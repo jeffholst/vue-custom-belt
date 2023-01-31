@@ -2,25 +2,21 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import SVGBelt from "./components/IconBelt.vue";
 import type BeltProps from "./interfaces/BeltProps";
-import { reactive, watch } from "vue";
+import { reactive } from "vue";
 
 const beltProps: BeltProps = reactive({
   level: "1",
-  message: "Hello World",
+  message: "Hello Universe",
   id: "1",
 });
 
-watch(beltProps, (newValue, oldValue) => {
-  console.log(newValue, oldValue);
-});
-
 const myClick = () => {
-  beltProps.message = "Hello World 2";
+  beltProps.message = "Hello Galaxy";
 };
 </script>
 
 <template>
-  <HelloWorld msg="You did it!" />
+  <HelloWorld :belt-props="beltProps" />
   <SVGBelt />
   <button @click="myClick">Click Me</button>
 </template>
