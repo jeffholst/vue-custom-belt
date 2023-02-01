@@ -1,24 +1,69 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
 import SVGBelt from "./components/IconBelt.vue";
 import type BeltProps from "./interfaces/BeltProps";
 import { reactive } from "vue";
 
 const beltProps: BeltProps = reactive({
-  level: "1",
-  message: "Hello Universe",
-  id: "1",
+  border: "#FFFFFF",
+  patch: "#000000",
+  patchBorder: "#FFFFFF",
+  professorPatch: "#000000",
+  professorBorder: "#000000",
+  stripe1_4: "#FFFFFF",
+  stripe2_4: "#FFFFFF",
+  stripe3_4: "#FFFFFF",
+  stripe4_4: "#FFFFFF",
+  stripe1_10: "#FFFFFF",
+  stripe2_10: "#FFFFFF",
+  stripe3_10: "#FFFFFF",
+  stripe4_10: "#FFFFFF",
+  stripe5_10: "#FFFFFF",
+  stripe6_10: "#FFFFFF",
+  stripe7_10: "#FFFFFF",
+  stripe8_10: "#FFFFFF",
+  stripe9_10: "#FFFFFF",
+  stripe10_10: "#FFFFFF",
+  s1l1: "#FFFFFF",
+  s1l2: "#FFFFFF",
+  s1l3: "#FFFFFF",
+  s2l1: "#FFFFFF",
+  s2l2: "#FFFFFF",
+  s2l3: "#FFFFFF",
+  s3l1: "#FFFFFF",
+  s3l2: "#FFFFFF",
+  s3l3: "#FFFFFF",
+  s4l1: "#FFFFFF",
+  s4l2: "#FFFFFF",
+  s4l3: "#FFFFFF",
+  s5l1: "#FFFFFF",
+  s5l2: "#FFFFFF",
+  s5l3: "#FFFFFF",
+  s6l1: "#FFFFFF",
+  s6l2: "#FFFFFF",
+  s6l3: "#FFFFFF",
+  s7l1: "#FFFFFF",
+  s7l2: "#FFFFFF",
+  s7l3: "#FFFFFF",
+  s8l1: "#FFFFFF",
+  s8l2: "#FFFFFF",
+  s8l3: "#FFFFFF",
+  s9l1: "#FFFFFF",
+  s9l2: "#FFFFFF",
+  s9l3: "#FFFFFF",
+  s10l1: "#FFFFFF",
+  s10l2: "#FFFFFF",
+  s10l3: "#FFFFFF",
+  s11l1: "#FFFFFF",
+  s11l2: "#FFFFFF",
+  s11l3: "#FFFFFF",
+  s12l1: "#FFFFFF",
+  s12l2: "#FFFFFF",
+  s12l3: "#FFFFFF",
 });
-
-const myClick = () => {
-  beltProps.message = "Hello Galaxy";
-};
 </script>
 
 <template>
-  <HelloWorld :belt-props="beltProps" />
-  <SVGBelt />
-  <button @click="myClick">Click Me</button>
+  <SVGBelt :belt-props="beltProps" />
 </template>
 
 <style scoped></style>
