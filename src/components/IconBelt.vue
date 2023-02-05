@@ -391,17 +391,17 @@
         <polygon
           id="s2l2"
           points="248.5 53.8 248.2 62.8 247.8 80.2 246.7 108.7 264.6 101.2 266.5 90.9 267.9 55.9 248.5 53.8"
-          style="fill: #fdb913"
+          :style="s2l2"
         />
         <path
           id="s2l3"
           d="m236.8,52.6c-.9,26-2.2,56.2-3.5,58.8-1,1.9,6.3,0,15-3.3,1.5-14.5,2.5-34.7,3-53.9l-2.2-.2-12.4-1.3Z"
-          style="fill: #f15a22"
+          :style="s2l3"
         />
         <path
           id="s2l1"
           d="m265.3,55.6c-.4,16-1.2,32.7-2.3,46.3,7.4-3.5,13.4-7,13.6-8.9.5-3.2,2.9-21.2,3.7-35.8l-15-1.6Z"
-          style="fill: #00abbd"
+          :style="s2l1"
         />
       </g>
       <g id="section1">
@@ -453,5 +453,17 @@ const s1l2 = computed(() => {
 
 const s1l3 = computed(() => {
   return `fill: ${props.beltProps.s1l3};`;
+});
+
+const s2l1 = computed(() => {
+  return `fill: ${props.beltProps.s2l1};`;
+});
+
+const s2l2 = computed(() => {
+  return `fill: ${props.beltProps.s2l2};`;
+});
+
+const s2l3 = computed(() => {
+  return `fill: ${props.beltProps.s2l3};`;
 });
 </script>
