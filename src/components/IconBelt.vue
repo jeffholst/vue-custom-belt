@@ -433,7 +433,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import type BeltProps from "../interfaces/BeltProps";
+import type BeltProps from "../types/BeltProps";
 
 const props = defineProps<{
   beltProps: BeltProps;

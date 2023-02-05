@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SVGBelt from "./components/IconBelt.vue";
-import type BeltProps from "./interfaces/BeltProps";
+import type BeltProps from "./types/BeltProps";
 import { reactive } from "vue";
 
 const beltProps: BeltProps = reactive({
