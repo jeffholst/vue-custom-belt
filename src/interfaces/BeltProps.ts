@@ -4,6 +4,8 @@ export default interface BeltProps {
   patchBorder: string;
   professorPatch: string;
   professorBorder: string;
+  hasProfessorPatch: boolean;
+  stripeCount: number;
   stripe4l1: string;
   stripe4l2: string;
   stripe4l3: string;

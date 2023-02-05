@@ -271,119 +271,119 @@
         />
       </g>
       <g id="Patch">
-        <g id="Professor">
+        <g id="Professor" :style="hasProfessorPatch">
           <path
             id="professorpatch"
             d="m154.1,120c-5.8-5.8-20.6-20.8-28-31l-90.7,50.6c6.3,7.6,19.8,23.3,30.2,31.8l88.5-51.4h0Z"
-            style="fill: #c3922e"
+            :style="professorPatchColor"
           />
           <path
             id="right2"
             d="m68,170.7c-10.6-8.3-25-25.1-31.3-32.8l-3.5,2c6.7,8.2,19.8,23.7,31.2,32.9l3.6-2.1h0Z"
-            style="fill: #414042"
+            :style="professorBorderColor"
           />
           <path
             id="left2"
             d="m152.7,121.5l3.6-2.1c-6.8-6.7-21.4-21.2-28.9-32l-3.6,2c7.3,10.4,22.7,26.1,28.9,32.1h0Z"
-            style="fill: #414042"
+            :style="professorBorderColor"
           />
         </g>
         <path
           id="patch"
           d="m142.8,126c-5.7-5.9-20.3-21.4-26.9-31.3l-68.6,38.3c5.6,7.1,18.8,23.3,29,31.9,0-.1,66.5-39,66.5-38.9Z"
-          style="fill: #231f20"
+          :style="patchColor"
         />
-        <g id="Stripes4">
+        <g id="Stripes4" :style="stripes4">
           <path
             id="stripe4l4"
             d="m125.5,134.9l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6h0Z"
-            style="fill: #fff"
+            :style="stripe4l4"
           />
           <path
             id="stripe4l3"
             d="m111.5,142.9l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            style="fill: #fff"
+            :style="stripe4l3"
           />
           <path
             id="stripe4l2"
             d="m97.4,152.3l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            style="fill: #fff"
+            :style="stripe4l2"
           />
           <path
             id="stripe4l1"
             d="m82.8,160.3l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            style="fill: #fff"
+            :style="stripe4l1"
           />
         </g>
-        <g id="Stripes10">
+        <g id="Stripes10" :style="stripes10">
           <path
             id="stripe10l10"
             d="m139.8,128.4c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l10"
           />
           <path
             id="stripe10l9"
             d="m133.3,131.5c-7.7-6.6-21.4-22.9-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l9"
           />
           <path
             id="stripe10l8"
             d="m127.2,135.4c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l8"
           />
           <path
             id="stripe10l7"
             d="m120.7,138.6c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.6,8.8,18.5,23.9,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l7"
           />
           <path
             id="stripe10l6"
             d="m114.8,142.8c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l6"
           />
           <path
             id="stripe10l5"
             d="m108.3,145.9c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l5"
           />
           <path
             id="stripe10l4"
             d="m102,149.4c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c5.4,7.2,16.9,22.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l4"
           />
           <path
             id="stripe10l3"
             d="m95.8,153.1c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c4.4,5.9,15.1,21,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l3"
           />
           <path
             id="stripe10l2"
             d="m89.8,157.1c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            style="fill: #e82329"
+            :style="stripe10l2"
           />
           <path
             id="stripe10l1"
             d="m84.2,160.9c-10-8.2-23.5-24.6-29.4-32.1l-3.5,1.8c6.2,8,18.5,23.1,29.3,32.1l3.6-1.9h0Z"
-            style="fill: #e82329"
+            :style="stripe10l1"
           />
         </g>
         <g id="PatchBorder">
           <path
             id="left1"
             d="m145.1,125.4c-6.4-6.6-20.4-21.1-27.4-31.8l-3.5,2c6.8,10.2,21.7,26,27.4,31.9l3.6-2.1h-.1Z"
-            style="fill: #414042"
+            :style="borderColor"
           />
           <path
             id="right1"
             d="m78.7,164.3c-10-8.1-23.7-24.9-29.6-32.3l-3.5,2c6.3,8,18.8,23.4,29.5,32.5l3.6-2.2h0Z"
-            style="fill: #414042"
+            :style="borderColor"
           />
         </g>
       </g>
       <path
         id="border2"
         d="m48.2,183c-5.8,0-12.1-7.2-16.7-12.5-1.3-1.5-2.4-2.7-3.2-3.5-5-4.8-9.7-10-14-15.4l-1.4-1.8,1.9-1.2c.3-.2,31.8-19.4,72.2-42.1,37.3-20.9,89.9-49.2,129.1-65.1,24.7-10,39.3-11.5,44.6-4.6,7.9,10.3-9.7,34-11.7,36.7l-.3.4-.4.2c-.8.4-79,38.4-110.6,57.2-8.8,5.2-19.1,11.5-29.1,17.6-34,20.7-55,33.3-59.6,33.9h-.9v.2h.1Zm-29.2-32.1c3.8,4.6,7.8,9.1,12.2,13.2.9.9,2.1,2.2,3.4,3.8,3.8,4.3,10.1,11.6,14,11.1,4-.5,33.9-18.7,58-33.3,10-6.1,20.3-12.3,29.1-17.6,30.6-18.2,104.1-54.1,110.5-57.2,6.9-9.3,15.9-25.6,11.4-31.5-2.2-2.9-10.4-6-39.9,5.9-69.5,28.1-182.5,95.9-198.7,105.6h0Z"
-        :style="borderColor"
+        :style="patchBorderColor"
       />
     </g>
     <g id="BeltKnotCenter">
@@ -596,5 +596,111 @@ const s13l2 = computed(() => {
 
 const s13l3 = computed(() => {
   return `fill: ${props.beltProps.s13l3};`;
+});
+
+const hasProfessorPatch = computed(() => {
+  return `visibility: ${
+    props.beltProps.hasProfessorPatch ? "visible" : "hidden"
+  };`;
+});
+
+const professorPatchColor = computed(() => {
+  return `fill: ${props.beltProps.professorPatch};`;
+});
+
+const professorBorderColor = computed(() => {
+  return `fill: ${props.beltProps.professorBorder};`;
+});
+
+const patchColor = computed(() => {
+  return `fill: ${props.beltProps.patch};`;
+});
+
+const patchBorderColor = computed(() => {
+  return `fill: ${props.beltProps.patchBorder};`;
+});
+
+const stripes4 = computed(() => {
+  return `visibility: ${
+    props.beltProps.stripeCount < 5 ? "visible" : "hidden"
+  };`;
+});
+
+const stripe4Style = (stripe: number, fill: string) => {
+  return `fill: ${fill}; visibility: ${
+    props.beltProps.stripeCount < 5 && props.beltProps.stripeCount >= stripe
+      ? "visible"
+      : "hidden"
+  };`;
+};
+
+const stripe4l1 = computed(() => {
+  return stripe4Style(1, props.beltProps.stripe4l1);
+});
+
+const stripe4l2 = computed(() => {
+  return stripe4Style(2, props.beltProps.stripe4l2);
+});
+
+const stripe4l3 = computed(() => {
+  return stripe4Style(3, props.beltProps.stripe4l3);
+});
+
+const stripe4l4 = computed(() => {
+  return stripe4Style(4, props.beltProps.stripe4l4);
+});
+
+const stripes10 = computed(() => {
+  return `visibility: ${
+    props.beltProps.stripeCount > 4 ? "visible" : "hidden"
+  };`;
+});
+
+const stripe10Style = (stripe: number, fill: string) => {
+  return `fill: ${fill}; visibility: ${
+    props.beltProps.stripeCount > 4 && props.beltProps.stripeCount >= stripe
+      ? "visible"
+      : "hidden"
+  };`;
+};
+
+const stripe10l1 = computed(() => {
+  return stripe10Style(1, props.beltProps.stripe10l1);
+});
+
+const stripe10l2 = computed(() => {
+  return stripe10Style(2, props.beltProps.stripe10l2);
+});
+
+const stripe10l3 = computed(() => {
+  return stripe10Style(3, props.beltProps.stripe10l3);
+});
+
+const stripe10l4 = computed(() => {
+  return stripe10Style(4, props.beltProps.stripe10l4);
+});
+
+const stripe10l5 = computed(() => {
+  return stripe10Style(5, props.beltProps.stripe10l5);
+});
+
+const stripe10l6 = computed(() => {
+  return stripe10Style(6, props.beltProps.stripe10l6);
+});
+
+const stripe10l7 = computed(() => {
+  return stripe10Style(7, props.beltProps.stripe10l7);
+});
+
+const stripe10l8 = computed(() => {
+  return stripe10Style(8, props.beltProps.stripe10l8);
+});
+
+const stripe10l9 = computed(() => {
+  return stripe10Style(9, props.beltProps.stripe10l9);
+});
+
+const stripe10l10 = computed(() => {
+  return stripe10Style(10, props.beltProps.stripe10l10);
 });
 </script>
