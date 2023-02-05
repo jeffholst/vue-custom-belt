@@ -65,68 +65,68 @@
         <polygon
           id="s13l2"
           points="389.7 32.2 344.1 42.5 276.5 47.9 225.7 50.4 224.3 50.3 224.3 71.8 270 71.8 333.9 65.7 371 61.3 393.2 55.6 389.7 32.2"
-          style="fill: #524fa1"
+          :style="s13l2"
         />
         <path
           id="s13l3"
           d="m394.4,63.3l-1.9-12.6c-50.4,11.1-106.2,16.5-168.2,16.1v11.4c7.3,0,14.8.2,22.4.2,63.6,0,112.5-6.9,147.7-15.1Z"
-          style="fill: #00a651"
+          :style="s13l3"
         />
         <path
           id="s13l1"
           d="m390.4,36.8l-1.8-11.8c-39.2,9.8-90.4,19-145.1,19s-12.8,0-19.3-.2v11.5c5.3,0,10.7,0,16.1,0,56.3,0,109.2-8.9,149.9-18.6h.2Z"
-          style="fill: #fdb913"
+          :style="s13l1"
         />
       </g>
       <g id="section12">
         <polygon
           id="s12l2"
           points="181.7 48.2 138.9 45.3 105.8 40.6 83.3 38.4 81 64.3 149 68.2 206.8 71.8 224.3 71.8 224.3 50.3 181.7 48.2"
-          style="fill: #b72467"
+          :style="s12l2"
         />
         <path
           id="s12l3"
           d="m81.6,57.3l-1.1,12.1c37.3,4.3,86.7,8,143.7,8.8v-11.4c-44.4-.2-91.8-3.4-142.7-9.5h0Z"
-          style="fill: #cbdb2a"
+          :style="s12l3"
         />
         <path
           id="s12l1"
           d="m83.9,31.4l-1.2,13.3c38.4,5.1,87.1,9.8,141.5,10.6v-11.5c-50.8-1.2-101.2-6.8-140.4-12.4h0Z"
-          style="fill: #00addc"
+          :style="s12l1"
         />
       </g>
       <g id="section11">
         <polygon
           id="s11l2"
           points="467.8 13.6 462.1 13.1 425.1 22.8 391.3 31.9 362.2 38.4 365.7 61.9 371 61.3 423.3 47.9 447.3 39.9 467.8 33 468.9 27 467.8 13.6"
-          style="fill: #f68b1f"
+          :style="s11l2"
         />
         <path
           id="s11l3"
           d="m428.1,41.7c-20.1,5.8-41.2,10.7-63.3,14.5l1.9,12.7c57.1-9.9,88.3-24.5,96.1-29.1,3.9-2.3,5.6-7.2,6-12.8-15.9,5.8-38.2,13.8-40.8,14.7h0Z"
-          style="fill: #662d91"
+          :style="s11l3"
         />
         <path
           id="s11l1"
           d="m462.1,1.8c-2.5,1.1-42.9,17.5-101,29.5l1.7,11.5c56.9-11.2,97.7-26.3,105-29.2-1.5-7.1-4.1-12.6-5.7-11.8Z"
-          style="fill: #6dc8bf"
+          :style="s11l1"
         />
       </g>
       <g id="section10">
         <polygon
           id="s10l2"
           points="60.6 36.2 29.7 31.5 11.2 27 2.5 27 1.7 50.4 14.4 55.4 79.1 64.2 100.5 65.4 102.9 40.3 60.6 36.2"
-          style="fill: #fff200"
+          :style="s10l2"
         />
         <path
           id="s10l3"
           d="m100.5,65.4h0l.5-5.9c-31.6-3.4-64.5-7.9-98.7-13.7.7,4.2,2.2,7.7,4.2,9.5,4,3.5,38.6,10.7,93.3,16.1l.6-6.1h0Z"
-          style="fill: #524fa1"
+          :style="s10l3"
         />
         <path
           id="s10l1"
           d="m103.4,34C48.7,26.9,9.8,18.7,9.8,18.7c-3.7,2.4-6,7.3-7.1,12.7,14.9,2.8,50.6,10,99.5,15.7l1.2-13.1Z"
-          style="fill: #f15a22"
+          :style="s10l1"
         />
       </g>
       <path
@@ -140,51 +140,51 @@
         <polygon
           id="s9l2"
           points="445.4 147.8 433.1 141.8 417.2 132.1 397.6 121.3 380.6 112.8 362.5 101.9 347.6 93.1 344.1 90.4 328.5 105.7 334.6 109.6 363.6 126.1 417.4 158 448.7 176.4 451.5 177.9 466.8 159 445.4 147.8"
-          style="fill: #00addc"
+          :style="s9l2"
         />
         <path
           id="s9l3"
           d="m358.9,120.5c-3.1-1.3-6.1-2.7-9.1-4l-3.5,3.9-5.2,5.7c15.2,7.3,29.6,14.2,41.1,19.8,32,15.6,56.8,41.3,56.8,41.3,0,0,4.9-3.9,10.6-9.3,0,0,0,0,0,0l4.5-5c-27.9-22.8-62.1-37.9-95.2-52.4Z"
-          style="fill: #f15a22"
+          :style="s9l3"
         />
         <path
           id="s9l1"
           d="m467.8,150.5c-2.6-8.9-58.2-38.6-97.7-56.5l-8.7,9.7-2.4,2.6c1.4.6,2.7,1.2,4.1,1.8,32.8,14.4,69.8,30.8,99.4,55.2l1.8-2c2.7-4.1,4.3-8,3.5-10.8Z"
-          style="fill: #fdb913"
+          :style="s9l1"
         />
       </g>
       <g id="section8">
         <path
           id="s8l2"
           d="m211,23.8c-3.7-2.6-7.3-5.2-10.8-7.7l-16.3,7.8c2.9,2.1,6.6,4.8,10.9,7.9.6.4,1.2.9,1.8,1.3l16.1-8.1c-.6-.4-1.2-.9-1.8-1.3Z"
-          style="fill: #6dc8bf"
+          :style="s8l2"
         />
         <path
           id="s8l3"
           d="m196.5,31.1c-3.8-2.7-7.1-5.1-9.7-7-.2-.1-.4-.3-.5-.4l-6.9,3.4-8.5,4.2s4.2,2.7,11,7c.2.1.4.3.6.4l13.9-7,.5-.3c-.2-.1-.4-.3-.6-.4Z"
-          style="fill: #b72467"
+          :style="s8l3"
         />
         <path
           id="s8l1"
           d="m222.9,17.9c-7-4.1-11.2-6.6-11.2-6.6h0c0-.1-8.9,4.3-8.9,4.3l-3.7,1.8c.2.2.5.3.7.5,3.1,2.2,6.3,4.5,9.5,6.8.2.1.4.3.5.4l.8-.4,12.7-6.4c-.2-.1-.4-.2-.6-.3Z"
-          style="fill: #cbdb2a"
+          :style="s8l1"
         />
       </g>
       <g id="section7">
         <polygon
           id="s7l2"
           points="350 98.3 337.6 92.9 321.6 84.2 302 74.4 285 66.7 266.8 56.9 251.9 48.9 238.5 39.9 218.8 27.1 212.8 22.7 188.1 34.5 203.2 43.5 238.8 63.8 267.9 78.7 321.9 107.5 353.2 124.1 356.1 125.5 371.4 108.4 350 98.3"
-          style="fill: #ed1c24"
+          :style="s7l2"
         />
         <path
           id="s7l3"
           d="m358.9,120.5c-4.6-2-9-4-13.5-6-29.9-13.8-72-35.3-94.4-46.9l-.3-.2c-18.1-10.9-40.3-26.4-54.6-36.7l-14.8,7.1c19.2,12.1,60.5,37.9,83.3,50.3,21.9,11.9,56.8,28.6,86.6,42.9l8.9-9.9c-.4-.2-.8-.3-1.2-.5Z"
-          style="fill: #cbdb2a"
+          :style="s7l3"
         />
         <path
           id="s7l1"
           d="m345.4,83.6c-27.4-10.2-95.7-49.9-122.5-65.8l-13.7,6.6c15.8,11.2,33.3,23,46.9,31.2,22.4,11.6,64.2,32.9,93.7,46.6,4.4,1.9,8.8,3.9,13.4,5.9,2,.9,4.1,1.8,6.1,2.7l5.7-6.3,5.2-5.8c-13.4-6.3-25.8-11.7-34.7-15Z"
-          style="fill: #662d91"
+          :style="s7l1"
         />
       </g>
       <path
@@ -198,34 +198,34 @@
         <polygon
           id="s6l2"
           points="237.1 53.8 227.9 60.3 216.1 69.2 197.9 83 190.6 88.3 207.1 101.3 221 91 238.6 79.1 253.6 65.8 237.1 53.8"
-          style="fill: #00a651"
+          :style="s6l2"
         />
         <path
           id="s6l3"
           d="m238.6,54.8l-15.6-11.5-45.6,34.5,14.6,11.5c12.6-9.1,28.2-20.4,35.2-25.4l11.3-9.2Z"
-          style="fill: #fff200"
+          :style="s6l3"
         />
         <path
           id="s6l1"
           d="m252.4,65l-15.6,12.7c-6.2,4.3-19.4,13.9-31.2,22.5l11.6,9.1c16-9.8,51.5-32.3,51.5-32.3l-16.3-12Z"
-          style="fill: #b72467"
+          :style="s6l1"
         />
       </g>
       <g id="section5">
         <polygon
           id="s5l2"
           points="197.9 83 178.5 97.1 197.1 108.8 203 104.3 219.4 92.2 202.5 79.6 197.9 83"
-          style="fill: #524fa1"
+          :style="s5l2"
         />
         <path
           id="s5l3"
           d="m172.5,81.6l2.3,13h0s2.1,1.4,5.2,3.5c6-4.3,15.1-10.9,24-17.4l-15.3-11.4-16.2,12.3Z"
-          style="fill: #cbdb2a"
+          :style="s5l3"
         />
         <path
           id="s5l1"
           d="m195.3,107.7c6.7,3.9,12.8,6.9,14.7,5.9,1.7-.9,10.7-6.4,21.1-12.9l-12.9-9.6c-7.7,5.6-16.2,11.7-22.8,16.6Z"
-          style="fill: #fdb913"
+          :style="s5l1"
         />
       </g>
       <g id="border3">
@@ -489,5 +489,112 @@ const s4l2 = computed(() => {
 
 const s4l3 = computed(() => {
   return `fill: ${props.beltProps.s4l3};`;
+});
+
+const s5l1 = computed(() => {
+  return `fill: ${props.beltProps.s5l1};`;
+});
+
+const s5l2 = computed(() => {
+  return `fill: ${props.beltProps.s5l2};`;
+});
+
+const s5l3 = computed(() => {
+  return `fill: ${props.beltProps.s5l3};`;
+});
+
+const s6l1 = computed(() => {
+  return `fill: ${props.beltProps.s6l1};`;
+});
+
+const s6l2 = computed(() => {
+  return `fill: ${props.beltProps.s6l2};`;
+});
+
+const s6l3 = computed(() => {
+  return `fill: ${props.beltProps.s6l3};`;
+});
+
+const s7l1 = computed(() => {
+  return `fill: ${props.beltProps.s7l1};`;
+});
+
+const s7l2 = computed(() => {
+  return `fill: ${props.beltProps.s7l2};`;
+});
+
+const s7l3 = computed(() => {
+  return `fill: ${props.beltProps.s7l3};`;
+});
+
+const s8l1 = computed(() => {
+  return `fill: ${props.beltProps.s8l1};`;
+});
+
+const s8l2 = computed(() => {
+  return `fill: ${props.beltProps.s8l2};`;
+});
+
+const s8l3 = computed(() => {
+  return `fill: ${props.beltProps.s8l3};`;
+});
+const s9l1 = computed(() => {
+  return `fill: ${props.beltProps.s9l1};`;
+});
+
+const s9l2 = computed(() => {
+  return `fill: ${props.beltProps.s9l2};`;
+});
+
+const s9l3 = computed(() => {
+  return `fill: ${props.beltProps.s9l3};`;
+});
+
+const s10l1 = computed(() => {
+  return `fill: ${props.beltProps.s10l1};`;
+});
+
+const s10l2 = computed(() => {
+  return `fill: ${props.beltProps.s10l2};`;
+});
+
+const s10l3 = computed(() => {
+  return `fill: ${props.beltProps.s10l3};`;
+});
+
+const s11l1 = computed(() => {
+  return `fill: ${props.beltProps.s11l1};`;
+});
+
+const s11l2 = computed(() => {
+  return `fill: ${props.beltProps.s11l2};`;
+});
+
+const s11l3 = computed(() => {
+  return `fill: ${props.beltProps.s11l3};`;
+});
+
+const s12l1 = computed(() => {
+  return `fill: ${props.beltProps.s12l1};`;
+});
+
+const s12l2 = computed(() => {
+  return `fill: ${props.beltProps.s12l2};`;
+});
+
+const s12l3 = computed(() => {
+  return `fill: ${props.beltProps.s12l3};`;
+});
+
+const s13l1 = computed(() => {
+  return `fill: ${props.beltProps.s13l1};`;
+});
+
+const s13l2 = computed(() => {
+  return `fill: ${props.beltProps.s13l2};`;
+});
+
+const s13l3 = computed(() => {
+  return `fill: ${props.beltProps.s13l3};`;
 });
 </script>
