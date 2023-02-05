@@ -257,17 +257,17 @@
         <polygon
           id="s3l3"
           points="253.5 41.2 245.2 43.7 236.1 46.7 224.1 51.5 212.1 55.5 201.2 60.1 184.5 69.2 167.8 78.6 165.8 79.6 175.3 96.9 190.7 89.5 213.9 78.6 237.2 68.5 254.7 61.9 261.1 44.1 261.1 41.2 253.5 41.2"
-          style="fill: #f68b1f"
+          :style="s3l3"
         />
         <path
-          id="s3l3-2"
+          id="s3l2"
           d="m247.8,72.4s5-6.6,8.9-14.3h-1.9c-26.7,8.7-54.1,21.1-81.5,35.1l7.1,12.9c32.7-16.9,67.5-33.8,67.5-33.8Z"
-          style="fill: #524fa1"
+          :style="s3l2"
         />
         <path
           id="s3l1"
           d="m166.8,81.4c22.8-11.8,45.3-22.7,66.6-31.8l19.3-5.4h0c0-.1,8.4-.1,8.4-.1.3-9.7-8.8-14.9-43.9-.7-17.1,6.9-36.7,16.1-56.8,26.3l2.1,3.9,4.3,7.8Z"
-          style="fill: #6dc8bf"
+          :style="s3l1"
         />
       </g>
       <g id="Patch">
@@ -465,5 +465,17 @@ const s2l2 = computed(() => {
 
 const s2l3 = computed(() => {
   return `fill: ${props.beltProps.s2l3};`;
+});
+
+const s3l1 = computed(() => {
+  return `fill: ${props.beltProps.s3l1};`;
+});
+
+const s3l2 = computed(() => {
+  return `fill: ${props.beltProps.s3l2};`;
+});
+
+const s3l3 = computed(() => {
+  return `fill: ${props.beltProps.s3l3};`;
 });
 </script>
