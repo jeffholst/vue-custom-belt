@@ -4,15 +4,19 @@ import type BeltProps from "./types/BeltProps";
 import { reactive } from "vue";
 import * as shared from "./shared/shared";
 
-//const beltProps: BeltProps = reactive(shared.getWhiteBelt(1));
-const beltProps: BeltProps = reactive(shared.getBlueBelt(1));
-//const beltProps: BeltProps = reactive(shared.getPurpleBelt(1));
-//const beltProps: BeltProps = reactive(shared.getBrownBelt(1));
-//const beltProps: BeltProps = reactive(shared.getBlackBelt(1));
+const whiteBelt: BeltProps = reactive(shared.getWhiteBelt(0));
+const blueBelt: BeltProps = reactive(shared.getBlueBelt(1));
+const purpleBelt: BeltProps = reactive(shared.getPurpleBelt(2));
+const brownBelt: BeltProps = reactive(shared.getBrownBelt(3));
+const blackBelt: BeltProps = reactive(shared.getBlackBelt(4));
 </script>
 
 <template>
-  <SVGBelt :belt-props="beltProps" />
+  <SVGBelt :belt-props="whiteBelt" />
+  <SVGBelt :belt-props="blueBelt" />
+  <SVGBelt :belt-props="purpleBelt" />
+  <SVGBelt :belt-props="brownBelt" />
+  <SVGBelt :belt-props="blackBelt" />
 </template>
 
 <style scoped></style>
