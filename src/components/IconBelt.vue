@@ -270,7 +270,7 @@
           :style="s3l1"
         />
       </g>
-      <g id="Patch">
+      <g id="Patch" :style="hasPatch">
         <g id="Professor" :style="hasProfessorPatch">
           <path
             id="professorpatch"
@@ -596,6 +596,10 @@ const s13l2 = computed(() => {
 
 const s13l3 = computed(() => {
   return `fill: ${props.beltProps.s13l3};`;
+});
+
+const hasPatch = computed(() => {
+  return `visibility: ${props.beltProps.hasPatch ? "visible" : "hidden"};`;
 });
 
 const hasProfessorPatch = computed(() => {

@@ -1,5 +1,6 @@
 export default interface BeltProps {
   border: string;
+  hasPatch: boolean;
   patch: string;
   patchBorder: string;
   professorPatch: string;
