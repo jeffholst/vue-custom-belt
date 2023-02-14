@@ -1,84 +1,68 @@
 import type BeltProps from "../types/BeltProps";
 
-const Color = {
-  white: "#FFFFFF",
-  gray: "#999999",
-  black: "#000000",
-  yellow: "#FFCC00",
-  orange: "#CC6633",
-  green: "#006633",
-  blue: "#0099CC",
-  purple: "#993399",
-  brown: "#663300",
-  red: "#990000",
-  gold: "#CC9900",
-  darkBorder: "#434244",
-  lightBorder: "#CCCCCC",
-};
-
 const getBelt = (): BeltProps => {
   const beltProps: BeltProps = {
-    border: Color.darkBorder,
+    border: "",
     hasPatch: true,
-    patch: Color.black,
-    patchBorder: Color.darkBorder,
-    professorPatch: Color.red,
-    professorBorder: Color.darkBorder,
+    patch: "",
+    patchBorder: "",
+    professorPatch: "",
+    professorBorder: "",
     hasProfessorPatch: false,
     stripeCount: 0,
-    stripe4l1: Color.white,
-    stripe4l2: Color.white,
-    stripe4l3: Color.white,
-    stripe4l4: Color.white,
-    stripe10l1: Color.white,
-    stripe10l2: Color.white,
-    stripe10l3: Color.white,
-    stripe10l4: Color.white,
-    stripe10l5: Color.white,
-    stripe10l6: Color.white,
-    stripe10l7: Color.white,
-    stripe10l8: Color.white,
-    stripe10l9: Color.white,
-    stripe10l10: Color.white,
-    s1l1: Color.white,
-    s1l2: Color.white,
-    s1l3: Color.white,
-    s2l1: Color.white,
-    s2l2: Color.white,
-    s2l3: Color.white,
-    s3l1: Color.white,
-    s3l2: Color.white,
-    s3l3: Color.white,
-    s4l1: Color.white,
-    s4l2: Color.white,
-    s4l3: Color.white,
-    s5l1: Color.white,
-    s5l2: Color.white,
-    s5l3: Color.white,
-    s6l1: Color.white,
-    s6l2: Color.white,
-    s6l3: Color.white,
-    s7l1: Color.white,
-    s7l2: Color.white,
-    s7l3: Color.white,
-    s8l1: Color.white,
-    s8l2: Color.white,
-    s8l3: Color.white,
-    s9l1: Color.white,
-    s9l2: Color.white,
-    s9l3: Color.white,
-    s10l1: Color.white,
-    s10l2: Color.white,
-    s10l3: Color.white,
-    s11l1: Color.white,
-    s11l2: Color.white,
-    s11l3: Color.white,
-    s12l1: Color.white,
-    s12l2: Color.white,
-    s12l3: Color.white,
-    s13l1: Color.white,
-    s13l2: Color.white,
-    s13l3: Color.white,
+    stripe4l1: "",
+    stripe4l2: "",
+    stripe4l3: "",
+    stripe4l4: "",
+    stripe10l1: "",
+    stripe10l2: "",
+    stripe10l3: "",
+    stripe10l4: "",
+    stripe10l5: "",
+    stripe10l6: "",
+    stripe10l7: "",
+    stripe10l8: "",
+    stripe10l9: "",
+    stripe10l10: "",
+    s1l1: "",
+    s1l2: "",
+    s1l3: "",
+    s2l1: "",
+    s2l2: "",
+    s2l3: "",
+    s3l1: "",
+    s3l2: "",
+    s3l3: "",
+    s4l1: "",
+    s4l2: "",
+    s4l3: "",
+    s5l1: "",
+    s5l2: "",
+    s5l3: "",
+    s6l1: "",
+    s6l2: "",
+    s6l3: "",
+    s7l1: "",
+    s7l2: "",
+    s7l3: "",
+    s8l1: "",
+    s8l2: "",
+    s8l3: "",
+    s9l1: "",
+    s9l2: "",
+    s9l3: "",
+    s10l1: "",
+    s10l2: "",
+    s10l3: "",
+    s11l1: "",
+    s11l2: "",
+    s11l3: "",
+    s12l1: "",
+    s12l2: "",
+    s12l3: "",
+    s13l1: "",
+    s13l2: "",
+    s13l3: "",
   };
 
   return beltProps;
@@ -119,7 +103,7 @@ const setPatchProperties = (
   beltProps.stripe10l10 = stripeColor;
 };
 
-const getSolidBelt = (
+export const getSolidBelt = (
   beltColor: string,
   borderColor: string,
   hasPatch: boolean,
@@ -193,7 +177,7 @@ const getSolidBelt = (
   return beltProps;
 };
 
-const getStrippedBelt = (
+export const getStrippedBelt = (
   beltColor: string,
   beltStripeColor: string,
   borderColor: string,
@@ -268,7 +252,7 @@ const getStrippedBelt = (
   return beltProps;
 };
 
-const getCoralBelt = (
+export const getCoralBelt = (
   beltColor1: string,
   beltColor2: string,
   borderColor: string,
@@ -340,119 +324,5 @@ const getCoralBelt = (
     stripeCount
   );
 
-  return beltProps;
-};
-
-export const getGrayWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getStrippedBelt(
-    Color.gray,
-    Color.white,
-    Color.darkBorder,
-    true,
-    Color.black,
-    Color.darkBorder,
-    Color.gold,
-    Color.darkBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getSolidBelt(
-    Color.white,
-    Color.darkBorder,
-    true,
-    Color.black,
-    Color.darkBorder,
-    Color.gold,
-    Color.darkBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getBlueBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getSolidBelt(
-    Color.blue,
-    Color.darkBorder,
-    true,
-    Color.black,
-    Color.darkBorder,
-    Color.gold,
-    Color.darkBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getPurpleBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getSolidBelt(
-    Color.purple,
-    Color.darkBorder,
-    true,
-    Color.black,
-    Color.darkBorder,
-    Color.gold,
-    Color.darkBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getBrownBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getSolidBelt(
-    Color.brown,
-    Color.lightBorder,
-    true,
-    Color.black,
-    Color.lightBorder,
-    Color.gold,
-    Color.lightBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getSolidBelt(
-    Color.black,
-    Color.lightBorder,
-    true,
-    Color.black,
-    Color.lightBorder,
-    Color.gold,
-    Color.lightBorder,
-    false,
-    Color.white,
-    stripeCount
-  );
-  return beltProps;
-};
-
-export const getRedBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = getCoralBelt(
-    Color.red,
-    Color.black,
-    Color.lightBorder,
-    true,
-    Color.white,
-    Color.lightBorder,
-    Color.gray,
-    Color.lightBorder,
-    true,
-    Color.red,
-    stripeCount
-  );
   return beltProps;
 };
