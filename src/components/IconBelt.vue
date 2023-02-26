@@ -1,10 +1,10 @@
 <template>
   <svg
     id="svg_belt"
-    xmlns="http://www.w3.org/2000/svg"
     width="471.2"
     height="190.2"
     viewBox="0 0 471.2 190.2"
+    role="img"
   >
     <metadata>
       <rdf:RDF

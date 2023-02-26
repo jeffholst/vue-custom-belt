@@ -34,6 +34,189 @@ export const getGrayWhiteBelt = (stripeCount: number): BeltProps => {
   return beltProps;
 };
 
+export const getGrayBlackBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.gray,
+    Color.black,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getYellowWhiteBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.yellow,
+    Color.white,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getYellowBlackBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.yellow,
+    Color.black,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getOrangeWhiteBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.orange,
+    Color.white,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getOrangeBlackBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.orange,
+    Color.black,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getGreenWhiteBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.green,
+    Color.white,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getGreenBlackBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getStrippedBelt(
+    Color.green,
+    Color.black,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getGrayBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getSolidBelt(
+    Color.gray,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getYellowBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getSolidBelt(
+    Color.yellow,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getOrangeBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getSolidBelt(
+    Color.orange,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getGreenBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getSolidBelt(
+    Color.green,
+    Color.darkBorder,
+    true,
+    Color.black,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
+    false,
+    Color.white,
+    stripeCount
+  );
+  return beltProps;
+};
+
 export const getWhiteBelt = (stripeCount: number): BeltProps => {
   const beltProps: BeltProps = shared.getSolidBelt(
     Color.white,
@@ -85,12 +268,12 @@ export const getPurpleBelt = (stripeCount: number): BeltProps => {
 export const getBrownBelt = (stripeCount: number): BeltProps => {
   const beltProps: BeltProps = shared.getSolidBelt(
     Color.brown,
-    Color.lightBorder,
+    Color.darkBorder,
     true,
     Color.black,
-    Color.lightBorder,
+    Color.darkBorder,
     Color.gold,
-    Color.lightBorder,
+    Color.darkBorder,
     false,
     Color.white,
     stripeCount
@@ -103,11 +286,11 @@ export const getBlackBelt = (stripeCount: number): BeltProps => {
     Color.black,
     Color.lightBorder,
     true,
-    Color.black,
+    Color.red,
     Color.lightBorder,
-    Color.gold,
+    Color.white,
     Color.lightBorder,
-    false,
+    true,
     Color.white,
     stripeCount
   );
@@ -124,6 +307,39 @@ export const getRedBlackBelt = (stripeCount: number): BeltProps => {
     Color.lightBorder,
     Color.gray,
     Color.lightBorder,
+    true,
+    Color.red,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getRedWhiteBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getCoralBelt(
+    Color.white,
+    Color.red,
+    Color.darkBorder,
+    true,
+    Color.white,
+    Color.darkBorder,
+    Color.gray,
+    Color.darkBorder,
+    true,
+    Color.red,
+    stripeCount
+  );
+  return beltProps;
+};
+
+export const getRedBelt = (stripeCount: number): BeltProps => {
+  const beltProps: BeltProps = shared.getSolidBelt(
+    Color.red,
+    Color.darkBorder,
+    true,
+    Color.white,
+    Color.darkBorder,
+    Color.gold,
+    Color.darkBorder,
     true,
     Color.red,
     stripeCount
