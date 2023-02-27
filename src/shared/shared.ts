@@ -95,6 +95,132 @@ const setPatchProperties = (
   beltProps.stripe10 = stripeColor;
 };
 
+const getRandomHexColor = (): string => {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  return `#${randomColor}`;
+};
+
+export const getRandomBelt = (): BeltProps => {
+  const randomBeltType = Math.floor(Math.random() * 4);
+
+  let beltProps: BeltProps = getBelt();
+
+  const border = getRandomHexColor();
+  const hasPatch = Math.random() < 0.5;
+  const patchColor = getRandomHexColor();
+  const patchBorder = border;
+  const professorPatchColor = getRandomHexColor();
+  const professorBorder = border;
+  const hasProfessorPatch = Math.random() < 0.5;
+  const stripeColor = getRandomHexColor();
+  const stripeCount = Math.floor(Math.random() * 11);
+
+  switch (randomBeltType) {
+    case 0: // solid belt
+      beltProps = getSolidBelt(
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount
+      );
+      break;
+    case 1: // striped belt
+      beltProps = getStrippedBelt(
+        getRandomHexColor(),
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount
+      );
+      break;
+    case 2: // coral belt
+      beltProps = getCoralBelt(
+        getRandomHexColor(),
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount
+      );
+      break;
+    case 3: // crazy belt
+      beltProps = getSolidBelt(
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount
+      );
+      beltProps.s1l1 = getRandomHexColor();
+      beltProps.s1l2 = getRandomHexColor();
+      beltProps.s1l3 = getRandomHexColor();
+      beltProps.s2l1 = getRandomHexColor();
+      beltProps.s2l2 = getRandomHexColor();
+      beltProps.s2l3 = getRandomHexColor();
+      beltProps.s3l1 = getRandomHexColor();
+      beltProps.s3l2 = getRandomHexColor();
+      beltProps.s3l3 = getRandomHexColor();
+      beltProps.s4l1 = getRandomHexColor();
+      beltProps.s4l2 = getRandomHexColor();
+      beltProps.s4l3 = getRandomHexColor();
+      beltProps.s5l1 = getRandomHexColor();
+      beltProps.s5l2 = getRandomHexColor();
+      beltProps.s5l3 = getRandomHexColor();
+      beltProps.s6l1 = getRandomHexColor();
+      beltProps.s6l2 = getRandomHexColor();
+      beltProps.s6l3 = getRandomHexColor();
+      beltProps.s6l1 = getRandomHexColor();
+      beltProps.s6l2 = getRandomHexColor();
+      beltProps.s6l3 = getRandomHexColor();
+      beltProps.s7l1 = getRandomHexColor();
+      beltProps.s7l2 = getRandomHexColor();
+      beltProps.s7l3 = getRandomHexColor();
+      beltProps.s8l1 = getRandomHexColor();
+      beltProps.s8l2 = getRandomHexColor();
+      beltProps.s8l3 = getRandomHexColor();
+      beltProps.s9l1 = getRandomHexColor();
+      beltProps.s9l2 = getRandomHexColor();
+      beltProps.s9l3 = getRandomHexColor();
+      beltProps.s10l1 = getRandomHexColor();
+      beltProps.s10l2 = getRandomHexColor();
+      beltProps.s10l3 = getRandomHexColor();
+      beltProps.s11l1 = getRandomHexColor();
+      beltProps.s11l2 = getRandomHexColor();
+      beltProps.s11l3 = getRandomHexColor();
+      beltProps.s12l1 = getRandomHexColor();
+      beltProps.s12l2 = getRandomHexColor();
+      beltProps.s12l3 = getRandomHexColor();
+      beltProps.s13l1 = getRandomHexColor();
+      beltProps.s13l2 = getRandomHexColor();
+      beltProps.s13l3 = getRandomHexColor();
+      break;
+  }
+
+  return beltProps;
+};
+
 export const getSolidBelt = (
   beltColor: string,
   borderColor: string,

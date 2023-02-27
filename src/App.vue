@@ -2,8 +2,10 @@
 import SVGBelt from "./components/IconBelt.vue";
 import type { BeltProps } from "./types/BeltProps";
 import { reactive } from "vue";
+import { getRandomBelt } from "./shared/shared";
 import * as ibjjf from "./shared/ibjjf";
 
+const randomBelt: BeltProps = reactive(getRandomBelt());
 const whiteBelt: BeltProps = reactive(ibjjf.getWhiteBelt(0));
 const grayWhiteBelt: BeltProps = reactive(ibjjf.getGrayWhiteBelt(0));
 const blueBelt: BeltProps = reactive(ibjjf.getBlueBelt(1));
@@ -27,6 +29,7 @@ const redBelt: BeltProps = reactive(ibjjf.getRedBelt(0));
 </script>
 
 <template>
+  <SVGBelt :belt-props="randomBelt" />
   <SVGBelt :belt-props="whiteBelt" />
   <SVGBelt :belt-props="grayWhiteBelt" />
   <SVGBelt :belt-props="grayBelt" />
