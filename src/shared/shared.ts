@@ -1,4 +1,4 @@
-import type BeltProps from "../types/BeltProps";
+import type { BeltProps } from "../types/BeltProps";
 
 const getBelt = (): BeltProps => {
   const beltProps: BeltProps = {
@@ -10,20 +10,16 @@ const getBelt = (): BeltProps => {
     professorBorder: "",
     hasProfessorPatch: false,
     stripeCount: 0,
-    stripe4l1: "",
-    stripe4l2: "",
-    stripe4l3: "",
-    stripe4l4: "",
-    stripe10l1: "",
-    stripe10l2: "",
-    stripe10l3: "",
-    stripe10l4: "",
-    stripe10l5: "",
-    stripe10l6: "",
-    stripe10l7: "",
-    stripe10l8: "",
-    stripe10l9: "",
-    stripe10l10: "",
+    stripe1: "",
+    stripe2: "",
+    stripe3: "",
+    stripe4: "",
+    stripe5: "",
+    stripe6: "",
+    stripe7: "",
+    stripe8: "",
+    stripe9: "",
+    stripe10: "",
     s1l1: "",
     s1l2: "",
     s1l3: "",
@@ -87,20 +83,16 @@ const setPatchProperties = (
   beltProps.hasProfessorPatch = hasProfessorPatch;
   beltProps.stripeCount = stripeCount;
 
-  beltProps.stripe4l1 = stripeColor;
-  beltProps.stripe4l2 = stripeColor;
-  beltProps.stripe4l3 = stripeColor;
-  beltProps.stripe4l4 = stripeColor;
-  beltProps.stripe10l1 = stripeColor;
-  beltProps.stripe10l2 = stripeColor;
-  beltProps.stripe10l3 = stripeColor;
-  beltProps.stripe10l4 = stripeColor;
-  beltProps.stripe10l5 = stripeColor;
-  beltProps.stripe10l6 = stripeColor;
-  beltProps.stripe10l7 = stripeColor;
-  beltProps.stripe10l8 = stripeColor;
-  beltProps.stripe10l9 = stripeColor;
-  beltProps.stripe10l10 = stripeColor;
+  beltProps.stripe1 = stripeColor;
+  beltProps.stripe2 = stripeColor;
+  beltProps.stripe3 = stripeColor;
+  beltProps.stripe4 = stripeColor;
+  beltProps.stripe5 = stripeColor;
+  beltProps.stripe6 = stripeColor;
+  beltProps.stripe7 = stripeColor;
+  beltProps.stripe8 = stripeColor;
+  beltProps.stripe9 = stripeColor;
+  beltProps.stripe10 = stripeColor;
 };
 
 export const getSolidBelt = (

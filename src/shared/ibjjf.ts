@@ -1,4 +1,4 @@
-import type BeltProps from "../types/BeltProps";
+import type { BeltProps } from "../types/BeltProps";
 import * as shared from "./shared";
 
 const Color = {

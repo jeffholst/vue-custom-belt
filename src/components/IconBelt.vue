@@ -296,54 +296,54 @@
         />
         <g id="Stripes10">
           <path
-            id="stripe10l10"
+            id="stripe10"
             d="m139.4,129.2c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l10"
+            :style="stripe10"
           />
           <path
-            id="stripe10l9"
+            id="stripe9"
             d="m132.9,132.3c-7.7-6.6-21.4-22.9-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l9"
+            :style="stripe9"
           />
           <path
-            id="stripe10l8"
+            id="stripe8"
             d="m126.8,136.2c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l8"
+            :style="stripe8"
           />
           <path
-            id="stripe10l7"
+            id="stripe7"
             d="m120.3,139.4c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.6,8.8,18.5,23.9,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l7"
+            :style="stripe7"
           />
           <path
-            id="stripe10l6"
+            id="stripe6"
             d="m114.4,143.6c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l6"
+            :style="stripe6"
           />
           <path
-            id="stripe10l5"
+            id="stripe5"
             d="m107.9,146.7c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l5"
+            :style="stripe5"
           />
           <path
-            id="stripe10l4"
+            id="stripe4"
             d="m101.6,150.2c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c5.4,7.2,16.9,22.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l4"
+            :style="stripe4"
           />
           <path
-            id="stripe10l3"
+            id="stripe3"
             d="m95.4,153.9c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c4.4,5.9,15.1,21,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l3"
+            :style="stripe3"
           />
           <path
-            id="stripe10l2"
+            id="stripe2"
             d="m89.4,157.9c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
-            :style="stripe10l2"
+            :style="stripe2"
           />
           <path
-            id="stripe10l1"
+            id="stripe1"
             d="m83.8,161.7c-10-8.2-23.5-24.6-29.4-32.1l-3.5,1.8c6.2,8,18.5,23.1,29.3,32.1l3.6-1.9h0Z"
-            :style="stripe10l1"
+            :style="stripe1"
           />
         </g>
         <g id="PatchBorder">
@@ -412,7 +412,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import type BeltProps from "../types/BeltProps";
+import type { BeltProps } from "../types/BeltProps";
 
 const props = defineProps<{
   beltProps: BeltProps;
@@ -603,7 +603,7 @@ const patchBorderColor = computed(() => {
   return `fill: ${props.beltProps.patchBorder};`;
 });
 
-const stripe10Style = (stripe: number, fill: string) => {
+const stripeStyle = (stripe: number, fill: string) => {
   return `fill: ${fill}; visibility: ${
     props.beltProps.stripeCount > 0 && props.beltProps.stripeCount >= stripe
       ? "visible"
@@ -611,43 +611,43 @@ const stripe10Style = (stripe: number, fill: string) => {
   };`;
 };
 
-const stripe10l1 = computed(() => {
-  return stripe10Style(1, props.beltProps.stripe10l1);
+const stripe1 = computed(() => {
+  return stripeStyle(1, props.beltProps.stripe1);
 });
 
-const stripe10l2 = computed(() => {
-  return stripe10Style(2, props.beltProps.stripe10l2);
+const stripe2 = computed(() => {
+  return stripeStyle(2, props.beltProps.stripe2);
 });
 
-const stripe10l3 = computed(() => {
-  return stripe10Style(3, props.beltProps.stripe10l3);
+const stripe3 = computed(() => {
+  return stripeStyle(3, props.beltProps.stripe3);
 });
 
-const stripe10l4 = computed(() => {
-  return stripe10Style(4, props.beltProps.stripe10l4);
+const stripe4 = computed(() => {
+  return stripeStyle(4, props.beltProps.stripe4);
 });
 
-const stripe10l5 = computed(() => {
-  return stripe10Style(5, props.beltProps.stripe10l5);
+const stripe5 = computed(() => {
+  return stripeStyle(5, props.beltProps.stripe5);
 });
 
-const stripe10l6 = computed(() => {
-  return stripe10Style(6, props.beltProps.stripe10l6);
+const stripe6 = computed(() => {
+  return stripeStyle(6, props.beltProps.stripe6);
 });
 
-const stripe10l7 = computed(() => {
-  return stripe10Style(7, props.beltProps.stripe10l7);
+const stripe7 = computed(() => {
+  return stripeStyle(7, props.beltProps.stripe7);
 });
 
-const stripe10l8 = computed(() => {
-  return stripe10Style(8, props.beltProps.stripe10l8);
+const stripe8 = computed(() => {
+  return stripeStyle(8, props.beltProps.stripe8);
 });
 
-const stripe10l9 = computed(() => {
-  return stripe10Style(9, props.beltProps.stripe10l9);
+const stripe9 = computed(() => {
+  return stripeStyle(9, props.beltProps.stripe9);
 });
 
-const stripe10l10 = computed(() => {
-  return stripe10Style(10, props.beltProps.stripe10l10);
+const stripe10 = computed(() => {
+  return stripeStyle(10, props.beltProps.stripe10);
 });
 </script>

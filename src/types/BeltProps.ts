@@ -1,4 +1,6 @@
-export default interface BeltProps {
+export type StripeStart = "Left" | "Right";
+
+export interface BeltProps {
   border: string;
   hasPatch: boolean;
   patch: string;
@@ -7,20 +9,16 @@ export default interface BeltProps {
   professorBorder: string;
   hasProfessorPatch: boolean;
   stripeCount: number;
-  stripe4l1: string;
-  stripe4l2: string;
-  stripe4l3: string;
-  stripe4l4: string;
-  stripe10l1: string;
-  stripe10l2: string;
-  stripe10l3: string;
-  stripe10l4: string;
-  stripe10l5: string;
-  stripe10l6: string;
-  stripe10l7: string;
-  stripe10l8: string;
-  stripe10l9: string;
-  stripe10l10: string;
+  stripe1: string;
+  stripe2: string;
+  stripe3: string;
+  stripe4: string;
+  stripe5: string;
+  stripe6: string;
+  stripe7: string;
+  stripe8: string;
+  stripe9: string;
+  stripe10: string;
   s1l1: string;
   s1l2: string;
   s1l3: string;
