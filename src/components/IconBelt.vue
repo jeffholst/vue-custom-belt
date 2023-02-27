@@ -294,29 +294,7 @@
           d="m142.4,126.8c-5.7-5.9-20.3-21.4-26.9-31.3l-68.6,38.3c5.6,7.1,18.8,23.3,29,31.9,0-.1,66.5-39,66.5-38.9Z"
           :style="patchColor"
         />
-        <g id="Stripes4" :style="stripes4">
-          <path
-            id="stripe4l4"
-            d="m125.1,135.7l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6h0Z"
-            :style="stripe4l4"
-          />
-          <path
-            id="stripe4l3"
-            d="m111.1,143.7l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            :style="stripe4l3"
-          />
-          <path
-            id="stripe4l2"
-            d="m97,153.1l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            :style="stripe4l2"
-          />
-          <path
-            id="stripe4l1"
-            d="m82.4,161.1l9.1-5.3c-5.8-5.8-20.6-20.8-28-31l-8.4,4.7c7,10.6,20.9,25,27.3,31.6Z"
-            :style="stripe4l1"
-          />
-        </g>
-        <g id="Stripes10" :style="stripes10">
+        <g id="Stripes10">
           <path
             id="stripe10l10"
             d="m139.4,129.2c-9.9-8.4-23-25-28.7-32.7l-3.5,1.7c6.1,8.1,18,23.5,28.6,32.7l3.6-1.8h0Z"
@@ -625,45 +603,9 @@ const patchBorderColor = computed(() => {
   return `fill: ${props.beltProps.patchBorder};`;
 });
 
-const stripes4 = computed(() => {
-  return `visibility: ${
-    props.beltProps.stripeCount < 5 ? "visible" : "hidden"
-  };`;
-});
-
-const stripe4Style = (stripe: number, fill: string) => {
-  return `fill: ${fill}; visibility: ${
-    props.beltProps.stripeCount < 5 && props.beltProps.stripeCount >= stripe
-      ? "visible"
-      : "hidden"
-  };`;
-};
-
-const stripe4l1 = computed(() => {
-  return stripe4Style(1, props.beltProps.stripe4l1);
-});
-
-const stripe4l2 = computed(() => {
-  return stripe4Style(2, props.beltProps.stripe4l2);
-});
-
-const stripe4l3 = computed(() => {
-  return stripe4Style(3, props.beltProps.stripe4l3);
-});
-
-const stripe4l4 = computed(() => {
-  return stripe4Style(4, props.beltProps.stripe4l4);
-});
-
-const stripes10 = computed(() => {
-  return `visibility: ${
-    props.beltProps.stripeCount > 4 ? "visible" : "hidden"
-  };`;
-});
-
 const stripe10Style = (stripe: number, fill: string) => {
   return `fill: ${fill}; visibility: ${
-    props.beltProps.stripeCount > 4 && props.beltProps.stripeCount >= stripe
+    props.beltProps.stripeCount > 0 && props.beltProps.stripeCount >= stripe
       ? "visible"
       : "hidden"
   };`;
