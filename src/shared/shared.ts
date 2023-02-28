@@ -1,6 +1,6 @@
 import type { BeltProps, BeltType } from "../types/BeltProps";
 
-const getBelt = (): BeltProps => {
+const getBelt = (title: string = "", description: string = ""): BeltProps => {
   const beltProps: BeltProps = {
     border: "",
     hasPatch: true,
@@ -61,8 +61,9 @@ const getBelt = (): BeltProps => {
     s13l2: "",
     s13l3: "",
     transitionCSS: "",
+    rdfTitle: title,
+    rdfDescription: description,
   };
-
   return beltProps;
 };
 
@@ -95,6 +96,19 @@ const setPatchProperties = (
   beltProps.stripe8 = stripeColor;
   beltProps.stripe9 = stripeColor;
   beltProps.stripe10 = stripeColor;
+};
+
+export const getDescription = (
+  beltName: string,
+  stripeCount: number | undefined
+): string => {
+  if (stripeCount === undefined || stripeCount === 0) {
+    return `${beltName} with no stripes`;
+  } else if (stripeCount === 1) {
+    return `${beltName} with 1 stripe`;
+  }
+
+  return `${beltName} with ${stripeCount} stripes`;
 };
 
 const getRandomHexColor = (): string => {
@@ -134,6 +148,7 @@ export const getRandomBelt = (
 ): BeltProps => {
   let rand;
   let randomBeltTypeIndex;
+  let title = "Random";
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
@@ -163,6 +178,7 @@ export const getRandomBelt = (
 
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
+      title = `${title} Solid belt`;
       beltProps = getSolidBelt(
         getRandomHexColor(),
         border,
@@ -173,10 +189,13 @@ export const getRandomBelt = (
         professorBorder,
         hasProfessorPatch,
         stripeColor,
-        stripeCount
+        stripeCount,
+        title,
+        getDescription(`${title}`, stripeCount)
       );
       break;
     case 1: // striped belt
+      title = `${title} Striped belt`;
       beltProps = getStripedBelt(
         getRandomHexColor(),
         getRandomHexColor(),
@@ -188,10 +207,13 @@ export const getRandomBelt = (
         professorBorder,
         hasProfessorPatch,
         stripeColor,
-        stripeCount
+        stripeCount,
+        title,
+        getDescription(`${title}`, stripeCount)
       );
       break;
     case 2: // coral belt
+      title = `${title} Coral belt`;
       beltProps = getCoralBelt(
         getRandomHexColor(),
         getRandomHexColor(),
@@ -203,10 +225,13 @@ export const getRandomBelt = (
         professorBorder,
         hasProfessorPatch,
         stripeColor,
-        stripeCount
+        stripeCount,
+        title,
+        getDescription(`${title}`, stripeCount)
       );
       break;
     case 3: // crazy belt
+      title = `${title} Crazy belt`;
       beltProps = getSolidBelt(
         getRandomHexColor(),
         border,
@@ -217,7 +242,9 @@ export const getRandomBelt = (
         professorBorder,
         hasProfessorPatch,
         stripeColor,
-        stripeCount
+        stripeCount,
+        title,
+        getDescription(`${title}`, stripeCount)
       );
       beltProps.s1l1 = getRandomHexColor();
       beltProps.s1l2 = getRandomHexColor();
@@ -277,9 +304,11 @@ export const getSolidBelt = (
   professorBorderColor: string,
   hasProfessorPatch: boolean,
   stripeColor: string,
-  stripeCount: number
+  stripeCount: number,
+  title: string = "",
+  description: string = ""
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt();
+  const beltProps: BeltProps = getBelt(title, description);
 
   beltProps.border = borderColor;
 
@@ -352,9 +381,11 @@ export const getStripedBelt = (
   professorBorderColor: string,
   hasProfessorPatch: boolean,
   stripeColor: string,
-  stripeCount: number
+  stripeCount: number,
+  title: string = "",
+  description: string = ""
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt();
+  const beltProps: BeltProps = getBelt(title, description);
 
   beltProps.border = borderColor;
 
@@ -427,9 +458,11 @@ export const getCoralBelt = (
   professorBorderColor: string,
   hasProfessorPatch: boolean,
   stripeColor: string,
-  stripeCount: number
+  stripeCount: number,
+  title: string = "",
+  description: string = ""
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt();
+  const beltProps: BeltProps = getBelt(title, description);
 
   beltProps.border = borderColor;
 

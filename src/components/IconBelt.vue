@@ -1,10 +1,12 @@
 <template>
   <svg
     id="svg_belt"
+    :onClick="downLoadSVG"
     width="471.2"
     height="190.2"
     viewBox="0 0 471.2 190.2"
     role="img"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <metadata>
       <rdf:RDF
@@ -14,10 +16,10 @@
       >
         <rdf:Description
           about="https://github.com/jeffholst/svg-belt"
-          dc:title="svg_belt"
-          dc:description="Brazilian Jiu-Jitsu belt"
+          :dc:title="props.beltProps.rdfTitle"
+          :dc:description="props.beltProps.rdfDescription"
           dc:publisher="Jeff Holst"
-          dc:date="2023-02-05"
+          :dc:date="new Date().toISOString().slice(0, 10)"
           dc:format="image/svg"
           dc:language="en"
         >
@@ -417,6 +419,21 @@ import type { BeltProps } from "../types/BeltProps";
 const props = defineProps<{
   beltProps: BeltProps;
 }>();
+
+const downLoadSVG = (event: any) => {
+  const svgContent = event.target.closest("svg").outerHTML;
+  const blob = new Blob([svgContent], {
+    type: "image/svg+xml",
+  });
+  const link = document.createElement("a");
+  link.style.display = "none";
+  link.href = URL.createObjectURL(blob);
+  link.download = "svg-belt";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+};
 
 const additionalStyles = () => {
   return transition();

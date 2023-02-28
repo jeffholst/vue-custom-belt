@@ -61,4 +61,6 @@ export interface BeltProps {
   s13l2: string;
   s13l3: string;
   transitionCSS: string;
+  rdfTitle: string;
+  rdfDescription: string;
 }
