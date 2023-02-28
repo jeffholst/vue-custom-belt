@@ -596,15 +596,15 @@ const hasProfessorPatch = computed(() => {
 });
 
 const professorPatchColor = computed(() => {
-  return `fill: ${props.beltProps.professorPatch};`;
+  return `fill: ${props.beltProps.professorPatch}; ${additionalStyles()}`;
 });
 
 const professorBorderColor = computed(() => {
-  return `fill: ${props.beltProps.professorBorder};`;
+  return `fill: ${props.beltProps.professorBorder}; ${additionalStyles()}`;
 });
 
 const patchColor = computed(() => {
-  return `fill: ${props.beltProps.patch};`;
+  return `fill: ${props.beltProps.patch}; ${additionalStyles()}`;
 });
 
 const patchBorderColor = computed(() => {
@@ -619,43 +619,51 @@ const stripeStyle = (stripe: number, fill: string) => {
   };`;
 };
 
+const getStripeIndex = (index: number): number => {
+  if (props.beltProps.stripeStart === "Left") {
+    return index;
+  } else {
+    return 11 - index;
+  }
+};
+
 const stripe1 = computed(() => {
-  return stripeStyle(1, props.beltProps.stripe1);
+  return stripeStyle(getStripeIndex(1), props.beltProps.stripe1);
 });
 
 const stripe2 = computed(() => {
-  return stripeStyle(2, props.beltProps.stripe2);
+  return stripeStyle(getStripeIndex(2), props.beltProps.stripe2);
 });
 
 const stripe3 = computed(() => {
-  return stripeStyle(3, props.beltProps.stripe3);
+  return stripeStyle(getStripeIndex(3), props.beltProps.stripe3);
 });
 
 const stripe4 = computed(() => {
-  return stripeStyle(4, props.beltProps.stripe4);
+  return stripeStyle(getStripeIndex(4), props.beltProps.stripe4);
 });
 
 const stripe5 = computed(() => {
-  return stripeStyle(5, props.beltProps.stripe5);
+  return stripeStyle(getStripeIndex(5), props.beltProps.stripe5);
 });
 
 const stripe6 = computed(() => {
-  return stripeStyle(6, props.beltProps.stripe6);
+  return stripeStyle(getStripeIndex(6), props.beltProps.stripe6);
 });
 
 const stripe7 = computed(() => {
-  return stripeStyle(7, props.beltProps.stripe7);
+  return stripeStyle(getStripeIndex(7), props.beltProps.stripe7);
 });
 
 const stripe8 = computed(() => {
-  return stripeStyle(8, props.beltProps.stripe8);
+  return stripeStyle(getStripeIndex(8), props.beltProps.stripe8);
 });
 
 const stripe9 = computed(() => {
-  return stripeStyle(9, props.beltProps.stripe9);
+  return stripeStyle(getStripeIndex(9), props.beltProps.stripe9);
 });
 
 const stripe10 = computed(() => {
-  return stripeStyle(10, props.beltProps.stripe10);
+  return stripeStyle(getStripeIndex(10), props.beltProps.stripe10);
 });
 </script>

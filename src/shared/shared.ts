@@ -10,6 +10,7 @@ const getBelt = (): BeltProps => {
     professorBorder: "",
     hasProfessorPatch: false,
     stripeCount: 0,
+    stripeStart: "Right",
     stripe1: "",
     stripe2: "",
     stripe3: "",
@@ -109,6 +110,7 @@ export const setBelt = (oldProps: BeltProps, newProps: BeltProps) => {
   oldProps.professorBorder = newProps.professorBorder;
   oldProps.hasProfessorPatch = newProps.hasProfessorPatch;
   oldProps.stripeCount = newProps.stripeCount;
+  oldProps.stripeStart = newProps.stripeStart;
   oldProps.stripe1 = newProps.stripe1;
   oldProps.stripe2 = newProps.stripe2;
   oldProps.stripe3 = newProps.stripe3;

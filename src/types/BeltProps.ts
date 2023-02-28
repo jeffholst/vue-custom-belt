@@ -9,6 +9,7 @@ export interface BeltProps {
   professorBorder: string;
   hasProfessorPatch: boolean;
   stripeCount: number;
+  stripeStart: StripeStart;
   stripe1: string;
   stripe2: string;
   stripe3: string;
