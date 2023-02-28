@@ -1,4 +1,5 @@
 export type StripeStart = "Left" | "Right";
+export type BeltType = "Solid" | "Striped" | "Coral" | "Crazy";
 
 export interface BeltProps {
   border: string;

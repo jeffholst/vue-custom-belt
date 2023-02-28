@@ -1,4 +1,4 @@
-import type { BeltProps } from "../types/BeltProps";
+import type { BeltProps, BeltType } from "../types/BeltProps";
 
 const getBelt = (): BeltProps => {
   const beltProps: BeltProps = {
@@ -105,12 +105,48 @@ export const copyBeltProps = (oldProps: BeltProps, newProps: BeltProps) => {
   oldProps = Object.assign(oldProps, newProps);
 };
 
+const getRandomBeltIndex = (beltType: BeltType): number => {
+  let index: number;
+
+  switch (beltType) {
+    case "Solid":
+      index = 0;
+      break;
+    case "Striped":
+      index = 1;
+      break;
+    case "Coral":
+      index = 2;
+      break;
+    case "Crazy":
+      index = 3;
+      break;
+  }
+  return index;
+};
+
 export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
-  stripeCount: number | undefined
+  stripeCount: number | undefined,
+  includeBelts: Array<BeltType> | undefined
 ): BeltProps => {
-  const randomBeltType = Math.floor(Math.random() * 4);
+  let rand;
+  let randomBeltTypeIndex;
+  if (includeBelts !== undefined && includeBelts.length > 0) {
+    if (includeBelts.length === 1) {
+      randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
+    } else {
+      const ary: Array<BeltType> = [];
+      for (let i = 0; i < includeBelts.length; i++) {
+        ary.push(includeBelts[i]);
+      }
+      rand = Math.floor(Math.random() * ary.length);
+      randomBeltTypeIndex = getRandomBeltIndex(ary[rand]);
+    }
+  } else {
+    randomBeltTypeIndex = Math.floor(Math.random() * 4);
+  }
 
   let beltProps: BeltProps = getBelt();
 
@@ -124,7 +160,7 @@ export const getRandomBelt = (
   const stripeColor = getRandomHexColor();
   if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11);
 
-  switch (randomBeltType) {
+  switch (randomBeltTypeIndex) {
     case 0: // solid belt
       beltProps = getSolidBelt(
         getRandomHexColor(),
@@ -140,7 +176,7 @@ export const getRandomBelt = (
       );
       break;
     case 1: // striped belt
-      beltProps = getStrippedBelt(
+      beltProps = getStripedBelt(
         getRandomHexColor(),
         getRandomHexColor(),
         border,
@@ -304,7 +340,7 @@ export const getSolidBelt = (
   return beltProps;
 };
 
-export const getStrippedBelt = (
+export const getStripedBelt = (
   beltColor: string,
   beltStripeColor: string,
   borderColor: string,
