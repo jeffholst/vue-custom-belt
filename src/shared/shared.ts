@@ -60,6 +60,7 @@ const getBelt = (): BeltProps => {
     s13l1: "",
     s13l2: "",
     s13l3: "",
+    transitionCSS: "",
   };
 
   return beltProps;

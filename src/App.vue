@@ -30,13 +30,9 @@ const redWhiteBelt: BeltProps = ibjjf.getRedWhiteBelt(8);
 const redBelt: BeltProps = ibjjf.getRedBelt(9);
 
 setInterval(function () {
-  const newBelt = getRandomBelt(false, false, 0, [
-    "Solid",
-    "Striped",
-    "Coral",
-    "Crazy",
-  ]);
+  const newBelt = getRandomBelt(false, false, 0, ["Solid", "Striped", "Coral"]);
   newBelt.hasPatch = true;
+  newBelt.transitionCSS = "transition: all 3.0s ease-in-out;";
   copyBeltProps(randomBelt, newBelt);
 }, 4000);
 </script>

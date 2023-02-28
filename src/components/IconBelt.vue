@@ -423,7 +423,8 @@ const additionalStyles = () => {
 };
 
 const transition = () => {
-  return "transition: all 2.0s ease-in-out;";
+  if (!props.beltProps.transitionCSS) return "";
+  else return `${props.beltProps.transitionCSS};`;
 };
 
 const borderColor = computed(() => {
@@ -612,7 +613,7 @@ const patchBorderColor = computed(() => {
 });
 
 const stripeStyle = (stripe: number, fill: string) => {
-  return `fill: ${fill}; visibility: ${
+  return `fill: ${fill}; ${additionalStyles()} visibility: ${
     props.beltProps.stripeCount > 0 && props.beltProps.stripeCount >= stripe
       ? "visible"
       : "hidden"
