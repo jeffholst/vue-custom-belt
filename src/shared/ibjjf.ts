@@ -18,7 +18,7 @@ const Color = {
 };
 
 export const getGrayWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.gray,
     Color.white,
     Color.darkBorder,
@@ -35,7 +35,7 @@ export const getGrayWhiteBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getGrayBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.gray,
     Color.black,
     Color.darkBorder,
@@ -52,7 +52,7 @@ export const getGrayBlackBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getYellowWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.yellow,
     Color.white,
     Color.darkBorder,
@@ -69,7 +69,7 @@ export const getYellowWhiteBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getYellowBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.yellow,
     Color.black,
     Color.darkBorder,
@@ -86,7 +86,7 @@ export const getYellowBlackBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getOrangeWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.orange,
     Color.white,
     Color.darkBorder,
@@ -103,7 +103,7 @@ export const getOrangeWhiteBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getOrangeBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.orange,
     Color.black,
     Color.darkBorder,
@@ -120,7 +120,7 @@ export const getOrangeBlackBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getGreenWhiteBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.green,
     Color.white,
     Color.darkBorder,
@@ -137,7 +137,7 @@ export const getGreenWhiteBelt = (stripeCount: number): BeltProps => {
 };
 
 export const getGreenBlackBelt = (stripeCount: number): BeltProps => {
-  const beltProps: BeltProps = shared.getStrippedBelt(
+  const beltProps: BeltProps = shared.getStripedBelt(
     Color.green,
     Color.black,
     Color.darkBorder,
