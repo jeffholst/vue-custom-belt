@@ -101,65 +101,8 @@ const getRandomHexColor = (): string => {
   return `#${randomColor}`;
 };
 
-export const setBelt = (oldProps: BeltProps, newProps: BeltProps) => {
-  oldProps.border = newProps.border;
-  oldProps.hasPatch = newProps.hasPatch;
-  oldProps.patch = newProps.patch;
-  oldProps.patchBorder = newProps.patchBorder;
-  oldProps.professorPatch = newProps.professorPatch;
-  oldProps.professorBorder = newProps.professorBorder;
-  oldProps.hasProfessorPatch = newProps.hasProfessorPatch;
-  oldProps.stripeCount = newProps.stripeCount;
-  oldProps.stripeStart = newProps.stripeStart;
-  oldProps.stripe1 = newProps.stripe1;
-  oldProps.stripe2 = newProps.stripe2;
-  oldProps.stripe3 = newProps.stripe3;
-  oldProps.stripe4 = newProps.stripe4;
-  oldProps.stripe5 = newProps.stripe5;
-  oldProps.stripe6 = newProps.stripe6;
-  oldProps.stripe7 = newProps.stripe7;
-  oldProps.stripe8 = newProps.stripe8;
-  oldProps.stripe9 = newProps.stripe9;
-  oldProps.stripe10 = newProps.stripe10;
-  oldProps.s1l1 = newProps.s1l1;
-  oldProps.s1l2 = newProps.s1l2;
-  oldProps.s1l3 = newProps.s1l3;
-  oldProps.s2l1 = newProps.s2l1;
-  oldProps.s2l2 = newProps.s2l2;
-  oldProps.s2l3 = newProps.s2l3;
-  oldProps.s3l1 = newProps.s3l1;
-  oldProps.s3l2 = newProps.s3l2;
-  oldProps.s3l3 = newProps.s3l3;
-  oldProps.s4l1 = newProps.s4l1;
-  oldProps.s4l2 = newProps.s4l2;
-  oldProps.s4l3 = newProps.s4l3;
-  oldProps.s5l1 = newProps.s5l1;
-  oldProps.s5l2 = newProps.s5l2;
-  oldProps.s5l3 = newProps.s5l3;
-  oldProps.s6l1 = newProps.s6l1;
-  oldProps.s6l2 = newProps.s6l2;
-  oldProps.s6l3 = newProps.s6l3;
-  oldProps.s7l1 = newProps.s7l1;
-  oldProps.s7l2 = newProps.s7l2;
-  oldProps.s7l3 = newProps.s7l3;
-  oldProps.s8l1 = newProps.s8l1;
-  oldProps.s8l2 = newProps.s8l2;
-  oldProps.s8l3 = newProps.s8l3;
-  oldProps.s9l1 = newProps.s9l1;
-  oldProps.s9l2 = newProps.s9l2;
-  oldProps.s9l3 = newProps.s9l3;
-  oldProps.s10l1 = newProps.s10l1;
-  oldProps.s10l2 = newProps.s10l2;
-  oldProps.s10l3 = newProps.s10l3;
-  oldProps.s11l1 = newProps.s11l1;
-  oldProps.s11l2 = newProps.s11l2;
-  oldProps.s11l3 = newProps.s11l3;
-  oldProps.s12l1 = newProps.s12l1;
-  oldProps.s12l2 = newProps.s12l2;
-  oldProps.s12l3 = newProps.s12l3;
-  oldProps.s13l1 = newProps.s13l1;
-  oldProps.s13l2 = newProps.s13l2;
-  oldProps.s13l3 = newProps.s13l3;
+export const copyBeltProps = (oldProps: BeltProps, newProps: BeltProps) => {
+  oldProps = Object.assign(oldProps, newProps);
 };
 
 export const getRandomBelt = (

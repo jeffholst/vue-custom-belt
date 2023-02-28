@@ -2,7 +2,7 @@
 import SVGBelt from "./components/IconBelt.vue";
 import type { BeltProps } from "./types/BeltProps";
 import { reactive } from "vue";
-import { getRandomBelt, setBelt } from "./shared/shared";
+import { getRandomBelt, copyBeltProps } from "./shared/shared";
 import * as ibjjf from "./shared/ibjjf";
 
 let randomBelt: BeltProps = reactive(getRandomBelt(true, false, 0));
@@ -30,7 +30,7 @@ const redBelt: BeltProps = ibjjf.getRedBelt(9);
 setInterval(function () {
   const newBelt = getRandomBelt(false, false, 0);
   newBelt.hasPatch = true;
-  setBelt(randomBelt, newBelt);
+  copyBeltProps(randomBelt, newBelt);
 }, 4000);
 </script>
 
