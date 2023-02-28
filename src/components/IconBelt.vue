@@ -418,163 +418,171 @@ const props = defineProps<{
   beltProps: BeltProps;
 }>();
 
+const additionalStyles = () => {
+  return transition();
+};
+
+const transition = () => {
+  return "transition: all 2.0s ease-in-out;";
+};
+
 const borderColor = computed(() => {
-  return `fill: ${props.beltProps.border};`;
+  return `fill: ${props.beltProps.border}; ${additionalStyles()}`;
 });
 
 const s1l1 = computed(() => {
-  return `fill: ${props.beltProps.s1l1};`;
+  return `fill: ${props.beltProps.s1l1}; ${additionalStyles()}`;
 });
 
 const s1l2 = computed(() => {
-  return `fill: ${props.beltProps.s1l2};`;
+  return `fill: ${props.beltProps.s1l2}; ${additionalStyles()}`;
 });
 
 const s1l3 = computed(() => {
-  return `fill: ${props.beltProps.s1l3};`;
+  return `fill: ${props.beltProps.s1l3}; ${additionalStyles()}`;
 });
 
 const s2l1 = computed(() => {
-  return `fill: ${props.beltProps.s2l1};`;
+  return `fill: ${props.beltProps.s2l1}; ${additionalStyles()}`;
 });
 
 const s2l2 = computed(() => {
-  return `fill: ${props.beltProps.s2l2};`;
+  return `fill: ${props.beltProps.s2l2}; ${additionalStyles()}`;
 });
 
 const s2l3 = computed(() => {
-  return `fill: ${props.beltProps.s2l3};`;
+  return `fill: ${props.beltProps.s2l3}; ${additionalStyles()}`;
 });
 
 const s3l1 = computed(() => {
-  return `fill: ${props.beltProps.s3l1};`;
+  return `fill: ${props.beltProps.s3l1}; ${additionalStyles()}`;
 });
 
 const s3l2 = computed(() => {
-  return `fill: ${props.beltProps.s3l2};`;
+  return `fill: ${props.beltProps.s3l2}; ${additionalStyles()}`;
 });
 
 const s3l3 = computed(() => {
-  return `fill: ${props.beltProps.s3l3};`;
+  return `fill: ${props.beltProps.s3l3}; ${additionalStyles()}`;
 });
 
 const s4l1 = computed(() => {
-  return `fill: ${props.beltProps.s4l1};`;
+  return `fill: ${props.beltProps.s4l1}; ${additionalStyles()}`;
 });
 
 const s4l2 = computed(() => {
-  return `fill: ${props.beltProps.s4l2};`;
+  return `fill: ${props.beltProps.s4l2}; ${additionalStyles()}`;
 });
 
 const s4l3 = computed(() => {
-  return `fill: ${props.beltProps.s4l3};`;
+  return `fill: ${props.beltProps.s4l3}; ${additionalStyles()}`;
 });
 
 const s5l1 = computed(() => {
-  return `fill: ${props.beltProps.s5l1};`;
+  return `fill: ${props.beltProps.s5l1}; ${additionalStyles()}`;
 });
 
 const s5l2 = computed(() => {
-  return `fill: ${props.beltProps.s5l2};`;
+  return `fill: ${props.beltProps.s5l2}; ${additionalStyles()}`;
 });
 
 const s5l3 = computed(() => {
-  return `fill: ${props.beltProps.s5l3};`;
+  return `fill: ${props.beltProps.s5l3}; ${additionalStyles()}`;
 });
 
 const s6l1 = computed(() => {
-  return `fill: ${props.beltProps.s6l1};`;
+  return `fill: ${props.beltProps.s6l1}; ${additionalStyles()}`;
 });
 
 const s6l2 = computed(() => {
-  return `fill: ${props.beltProps.s6l2};`;
+  return `fill: ${props.beltProps.s6l2}; ${additionalStyles()}`;
 });
 
 const s6l3 = computed(() => {
-  return `fill: ${props.beltProps.s6l3};`;
+  return `fill: ${props.beltProps.s6l3}; ${additionalStyles()}`;
 });
 
 const s7l1 = computed(() => {
-  return `fill: ${props.beltProps.s7l1};`;
+  return `fill: ${props.beltProps.s7l1}; ${additionalStyles()}`;
 });
 
 const s7l2 = computed(() => {
-  return `fill: ${props.beltProps.s7l2};`;
+  return `fill: ${props.beltProps.s7l2}; ${additionalStyles()}`;
 });
 
 const s7l3 = computed(() => {
-  return `fill: ${props.beltProps.s7l3};`;
+  return `fill: ${props.beltProps.s7l3}; ${additionalStyles()}`;
 });
 
 const s8l1 = computed(() => {
-  return `fill: ${props.beltProps.s8l1};`;
+  return `fill: ${props.beltProps.s8l1}; ${additionalStyles()}`;
 });
 
 const s8l2 = computed(() => {
-  return `fill: ${props.beltProps.s8l2};`;
+  return `fill: ${props.beltProps.s8l2}; ${additionalStyles()}`;
 });
 
 const s8l3 = computed(() => {
-  return `fill: ${props.beltProps.s8l3};`;
+  return `fill: ${props.beltProps.s8l3}; ${additionalStyles()}`;
 });
 const s9l1 = computed(() => {
-  return `fill: ${props.beltProps.s9l1};`;
+  return `fill: ${props.beltProps.s9l1}; ${additionalStyles()}`;
 });
 
 const s9l2 = computed(() => {
-  return `fill: ${props.beltProps.s9l2};`;
+  return `fill: ${props.beltProps.s9l2}; ${additionalStyles()}`;
 });
 
 const s9l3 = computed(() => {
-  return `fill: ${props.beltProps.s9l3};`;
+  return `fill: ${props.beltProps.s9l3}; ${additionalStyles()}`;
 });
 
 const s10l1 = computed(() => {
-  return `fill: ${props.beltProps.s10l1};`;
+  return `fill: ${props.beltProps.s10l1}; ${additionalStyles()}`;
 });
 
 const s10l2 = computed(() => {
-  return `fill: ${props.beltProps.s10l2};`;
+  return `fill: ${props.beltProps.s10l2}; ${additionalStyles()}`;
 });
 
 const s10l3 = computed(() => {
-  return `fill: ${props.beltProps.s10l3};`;
+  return `fill: ${props.beltProps.s10l3}; ${additionalStyles()}`;
 });
 
 const s11l1 = computed(() => {
-  return `fill: ${props.beltProps.s11l1};`;
+  return `fill: ${props.beltProps.s11l1}; ${additionalStyles()}`;
 });
 
 const s11l2 = computed(() => {
-  return `fill: ${props.beltProps.s11l2};`;
+  return `fill: ${props.beltProps.s11l2}; ${additionalStyles()}`;
 });
 
 const s11l3 = computed(() => {
-  return `fill: ${props.beltProps.s11l3};`;
+  return `fill: ${props.beltProps.s11l3}; ${additionalStyles()}`;
 });
 
 const s12l1 = computed(() => {
-  return `fill: ${props.beltProps.s12l1};`;
+  return `fill: ${props.beltProps.s12l1}; ${additionalStyles()}`;
 });
 
 const s12l2 = computed(() => {
-  return `fill: ${props.beltProps.s12l2};`;
+  return `fill: ${props.beltProps.s12l2}; ${additionalStyles()}`;
 });
 
 const s12l3 = computed(() => {
-  return `fill: ${props.beltProps.s12l3};`;
+  return `fill: ${props.beltProps.s12l3}; ${additionalStyles()}`;
 });
 
 const s13l1 = computed(() => {
-  return `fill: ${props.beltProps.s13l1};`;
+  return `fill: ${props.beltProps.s13l1}; ${additionalStyles()}`;
 });
 
 const s13l2 = computed(() => {
-  return `fill: ${props.beltProps.s13l2};`;
+  return `fill: ${props.beltProps.s13l2}; ${additionalStyles()}`;
 });
 
 const s13l3 = computed(() => {
-  return `fill: ${props.beltProps.s13l3};`;
+  return `fill: ${props.beltProps.s13l3}; ${additionalStyles()}`;
 });
 
 const hasPatch = computed(() => {
@@ -600,7 +608,7 @@ const patchColor = computed(() => {
 });
 
 const patchBorderColor = computed(() => {
-  return `fill: ${props.beltProps.patchBorder};`;
+  return `fill: ${props.beltProps.patchBorder}; ${additionalStyles()}`;
 });
 
 const stripeStyle = (stripe: number, fill: string) => {
