@@ -5,7 +5,7 @@ import { reactive } from "vue";
 import { getRandomBelt, setBelt } from "./shared/shared";
 import * as ibjjf from "./shared/ibjjf";
 
-let randomBelt: BeltProps = reactive(getRandomBelt(false, false, 0));
+let randomBelt: BeltProps = reactive(getRandomBelt(true, false, 0));
 const whiteBelt: BeltProps = reactive(ibjjf.getWhiteBelt(0));
 const grayWhiteBelt: BeltProps = reactive(ibjjf.getGrayWhiteBelt(0));
 const blueBelt: BeltProps = reactive(ibjjf.getBlueBelt(1));
@@ -25,12 +25,11 @@ const orangeBlackBelt: BeltProps = reactive(ibjjf.getOrangeBlackBelt(0));
 const greenWhiteBelt: BeltProps = reactive(ibjjf.getGreenWhiteBelt(0));
 const greenBlackBelt: BeltProps = reactive(ibjjf.getGreenBlackBelt(0));
 const redWhiteBelt: BeltProps = reactive(ibjjf.getRedWhiteBelt(8));
-const redBelt: BeltProps = reactive(ibjjf.getRedBelt(0));
+const redBelt: BeltProps = reactive(ibjjf.getRedBelt(9));
 
 setInterval(function () {
   const newBelt = getRandomBelt(false, false, 0);
   newBelt.hasPatch = true;
-  newBelt.patch = "#000000";
   setBelt(randomBelt, newBelt);
 }, 4000);
 </script>
