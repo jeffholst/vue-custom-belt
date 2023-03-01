@@ -63,6 +63,8 @@ const getBelt = (title: string = "", description: string = ""): BeltProps => {
     transitionCSS: "",
     rdfTitle: title,
     rdfDescription: description,
+    randomBeltTypes: Array<BeltType>(),
+    refreshInterval: 0,
   };
   return beltProps;
 };
@@ -144,11 +146,16 @@ export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
   stripeCount: number | undefined,
-  includeBelts: Array<BeltType> | undefined
+  transitionCSS: string | undefined,
+  includeBelts: Array<BeltType> | undefined,
+  refreshInterval: number | undefined
 ): BeltProps => {
   let rand;
   let randomBeltTypeIndex;
   let title = "Random";
+  const myTransitionCSS = transitionCSS === undefined ? "" : transitionCSS;
+  const myIncludeBelts = includeBelts === undefined ? [] : includeBelts;
+  const myRefreshInterval = refreshInterval === undefined ? 0 : refreshInterval;
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
@@ -190,8 +197,11 @@ export const getRandomBelt = (
         hasProfessorPatch,
         stripeColor,
         stripeCount,
+        myTransitionCSS,
         title,
-        getDescription(`${title}`, stripeCount)
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
       );
       break;
     case 1: // striped belt
@@ -208,8 +218,11 @@ export const getRandomBelt = (
         hasProfessorPatch,
         stripeColor,
         stripeCount,
+        myTransitionCSS,
         title,
-        getDescription(`${title}`, stripeCount)
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
       );
       break;
     case 2: // coral belt
@@ -226,8 +239,11 @@ export const getRandomBelt = (
         hasProfessorPatch,
         stripeColor,
         stripeCount,
+        myTransitionCSS,
         title,
-        getDescription(`${title}`, stripeCount)
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
       );
       break;
     case 3: // crazy belt
@@ -243,8 +259,11 @@ export const getRandomBelt = (
         hasProfessorPatch,
         stripeColor,
         stripeCount,
+        myTransitionCSS,
         title,
-        getDescription(`${title}`, stripeCount)
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
       );
       beltProps.s1l1 = getRandomHexColor();
       beltProps.s1l2 = getRandomHexColor();
@@ -305,10 +324,16 @@ export const getSolidBelt = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
+  transitionCSS: string,
   title: string = "",
-  description: string = ""
+  description: string = "",
+  randomBeltTypes: Array<BeltType>,
+  refreshInterval: number
 ): BeltProps => {
   const beltProps: BeltProps = getBelt(title, description);
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.randomBeltTypes = randomBeltTypes;
+  beltProps.refreshInterval = refreshInterval;
 
   beltProps.border = borderColor;
 
@@ -382,10 +407,16 @@ export const getStripedBelt = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
+  transitionCSS: string,
   title: string = "",
-  description: string = ""
+  description: string = "",
+  randomBeltTypes: Array<BeltType>,
+  refreshInterval: number
 ): BeltProps => {
   const beltProps: BeltProps = getBelt(title, description);
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.randomBeltTypes = randomBeltTypes;
+  beltProps.refreshInterval = refreshInterval;
 
   beltProps.border = borderColor;
 
@@ -459,10 +490,16 @@ export const getCoralBelt = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
+  transitionCSS: string,
   title: string = "",
-  description: string = ""
+  description: string = "",
+  randomBeltTypes: Array<BeltType>,
+  refreshInterval: number
 ): BeltProps => {
   const beltProps: BeltProps = getBelt(title, description);
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.randomBeltTypes = randomBeltTypes;
+  beltProps.refreshInterval = refreshInterval;
 
   beltProps.border = borderColor;
 

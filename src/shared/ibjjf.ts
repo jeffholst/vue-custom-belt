@@ -40,8 +40,11 @@ export const getGrayWhiteBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -60,8 +63,11 @@ export const getGrayBlackBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -80,8 +86,11 @@ export const getYellowWhiteBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -100,8 +109,11 @@ export const getYellowBlackBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -120,8 +132,11 @@ export const getOrangeWhiteBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -140,8 +155,11 @@ export const getOrangeBlackBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -160,8 +178,11 @@ export const getGreenWhiteBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -180,8 +201,11 @@ export const getGreenBlackBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -199,8 +223,11 @@ export const getGrayBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -218,8 +245,11 @@ export const getYellowBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -237,8 +267,11 @@ export const getOrangeBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -256,8 +289,11 @@ export const getGreenBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -275,8 +311,11 @@ export const getWhiteBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -294,8 +333,11 @@ export const getBlueBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -313,8 +355,11 @@ export const getPurpleBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -332,8 +377,11 @@ export const getBrownBelt = (stripeCount: number): BeltProps => {
     false,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -351,8 +399,11 @@ export const getBlackBelt = (stripeCount: number): BeltProps => {
     true,
     Color.white,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -371,8 +422,11 @@ export const getRedBlackBelt = (stripeCount: number): BeltProps => {
     true,
     Color.red,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -391,8 +445,11 @@ export const getRedWhiteBelt = (stripeCount: number): BeltProps => {
     true,
     Color.red,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };
@@ -410,8 +467,11 @@ export const getRedBelt = (stripeCount: number): BeltProps => {
     true,
     Color.red,
     stripeCount,
+    "",
     getIBJJFTitle(desc),
-    getIBJJFDescription(desc, stripeCount)
+    getIBJJFDescription(desc, stripeCount),
+    [],
+    0
   );
   return beltProps;
 };

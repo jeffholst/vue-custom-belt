@@ -63,4 +63,6 @@ export interface BeltProps {
   transitionCSS: string;
   rdfTitle: string;
   rdfDescription: string;
+  randomBeltTypes: BeltType[];
+  refreshInterval: number;
 }

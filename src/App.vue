@@ -2,11 +2,18 @@
 import SVGBelt from "./components/IconBelt.vue";
 import type { BeltProps } from "./types/BeltProps";
 import { reactive } from "vue";
-import { getRandomBelt, copyBeltProps } from "./shared/shared";
+import { getRandomBelt } from "./shared/shared";
 import * as ibjjf from "./shared/ibjjf";
 
 let randomBelt: BeltProps = reactive(
-  getRandomBelt(true, false, 0, ["Solid", "Striped", "Coral", "Crazy"])
+  getRandomBelt(
+    true,
+    false,
+    0,
+    "transition: all 3.0s ease-in-out;",
+    ["Solid", "Striped", "Coral", "Crazy"],
+    4000
+  )
 );
 const whiteBelt: BeltProps = ibjjf.getWhiteBelt(0);
 const grayWhiteBelt: BeltProps = ibjjf.getGrayWhiteBelt(0);
@@ -28,18 +35,6 @@ const greenWhiteBelt: BeltProps = ibjjf.getGreenWhiteBelt(0);
 const greenBlackBelt: BeltProps = ibjjf.getGreenBlackBelt(0);
 const redWhiteBelt: BeltProps = ibjjf.getRedWhiteBelt(8);
 const redBelt: BeltProps = ibjjf.getRedBelt(9);
-
-setInterval(function () {
-  const newBelt = getRandomBelt(false, false, 0, [
-    "Solid",
-    "Striped",
-    "Coral",
-    "Crazy",
-  ]);
-  newBelt.hasPatch = true;
-  newBelt.transitionCSS = "transition: all 3.0s ease-in-out;";
-  copyBeltProps(randomBelt, newBelt);
-}, 4000);
 </script>
 
 <template>

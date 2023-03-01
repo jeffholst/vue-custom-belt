@@ -413,12 +413,32 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import type { BeltProps } from "../types/BeltProps";
+import { getRandomBelt, copyBeltProps } from "../shared/shared";
 
 const props = defineProps<{
   beltProps: BeltProps;
 }>();
+
+onMounted(() => {
+  if (
+    props.beltProps.refreshInterval != undefined &&
+    props.beltProps.refreshInterval > 0
+  ) {
+    setInterval(() => {
+      const randomBelt: BeltProps = getRandomBelt(
+        props.beltProps.hasPatch,
+        props.beltProps.hasProfessorPatch,
+        props.beltProps.stripeCount,
+        props.beltProps.transitionCSS,
+        props.beltProps.randomBeltTypes,
+        props.beltProps.refreshInterval
+      );
+      copyBeltProps(props.beltProps, randomBelt);
+    }, props.beltProps.refreshInterval);
+  }
+});
 
 const downLoadSVG = (event: any) => {
   const svgContent = event.target.closest("svg").outerHTML;
