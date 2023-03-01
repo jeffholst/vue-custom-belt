@@ -1,10 +1,24 @@
 {
   "name": "svg-belt",
   "version": "0.0.0",
-  "private": true,
+  "type": "module",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/svg-belt.umd.js",
+  "module": "./dist/svg-belt.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/svg-belt.es.js",
+      "require": "./dist/svg-belt.umd.js"
+    }
+  },
+  "types": "./dist/svg-belt.d.ts",
   "scripts": {
     "dev": "vite --open",
-    "build": "run-p type-check build-only",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build-original": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",

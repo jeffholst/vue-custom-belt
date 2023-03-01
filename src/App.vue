@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SVGBelt from "./components/IconBelt.vue";
+import SVGBelt from "./components/SVGBelt.vue";
 import type { BeltProps } from "./types/BeltProps";
 import { reactive } from "vue";
 import { getRandomBelt } from "./shared/shared";

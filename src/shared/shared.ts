@@ -1,6 +1,9 @@
 import type { BeltProps, BeltType } from "../types/BeltProps";
 
-const getBelt = (title: string = "", description: string = ""): BeltProps => {
+export const getBelt = (
+  title: string = "",
+  description: string = ""
+): BeltProps => {
   const beltProps: BeltProps = {
     border: "",
     hasPatch: true,
