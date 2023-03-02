@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/components/main.d.ts"),
+      entry: resolve(__dirname, "src/components/main.ts"),
       name: "SVGBelt",
       // the proper extensions will be added
       fileName: "svg-belt",
