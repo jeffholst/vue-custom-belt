@@ -16,8 +16,8 @@
       >
         <rdf:Description
           about="https://github.com/jeffholst/svg-belt"
-          :dc:title="props.beltProps.rdfTitle"
-          :dc:description="props.beltProps.rdfDescription"
+          :dc:title="myBelt.rdfTitle"
+          :dc:description="myBelt.rdfDescription"
           dc:publisher="Jeff Holst"
           :dc:date="new Date().toISOString().slice(0, 10)"
           dc:format="image/svg"
@@ -413,32 +413,32 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
+import { computed, ref } from "vue";
 import type { BeltProps } from "../types/BeltProps";
-import { getRandomBelt, copyBeltProps } from "../shared/shared";
+import { getRandomBelt } from "../shared/shared";
 
 const props = defineProps<{
   beltProps: BeltProps;
 }>();
 
-onMounted(() => {
-  if (
-    props.beltProps.refreshInterval != undefined &&
-    props.beltProps.refreshInterval > 0
-  ) {
-    setInterval(() => {
-      const randomBelt: BeltProps = getRandomBelt(
-        props.beltProps.hasPatch,
-        props.beltProps.hasProfessorPatch,
-        props.beltProps.stripeCount,
-        props.beltProps.transitionCSS,
-        props.beltProps.randomBeltTypes,
-        props.beltProps.refreshInterval
-      );
-      copyBeltProps(props.beltProps, randomBelt);
-    }, props.beltProps.refreshInterval);
-  }
-});
+const myBelt = ref(props.beltProps);
+if (
+  myBelt.value.refreshInterval != undefined &&
+  myBelt.value.refreshInterval > 0
+) {
+  setInterval(() => {
+    const randomBelt: BeltProps = getRandomBelt(
+      myBelt.value.hasPatch,
+      myBelt.value.hasProfessorPatch,
+      myBelt.value.stripeCount,
+      myBelt.value.transitionCSS,
+      myBelt.value.randomBeltTypes,
+      myBelt.value.refreshInterval
+    );
+    myBelt.value = randomBelt;
+    //copyBeltProps(myBelt.value, randomBelt);
+  }, myBelt.value.refreshInterval);
+}
 
 const downLoadSVG = (event: any) => {
   const svgContent = event.target.closest("svg").outerHTML;
@@ -460,205 +460,205 @@ const additionalStyles = () => {
 };
 
 const transition = () => {
-  if (!props.beltProps.transitionCSS) return "";
-  else return `${props.beltProps.transitionCSS};`;
+  if (!myBelt.value.transitionCSS) return "";
+  else return `${myBelt.value.transitionCSS};`;
 };
 
 const borderColor = computed(() => {
-  return `fill: ${props.beltProps.border}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.border}; ${additionalStyles()}`;
 });
 
 const s1l1 = computed(() => {
-  return `fill: ${props.beltProps.s1l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s1l1}; ${additionalStyles()}`;
 });
 
 const s1l2 = computed(() => {
-  return `fill: ${props.beltProps.s1l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s1l2}; ${additionalStyles()}`;
 });
 
 const s1l3 = computed(() => {
-  return `fill: ${props.beltProps.s1l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s1l3}; ${additionalStyles()}`;
 });
 
 const s2l1 = computed(() => {
-  return `fill: ${props.beltProps.s2l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s2l1}; ${additionalStyles()}`;
 });
 
 const s2l2 = computed(() => {
-  return `fill: ${props.beltProps.s2l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s2l2}; ${additionalStyles()}`;
 });
 
 const s2l3 = computed(() => {
-  return `fill: ${props.beltProps.s2l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s2l3}; ${additionalStyles()}`;
 });
 
 const s3l1 = computed(() => {
-  return `fill: ${props.beltProps.s3l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s3l1}; ${additionalStyles()}`;
 });
 
 const s3l2 = computed(() => {
-  return `fill: ${props.beltProps.s3l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s3l2}; ${additionalStyles()}`;
 });
 
 const s3l3 = computed(() => {
-  return `fill: ${props.beltProps.s3l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s3l3}; ${additionalStyles()}`;
 });
 
 const s4l1 = computed(() => {
-  return `fill: ${props.beltProps.s4l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s4l1}; ${additionalStyles()}`;
 });
 
 const s4l2 = computed(() => {
-  return `fill: ${props.beltProps.s4l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s4l2}; ${additionalStyles()}`;
 });
 
 const s4l3 = computed(() => {
-  return `fill: ${props.beltProps.s4l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s4l3}; ${additionalStyles()}`;
 });
 
 const s5l1 = computed(() => {
-  return `fill: ${props.beltProps.s5l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s5l1}; ${additionalStyles()}`;
 });
 
 const s5l2 = computed(() => {
-  return `fill: ${props.beltProps.s5l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s5l2}; ${additionalStyles()}`;
 });
 
 const s5l3 = computed(() => {
-  return `fill: ${props.beltProps.s5l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s5l3}; ${additionalStyles()}`;
 });
 
 const s6l1 = computed(() => {
-  return `fill: ${props.beltProps.s6l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s6l1}; ${additionalStyles()}`;
 });
 
 const s6l2 = computed(() => {
-  return `fill: ${props.beltProps.s6l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s6l2}; ${additionalStyles()}`;
 });
 
 const s6l3 = computed(() => {
-  return `fill: ${props.beltProps.s6l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s6l3}; ${additionalStyles()}`;
 });
 
 const s7l1 = computed(() => {
-  return `fill: ${props.beltProps.s7l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s7l1}; ${additionalStyles()}`;
 });
 
 const s7l2 = computed(() => {
-  return `fill: ${props.beltProps.s7l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s7l2}; ${additionalStyles()}`;
 });
 
 const s7l3 = computed(() => {
-  return `fill: ${props.beltProps.s7l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s7l3}; ${additionalStyles()}`;
 });
 
 const s8l1 = computed(() => {
-  return `fill: ${props.beltProps.s8l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s8l1}; ${additionalStyles()}`;
 });
 
 const s8l2 = computed(() => {
-  return `fill: ${props.beltProps.s8l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s8l2}; ${additionalStyles()}`;
 });
 
 const s8l3 = computed(() => {
-  return `fill: ${props.beltProps.s8l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s8l3}; ${additionalStyles()}`;
 });
 const s9l1 = computed(() => {
-  return `fill: ${props.beltProps.s9l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s9l1}; ${additionalStyles()}`;
 });
 
 const s9l2 = computed(() => {
-  return `fill: ${props.beltProps.s9l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s9l2}; ${additionalStyles()}`;
 });
 
 const s9l3 = computed(() => {
-  return `fill: ${props.beltProps.s9l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s9l3}; ${additionalStyles()}`;
 });
 
 const s10l1 = computed(() => {
-  return `fill: ${props.beltProps.s10l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s10l1}; ${additionalStyles()}`;
 });
 
 const s10l2 = computed(() => {
-  return `fill: ${props.beltProps.s10l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s10l2}; ${additionalStyles()}`;
 });
 
 const s10l3 = computed(() => {
-  return `fill: ${props.beltProps.s10l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s10l3}; ${additionalStyles()}`;
 });
 
 const s11l1 = computed(() => {
-  return `fill: ${props.beltProps.s11l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s11l1}; ${additionalStyles()}`;
 });
 
 const s11l2 = computed(() => {
-  return `fill: ${props.beltProps.s11l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s11l2}; ${additionalStyles()}`;
 });
 
 const s11l3 = computed(() => {
-  return `fill: ${props.beltProps.s11l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s11l3}; ${additionalStyles()}`;
 });
 
 const s12l1 = computed(() => {
-  return `fill: ${props.beltProps.s12l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s12l1}; ${additionalStyles()}`;
 });
 
 const s12l2 = computed(() => {
-  return `fill: ${props.beltProps.s12l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s12l2}; ${additionalStyles()}`;
 });
 
 const s12l3 = computed(() => {
-  return `fill: ${props.beltProps.s12l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s12l3}; ${additionalStyles()}`;
 });
 
 const s13l1 = computed(() => {
-  return `fill: ${props.beltProps.s13l1}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s13l1}; ${additionalStyles()}`;
 });
 
 const s13l2 = computed(() => {
-  return `fill: ${props.beltProps.s13l2}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s13l2}; ${additionalStyles()}`;
 });
 
 const s13l3 = computed(() => {
-  return `fill: ${props.beltProps.s13l3}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.s13l3}; ${additionalStyles()}`;
 });
 
 const hasPatch = computed(() => {
-  return `visibility: ${props.beltProps.hasPatch ? "visible" : "hidden"};`;
+  return `visibility: ${myBelt.value.hasPatch ? "visible" : "hidden"};`;
 });
 
 const hasProfessorPatch = computed(() => {
   return `visibility: ${
-    props.beltProps.hasProfessorPatch ? "visible" : "hidden"
+    myBelt.value.hasProfessorPatch ? "visible" : "hidden"
   };`;
 });
 
 const professorPatchColor = computed(() => {
-  return `fill: ${props.beltProps.professorPatch}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.professorPatch}; ${additionalStyles()}`;
 });
 
 const professorBorderColor = computed(() => {
-  return `fill: ${props.beltProps.professorBorder}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.professorBorder}; ${additionalStyles()}`;
 });
 
 const patchColor = computed(() => {
-  return `fill: ${props.beltProps.patch}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.patch}; ${additionalStyles()}`;
 });
 
 const patchBorderColor = computed(() => {
-  return `fill: ${props.beltProps.patchBorder}; ${additionalStyles()}`;
+  return `fill: ${myBelt.value.patchBorder}; ${additionalStyles()}`;
 });
 
 const stripeStyle = (stripe: number, fill: string) => {
   return `fill: ${fill}; ${additionalStyles()} visibility: ${
-    props.beltProps.stripeCount > 0 && props.beltProps.stripeCount >= stripe
+    myBelt.value.stripeCount > 0 && myBelt.value.stripeCount >= stripe
       ? "visible"
       : "hidden"
   };`;
 };
 
 const getStripeIndex = (index: number): number => {
-  if (props.beltProps.stripeStart === "Left") {
+  if (myBelt.value.stripeStart === "Left") {
     return index;
   } else {
     return 11 - index;
@@ -666,42 +666,42 @@ const getStripeIndex = (index: number): number => {
 };
 
 const stripe1 = computed(() => {
-  return stripeStyle(getStripeIndex(1), props.beltProps.stripe1);
+  return stripeStyle(getStripeIndex(1), myBelt.value.stripe1);
 });
 
 const stripe2 = computed(() => {
-  return stripeStyle(getStripeIndex(2), props.beltProps.stripe2);
+  return stripeStyle(getStripeIndex(2), myBelt.value.stripe2);
 });
 
 const stripe3 = computed(() => {
-  return stripeStyle(getStripeIndex(3), props.beltProps.stripe3);
+  return stripeStyle(getStripeIndex(3), myBelt.value.stripe3);
 });
 
 const stripe4 = computed(() => {
-  return stripeStyle(getStripeIndex(4), props.beltProps.stripe4);
+  return stripeStyle(getStripeIndex(4), myBelt.value.stripe4);
 });
 
 const stripe5 = computed(() => {
-  return stripeStyle(getStripeIndex(5), props.beltProps.stripe5);
+  return stripeStyle(getStripeIndex(5), myBelt.value.stripe5);
 });
 
 const stripe6 = computed(() => {
-  return stripeStyle(getStripeIndex(6), props.beltProps.stripe6);
+  return stripeStyle(getStripeIndex(6), myBelt.value.stripe6);
 });
 
 const stripe7 = computed(() => {
-  return stripeStyle(getStripeIndex(7), props.beltProps.stripe7);
+  return stripeStyle(getStripeIndex(7), myBelt.value.stripe7);
 });
 
 const stripe8 = computed(() => {
-  return stripeStyle(getStripeIndex(8), props.beltProps.stripe8);
+  return stripeStyle(getStripeIndex(8), myBelt.value.stripe8);
 });
 
 const stripe9 = computed(() => {
-  return stripeStyle(getStripeIndex(9), props.beltProps.stripe9);
+  return stripeStyle(getStripeIndex(9), myBelt.value.stripe9);
 });
 
 const stripe10 = computed(() => {
-  return stripeStyle(getStripeIndex(10), props.beltProps.stripe10);
+  return stripeStyle(getStripeIndex(10), myBelt.value.stripe10);
 });
 </script>
