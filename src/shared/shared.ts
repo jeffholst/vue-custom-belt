@@ -25,43 +25,56 @@ export const getBelt = (
     stripe9: "",
     stripe10: "",
     s1l1: "",
-    s1l2: "",
+    s1l2a: "",
+    s1l2b: "",
     s1l3: "",
     s2l1: "",
-    s2l2: "",
+    s2l2a: "",
+    s2l2b: "",
     s2l3: "",
     s3l1: "",
-    s3l2: "",
+    s3l2a: "",
+    s3l2b: "",
     s3l3: "",
     s4l1: "",
-    s4l2: "",
+    s4l2a: "",
+    s4l2b: "",
     s4l3: "",
     s5l1: "",
-    s5l2: "",
+    s5l2a: "",
+    s5l2b: "",
     s5l3: "",
     s6l1: "",
-    s6l2: "",
+    s6l2a: "",
+    s6l2b: "",
     s6l3: "",
     s7l1: "",
-    s7l2: "",
+    s7l2a: "",
+    s7l2b: "",
     s7l3: "",
     s8l1: "",
-    s8l2: "",
+    s8l2a: "",
+    s8l2b: "",
     s8l3: "",
     s9l1: "",
-    s9l2: "",
+    s9l2a: "",
+    s9l2b: "",
     s9l3: "",
     s10l1: "",
-    s10l2: "",
+    s10l2a: "",
+    s10l2b: "",
     s10l3: "",
     s11l1: "",
-    s11l2: "",
+    s11l2a: "",
+    s11l2b: "",
     s11l3: "",
     s12l1: "",
-    s12l2: "",
+    s12l2a: "",
+    s12l2b: "",
     s12l3: "",
     s13l1: "",
-    s13l2: "",
+    s13l2a: "",
+    s13l2b: "",
     s13l3: "",
     transitionCSS: "",
     rdfTitle: title,
@@ -138,8 +151,14 @@ const getRandomBeltIndex = (beltType: BeltType): number => {
     case "Coral":
       index = 2;
       break;
-    case "Crazy":
+    case "Split":
       index = 3;
+      break;
+    case "Checkered":
+      index = 4;
+      break;
+    case "Crazy":
+      index = 5;
       break;
   }
   return index;
@@ -171,7 +190,7 @@ export const getRandomBelt = (
       randomBeltTypeIndex = getRandomBeltIndex(ary[rand]);
     }
   } else {
-    randomBeltTypeIndex = Math.floor(Math.random() * 4);
+    randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
 
   let beltProps: BeltProps = getBelt();
@@ -249,7 +268,49 @@ export const getRandomBelt = (
         myRefreshInterval
       );
       break;
-    case 3: // crazy belt
+    case 3: // split belt
+      title = `${title} Split belt`;
+      beltProps = getSplitBelt(
+        getRandomHexColor(),
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount,
+        myTransitionCSS,
+        title,
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
+      );
+      break;
+    case 4: // checkered belt
+      title = `${title} Checkered belt`;
+      beltProps = getCheckeredBelt(
+        getRandomHexColor(),
+        getRandomHexColor(),
+        border,
+        hasPatch,
+        patchColor,
+        patchBorder,
+        professorPatchColor,
+        professorBorder,
+        hasProfessorPatch,
+        stripeColor,
+        stripeCount,
+        myTransitionCSS,
+        title,
+        getDescription(`${title}`, stripeCount),
+        myIncludeBelts,
+        myRefreshInterval
+      );
+      break;
+    case 5: // crazy belt
       title = `${title} Crazy belt`;
       beltProps = getSolidBelt(
         getRandomHexColor(),
@@ -269,46 +330,60 @@ export const getRandomBelt = (
         myRefreshInterval
       );
       beltProps.s1l1 = getRandomHexColor();
-      beltProps.s1l2 = getRandomHexColor();
+      beltProps.s1l2a = getRandomHexColor();
+      beltProps.s1l2b = getRandomHexColor();
       beltProps.s1l3 = getRandomHexColor();
       beltProps.s2l1 = getRandomHexColor();
-      beltProps.s2l2 = getRandomHexColor();
+      beltProps.s2l2a = getRandomHexColor();
+      beltProps.s2l2b = getRandomHexColor();
       beltProps.s2l3 = getRandomHexColor();
       beltProps.s3l1 = getRandomHexColor();
-      beltProps.s3l2 = getRandomHexColor();
+      beltProps.s3l2a = getRandomHexColor();
+      beltProps.s3l2b = getRandomHexColor();
       beltProps.s3l3 = getRandomHexColor();
       beltProps.s4l1 = getRandomHexColor();
-      beltProps.s4l2 = getRandomHexColor();
+      beltProps.s4l2a = getRandomHexColor();
+      beltProps.s4l2b = getRandomHexColor();
       beltProps.s4l3 = getRandomHexColor();
       beltProps.s5l1 = getRandomHexColor();
-      beltProps.s5l2 = getRandomHexColor();
+      beltProps.s5l2a = getRandomHexColor();
+      beltProps.s5l2b = getRandomHexColor();
       beltProps.s5l3 = getRandomHexColor();
       beltProps.s6l1 = getRandomHexColor();
-      beltProps.s6l2 = getRandomHexColor();
+      beltProps.s6l2a = getRandomHexColor();
+      beltProps.s6l2b = getRandomHexColor();
       beltProps.s6l3 = getRandomHexColor();
       beltProps.s6l1 = getRandomHexColor();
-      beltProps.s6l2 = getRandomHexColor();
+      beltProps.s6l2a = getRandomHexColor();
+      beltProps.s6l2b = getRandomHexColor();
       beltProps.s6l3 = getRandomHexColor();
       beltProps.s7l1 = getRandomHexColor();
-      beltProps.s7l2 = getRandomHexColor();
+      beltProps.s7l2a = getRandomHexColor();
+      beltProps.s7l2b = getRandomHexColor();
       beltProps.s7l3 = getRandomHexColor();
       beltProps.s8l1 = getRandomHexColor();
-      beltProps.s8l2 = getRandomHexColor();
+      beltProps.s8l2a = getRandomHexColor();
+      beltProps.s8l2b = getRandomHexColor();
       beltProps.s8l3 = getRandomHexColor();
       beltProps.s9l1 = getRandomHexColor();
-      beltProps.s9l2 = getRandomHexColor();
+      beltProps.s9l2a = getRandomHexColor();
+      beltProps.s9l2b = getRandomHexColor();
       beltProps.s9l3 = getRandomHexColor();
       beltProps.s10l1 = getRandomHexColor();
-      beltProps.s10l2 = getRandomHexColor();
+      beltProps.s10l2a = getRandomHexColor();
+      beltProps.s10l2b = getRandomHexColor();
       beltProps.s10l3 = getRandomHexColor();
       beltProps.s11l1 = getRandomHexColor();
-      beltProps.s11l2 = getRandomHexColor();
+      beltProps.s11l2a = getRandomHexColor();
+      beltProps.s11l2b = getRandomHexColor();
       beltProps.s11l3 = getRandomHexColor();
       beltProps.s12l1 = getRandomHexColor();
-      beltProps.s12l2 = getRandomHexColor();
+      beltProps.s12l2a = getRandomHexColor();
+      beltProps.s12l2b = getRandomHexColor();
       beltProps.s12l3 = getRandomHexColor();
       beltProps.s13l1 = getRandomHexColor();
-      beltProps.s13l2 = getRandomHexColor();
+      beltProps.s13l2a = getRandomHexColor();
+      beltProps.s13l2b = getRandomHexColor();
       beltProps.s13l3 = getRandomHexColor();
       break;
   }
@@ -341,47 +416,158 @@ export const getSolidBelt = (
   beltProps.border = borderColor;
 
   beltProps.s1l1 = beltColor;
-  beltProps.s1l2 = beltColor;
+  beltProps.s1l2a = beltColor;
+  beltProps.s1l2b = beltColor;
   beltProps.s1l3 = beltColor;
   beltProps.s2l1 = beltColor;
-  beltProps.s2l2 = beltColor;
+  beltProps.s2l2a = beltColor;
+  beltProps.s2l2b = beltColor;
   beltProps.s2l3 = beltColor;
   beltProps.s3l1 = beltColor;
-  beltProps.s3l2 = beltColor;
+  beltProps.s3l2a = beltColor;
+  beltProps.s3l2b = beltColor;
   beltProps.s3l3 = beltColor;
   beltProps.s4l1 = beltColor;
-  beltProps.s4l2 = beltColor;
+  beltProps.s4l2a = beltColor;
+  beltProps.s4l2b = beltColor;
   beltProps.s4l3 = beltColor;
   beltProps.s5l1 = beltColor;
-  beltProps.s5l2 = beltColor;
+  beltProps.s5l2a = beltColor;
+  beltProps.s5l2b = beltColor;
   beltProps.s5l3 = beltColor;
   beltProps.s6l1 = beltColor;
-  beltProps.s6l2 = beltColor;
+  beltProps.s6l2a = beltColor;
+  beltProps.s6l2b = beltColor;
   beltProps.s6l3 = beltColor;
   beltProps.s6l1 = beltColor;
-  beltProps.s6l2 = beltColor;
+  beltProps.s6l2a = beltColor;
+  beltProps.s6l2b = beltColor;
   beltProps.s6l3 = beltColor;
   beltProps.s7l1 = beltColor;
-  beltProps.s7l2 = beltColor;
+  beltProps.s7l2a = beltColor;
+  beltProps.s7l2b = beltColor;
   beltProps.s7l3 = beltColor;
   beltProps.s8l1 = beltColor;
-  beltProps.s8l2 = beltColor;
+  beltProps.s8l2a = beltColor;
+  beltProps.s8l2b = beltColor;
   beltProps.s8l3 = beltColor;
   beltProps.s9l1 = beltColor;
-  beltProps.s9l2 = beltColor;
+  beltProps.s9l2a = beltColor;
+  beltProps.s9l2b = beltColor;
   beltProps.s9l3 = beltColor;
   beltProps.s10l1 = beltColor;
-  beltProps.s10l2 = beltColor;
+  beltProps.s10l2a = beltColor;
+  beltProps.s10l2b = beltColor;
   beltProps.s10l3 = beltColor;
   beltProps.s11l1 = beltColor;
-  beltProps.s11l2 = beltColor;
+  beltProps.s11l2a = beltColor;
+  beltProps.s11l2b = beltColor;
   beltProps.s11l3 = beltColor;
   beltProps.s12l1 = beltColor;
-  beltProps.s12l2 = beltColor;
+  beltProps.s12l2a = beltColor;
+  beltProps.s12l2b = beltColor;
   beltProps.s12l3 = beltColor;
   beltProps.s13l1 = beltColor;
-  beltProps.s13l2 = beltColor;
+  beltProps.s13l2a = beltColor;
+  beltProps.s13l2b = beltColor;
   beltProps.s13l3 = beltColor;
+
+  setPatchProperties(
+    beltProps,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    professorPatchColor,
+    professorBorderColor,
+    hasProfessorPatch,
+    stripeColor,
+    stripeCount
+  );
+
+  return beltProps;
+};
+
+export const getCheckeredBelt = (
+  beltColor1: string,
+  beltColor2: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  hasProfessorPatch: boolean,
+  stripeColor: string,
+  stripeCount: number,
+  transitionCSS: string,
+  title: string = "",
+  description: string = "",
+  randomBeltTypes: Array<BeltType>,
+  refreshInterval: number
+): BeltProps => {
+  const beltProps: BeltProps = getBelt(title, description);
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.randomBeltTypes = randomBeltTypes;
+  beltProps.refreshInterval = refreshInterval;
+
+  beltProps.border = borderColor;
+
+  beltProps.s1l1 = beltColor1;
+  beltProps.s1l2a = beltColor2;
+  beltProps.s1l2b = beltColor2;
+  beltProps.s1l3 = beltColor1;
+  beltProps.s2l1 = beltColor2;
+  beltProps.s2l2a = beltColor1;
+  beltProps.s2l2b = beltColor1;
+  beltProps.s2l3 = beltColor2;
+  beltProps.s3l1 = beltColor1;
+  beltProps.s3l2a = beltColor2;
+  beltProps.s3l2b = beltColor2;
+  beltProps.s3l3 = beltColor1;
+  beltProps.s4l1 = beltColor2;
+  beltProps.s4l2a = beltColor1;
+  beltProps.s4l2b = beltColor1;
+  beltProps.s4l3 = beltColor2;
+  beltProps.s5l1 = beltColor2;
+  beltProps.s5l2a = beltColor1;
+  beltProps.s5l2b = beltColor1;
+  beltProps.s5l3 = beltColor2;
+  beltProps.s6l1 = beltColor1;
+  beltProps.s6l2a = beltColor2;
+  beltProps.s6l2b = beltColor2;
+  beltProps.s6l3 = beltColor1;
+  beltProps.s6l1 = beltColor1;
+  beltProps.s6l2a = beltColor1;
+  beltProps.s6l2b = beltColor1;
+  beltProps.s6l3 = beltColor1;
+  beltProps.s7l1 = beltColor1;
+  beltProps.s7l2a = beltColor2;
+  beltProps.s7l2b = beltColor2;
+  beltProps.s7l3 = beltColor1;
+  beltProps.s8l1 = beltColor1;
+  beltProps.s8l2a = beltColor2;
+  beltProps.s8l2b = beltColor2;
+  beltProps.s8l3 = beltColor1;
+  beltProps.s9l1 = beltColor2;
+  beltProps.s9l2a = beltColor1;
+  beltProps.s9l2b = beltColor1;
+  beltProps.s9l3 = beltColor2;
+  beltProps.s10l1 = beltColor2;
+  beltProps.s10l2a = beltColor1;
+  beltProps.s10l2b = beltColor1;
+  beltProps.s10l3 = beltColor2;
+  beltProps.s11l1 = beltColor1;
+  beltProps.s11l2a = beltColor2;
+  beltProps.s11l2b = beltColor2;
+  beltProps.s11l3 = beltColor1;
+  beltProps.s12l1 = beltColor2;
+  beltProps.s12l2a = beltColor1;
+  beltProps.s12l2b = beltColor1;
+  beltProps.s12l3 = beltColor2;
+  beltProps.s13l1 = beltColor1;
+  beltProps.s13l2a = beltColor2;
+  beltProps.s13l2b = beltColor2;
+  beltProps.s13l3 = beltColor1;
 
   setPatchProperties(
     beltProps,
@@ -424,47 +610,158 @@ export const getStripedBelt = (
   beltProps.border = borderColor;
 
   beltProps.s1l1 = beltColor;
-  beltProps.s1l2 = beltStripeColor;
+  beltProps.s1l2a = beltStripeColor;
+  beltProps.s1l2b = beltStripeColor;
   beltProps.s1l3 = beltColor;
   beltProps.s2l1 = beltColor;
-  beltProps.s2l2 = beltStripeColor;
+  beltProps.s2l2a = beltStripeColor;
+  beltProps.s2l2b = beltStripeColor;
   beltProps.s2l3 = beltColor;
   beltProps.s3l1 = beltColor;
-  beltProps.s3l2 = beltStripeColor;
+  beltProps.s3l2a = beltStripeColor;
+  beltProps.s3l2b = beltStripeColor;
   beltProps.s3l3 = beltColor;
   beltProps.s4l1 = beltColor;
-  beltProps.s4l2 = beltStripeColor;
+  beltProps.s4l2a = beltStripeColor;
+  beltProps.s4l2b = beltStripeColor;
   beltProps.s4l3 = beltColor;
   beltProps.s5l1 = beltColor;
-  beltProps.s5l2 = beltStripeColor;
+  beltProps.s5l2a = beltStripeColor;
+  beltProps.s5l2b = beltStripeColor;
   beltProps.s5l3 = beltColor;
   beltProps.s6l1 = beltColor;
-  beltProps.s6l2 = beltStripeColor;
+  beltProps.s6l2a = beltStripeColor;
+  beltProps.s6l2b = beltStripeColor;
   beltProps.s6l3 = beltColor;
   beltProps.s6l1 = beltColor;
-  beltProps.s6l2 = beltStripeColor;
+  beltProps.s6l2a = beltStripeColor;
+  beltProps.s6l2b = beltStripeColor;
   beltProps.s6l3 = beltColor;
   beltProps.s7l1 = beltColor;
-  beltProps.s7l2 = beltStripeColor;
+  beltProps.s7l2a = beltStripeColor;
+  beltProps.s7l2b = beltStripeColor;
   beltProps.s7l3 = beltColor;
   beltProps.s8l1 = beltColor;
-  beltProps.s8l2 = beltStripeColor;
+  beltProps.s8l2a = beltStripeColor;
+  beltProps.s8l2b = beltStripeColor;
   beltProps.s8l3 = beltColor;
   beltProps.s9l1 = beltColor;
-  beltProps.s9l2 = beltStripeColor;
+  beltProps.s9l2a = beltStripeColor;
+  beltProps.s9l2b = beltStripeColor;
   beltProps.s9l3 = beltColor;
   beltProps.s10l1 = beltColor;
-  beltProps.s10l2 = beltStripeColor;
+  beltProps.s10l2a = beltStripeColor;
+  beltProps.s10l2b = beltStripeColor;
   beltProps.s10l3 = beltColor;
   beltProps.s11l1 = beltColor;
-  beltProps.s11l2 = beltStripeColor;
+  beltProps.s11l2a = beltStripeColor;
+  beltProps.s11l2b = beltStripeColor;
   beltProps.s11l3 = beltColor;
   beltProps.s12l1 = beltColor;
-  beltProps.s12l2 = beltStripeColor;
+  beltProps.s12l2a = beltStripeColor;
+  beltProps.s12l2b = beltStripeColor;
   beltProps.s12l3 = beltColor;
   beltProps.s13l1 = beltColor;
-  beltProps.s13l2 = beltStripeColor;
+  beltProps.s13l2a = beltStripeColor;
+  beltProps.s13l2b = beltStripeColor;
   beltProps.s13l3 = beltColor;
+
+  setPatchProperties(
+    beltProps,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    professorPatchColor,
+    professorBorderColor,
+    hasProfessorPatch,
+    stripeColor,
+    stripeCount
+  );
+
+  return beltProps;
+};
+
+export const getSplitBelt = (
+  topColor: string,
+  bottomColor: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  hasProfessorPatch: boolean,
+  stripeColor: string,
+  stripeCount: number,
+  transitionCSS: string,
+  title: string = "",
+  description: string = "",
+  randomBeltTypes: Array<BeltType>,
+  refreshInterval: number
+): BeltProps => {
+  const beltProps: BeltProps = getBelt(title, description);
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.randomBeltTypes = randomBeltTypes;
+  beltProps.refreshInterval = refreshInterval;
+
+  beltProps.border = borderColor;
+
+  beltProps.s1l1 = topColor;
+  beltProps.s1l2a = topColor;
+  beltProps.s1l2b = bottomColor;
+  beltProps.s1l3 = bottomColor;
+  beltProps.s2l1 = topColor;
+  beltProps.s2l2a = topColor;
+  beltProps.s2l2b = bottomColor;
+  beltProps.s2l3 = bottomColor;
+  beltProps.s3l1 = topColor;
+  beltProps.s3l2a = topColor;
+  beltProps.s3l2b = bottomColor;
+  beltProps.s3l3 = bottomColor;
+  beltProps.s4l1 = topColor;
+  beltProps.s4l2a = topColor;
+  beltProps.s4l2b = bottomColor;
+  beltProps.s4l3 = bottomColor;
+  beltProps.s5l1 = topColor;
+  beltProps.s5l2b = topColor;
+  beltProps.s5l2a = bottomColor;
+  beltProps.s5l3 = bottomColor;
+  beltProps.s6l1 = topColor;
+  beltProps.s6l2b = topColor;
+  beltProps.s6l2a = bottomColor;
+  beltProps.s6l3 = bottomColor;
+  beltProps.s6l1 = topColor;
+  beltProps.s6l2b = topColor;
+  beltProps.s6l2a = bottomColor;
+  beltProps.s6l3 = bottomColor;
+  beltProps.s7l1 = topColor;
+  beltProps.s7l2a = topColor;
+  beltProps.s7l2b = bottomColor;
+  beltProps.s7l3 = bottomColor;
+  beltProps.s8l1 = topColor;
+  beltProps.s8l2a = topColor;
+  beltProps.s8l2b = bottomColor;
+  beltProps.s8l3 = bottomColor;
+  beltProps.s9l1 = topColor;
+  beltProps.s9l2a = topColor;
+  beltProps.s9l2b = bottomColor;
+  beltProps.s9l3 = bottomColor;
+  beltProps.s10l1 = topColor;
+  beltProps.s10l2a = topColor;
+  beltProps.s10l2b = bottomColor;
+  beltProps.s10l3 = bottomColor;
+  beltProps.s11l1 = topColor;
+  beltProps.s11l2a = topColor;
+  beltProps.s11l2b = bottomColor;
+  beltProps.s11l3 = bottomColor;
+  beltProps.s12l1 = topColor;
+  beltProps.s12l2a = topColor;
+  beltProps.s12l2b = bottomColor;
+  beltProps.s12l3 = bottomColor;
+  beltProps.s13l1 = topColor;
+  beltProps.s13l2a = topColor;
+  beltProps.s13l2b = bottomColor;
+  beltProps.s13l3 = bottomColor;
 
   setPatchProperties(
     beltProps,
@@ -507,47 +804,61 @@ export const getCoralBelt = (
   beltProps.border = borderColor;
 
   beltProps.s1l1 = beltColor1;
-  beltProps.s1l2 = beltColor1;
+  beltProps.s1l2a = beltColor1;
+  beltProps.s1l2b = beltColor1;
   beltProps.s1l3 = beltColor1;
   beltProps.s2l1 = beltColor2;
-  beltProps.s2l2 = beltColor2;
+  beltProps.s2l2a = beltColor2;
+  beltProps.s2l2b = beltColor2;
   beltProps.s2l3 = beltColor2;
   beltProps.s3l1 = beltColor1;
-  beltProps.s3l2 = beltColor1;
+  beltProps.s3l2a = beltColor1;
+  beltProps.s3l2b = beltColor1;
   beltProps.s3l3 = beltColor1;
   beltProps.s4l1 = beltColor2;
-  beltProps.s4l2 = beltColor2;
+  beltProps.s4l2a = beltColor2;
+  beltProps.s4l2b = beltColor2;
   beltProps.s4l3 = beltColor2;
   beltProps.s5l1 = beltColor2;
-  beltProps.s5l2 = beltColor2;
+  beltProps.s5l2a = beltColor2;
+  beltProps.s5l2b = beltColor2;
   beltProps.s5l3 = beltColor2;
   beltProps.s6l1 = beltColor1;
-  beltProps.s6l2 = beltColor1;
+  beltProps.s6l2a = beltColor1;
+  beltProps.s6l2b = beltColor1;
   beltProps.s6l3 = beltColor1;
   beltProps.s6l1 = beltColor1;
-  beltProps.s6l2 = beltColor1;
+  beltProps.s6l2a = beltColor1;
+  beltProps.s6l2b = beltColor1;
   beltProps.s6l3 = beltColor1;
   beltProps.s7l1 = beltColor1;
-  beltProps.s7l2 = beltColor1;
+  beltProps.s7l2a = beltColor1;
+  beltProps.s7l2b = beltColor1;
   beltProps.s7l3 = beltColor1;
   beltProps.s8l1 = beltColor1;
-  beltProps.s8l2 = beltColor1;
+  beltProps.s8l2a = beltColor1;
+  beltProps.s8l2b = beltColor1;
   beltProps.s8l3 = beltColor1;
   beltProps.s9l1 = beltColor2;
-  beltProps.s9l2 = beltColor2;
+  beltProps.s9l2a = beltColor2;
+  beltProps.s9l2b = beltColor2;
   beltProps.s9l3 = beltColor2;
   beltProps.s10l1 = beltColor1;
-  beltProps.s10l2 = beltColor1;
+  beltProps.s10l2a = beltColor1;
+  beltProps.s10l2b = beltColor1;
   beltProps.s10l3 = beltColor1;
   beltProps.s11l1 = beltColor2;
-  beltProps.s11l2 = beltColor2;
+  beltProps.s11l2a = beltColor2;
+  beltProps.s11l2b = beltColor2;
   beltProps.s11l3 = beltColor2;
-  beltProps.s12l1 = beltColor2;
-  beltProps.s12l2 = beltColor2;
-  beltProps.s12l3 = beltColor2;
-  beltProps.s13l1 = beltColor1;
-  beltProps.s13l2 = beltColor1;
-  beltProps.s13l3 = beltColor1;
+  beltProps.s12l1 = beltColor1;
+  beltProps.s12l2a = beltColor1;
+  beltProps.s12l2b = beltColor1;
+  beltProps.s12l3 = beltColor1;
+  beltProps.s13l1 = beltColor2;
+  beltProps.s13l2a = beltColor2;
+  beltProps.s13l2b = beltColor2;
+  beltProps.s13l3 = beltColor2;
 
   setPatchProperties(
     beltProps,
