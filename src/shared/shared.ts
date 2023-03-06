@@ -1,5 +1,25 @@
 import type { BeltProps, BeltType } from "../types/BeltProps";
 
+function isValidHexaCode(str: string): boolean {
+  // Regex to check valid
+  // hexadecimalColor_code
+  const regex = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
+
+  // if str
+  // is empty return false
+  if (str == null) {
+    return false;
+  }
+
+  // Return true if the str
+  // matched the ReGex
+  if (regex.test(str) == true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export const getBelt = (
   title: string = "",
   description: string = ""
@@ -139,7 +159,7 @@ export const copyBeltProps = (oldProps: BeltProps, newProps: BeltProps) => {
 };
 
 const getRandomBeltIndex = (beltType: BeltType): number => {
-  let index: number;
+  let index: number = -1;
 
   switch (beltType) {
     case "Solid":
@@ -159,6 +179,9 @@ const getRandomBeltIndex = (beltType: BeltType): number => {
       break;
     case "Crazy":
       index = 5;
+      break;
+    case "Random":
+      index = 6;
       break;
   }
   return index;
@@ -184,7 +207,9 @@ export const getRandomBelt = (
     } else {
       const ary: Array<BeltType> = [];
       for (let i = 0; i < includeBelts.length; i++) {
-        ary.push(includeBelts[i]);
+        if (includeBelts[i] !== "Random") {
+          ary.push(includeBelts[i]);
+        }
       }
       rand = Math.floor(Math.random() * ary.length);
       randomBeltTypeIndex = getRandomBeltIndex(ary[rand]);

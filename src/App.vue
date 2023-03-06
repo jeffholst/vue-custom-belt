@@ -1,74 +1,67 @@
 <script setup lang="ts">
 import SVGBelt from "./components/SVGBelt.vue";
-import type { BeltProps } from "./types/BeltProps";
-import { reactive } from "vue";
+import { BeltProps, BeltSystem } from "./types/BeltProps";
 import { getRandomBelt } from "./shared/shared";
 import * as ibjjf from "./shared/ibjjf";
+import ibjjfJSON from "./shared/ibjjf.json";
 
-let randomCrazy: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Crazy"],
-    4000
-  )
+const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
+const myWhiteBelt: BeltProps = ibjjfSystem.getBelt("White", 1);
+const myGrayWhiteBelt: BeltProps = ibjjfSystem.getBelt("Gray/White", 2);
+
+debugger;
+
+let randomCrazy: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Crazy"],
+  4000
+);
+let randomCheckered: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Checkered"],
+  4000
 );
 
-let randomCheckered: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Checkered"],
-    4000
-  )
+let randomSolid: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Solid"],
+  4000
 );
 
-let randomSolid: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Solid"],
-    4000
-  )
+let randomStriped: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Striped"],
+  4000
 );
 
-let randomStriped: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Striped"],
-    4000
-  )
+let randomCoral: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Coral"],
+  4000
 );
 
-let randomCoral: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Coral"],
-    4000
-  )
-);
-
-let randomSplit: BeltProps = reactive(
-  getRandomBelt(
-    true,
-    false,
-    0,
-    "transition: all 3.0s ease-in-out;",
-    ["Split"],
-    4000
-  )
+let randomSplit: BeltProps = getRandomBelt(
+  true,
+  false,
+  0,
+  "transition: all 3.0s ease-in-out;",
+  ["Split"],
+  4000
 );
 const whiteBelt: BeltProps = ibjjf.getWhiteBelt(0);
 const grayWhiteBelt: BeltProps = ibjjf.getGrayWhiteBelt(0);
@@ -93,6 +86,8 @@ const redBelt: BeltProps = ibjjf.getRedBelt(9);
 </script>
 
 <template>
+  <SVGBelt :belt-props="myWhiteBelt" />
+  <SVGBelt :belt-props="myGrayWhiteBelt" />
   <h1>Random Belts</h1>
   <div class="row">
     <div class="column">
