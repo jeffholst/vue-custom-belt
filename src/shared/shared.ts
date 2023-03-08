@@ -210,9 +210,6 @@ const getRandomBeltIndex = (beltType: BeltType): number => {
     case "Crazy":
       index = 5;
       break;
-    case "Random":
-      index = 6;
-      break;
   }
   return index;
 };
@@ -221,16 +218,18 @@ export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
   stripeCount: number | undefined,
-  transitionCSS: string | undefined,
-  includeBelts: Array<BeltType> | undefined,
-  refreshInterval: number | undefined
+  transitionCSS: string = "",
+  includeBelts: Array<BeltType> = [],
+  refreshInterval: number = 0
 ): BeltProps => {
   let rand;
   let randomBeltTypeIndex;
   let title = "Random";
-  const myTransitionCSS = transitionCSS === undefined ? "" : transitionCSS;
-  const myIncludeBelts = includeBelts === undefined ? [] : includeBelts;
-  const myRefreshInterval = refreshInterval === undefined ? 0 : refreshInterval;
+
+  if (hasPatch === undefined) hasPatch = Math.random() < 0.5; // randomly pick true or false
+  if (hasProfessorPatch === undefined) hasProfessorPatch = Math.random() < 0.5; // randomly pick true or false
+  if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11); // randomly pick between 0-10 stripes
+
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       // if only one includeBelt items is specified, then use that belt type
@@ -251,140 +250,91 @@ export const getRandomBelt = (
 
   let beltProps: BeltProps = getBeltProps();
 
-  const border = getRandomHexColor();
-  if (hasPatch === undefined) hasPatch = Math.random() < 0.5;
-  const patchColor = getRandomHexColor();
-  const patchBorder = border;
-  const professorPatchColor = getRandomHexColor();
-  const professorBorder = border;
-  if (hasProfessorPatch === undefined) hasProfessorPatch = Math.random() < 0.5;
-  const stripeColor = getRandomHexColor();
-  if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11);
+  const belt: Belt = getBelt();
+  belt.sortOrder = 0;
+  belt.color1 = getRandomHexColor();
+  belt.color2 = getRandomHexColor();
+  belt.color3 = getRandomHexColor();
+  belt.borderColor = belt.professorBorderColor = getRandomHexColor();
+  belt.hasPatch = hasPatch;
+  belt.patchColor = getRandomHexColor();
+  belt.hasProfessorPatch = hasProfessorPatch;
+  belt.professorPatchColor = getRandomHexColor();
+  belt.stripeColor = getRandomHexColor();
+
+  let rdfTitle = "";
+  let rdfDescription = "";
 
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
-      title = `${title} Solid belt`;
-      beltProps = getSolidBelt(
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
+      rdfTitle = `${title} Solid belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Solid";
+      setBeltProps(
+        belt,
         stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
+        rdfTitle,
+        rdfDescription,
+        transitionCSS,
+        refreshInterval
       );
       break;
     case 1: // striped belt
-      title = `${title} Striped belt`;
-      beltProps = getStripedBelt(
-        getRandomHexColor(),
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
+      rdfTitle = `${title} Striped belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Striped";
+      setBeltProps(
+        belt,
         stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
+        rdfTitle,
+        rdfDescription,
+        transitionCSS,
+        refreshInterval
       );
       break;
     case 2: // coral belt
-      title = `${title} Coral belt`;
-      beltProps = getCoralBelt(
-        getRandomHexColor(),
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
+      rdfTitle = `${title} Coral belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Coral";
+      setBeltProps(
+        belt,
         stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
+        rdfTitle,
+        rdfDescription,
+        transitionCSS,
+        refreshInterval
       );
       break;
     case 3: // split belt
-      title = `${title} Split belt`;
-      beltProps = getSplitBelt(
-        getRandomHexColor(),
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
+      rdfTitle = `${title} Split belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Split";
+      setBeltProps(
+        belt,
         stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
+        rdfTitle,
+        rdfDescription,
+        transitionCSS,
+        refreshInterval
       );
       break;
     case 4: // checkered belt
-      title = `${title} Checkered belt`;
-      beltProps = getCheckeredBelt(
-        getRandomHexColor(),
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
+      rdfTitle = `${title} Checkered belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Checkered";
+      setBeltProps(
+        belt,
         stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
+        rdfTitle,
+        rdfDescription,
+        transitionCSS,
+        refreshInterval
       );
       break;
     case 5: // crazy belt
-      title = `${title} Crazy belt`;
-      beltProps = getSolidBelt(
-        getRandomHexColor(),
-        border,
-        hasPatch,
-        patchColor,
-        patchBorder,
-        professorPatchColor,
-        professorBorder,
-        hasProfessorPatch,
-        stripeColor,
-        stripeCount,
-        myTransitionCSS,
-        title,
-        getDescription(`${title}`, stripeCount),
-        myIncludeBelts,
-        myRefreshInterval
-      );
+      rdfTitle = `${title} Crazy belt`;
+      rdfDescription = getDescription(rdfTitle, stripeCount);
+      belt.type = "Crazy";
       beltProps.s1l1 = getRandomHexColor();
       beltProps.s1l2a = getRandomHexColor();
       beltProps.s1l2b = getRandomHexColor();
@@ -721,38 +671,38 @@ export const getSolidBelt = (
 };
 
 export const getBelt = (
-  name: string,
-  type: BeltType,
-  sortOrder: number,
-  color1: string,
-  color2: string,
-  color3: string,
-  borderColor: string,
-  hasPatch: boolean,
-  patchColor: string,
-  patchBorderColor: string,
-  hasProfessorPatch: boolean,
-  professorPatchColor: string,
-  professorBorderColor: string,
-  stripeColor: string,
-  stripeCount: number
+  name: string = "",
+  type: BeltType = "Solid",
+  sortOrder: number = 0,
+  color1: string = "",
+  color2: string = "",
+  color3: string = "",
+  borderColor: string = "",
+  hasPatch: boolean = false,
+  patchColor: string = "",
+  patchBorderColor: string = "",
+  hasProfessorPatch: boolean = false,
+  professorPatchColor: string = "",
+  professorBorderColor: string = "",
+  stripeColor: string = "",
+  stripeCount: number = 0
 ): Belt => {
   const belt: Belt = {
-    name: name,
-    type: type,
-    sortOrder: sortOrder,
-    color1: color1,
-    color2: color2,
-    color3: color3,
-    borderColor: borderColor,
-    hasPatch: hasPatch,
-    patchColor: patchColor,
-    patchBorderColor: patchBorderColor,
-    hasProfessorPatch: hasProfessorPatch,
-    professorPatchColor: professorPatchColor,
-    professorBorderColor: professorBorderColor,
-    stripeColor: stripeColor,
-    stripeCount: stripeCount,
+    name: name ? name : "",
+    type: type ? type : "Solid",
+    sortOrder: sortOrder ? sortOrder : 0,
+    color1: color1 ? color1 : "",
+    color2: color2 ? color2 : "",
+    color3: color3 ? color3 : "",
+    borderColor: borderColor ? borderColor : "",
+    hasPatch: hasPatch ? hasPatch : false,
+    patchColor: patchColor ? patchColor : "",
+    patchBorderColor: patchBorderColor ? patchBorderColor : "",
+    hasProfessorPatch: hasProfessorPatch ? hasProfessorPatch : false,
+    professorPatchColor: professorPatchColor ? professorPatchColor : "",
+    professorBorderColor: professorBorderColor ? professorBorderColor : "",
+    stripeColor: stripeColor ? stripeColor : "",
+    stripeCount: stripeCount ? stripeCount : 0,
   };
 
   return belt;
@@ -1110,7 +1060,7 @@ export const getCoralBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBeltProp(title, description);
+  const beltProps: BeltProps = getBeltProps(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
