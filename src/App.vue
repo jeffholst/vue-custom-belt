@@ -2,14 +2,9 @@
 import SVGBelt from "./components/SVGBelt.vue";
 import { BeltProps, BeltSystem } from "./types/BeltProps";
 import { getRandomBelt } from "./shared/shared";
-import * as ibjjf from "./shared/ibjjf";
 import ibjjfJSON from "./shared/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
-const myWhiteBelt: BeltProps = ibjjfSystem.getBelt("White", 1);
-const myGrayWhiteBelt: BeltProps = ibjjfSystem.getBelt("Gray/White", 2);
-
-debugger;
 
 let randomCrazy: BeltProps = getRandomBelt(
   true,
@@ -63,31 +58,16 @@ let randomSplit: BeltProps = getRandomBelt(
   ["Split"],
   4000
 );
-const whiteBelt: BeltProps = ibjjf.getWhiteBelt(0);
-const grayWhiteBelt: BeltProps = ibjjf.getGrayWhiteBelt(0);
-const blueBelt: BeltProps = ibjjf.getBlueBelt(1);
-const purpleBelt: BeltProps = ibjjf.getPurpleBelt(2);
-const brownBelt: BeltProps = ibjjf.getBrownBelt(3);
-const blackBelt: BeltProps = ibjjf.getBlackBelt(5);
-const redBlackBelt: BeltProps = ibjjf.getRedBlackBelt(7);
-const grayBelt: BeltProps = ibjjf.getGrayBelt(0);
-const yellowBelt: BeltProps = ibjjf.getYellowBelt(0);
-const orangeBelt: BeltProps = ibjjf.getOrangeBelt(0);
-const greenBelt: BeltProps = ibjjf.getGreenBelt(0);
-const grayBlackBelt: BeltProps = ibjjf.getGrayBlackBelt(0);
-const yellowWhiteBelt: BeltProps = ibjjf.getYellowWhiteBelt(0);
-const yellowBlackBelt: BeltProps = ibjjf.getYellowBlackBelt(0);
-const orangeWhiteBelt: BeltProps = ibjjf.getOrangeWhiteBelt(0);
-const orangeBlackBelt: BeltProps = ibjjf.getOrangeBlackBelt(0);
-const greenWhiteBelt: BeltProps = ibjjf.getGreenWhiteBelt(0);
-const greenBlackBelt: BeltProps = ibjjf.getGreenBlackBelt(0);
-const redWhiteBelt: BeltProps = ibjjf.getRedWhiteBelt(8);
-const redBelt: BeltProps = ibjjf.getRedBelt(9);
 </script>
 
 <template>
-  <SVGBelt :belt-props="myWhiteBelt" />
-  <SVGBelt :belt-props="myGrayWhiteBelt" />
+  <h1>{{ ibjjfSystem.title }}</h1>
+  <div v-for="(belt, index) in ibjjfSystem.belts" :key="index">
+    <h2>{{ belt.name }}</h2>
+    <SVGBelt
+      :belt-props="ibjjfSystem.getBeltProps(belt.name, belt.stripeCount)"
+    />
+  </div>
   <h1>Random Belts</h1>
   <div class="row">
     <div class="column">
@@ -120,49 +100,6 @@ const redBelt: BeltProps = ibjjf.getRedBelt(9);
         <SVGBelt :belt-props="randomCrazy" />
       </div>
     </div>
-  </div>
-  <div>
-    <h1>IBJJF Belts</h1>
-    <h2>White</h2>
-    <SVGBelt :belt-props="whiteBelt" />
-    <h2>Gray/White</h2>
-    <SVGBelt :belt-props="grayWhiteBelt" />
-    <h2>Gray</h2>
-    <SVGBelt :belt-props="grayBelt" />
-    <h2>Gray/Black</h2>
-    <SVGBelt :belt-props="grayBlackBelt" />
-    <h2>Yellow/White</h2>
-    <SVGBelt :belt-props="yellowWhiteBelt" />
-    <h2>Yellow</h2>
-    <SVGBelt :belt-props="yellowBelt" />
-    <h2>Yellow/Black</h2>
-    <SVGBelt :belt-props="yellowBlackBelt" />
-    <h2>Orange/White</h2>
-    <SVGBelt :belt-props="orangeWhiteBelt" />
-    <h2>Orange</h2>
-    <SVGBelt :belt-props="orangeBelt" />
-    <h2>Orange/Black</h2>
-    <SVGBelt :belt-props="orangeBlackBelt" />
-    <h2>Green/White</h2>
-    <SVGBelt :belt-props="greenWhiteBelt" />
-    <h2>Green</h2>
-    <SVGBelt :belt-props="greenBelt" />
-    <h2>Green/Black</h2>
-    <SVGBelt :belt-props="greenBlackBelt" />
-    <h2>Blue (1 stripe)</h2>
-    <SVGBelt :belt-props="blueBelt" />
-    <h2>Purple (2 stripes)</h2>
-    <SVGBelt :belt-props="purpleBelt" />
-    <h2>Brown (3 stripes)</h2>
-    <SVGBelt :belt-props="brownBelt" />
-    <h2>Black (5 stripes)</h2>
-    <SVGBelt :belt-props="blackBelt" />
-    <h2>Red/Black (7 stripes)</h2>
-    <SVGBelt :belt-props="redBlackBelt" />
-    <h2>Red/White (8 stripes)</h2>
-    <SVGBelt :belt-props="redWhiteBelt" />
-    <h2>Red (9 stripes)</h2>
-    <SVGBelt :belt-props="redBelt" />
   </div>
 </template>
 

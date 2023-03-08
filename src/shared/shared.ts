@@ -1,4 +1,4 @@
-import type { BeltProps, BeltType } from "../types/BeltProps";
+import type { BeltProps, BeltType, Belt, BeltColor } from "../types/BeltProps";
 
 function isValidHexaCode(str: string): boolean {
   // Regex to check valid
@@ -19,6 +19,36 @@ function isValidHexaCode(str: string): boolean {
     return false;
   }
 }
+
+const mapColor = (color: string, colors: BeltColor[]): string => {
+  // 1. if color is valid hex code, return it
+  // 2. else if color in colors, return hex code
+  // 3. else return color
+  let rval = color;
+
+  if (!isValidHexaCode(color)) {
+    const beltColor = colors.find((c) => c.name === color);
+    if (beltColor) {
+      rval = beltColor.hex;
+    }
+  }
+
+  return rval;
+};
+
+export const mapColors = (belts: Belt[], colors: BeltColor[]) => {
+  belts.forEach((belt) => {
+    belt.color1 = mapColor(belt.color1, colors);
+    belt.color2 = mapColor(belt.color2, colors);
+    belt.color3 = mapColor(belt.color3, colors);
+    belt.borderColor = mapColor(belt.borderColor, colors);
+    belt.patchColor = mapColor(belt.patchColor, colors);
+    belt.patchBorderColor = mapColor(belt.patchBorderColor, colors);
+    belt.professorPatchColor = mapColor(belt.professorPatchColor, colors);
+    belt.professorBorderColor = mapColor(belt.professorBorderColor, colors);
+    belt.stripeColor = mapColor(belt.stripeColor, colors);
+  });
+};
 
 export const getBelt = (
   title: string = "",
@@ -203,18 +233,19 @@ export const getRandomBelt = (
   const myRefreshInterval = refreshInterval === undefined ? 0 : refreshInterval;
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
+      // if only one includeBelt items is specified, then use that belt type
       randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
     } else {
+      // build array of includeBelt types and selct random one
       const ary: Array<BeltType> = [];
       for (let i = 0; i < includeBelts.length; i++) {
-        if (includeBelts[i] !== "Random") {
-          ary.push(includeBelts[i]);
-        }
+        ary.push(includeBelts[i]);
       }
       rand = Math.floor(Math.random() * ary.length);
       randomBeltTypeIndex = getRandomBeltIndex(ary[rand]);
     }
   } else {
+    // no includeBelt types specified, for select random from all
     randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
 

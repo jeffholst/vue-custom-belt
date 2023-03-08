@@ -7,8 +7,7 @@ export type BeltType =
   | "Coral"
   | "Split"
   | "Checkered"
-  | "Crazy"
-  | "Random";
+  | "Crazy";
 
 export interface BeltProps {
   border: string;
@@ -96,7 +95,7 @@ export interface BeltColor {
 
 export interface Belt {
   name: string;
-  types: BeltType[];
+  type: BeltType;
   sortOrder: number;
   color1: string;
   color2: string;
@@ -127,189 +126,25 @@ export class BeltSystem {
     this.refreshInterval = system.refreshInterval;
     this.colors = system.colors;
     this.belts = system.belts;
+
+    shared.mapColors(this.belts, this.colors);
   }
 
-  setPatchProperties = (
-    beltProps: BeltProps,
-    hasPatch: boolean,
-    patchColor: string,
-    patchBorderColor: string,
-    professorPatchColor: string,
-    professorBorderColor: string,
-    hasProfessorPatch: boolean,
-    stripeColor: string,
-    stripeCount: number
-  ) => {
-    beltProps.hasPatch = hasPatch;
-    beltProps.patch = patchColor;
-    beltProps.patchBorder = patchBorderColor;
-    beltProps.professorPatch = professorPatchColor;
-    beltProps.professorBorder = professorBorderColor;
-    beltProps.hasProfessorPatch = hasProfessorPatch;
-    beltProps.stripeCount = stripeCount;
-
-    beltProps.stripe1 = stripeColor;
-    beltProps.stripe2 = stripeColor;
-    beltProps.stripe3 = stripeColor;
-    beltProps.stripe4 = stripeColor;
-    beltProps.stripe5 = stripeColor;
-    beltProps.stripe6 = stripeColor;
-    beltProps.stripe7 = stripeColor;
-    beltProps.stripe8 = stripeColor;
-    beltProps.stripe9 = stripeColor;
-    beltProps.stripe10 = stripeColor;
-  };
-
-  setSolidBelt(belt: Belt, beltProps: BeltProps) {
-    beltProps.s1l1 = belt ? belt.color1 : "";
-    beltProps.s1l2a = belt ? belt.color1 : "";
-    beltProps.s1l2b = belt ? belt.color1 : "";
-    beltProps.s1l3 = belt ? belt.color1 : "";
-    beltProps.s2l1 = belt ? belt.color1 : "";
-    beltProps.s2l2a = belt ? belt.color1 : "";
-    beltProps.s2l2b = belt ? belt.color1 : "";
-    beltProps.s2l3 = belt ? belt.color1 : "";
-    beltProps.s3l1 = belt ? belt.color1 : "";
-    beltProps.s3l2a = belt ? belt.color1 : "";
-    beltProps.s3l2b = belt ? belt.color1 : "";
-    beltProps.s3l3 = belt ? belt.color1 : "";
-    beltProps.s4l1 = belt ? belt.color1 : "";
-    beltProps.s4l2a = belt ? belt.color1 : "";
-    beltProps.s4l2b = belt ? belt.color1 : "";
-    beltProps.s4l3 = belt ? belt.color1 : "";
-    beltProps.s5l1 = belt ? belt.color1 : "";
-    beltProps.s5l2a = belt ? belt.color1 : "";
-    beltProps.s5l2b = belt ? belt.color1 : "";
-    beltProps.s5l3 = belt ? belt.color1 : "";
-    beltProps.s6l1 = belt ? belt.color1 : "";
-    beltProps.s6l2a = belt ? belt.color1 : "";
-    beltProps.s6l2b = belt ? belt.color1 : "";
-    beltProps.s6l3 = belt ? belt.color1 : "";
-    beltProps.s6l1 = belt ? belt.color1 : "";
-    beltProps.s6l2a = belt ? belt.color1 : "";
-    beltProps.s6l2b = belt ? belt.color1 : "";
-    beltProps.s6l3 = belt ? belt.color1 : "";
-    beltProps.s7l1 = belt ? belt.color1 : "";
-    beltProps.s7l2a = belt ? belt.color1 : "";
-    beltProps.s7l2b = belt ? belt.color1 : "";
-    beltProps.s7l3 = belt ? belt.color1 : "";
-    beltProps.s8l1 = belt ? belt.color1 : "";
-    beltProps.s8l2a = belt ? belt.color1 : "";
-    beltProps.s8l2b = belt ? belt.color1 : "";
-    beltProps.s8l3 = belt ? belt.color1 : "";
-    beltProps.s9l1 = belt ? belt.color1 : "";
-    beltProps.s9l2a = belt ? belt.color1 : "";
-    beltProps.s9l2b = belt ? belt.color1 : "";
-    beltProps.s9l3 = belt ? belt.color1 : "";
-    beltProps.s10l1 = belt ? belt.color1 : "";
-    beltProps.s10l2a = belt ? belt.color1 : "";
-    beltProps.s10l2b = belt ? belt.color1 : "";
-    beltProps.s10l3 = belt ? belt.color1 : "";
-    beltProps.s11l1 = belt ? belt.color1 : "";
-    beltProps.s11l2a = belt ? belt.color1 : "";
-    beltProps.s11l2b = belt ? belt.color1 : "";
-    beltProps.s11l3 = belt ? belt.color1 : "";
-    beltProps.s12l1 = belt ? belt.color1 : "";
-    beltProps.s12l2a = belt ? belt.color1 : "";
-    beltProps.s12l2b = belt ? belt.color1 : "";
-    beltProps.s12l3 = belt ? belt.color1 : "";
-    beltProps.s13l1 = belt ? belt.color1 : "";
-    beltProps.s13l2a = belt ? belt.color1 : "";
-    beltProps.s13l2b = belt ? belt.color1 : "";
-    beltProps.s13l3 = belt ? belt.color1 : "";
-  }
-
-  setStripedBelt(belt: Belt, beltProps: BeltProps) {
-    beltProps.s1l1 = belt ? belt.color1 : "";
-    beltProps.s1l2a = belt ? belt.color2 : "";
-    beltProps.s1l2b = belt ? belt.color2 : "";
-    beltProps.s1l3 = belt ? belt.color1 : "";
-    beltProps.s2l1 = belt ? belt.color1 : "";
-    beltProps.s2l2a = belt ? belt.color2 : "";
-    beltProps.s2l2b = belt ? belt.color2 : "";
-    beltProps.s2l3 = belt ? belt.color1 : "";
-    beltProps.s3l1 = belt ? belt.color1 : "";
-    beltProps.s3l2a = belt ? belt.color2 : "";
-    beltProps.s3l2b = belt ? belt.color2 : "";
-    beltProps.s3l3 = belt ? belt.color1 : "";
-    beltProps.s4l1 = belt ? belt.color1 : "";
-    beltProps.s4l2a = belt ? belt.color2 : "";
-    beltProps.s4l2b = belt ? belt.color2 : "";
-    beltProps.s4l3 = belt ? belt.color1 : "";
-    beltProps.s5l1 = belt ? belt.color1 : "";
-    beltProps.s5l2a = belt ? belt.color2 : "";
-    beltProps.s5l2b = belt ? belt.color2 : "";
-    beltProps.s5l3 = belt ? belt.color1 : "";
-    beltProps.s6l1 = belt ? belt.color1 : "";
-    beltProps.s6l2a = belt ? belt.color2 : "";
-    beltProps.s6l2b = belt ? belt.color2 : "";
-    beltProps.s6l3 = belt ? belt.color1 : "";
-    beltProps.s6l1 = belt ? belt.color1 : "";
-    beltProps.s6l2a = belt ? belt.color2 : "";
-    beltProps.s6l2b = belt ? belt.color2 : "";
-    beltProps.s6l3 = belt ? belt.color1 : "";
-    beltProps.s7l1 = belt ? belt.color1 : "";
-    beltProps.s7l2a = belt ? belt.color2 : "";
-    beltProps.s7l2b = belt ? belt.color2 : "";
-    beltProps.s7l3 = belt ? belt.color1 : "";
-    beltProps.s8l1 = belt ? belt.color1 : "";
-    beltProps.s8l2a = belt ? belt.color2 : "";
-    beltProps.s8l2b = belt ? belt.color2 : "";
-    beltProps.s8l3 = belt ? belt.color1 : "";
-    beltProps.s9l1 = belt ? belt.color1 : "";
-    beltProps.s9l2a = belt ? belt.color2 : "";
-    beltProps.s9l2b = belt ? belt.color2 : "";
-    beltProps.s9l3 = belt ? belt.color1 : "";
-    beltProps.s10l1 = belt ? belt.color1 : "";
-    beltProps.s10l2a = belt ? belt.color2 : "";
-    beltProps.s10l2b = belt ? belt.color2 : "";
-    beltProps.s10l3 = belt ? belt.color1 : "";
-    beltProps.s11l1 = belt ? belt.color1 : "";
-    beltProps.s11l2a = belt ? belt.color2 : "";
-    beltProps.s11l2b = belt ? belt.color2 : "";
-    beltProps.s11l3 = belt ? belt.color1 : "";
-    beltProps.s12l1 = belt ? belt.color1 : "";
-    beltProps.s12l2a = belt ? belt.color2 : "";
-    beltProps.s12l2b = belt ? belt.color2 : "";
-    beltProps.s12l3 = belt ? belt.color1 : "";
-    beltProps.s13l1 = belt ? belt.color1 : "";
-    beltProps.s13l2a = belt ? belt.color2 : "";
-    beltProps.s13l2b = belt ? belt.color2 : "";
-    beltProps.s13l3 = belt ? belt.color1 : "";
-  }
-
-  getBelt(name: string, stripeCount: number): BeltProps {
-    const belt = this.belts.find((belt) => belt.name === name);
-    const beltProps: BeltProps = shared.getBelt("jkh Title", "jkh Description");
-    beltProps.transitionCSS = this.transitionCSS;
-    beltProps.refreshInterval = this.refreshInterval;
-
-    if (belt) {
-      beltProps.border = belt.borderColor;
-      beltProps.patchBorder = belt.borderColor;
-      beltProps.professorBorder = belt.borderColor;
-      switch (belt.types[0]) {
-        case "Solid":
-          this.setSolidBelt(belt, beltProps);
-          break;
-        case "Striped":
-          this.setStripedBelt(belt, beltProps);
-          break;
-      }
-    }
-
-    this.setPatchProperties(
-      beltProps,
-      belt ? belt.hasPatch : false,
-      belt ? belt.patchColor : "",
-      belt ? belt.patchBorderColor : "",
-      belt ? belt.professorPatchColor : "",
-      belt ? belt.professorBorderColor : "",
-      belt ? belt.hasProfessorPatch : false,
-      belt ? belt.stripeColor : "",
-      stripeCount
+  getBeltProps(name: string, stripeCount: number): BeltProps {
+    const belt: Belt | undefined = this.belts.find(
+      (belt) => belt.name === name
     );
-
-    return beltProps;
+    const rdfTitle = belt ? `${this.title} ${belt.name} Belt` : name;
+    const rdfDescription = belt
+      ? shared.getDescription(rdfTitle, belt.stripeCount)
+      : "Belt Not Found";
+    return shared.setBeltProps(
+      belt,
+      stripeCount,
+      rdfTitle,
+      rdfDescription,
+      this.transitionCSS,
+      this.refreshInterval
+    );
   }
 }

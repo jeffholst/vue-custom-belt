@@ -1,5 +1,5 @@
 {
-  "title": "IBJJF Belts",
+  "title": "IBJJF",
   "transitionCSS": "",
   "refreshInterval": 0,
   "colors": [
@@ -60,7 +60,7 @@
     {
       "name": "White",
       "sortOrder": 10,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "White",
       "color2": "",
       "color3": "",
@@ -77,7 +77,7 @@
     {
       "name": "Gray/White",
       "sortOrder": 20,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Gray",
       "color2": "White",
       "color3": "",
@@ -94,7 +94,7 @@
     {
       "name": "Gray",
       "sortOrder": 30,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Gray",
       "color2": "",
       "color3": "",
@@ -111,7 +111,7 @@
     {
       "name": "Gray/Black",
       "sortOrder": 40,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Gray",
       "color2": "Black",
       "color3": "",
@@ -128,7 +128,7 @@
     {
       "name": "Yellow/White",
       "sortOrder": 50,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Yellow",
       "color2": "White",
       "color3": "",
@@ -145,7 +145,7 @@
     {
       "name": "Yellow",
       "sortOrder": 60,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Yellow",
       "color2": "",
       "color3": "",
@@ -162,7 +162,7 @@
     {
       "name": "Yellow/Black",
       "sortOrder": 70,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Yellow",
       "color2": "Black",
       "color3": "",
@@ -179,7 +179,7 @@
     {
       "name": "Orange/White",
       "sortOrder": 80,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Orange",
       "color2": "White",
       "color3": "",
@@ -196,7 +196,7 @@
     {
       "name": "Orange",
       "sortOrder": 90,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Orange",
       "color2": "",
       "color3": "",
@@ -213,7 +213,7 @@
     {
       "name": "Orange/Black",
       "sortOrder": 100,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Orange",
       "color2": "Black",
       "color3": "",
@@ -230,7 +230,7 @@
     {
       "name": "Green/White",
       "sortOrder": 110,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Green",
       "color2": "White",
       "color3": "",
@@ -247,7 +247,7 @@
     {
       "name": "Green",
       "sortOrder": 120,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Green",
       "color2": "",
       "color3": "",
@@ -264,7 +264,7 @@
     {
       "name": "Green/Black",
       "sortOrder": 130,
-      "types": ["Striped"],
+      "type": "Striped",
       "color1": "Green",
       "color2": "Black",
       "color3": "",
@@ -281,7 +281,7 @@
     {
       "name": "Blue",
       "sortOrder": 140,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Blue",
       "color2": "",
       "color3": "",
@@ -298,7 +298,7 @@
     {
       "name": "Purple",
       "sortOrder": 150,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Purple",
       "color2": "",
       "color3": "",
@@ -315,14 +315,14 @@
     {
       "name": "Brown",
       "sortOrder": 160,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Brown",
       "color2": "",
       "color3": "",
-      "borderColor": "DarkBorder",
+      "borderColor": "LightBorder",
       "hasPatch": true,
       "patchColor": "Black",
-      "patchBorderColor": "DarkBorder",
+      "patchBorderColor": "LightBorder",
       "hasProfessorPatch": false,
       "professorPatchColor": "",
       "professorBorderColor": "",
@@ -332,7 +332,7 @@
     {
       "name": "Black",
       "sortOrder": 170,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Black",
       "color2": "",
       "color3": "",
@@ -349,7 +349,7 @@
     {
       "name": "Red/Black",
       "sortOrder": 180,
-      "types": ["Coral"],
+      "type": "Coral",
       "color1": "Red",
       "color2": "Black",
       "color3": "",
@@ -361,14 +361,14 @@
       "professorPatchColor": "Gray",
       "professorBorderColor": "LightBorder",
       "stripeColor": "Red",
-      "stripeCount": 0
+      "stripeCount": 7
     },
     {
       "name": "Red/White",
       "sortOrder": 190,
-      "types": ["Coral"],
-      "color1": "Red",
-      "color2": "White",
+      "type": "Coral",
+      "color1": "White",
+      "color2": "Red",
       "color3": "",
       "borderColor": "DarkBorder",
       "hasPatch": true,
@@ -378,12 +378,12 @@
       "professorPatchColor": "Gray",
       "professorBorderColor": "DarkBorder",
       "stripeColor": "Red",
-      "stripeCount": 0
+      "stripeCount": 8
     },
     {
       "name": "Red",
       "sortOrder": 200,
-      "types": ["Solid"],
+      "type": "Solid",
       "color1": "Red",
       "color2": "",
       "color3": "",
@@ -395,7 +395,7 @@
       "professorPatchColor": "Gold",
       "professorBorderColor": "DarkBorder",
       "stripeColor": "Red",
-      "stripeCount": 0
+      "stripeCount": 9
     }
   ]
 }
