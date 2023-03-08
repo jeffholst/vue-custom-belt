@@ -506,6 +506,65 @@ export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color1;
 };
 
+export const setStripedBelt = (belt: Belt, beltProps: BeltProps) => {
+  beltProps.s1l1 = belt.color1;
+  beltProps.s1l2a = belt.color2;
+  beltProps.s1l2b = belt.color2;
+  beltProps.s1l3 = belt.color1;
+  beltProps.s2l1 = belt.color1;
+  beltProps.s2l2a = belt.color2;
+  beltProps.s2l2b = belt.color2;
+  beltProps.s2l3 = belt.color1;
+  beltProps.s3l1 = belt.color1;
+  beltProps.s3l2a = belt.color2;
+  beltProps.s3l2b = belt.color2;
+  beltProps.s3l3 = belt.color1;
+  beltProps.s4l1 = belt.color1;
+  beltProps.s4l2a = belt.color2;
+  beltProps.s4l2b = belt.color2;
+  beltProps.s4l3 = belt.color1;
+  beltProps.s5l1 = belt.color1;
+  beltProps.s5l2a = belt.color2;
+  beltProps.s5l2b = belt.color2;
+  beltProps.s5l3 = belt.color1;
+  beltProps.s6l1 = belt.color1;
+  beltProps.s6l2a = belt.color2;
+  beltProps.s6l2b = belt.color2;
+  beltProps.s6l3 = belt.color1;
+  beltProps.s6l1 = belt.color1;
+  beltProps.s6l2a = belt.color2;
+  beltProps.s6l2b = belt.color2;
+  beltProps.s6l3 = belt.color1;
+  beltProps.s7l1 = belt.color1;
+  beltProps.s7l2a = belt.color2;
+  beltProps.s7l2b = belt.color2;
+  beltProps.s7l3 = belt.color1;
+  beltProps.s8l1 = belt.color1;
+  beltProps.s8l2a = belt.color2;
+  beltProps.s8l2b = belt.color2;
+  beltProps.s8l3 = belt.color1;
+  beltProps.s9l1 = belt.color1;
+  beltProps.s9l2a = belt.color2;
+  beltProps.s9l2b = belt.color2;
+  beltProps.s9l3 = belt.color1;
+  beltProps.s10l1 = belt.color1;
+  beltProps.s10l2a = belt.color2;
+  beltProps.s10l2b = belt.color2;
+  beltProps.s10l3 = belt.color1;
+  beltProps.s11l1 = belt.color1;
+  beltProps.s11l2a = belt.color2;
+  beltProps.s11l2b = belt.color2;
+  beltProps.s11l3 = belt.color1;
+  beltProps.s12l1 = belt.color1;
+  beltProps.s12l2a = belt.color2;
+  beltProps.s12l2b = belt.color2;
+  beltProps.s12l3 = belt.color1;
+  beltProps.s13l1 = belt.color1;
+  beltProps.s13l2a = belt.color2;
+  beltProps.s13l2b = belt.color2;
+  beltProps.s13l3 = belt.color1;
+};
+
 export const getSolidBelt = (
   beltColor: string,
   borderColor: string,
