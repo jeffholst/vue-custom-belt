@@ -50,7 +50,7 @@ export const mapColors = (belts: Belt[], colors: BeltColor[]) => {
   });
 };
 
-export const getBelt = (
+export const getBeltProps = (
   title: string = "",
   description: string = ""
 ): BeltProps => {
@@ -249,7 +249,7 @@ export const getRandomBelt = (
     randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
 
-  let beltProps: BeltProps = getBelt();
+  let beltProps: BeltProps = getBeltProps();
 
   const border = getRandomHexColor();
   if (hasPatch === undefined) hasPatch = Math.random() < 0.5;
@@ -447,6 +447,65 @@ export const getRandomBelt = (
   return beltProps;
 };
 
+export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
+  beltProps.s1l1 = belt.color1;
+  beltProps.s1l2a = belt.color1;
+  beltProps.s1l2b = belt.color1;
+  beltProps.s1l3 = belt.color1;
+  beltProps.s2l1 = belt.color1;
+  beltProps.s2l2a = belt.color1;
+  beltProps.s2l2b = belt.color1;
+  beltProps.s2l3 = belt.color1;
+  beltProps.s3l1 = belt.color1;
+  beltProps.s3l2a = belt.color1;
+  beltProps.s3l2b = belt.color1;
+  beltProps.s3l3 = belt.color1;
+  beltProps.s4l1 = belt.color1;
+  beltProps.s4l2a = belt.color1;
+  beltProps.s4l2b = belt.color1;
+  beltProps.s4l3 = belt.color1;
+  beltProps.s5l1 = belt.color1;
+  beltProps.s5l2a = belt.color1;
+  beltProps.s5l2b = belt.color1;
+  beltProps.s5l3 = belt.color1;
+  beltProps.s6l1 = belt.color1;
+  beltProps.s6l2a = belt.color1;
+  beltProps.s6l2b = belt.color1;
+  beltProps.s6l3 = belt.color1;
+  beltProps.s6l1 = belt.color1;
+  beltProps.s6l2a = belt.color1;
+  beltProps.s6l2b = belt.color1;
+  beltProps.s6l3 = belt.color1;
+  beltProps.s7l1 = belt.color1;
+  beltProps.s7l2a = belt.color1;
+  beltProps.s7l2b = belt.color1;
+  beltProps.s7l3 = belt.color1;
+  beltProps.s8l1 = belt.color1;
+  beltProps.s8l2a = belt.color1;
+  beltProps.s8l2b = belt.color1;
+  beltProps.s8l3 = belt.color1;
+  beltProps.s9l1 = belt.color1;
+  beltProps.s9l2a = belt.color1;
+  beltProps.s9l2b = belt.color1;
+  beltProps.s9l3 = belt.color1;
+  beltProps.s10l1 = belt.color1;
+  beltProps.s10l2a = belt.color1;
+  beltProps.s10l2b = belt.color1;
+  beltProps.s10l3 = belt.color1;
+  beltProps.s11l1 = belt.color1;
+  beltProps.s11l2a = belt.color1;
+  beltProps.s11l2b = belt.color1;
+  beltProps.s11l3 = belt.color1;
+  beltProps.s12l1 = belt.color1;
+  beltProps.s12l2a = belt.color1;
+  beltProps.s12l2b = belt.color1;
+  beltProps.s12l3 = belt.color1;
+  beltProps.s13l1 = belt.color1;
+  beltProps.s13l2a = belt.color1;
+  beltProps.s13l2b = belt.color1;
+  beltProps.s13l3 = belt.color1;
+};
+
 export const getSolidBelt = (
   beltColor: string,
   borderColor: string,
@@ -464,7 +523,7 @@ export const getSolidBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt(title, description);
+  const beltProps: BeltProps = getBeltProps(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
@@ -543,6 +602,87 @@ export const getSolidBelt = (
   return beltProps;
 };
 
+export const getBelt = (
+  name: string,
+  type: BeltType,
+  sortOrder: number,
+  color1: string,
+  color2: string,
+  color3: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number
+): Belt => {
+  const belt: Belt = {
+    name: name,
+    type: type,
+    sortOrder: sortOrder,
+    color1: color1,
+    color2: color2,
+    color3: color3,
+    borderColor: borderColor,
+    hasPatch: hasPatch,
+    patchColor: patchColor,
+    patchBorderColor: patchBorderColor,
+    hasProfessorPatch: hasProfessorPatch,
+    professorPatchColor: professorPatchColor,
+    professorBorderColor: professorBorderColor,
+    stripeColor: stripeColor,
+    stripeCount: stripeCount,
+  };
+
+  return belt;
+};
+
+export const setBeltProps = (
+  belt: Belt | undefined,
+  stripeCount: number,
+  rdfTitle: string,
+  rdfDescription: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps => {
+  const beltProps: BeltProps = getBeltProps(rdfTitle, rdfDescription);
+
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.refreshInterval = refreshInterval;
+  beltProps.stripeCount = stripeCount;
+
+  if (belt) {
+    switch (belt.type) {
+      case "Solid":
+        setSolidBelt(belt, beltProps);
+        break;
+      case "Striped":
+        setStripeBelt(belt, beltProps);
+        break;
+      case "Coral":
+        setCoralBelt(belt, beltProps);
+        break;
+    }
+    beltProps.border = belt.borderColor;
+    setPatchProperties(
+      beltProps,
+      belt.hasPatch,
+      belt.patchColor,
+      belt.patchBorderColor,
+      belt.professorPatchColor,
+      belt.professorBorderColor,
+      belt.hasProfessorPatch,
+      belt.stripeColor,
+      stripeCount
+    );
+  }
+
+  return beltProps;
+};
+
 export const getCheckeredBelt = (
   beltColor1: string,
   beltColor2: string,
@@ -561,7 +701,7 @@ export const getCheckeredBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt(title, description);
+  const beltProps: BeltProps = getBeltProps(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
@@ -658,7 +798,7 @@ export const getStripedBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt(title, description);
+  const beltProps: BeltProps = getBeltProps(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
@@ -755,7 +895,7 @@ export const getSplitBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt(title, description);
+  const beltProps: BeltProps = getBeltProps(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
@@ -852,7 +992,7 @@ export const getCoralBelt = (
   randomBeltTypes: Array<BeltType>,
   refreshInterval: number
 ): BeltProps => {
-  const beltProps: BeltProps = getBelt(title, description);
+  const beltProps: BeltProps = getBeltProp(title, description);
   beltProps.transitionCSS = transitionCSS;
   beltProps.randomBeltTypes = randomBeltTypes;
   beltProps.refreshInterval = refreshInterval;
