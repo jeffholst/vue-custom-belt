@@ -264,13 +264,12 @@ export const getRandomBelt = (
 
   let rdfTitle = "";
   let rdfDescription = "";
-
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
       rdfTitle = `${title} Solid belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Solid";
-      setBeltProps(
+      beltProps = setBeltProps(
         belt,
         stripeCount,
         rdfTitle,
@@ -283,7 +282,7 @@ export const getRandomBelt = (
       rdfTitle = `${title} Striped belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Striped";
-      setBeltProps(
+      beltProps = setBeltProps(
         belt,
         stripeCount,
         rdfTitle,
@@ -296,7 +295,7 @@ export const getRandomBelt = (
       rdfTitle = `${title} Coral belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Coral";
-      setBeltProps(
+      beltProps = setBeltProps(
         belt,
         stripeCount,
         rdfTitle,
@@ -309,7 +308,7 @@ export const getRandomBelt = (
       rdfTitle = `${title} Split belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Split";
-      setBeltProps(
+      beltProps = setBeltProps(
         belt,
         stripeCount,
         rdfTitle,
@@ -322,7 +321,7 @@ export const getRandomBelt = (
       rdfTitle = `${title} Checkered belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Checkered";
-      setBeltProps(
+      beltProps = setBeltProps(
         belt,
         stripeCount,
         rdfTitle,
@@ -393,6 +392,8 @@ export const getRandomBelt = (
       beltProps.s13l3 = getRandomHexColor();
       break;
   }
+
+  beltProps.randomBeltTypes = includeBelts;
 
   return beltProps;
 };
