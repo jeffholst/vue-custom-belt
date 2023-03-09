@@ -222,7 +222,6 @@ export const getRandomBelt = (
   includeBelts: Array<BeltType> = [],
   refreshInterval: number = 0
 ): BeltProps => {
-  let rand;
   let randomBeltTypeIndex;
   const title = "Random";
 
@@ -240,7 +239,7 @@ export const getRandomBelt = (
       for (let i = 0; i < includeBelts.length; i++) {
         ary.push(includeBelts[i]);
       }
-      rand = Math.floor(Math.random() * ary.length);
+      const rand = Math.floor(Math.random() * ary.length);
       randomBeltTypeIndex = getRandomBeltIndex(ary[rand]);
     }
   } else {
@@ -272,129 +271,42 @@ export const getRandomBelt = (
       rdfTitle = `${title} Solid belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Solid";
-      beltProps = setBeltProps(
-        belt,
-        stripeCount,
-        rdfTitle,
-        rdfDescription,
-        transitionCSS,
-        refreshInterval
-      );
       break;
     case 1: // striped belt
       rdfTitle = `${title} Striped belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Striped";
-      beltProps = setBeltProps(
-        belt,
-        stripeCount,
-        rdfTitle,
-        rdfDescription,
-        transitionCSS,
-        refreshInterval
-      );
       break;
     case 2: // coral belt
       rdfTitle = `${title} Coral belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Coral";
-      beltProps = setBeltProps(
-        belt,
-        stripeCount,
-        rdfTitle,
-        rdfDescription,
-        transitionCSS,
-        refreshInterval
-      );
       break;
     case 3: // split belt
       rdfTitle = `${title} Split belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Split";
-      beltProps = setBeltProps(
-        belt,
-        stripeCount,
-        rdfTitle,
-        rdfDescription,
-        transitionCSS,
-        refreshInterval
-      );
       break;
     case 4: // checkered belt
       rdfTitle = `${title} Checkered belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Checkered";
-      beltProps = setBeltProps(
-        belt,
-        stripeCount,
-        rdfTitle,
-        rdfDescription,
-        transitionCSS,
-        refreshInterval
-      );
       break;
     case 5: // crazy belt
       rdfTitle = `${title} Crazy belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
       belt.type = "Crazy";
-      beltProps.s1l1 = getRandomHexColor();
-      beltProps.s1l2a = getRandomHexColor();
-      beltProps.s1l2b = getRandomHexColor();
-      beltProps.s1l3 = getRandomHexColor();
-      beltProps.s2l1 = getRandomHexColor();
-      beltProps.s2l2a = getRandomHexColor();
-      beltProps.s2l2b = getRandomHexColor();
-      beltProps.s2l3 = getRandomHexColor();
-      beltProps.s3l1 = getRandomHexColor();
-      beltProps.s3l2a = getRandomHexColor();
-      beltProps.s3l2b = getRandomHexColor();
-      beltProps.s3l3 = getRandomHexColor();
-      beltProps.s4l1 = getRandomHexColor();
-      beltProps.s4l2a = getRandomHexColor();
-      beltProps.s4l2b = getRandomHexColor();
-      beltProps.s4l3 = getRandomHexColor();
-      beltProps.s5l1 = getRandomHexColor();
-      beltProps.s5l2a = getRandomHexColor();
-      beltProps.s5l2b = getRandomHexColor();
-      beltProps.s5l3 = getRandomHexColor();
-      beltProps.s6l1 = getRandomHexColor();
-      beltProps.s6l2a = getRandomHexColor();
-      beltProps.s6l2b = getRandomHexColor();
-      beltProps.s6l3 = getRandomHexColor();
-      beltProps.s6l1 = getRandomHexColor();
-      beltProps.s6l2a = getRandomHexColor();
-      beltProps.s6l2b = getRandomHexColor();
-      beltProps.s6l3 = getRandomHexColor();
-      beltProps.s7l1 = getRandomHexColor();
-      beltProps.s7l2a = getRandomHexColor();
-      beltProps.s7l2b = getRandomHexColor();
-      beltProps.s7l3 = getRandomHexColor();
-      beltProps.s8l1 = getRandomHexColor();
-      beltProps.s8l2a = getRandomHexColor();
-      beltProps.s8l2b = getRandomHexColor();
-      beltProps.s8l3 = getRandomHexColor();
-      beltProps.s9l1 = getRandomHexColor();
-      beltProps.s9l2a = getRandomHexColor();
-      beltProps.s9l2b = getRandomHexColor();
-      beltProps.s9l3 = getRandomHexColor();
-      beltProps.s10l1 = getRandomHexColor();
-      beltProps.s10l2a = getRandomHexColor();
-      beltProps.s10l2b = getRandomHexColor();
-      beltProps.s10l3 = getRandomHexColor();
-      beltProps.s11l1 = getRandomHexColor();
-      beltProps.s11l2a = getRandomHexColor();
-      beltProps.s11l2b = getRandomHexColor();
-      beltProps.s11l3 = getRandomHexColor();
-      beltProps.s12l1 = getRandomHexColor();
-      beltProps.s12l2a = getRandomHexColor();
-      beltProps.s12l2b = getRandomHexColor();
-      beltProps.s12l3 = getRandomHexColor();
-      beltProps.s13l1 = getRandomHexColor();
-      beltProps.s13l2a = getRandomHexColor();
-      beltProps.s13l2b = getRandomHexColor();
-      beltProps.s13l3 = getRandomHexColor();
       break;
   }
+
+  beltProps = setBeltProps(
+    belt,
+    stripeCount,
+    rdfTitle,
+    rdfDescription,
+    transitionCSS,
+    refreshInterval
+  );
 
   beltProps.randomBeltTypes = includeBelts;
 
@@ -696,6 +608,65 @@ export const setSplitBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color2;
 };
 
+export const setCrazyBelt = (belt: Belt, beltProps: BeltProps) => {
+  beltProps.s1l1 = getRandomHexColor();
+  beltProps.s1l2a = getRandomHexColor();
+  beltProps.s1l2b = getRandomHexColor();
+  beltProps.s1l3 = getRandomHexColor();
+  beltProps.s2l1 = getRandomHexColor();
+  beltProps.s2l2a = getRandomHexColor();
+  beltProps.s2l2b = getRandomHexColor();
+  beltProps.s2l3 = getRandomHexColor();
+  beltProps.s3l1 = getRandomHexColor();
+  beltProps.s3l2a = getRandomHexColor();
+  beltProps.s3l2b = getRandomHexColor();
+  beltProps.s3l3 = getRandomHexColor();
+  beltProps.s4l1 = getRandomHexColor();
+  beltProps.s4l2a = getRandomHexColor();
+  beltProps.s4l2b = getRandomHexColor();
+  beltProps.s4l3 = getRandomHexColor();
+  beltProps.s5l1 = getRandomHexColor();
+  beltProps.s5l2a = getRandomHexColor();
+  beltProps.s5l2b = getRandomHexColor();
+  beltProps.s5l3 = getRandomHexColor();
+  beltProps.s6l1 = getRandomHexColor();
+  beltProps.s6l2a = getRandomHexColor();
+  beltProps.s6l2b = getRandomHexColor();
+  beltProps.s6l3 = getRandomHexColor();
+  beltProps.s6l1 = getRandomHexColor();
+  beltProps.s6l2a = getRandomHexColor();
+  beltProps.s6l2b = getRandomHexColor();
+  beltProps.s6l3 = getRandomHexColor();
+  beltProps.s7l1 = getRandomHexColor();
+  beltProps.s7l2a = getRandomHexColor();
+  beltProps.s7l2b = getRandomHexColor();
+  beltProps.s7l3 = getRandomHexColor();
+  beltProps.s8l1 = getRandomHexColor();
+  beltProps.s8l2a = getRandomHexColor();
+  beltProps.s8l2b = getRandomHexColor();
+  beltProps.s8l3 = getRandomHexColor();
+  beltProps.s9l1 = getRandomHexColor();
+  beltProps.s9l2a = getRandomHexColor();
+  beltProps.s9l2b = getRandomHexColor();
+  beltProps.s9l3 = getRandomHexColor();
+  beltProps.s10l1 = getRandomHexColor();
+  beltProps.s10l2a = getRandomHexColor();
+  beltProps.s10l2b = getRandomHexColor();
+  beltProps.s10l3 = getRandomHexColor();
+  beltProps.s11l1 = getRandomHexColor();
+  beltProps.s11l2a = getRandomHexColor();
+  beltProps.s11l2b = getRandomHexColor();
+  beltProps.s11l3 = getRandomHexColor();
+  beltProps.s12l1 = getRandomHexColor();
+  beltProps.s12l2a = getRandomHexColor();
+  beltProps.s12l2b = getRandomHexColor();
+  beltProps.s12l3 = getRandomHexColor();
+  beltProps.s13l1 = getRandomHexColor();
+  beltProps.s13l2a = getRandomHexColor();
+  beltProps.s13l2b = getRandomHexColor();
+  beltProps.s13l3 = getRandomHexColor();
+};
+
 export const getBelt = (
   name: string = "",
   type: BeltType = "Solid",
@@ -764,6 +735,9 @@ export const setBeltProps = (
         break;
       case "Checkered":
         setCheckeredBelt(belt, beltProps);
+        break;
+      case "Crazy":
+        setCrazyBelt(belt, beltProps);
         break;
     }
     beltProps.border = belt.borderColor;
