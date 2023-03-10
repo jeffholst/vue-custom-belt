@@ -480,26 +480,31 @@ import { computed, ref } from "vue";
 import type { BeltProps } from "../types/BeltProps";
 import { getRandomBelt } from "../shared/shared";
 
+const index = ref(0);
 const props = defineProps<{
-  beltProps: BeltProps;
+  beltProps: BeltProps[];
 }>();
 
-const myBelt = ref(props.beltProps);
+const myBelt = ref(props.beltProps[index.value]);
 if (
   myBelt.value.refreshInterval != undefined &&
   myBelt.value.refreshInterval > 0
 ) {
   setInterval(() => {
-    const randomBelt: BeltProps = getRandomBelt(
-      myBelt.value.hasPatch,
-      myBelt.value.hasProfessorPatch,
-      myBelt.value.stripeCount,
-      myBelt.value.transitionCSS,
-      myBelt.value.randomBeltTypes,
-      myBelt.value.refreshInterval
-    );
-    myBelt.value = randomBelt;
-    //copyBeltProps(myBelt.value, randomBelt);
+    index.value =
+      index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
+    myBelt.value = props.beltProps[index.value];
+    if (myBelt.value.randomBeltTypes.length > 0) {
+      const randomBelt: BeltProps = getRandomBelt(
+        myBelt.value.hasPatch,
+        myBelt.value.hasProfessorPatch,
+        myBelt.value.stripeCount,
+        myBelt.value.transitionCSS,
+        myBelt.value.randomBeltTypes,
+        myBelt.value.refreshInterval
+      );
+      myBelt.value = randomBelt;
+    }
   }, myBelt.value.refreshInterval);
 }
 

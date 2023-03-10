@@ -130,14 +130,10 @@ export class BeltSystem {
     shared.mapColors(this.belts, this.colors);
   }
 
-  getBeltProps(name: string, stripeCount: number): BeltProps {
-    const belt: Belt | undefined = this.belts.find(
-      (belt) => belt.name === name
-    );
-    const rdfTitle = belt ? `${this.title} ${belt.name} Belt` : name;
-    const rdfDescription = belt
-      ? shared.getDescription(rdfTitle, belt.stripeCount)
-      : "Belt Not Found";
+  getBeltProps(belt: Belt, stripeCount: number): BeltProps {
+    const rdfTitle = `${this.title} ${belt.name} Belt`;
+    const rdfDescription = shared.getDescription(rdfTitle, belt.stripeCount);
+
     return shared.setBeltProps(
       belt,
       stripeCount,
@@ -146,5 +142,27 @@ export class BeltSystem {
       this.transitionCSS,
       this.refreshInterval
     );
+  }
+
+  getBeltPropsByName(name: string, stripeCount: number): BeltProps[] {
+    const beltPropsAry: BeltProps[] = [];
+    const belt: Belt | undefined = this.belts.find(
+      (belt) => belt.name === name
+    );
+    if (belt) beltPropsAry.push(this.getBeltProps(belt, stripeCount));
+
+    return beltPropsAry;
+  }
+
+  getBeltPropsAll(transitionCSS: string, refreshInterval: number): BeltProps[] {
+    const beltPropsAry: BeltProps[] = [];
+    this.belts.forEach((belt) => {
+      const beltProps = this.getBeltProps(belt, belt.stripeCount);
+      beltProps.transitionCSS = transitionCSS;
+      beltProps.refreshInterval = refreshInterval;
+      beltPropsAry.push(beltProps);
+    });
+
+    return beltPropsAry;
   }
 }
