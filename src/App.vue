@@ -61,64 +61,64 @@ let randomSplit: BeltProps = getRandomBelt(
 </script>
 
 <template>
-  <h1>{{ ibjjfSystem.title }}</h1>
-  <div v-for="(belt, index) in ibjjfSystem.belts" :key="index">
-    <h2>{{ belt.name }}</h2>
-    <SVGBelt
-      :belt-props="ibjjfSystem.getBeltProps(belt.name, belt.stripeCount)"
-    />
-  </div>
-  <h1>Random Belts</h1>
-  <div class="row">
-    <div class="column">
-      <div>
-        <h2>Solid</h2>
-        <SVGBelt :belt-props="randomSolid" />
+  <section class="bg-white dark:bg-slate-800">
+    <main class="mx-40 pt-20">
+      <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
+        {{ ibjjfSystem.title }}
+      </h1>
+      <div class="columns-2">
+        <div v-for="(belt, index) in ibjjfSystem.belts" :key="index">
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            {{ belt.name }}
+          </h2>
+          <SVGBelt
+            :belt-props="ibjjfSystem.getBeltProps(belt.name, belt.stripeCount)"
+          />
+        </div>
       </div>
-      <div>
-        <h2>Split</h2>
-        <SVGBelt :belt-props="randomSplit" />
+      <h1 class="text-2xl font-bold text-slate-800 dark:text-white py-10">
+        Random Belts
+      </h1>
+      <div class="columns-3">
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Solid
+          </h2>
+          <SVGBelt :belt-props="randomSolid" />
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Split
+          </h2>
+          <SVGBelt :belt-props="randomSplit" />
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Striped
+          </h2>
+          <SVGBelt :belt-props="randomStriped" />
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Checkered
+          </h2>
+          <SVGBelt :belt-props="randomCheckered" />
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Coral
+          </h2>
+          <SVGBelt :belt-props="randomCoral" />
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
+            Crazy
+          </h2>
+          <SVGBelt :belt-props="randomCrazy" />
+        </div>
       </div>
-    </div>
-    <div class="column">
-      <div>
-        <h2>Striped</h2>
-        <SVGBelt :belt-props="randomStriped" />
-      </div>
-      <div>
-        <h2>Checkered</h2>
-        <SVGBelt :belt-props="randomCheckered" />
-      </div>
-    </div>
-    <div class="column">
-      <div>
-        <h2>Coral</h2>
-        <SVGBelt :belt-props="randomCoral" />
-      </div>
-      <div>
-        <h2>Crazy</h2>
-        <SVGBelt :belt-props="randomCrazy" />
-      </div>
-    </div>
-  </div>
+    </main>
+  </section>
 </template>
 
-<style scoped>
-* {
-  box-sizing: border-box;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
+<style scoped></style>
