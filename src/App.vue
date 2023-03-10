@@ -6,7 +6,7 @@ import ibjjfJSON from "./shared/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
 
-let randomCrazy: BeltProps = getRandomBelt(
+let randomCrazy: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -14,7 +14,7 @@ let randomCrazy: BeltProps = getRandomBelt(
   ["Crazy"],
   4000
 );
-let randomCheckered: BeltProps = getRandomBelt(
+let randomCheckered: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -23,7 +23,7 @@ let randomCheckered: BeltProps = getRandomBelt(
   4000
 );
 
-let randomSolid: BeltProps = getRandomBelt(
+let randomSolid: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -32,7 +32,7 @@ let randomSolid: BeltProps = getRandomBelt(
   4000
 );
 
-let randomStriped: BeltProps = getRandomBelt(
+let randomStriped: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -41,7 +41,7 @@ let randomStriped: BeltProps = getRandomBelt(
   4000
 );
 
-let randomCoral: BeltProps = getRandomBelt(
+let randomCoral: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -50,7 +50,7 @@ let randomCoral: BeltProps = getRandomBelt(
   4000
 );
 
-let randomSplit: BeltProps = getRandomBelt(
+let randomSplit: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
@@ -64,6 +64,14 @@ let randomSplit: BeltProps = getRandomBelt(
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
+        All IBJJF belts
+      </h1>
+      <SVGBelt
+        :belt-props="
+          ibjjfSystem.getBeltPropsAll('transition: all 3.0s ease-in-out;', 4000)
+        "
+      />
+      <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         {{ ibjjfSystem.title }}
       </h1>
       <div class="columns-2">
@@ -72,7 +80,9 @@ let randomSplit: BeltProps = getRandomBelt(
             {{ belt.name }}
           </h2>
           <SVGBelt
-            :belt-props="ibjjfSystem.getBeltProps(belt.name, belt.stripeCount)"
+            :belt-props="
+              ibjjfSystem.getBeltPropsByName(belt.name, belt.stripeCount)
+            "
           />
         </div>
       </div>
