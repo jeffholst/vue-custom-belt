@@ -495,7 +495,7 @@ if (
       index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
     myBelt.value = props.beltProps[index.value];
     if (myBelt.value.randomBeltTypes.length > 0) {
-      const randomBelt: BeltProps = getRandomBelt(
+      const randomBelt: BeltProps[] = getRandomBelt(
         myBelt.value.hasPatch,
         myBelt.value.hasProfessorPatch,
         myBelt.value.stripeCount,
@@ -503,7 +503,7 @@ if (
         myBelt.value.randomBeltTypes,
         myBelt.value.refreshInterval
       );
-      myBelt.value = randomBelt;
+      myBelt.value = randomBelt[0];
     }
   }, myBelt.value.refreshInterval);
 }
