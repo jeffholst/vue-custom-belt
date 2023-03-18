@@ -95,8 +95,8 @@ export interface BeltColor {
 
 export interface Belt {
   name: string;
-  type: BeltType;
   sortOrder: number;
+  type: BeltType;
   color1: string;
   color2: string;
   color3: string;
