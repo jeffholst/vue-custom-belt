@@ -1,6 +1,7 @@
 import type { BeltProps, BeltType, Belt, BeltColor } from "../types/BeltProps";
 
-function isValidHexaCode(str: string): boolean {
+//function isValidHexCode(str: string): boolean {
+export const isValidHexCode = (str: string): boolean => {
   // Regex to check valid
   // hexadecimalColor_code
   const regex = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
@@ -26,7 +27,7 @@ const mapColor = (color: string, colors: BeltColor[]): string => {
   // 3. else return color
   let rval = color;
 
-  if (!isValidHexaCode(color)) {
+  if (!isValidHexCode(color)) {
     const beltColor = colors.find((c) => c.name === color);
     if (beltColor) {
       rval = beltColor.hex;
