@@ -19,16 +19,18 @@ export const isValidHexCode = (str: string): boolean => {
   } else {
     return false;
   }
-}
+};
 
-const mapColor = (color: string, colors: BeltColor[]): string => {
+export const mapColor = (color: string, colors: BeltColor[]): string => {
   // 1. if color is valid hex code, return it
   // 2. else if color in colors, return hex code
   // 3. else return color
   let rval = color;
 
   if (!isValidHexCode(color)) {
-    const beltColor = colors.find((c) => c.name === color);
+    const beltColor = colors.find(
+      (c) => c.name.toUpperCase() === color.toUpperCase()
+    );
     if (beltColor) {
       rval = beltColor.hex;
     }
