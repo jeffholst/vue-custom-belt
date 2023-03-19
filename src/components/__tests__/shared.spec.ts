@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import * as shared from "../../shared/shared";
-import { BeltColor } from "../../types/BeltProps";
+import { BeltColor, Belt } from "../../types/BeltProps";
 
 describe("isValidHexCode", () => {
   const hexCodes: string[] = [
@@ -19,18 +19,42 @@ describe("isValidHexCode", () => {
   });
 });
 
-describe("mapColor", () => {
-  const colors: BeltColor[] = [
-    {
-      name: "White",
-      hex: "#FFFFFF",
-    },
-    {
-      name: "Gray",
-      hex: "#999999",
-    },
-  ];
+const colors: BeltColor[] = [
+  {
+    name: "White",
+    hex: "#FFFFFF",
+  },
+  {
+    name: "Black",
+    hex: "#000000",
+  },
+  {
+    name: "Gray",
+    hex: "#999999",
+  },
+];
 
+const belts: Belt[] = [
+  {
+    name: "White",
+    sortOrder: 10,
+    type: "Solid",
+    color1: "wHiTe",
+    color2: "Black",
+    color3: "Gray",
+    borderColor: "DarkBorder",
+    hasPatch: true,
+    patchColor: "Black",
+    patchBorderColor: "DarkBorder",
+    hasProfessorPatch: false,
+    professorPatchColor: "",
+    professorBorderColor: "",
+    stripeColor: "White",
+    stripeCount: 0,
+  },
+];
+
+describe("mapColor", () => {
   it("should return valid hexcode", () => {
     expect(shared.mapColor("#FFFFFF", colors)).toBe("#FFFFFF");
   });
@@ -49,5 +73,20 @@ describe("mapColor", () => {
 
   it("should return passed color", () => {
     expect(shared.mapColor("Red", colors)).toBe("Red");
+  });
+});
+
+describe("mapColors", () => {
+  shared.mapColors(belts, colors);
+  it("should return mapped color for White", () => {
+    expect(belts[0].color1).toBe("#FFFFFF");
+  });
+
+  it("should return mapped color for Black", () => {
+    expect(belts[0].color2).toBe("#000000");
+  });
+
+  it("should return mapped color for Gray", () => {
+    expect(belts[0].color3).toBe("#999999");
   });
 });
