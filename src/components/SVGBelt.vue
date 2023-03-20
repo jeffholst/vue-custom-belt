@@ -485,6 +485,10 @@ const props = defineProps<{
   beltProps: BeltProps[];
 }>();
 
+if (!props.beltProps) {
+  throw new Error("beltProps is required");
+}
+
 const myBelt = ref(props.beltProps[index.value]);
 if (
   myBelt.value.refreshInterval != undefined &&
