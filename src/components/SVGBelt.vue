@@ -1,5 +1,6 @@
 <template>
   <svg
+    v-if="isValid"
     id="svg_belt"
     :onClick="downLoadSVG"
     viewBox="0 0 471.2 190.2"
@@ -473,6 +474,9 @@
       </g>
     </g>
   </svg>
+  <div v-else>
+    <h1>Invalid beltParms received</h1>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -485,31 +489,33 @@ const props = defineProps<{
   beltProps: BeltProps[];
 }>();
 
+const isValid = ref(true);
+const myBelt = ref(props.beltProps ? props.beltProps[index.value] : undefined);
 if (!props.beltProps) {
-  throw new Error("beltProps is required");
-}
-
-const myBelt = ref(props.beltProps[index.value]);
-if (
-  myBelt.value.refreshInterval != undefined &&
-  myBelt.value.refreshInterval > 0
-) {
-  setInterval(() => {
-    index.value =
-      index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
-    myBelt.value = props.beltProps[index.value];
-    if (myBelt.value.randomBeltTypes.length > 0) {
-      const randomBelt: BeltProps[] = getRandomBelt(
-        myBelt.value.hasPatch,
-        myBelt.value.hasProfessorPatch,
-        myBelt.value.stripeCount,
-        myBelt.value.transitionCSS,
-        myBelt.value.randomBeltTypes,
-        myBelt.value.refreshInterval
-      );
-      myBelt.value = randomBelt[0];
-    }
-  }, myBelt.value.refreshInterval);
+  isValid.value = false;
+} else {
+  if (
+    myBelt.value != undefined &&
+    myBelt.value.refreshInterval != undefined &&
+    myBelt.value.refreshInterval > 0
+  ) {
+    setInterval(() => {
+      index.value =
+        index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
+      myBelt.value = props.beltProps[index.value];
+      if (myBelt.value.randomBeltTypes.length > 0) {
+        const randomBelt: BeltProps[] = getRandomBelt(
+          myBelt.value.hasPatch,
+          myBelt.value.hasProfessorPatch,
+          myBelt.value.stripeCount,
+          myBelt.value.transitionCSS,
+          myBelt.value.randomBeltTypes,
+          myBelt.value.refreshInterval
+        );
+        myBelt.value = randomBelt[0];
+      }
+    }, myBelt.value.refreshInterval);
+  }
 }
 
 const downLoadSVG = (event: any) => {
@@ -532,248 +538,432 @@ const additionalStyles = () => {
 };
 
 const transition = () => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   if (!myBelt.value.transitionCSS) return "";
   else return `${myBelt.value.transitionCSS};`;
 };
 
 const borderColor = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.border}; ${additionalStyles()}`;
 });
 
 const s1l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s1l1}; ${additionalStyles()}`;
 });
 
 const s1l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s1l2a}; ${additionalStyles()}`;
 });
 
 const s1l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s1l2b}; ${additionalStyles()}`;
 });
 
 const s1l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s1l3}; ${additionalStyles()}`;
 });
 
 const s2l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s2l1}; ${additionalStyles()}`;
 });
 
 const s2l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s2l2a}; ${additionalStyles()}`;
 });
 
 const s2l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s2l2b}; ${additionalStyles()}`;
 });
 
 const s2l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s2l3}; ${additionalStyles()}`;
 });
 
 const s3l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s3l1}; ${additionalStyles()}`;
 });
 
 const s3l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s3l2a}; ${additionalStyles()}`;
 });
 
 const s3l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s3l2b}; ${additionalStyles()}`;
 });
 
 const s3l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s3l3}; ${additionalStyles()}`;
 });
 
 const s4l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s4l1}; ${additionalStyles()}`;
 });
 
 const s4l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s4l2a}; ${additionalStyles()}`;
 });
 
 const s4l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s4l2b}; ${additionalStyles()}`;
 });
 
 const s4l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s4l3}; ${additionalStyles()}`;
 });
 
 const s5l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s5l1}; ${additionalStyles()}`;
 });
 
 const s5l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s5l2a}; ${additionalStyles()}`;
 });
 
 const s5l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s5l2b}; ${additionalStyles()}`;
 });
 
 const s5l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s5l3}; ${additionalStyles()}`;
 });
 
 const s6l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s6l1}; ${additionalStyles()}`;
 });
 
 const s6l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s6l2a}; ${additionalStyles()}`;
 });
 
 const s6l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s6l2b}; ${additionalStyles()}`;
 });
 
 const s6l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s6l3}; ${additionalStyles()}`;
 });
 
 const s7l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s7l1}; ${additionalStyles()}`;
 });
 
 const s7l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s7l2a}; ${additionalStyles()}`;
 });
 
 const s7l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s7l2b}; ${additionalStyles()}`;
 });
 
 const s7l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s7l3}; ${additionalStyles()}`;
 });
 
 const s8l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s8l1}; ${additionalStyles()}`;
 });
 
 const s8l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s8l2a}; ${additionalStyles()}`;
 });
 
 const s8l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s8l2b}; ${additionalStyles()}`;
 });
 
 const s8l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s8l3}; ${additionalStyles()}`;
 });
+
 const s9l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s9l1}; ${additionalStyles()}`;
 });
 
 const s9l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s9l2a}; ${additionalStyles()}`;
 });
 
 const s9l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s9l2b}; ${additionalStyles()}`;
 });
 
 const s9l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s9l3}; ${additionalStyles()}`;
 });
 
 const s10l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s10l1}; ${additionalStyles()}`;
 });
 
 const s10l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s10l2a}; ${additionalStyles()}`;
 });
 
 const s10l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s10l2b}; ${additionalStyles()}`;
 });
 
 const s10l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s10l3}; ${additionalStyles()}`;
 });
 
 const s11l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s11l1}; ${additionalStyles()}`;
 });
 
 const s11l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s11l2a}; ${additionalStyles()}`;
 });
 
 const s11l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s11l2b}; ${additionalStyles()}`;
 });
 
 const s11l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s11l3}; ${additionalStyles()}`;
 });
 
 const s12l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s12l1}; ${additionalStyles()}`;
 });
 
 const s12l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s12l2a}; ${additionalStyles()}`;
 });
 
 const s12l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s12l2b}; ${additionalStyles()}`;
 });
 
 const s12l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s12l3}; ${additionalStyles()}`;
 });
 
 const s13l1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s13l1}; ${additionalStyles()}`;
 });
 
 const s13l2a = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s13l2a}; ${additionalStyles()}`;
 });
 
 const s13l2b = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s13l2b}; ${additionalStyles()}`;
 });
 
 const s13l3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.s13l3}; ${additionalStyles()}`;
 });
 
 const hasPatch = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `visibility: ${myBelt.value.hasPatch ? "visible" : "hidden"};`;
 });
 
 const hasProfessorPatch = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `visibility: ${
     myBelt.value.hasProfessorPatch ? "visible" : "hidden"
   };`;
 });
 
 const professorPatchColor = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.professorPatch}; ${additionalStyles()}`;
 });
 
 const professorBorderColor = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.professorBorder}; ${additionalStyles()}`;
 });
 
 const patchColor = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.patch}; ${additionalStyles()}`;
 });
 
 const patchBorderColor = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${myBelt.value.patchBorder}; ${additionalStyles()}`;
 });
 
 const stripeStyle = (stripe: number, fill: string) => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return `fill: ${fill}; ${additionalStyles()} visibility: ${
     myBelt.value.stripeCount > 0 && myBelt.value.stripeCount >= stripe
       ? "visible"
@@ -782,6 +972,9 @@ const stripeStyle = (stripe: number, fill: string) => {
 };
 
 const getStripeIndex = (index: number): number => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   if (myBelt.value.stripeStart === "Left") {
     return index;
   } else {
@@ -790,42 +983,72 @@ const getStripeIndex = (index: number): number => {
 };
 
 const stripe1 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(1), myBelt.value.stripe1);
 });
 
 const stripe2 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(2), myBelt.value.stripe2);
 });
 
 const stripe3 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(3), myBelt.value.stripe3);
 });
 
 const stripe4 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(4), myBelt.value.stripe4);
 });
 
 const stripe5 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(5), myBelt.value.stripe5);
 });
 
 const stripe6 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(6), myBelt.value.stripe6);
 });
 
 const stripe7 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(7), myBelt.value.stripe7);
 });
 
 const stripe8 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(8), myBelt.value.stripe8);
 });
 
 const stripe9 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(9), myBelt.value.stripe9);
 });
 
 const stripe10 = computed(() => {
+  if (myBelt.value === undefined) {
+    return "";
+  }
   return stripeStyle(getStripeIndex(10), myBelt.value.stripe10);
 });
 </script>
