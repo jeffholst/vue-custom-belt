@@ -64,17 +64,17 @@ let randomSplit: BeltProps[] = getRandomBelt(
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        All IBJJF belts
+        All {{ ibjjfSystem.title }} belts (rotating)
       </h1>
       <SVGBelt
         :belt-props="
           ibjjfSystem.getBeltPropsAll('transition: all 3.0s ease-in-out;', 4000)
         "
       />
-      <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        {{ ibjjfSystem.title }}
+      <h1 class="pt-6 text-2xl font-bold text-slate-800 dark:text-white pb-10">
+        All {{ ibjjfSystem.title }} belts
       </h1>
-      <div class="columns-2">
+      <div class="grid grid-cols-2 gap-4">
         <div v-for="(belt, index) in ibjjfSystem.belts" :key="index">
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             {{ belt.name }}
