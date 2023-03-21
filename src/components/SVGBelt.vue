@@ -15,8 +15,8 @@
       >
         <rdf:Description
           about="https://github.com/jeffholst/svg-belt"
-          :dc:title="myBelt.rdfTitle"
-          :dc:description="myBelt.rdfDescription"
+          :dc:title="myBelt != undefined ? myBelt.rdfTitle : ''"
+          :dc:description="myBelt != undefined ? myBelt.rdfDescription : ''"
           dc:publisher="Jeff Holst"
           :dc:date="new Date().toISOString().slice(0, 10)"
           dc:format="image/svg"
