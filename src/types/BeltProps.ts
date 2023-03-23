@@ -109,6 +109,7 @@ export interface Belt {
   professorBorderColor: string;
   stripeColor: string;
   stripeCount: number;
+  stripeStart: StripeStart;
 }
 
 export class BeltSystem {
@@ -130,13 +131,18 @@ export class BeltSystem {
     shared.mapColors(this.belts, this.colors);
   }
 
-  getBeltProps(belt: Belt, stripeCount: number): BeltProps {
+  getBeltProps(
+    belt: Belt,
+    stripeCount: number,
+    stripeStart: StripeStart | undefined
+  ): BeltProps {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = shared.getDescription(rdfTitle, stripeCount);
 
     return shared.setBeltProps(
       belt,
       stripeCount,
+      stripeStart,
       rdfTitle,
       rdfDescription,
       this.transitionCSS,
@@ -144,12 +150,17 @@ export class BeltSystem {
     );
   }
 
-  getBeltPropsByName(name: string, stripeCount: number): BeltProps[] {
+  getBeltPropsByName(
+    name: string,
+    stripeCount: number,
+    stripeStart: StripeStart | undefined = undefined
+  ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt: Belt | undefined = this.belts.find(
       (belt) => belt.name === name
     );
-    if (belt) beltPropsAry.push(this.getBeltProps(belt, stripeCount));
+    if (belt)
+      beltPropsAry.push(this.getBeltProps(belt, stripeCount, stripeStart));
 
     return beltPropsAry;
   }
@@ -157,7 +168,11 @@ export class BeltSystem {
   getBeltPropsAll(transitionCSS: string, refreshInterval: number): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     this.belts.forEach((belt) => {
-      const beltProps = this.getBeltProps(belt, belt.stripeCount);
+      const beltProps = this.getBeltProps(
+        belt,
+        belt.stripeCount,
+        belt.stripeStart
+      );
       beltProps.transitionCSS = transitionCSS;
       beltProps.refreshInterval = refreshInterval;
       beltPropsAry.push(beltProps);

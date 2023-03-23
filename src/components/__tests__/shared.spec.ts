@@ -51,6 +51,7 @@ const belts: Belt[] = [
     professorBorderColor: "",
     stripeColor: "White",
     stripeCount: 0,
+    stripeStart: "Right",
   },
 ];
 

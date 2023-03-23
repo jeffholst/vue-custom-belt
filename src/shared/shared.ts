@@ -1,4 +1,10 @@
-import type { BeltProps, BeltType, Belt, BeltColor } from "../types/BeltProps";
+import type {
+  BeltProps,
+  BeltType,
+  Belt,
+  BeltColor,
+  StripeStart,
+} from "../types/BeltProps";
 
 //function isValidHexCode(str: string): boolean {
 export const isValidHexCode = (str: string): boolean => {
@@ -221,6 +227,7 @@ export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
   stripeCount: number | undefined,
+  stripeStart: StripeStart | undefined,
   transitionCSS: string = "",
   includeBelts: Array<BeltType> = [],
   refreshInterval: number = 0
@@ -231,7 +238,10 @@ export const getRandomBelt = (
   if (hasPatch === undefined) hasPatch = Math.random() < 0.5; // randomly pick true or false
   if (hasProfessorPatch === undefined) hasProfessorPatch = Math.random() < 0.5; // randomly pick true or false
   if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11); // randomly pick between 0-10 stripes
-
+  if (stripeStart === undefined)
+    Math.random() < 0.5 === true
+      ? (stripeStart = "Left")
+      : (stripeStart = "Right"); // randomly pick Left or Right
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       // if only one includeBelt items is specified, then use that belt type
@@ -305,6 +315,7 @@ export const getRandomBelt = (
   beltProps = setBeltProps(
     belt,
     stripeCount,
+    stripeStart,
     rdfTitle,
     rdfDescription,
     transitionCSS,
@@ -687,7 +698,8 @@ export const getBelt = (
   professorPatchColor: string = "",
   professorBorderColor: string = "",
   stripeColor: string = "",
-  stripeCount: number = 0
+  stripeCount: number = 0,
+  stripeStart: StripeStart = "Right"
 ): Belt => {
   const belt: Belt = {
     name: name ? name : "",
@@ -705,6 +717,7 @@ export const getBelt = (
     professorBorderColor: professorBorderColor ? professorBorderColor : "",
     stripeColor: stripeColor ? stripeColor : "",
     stripeCount: stripeCount ? stripeCount : 0,
+    stripeStart: stripeStart ? stripeStart : "Right",
   };
 
   return belt;
@@ -713,6 +726,7 @@ export const getBelt = (
 export const setBeltProps = (
   belt: Belt | undefined,
   stripeCount: number,
+  stripeStart: StripeStart | undefined,
   rdfTitle: string,
   rdfDescription: string,
   transitionCSS: string,
@@ -723,6 +737,8 @@ export const setBeltProps = (
   beltProps.transitionCSS = transitionCSS;
   beltProps.refreshInterval = refreshInterval;
   beltProps.stripeCount = stripeCount;
+  if (stripeStart != undefined) beltProps.stripeStart = stripeStart;
+  else if (belt != undefined) beltProps.stripeStart = belt.stripeStart;
 
   if (belt) {
     switch (belt.type) {

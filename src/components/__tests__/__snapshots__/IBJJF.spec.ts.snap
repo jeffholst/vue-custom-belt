@@ -765,6 +765,7 @@ BeltSystem {
       "sortOrder": 10,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -782,6 +783,7 @@ BeltSystem {
       "sortOrder": 20,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -799,6 +801,7 @@ BeltSystem {
       "sortOrder": 30,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -816,6 +819,7 @@ BeltSystem {
       "sortOrder": 40,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -833,6 +837,7 @@ BeltSystem {
       "sortOrder": 50,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -850,6 +855,7 @@ BeltSystem {
       "sortOrder": 60,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -867,6 +873,7 @@ BeltSystem {
       "sortOrder": 70,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -884,6 +891,7 @@ BeltSystem {
       "sortOrder": 80,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -901,6 +909,7 @@ BeltSystem {
       "sortOrder": 90,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -918,6 +927,7 @@ BeltSystem {
       "sortOrder": 100,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -935,6 +945,7 @@ BeltSystem {
       "sortOrder": 110,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -952,6 +963,7 @@ BeltSystem {
       "sortOrder": 120,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -969,6 +981,7 @@ BeltSystem {
       "sortOrder": 130,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Striped",
     },
     {
@@ -986,6 +999,7 @@ BeltSystem {
       "sortOrder": 140,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -1003,6 +1017,7 @@ BeltSystem {
       "sortOrder": 150,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -1020,6 +1035,7 @@ BeltSystem {
       "sortOrder": 160,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -1037,6 +1053,7 @@ BeltSystem {
       "sortOrder": 170,
       "stripeColor": "#FFFFFF",
       "stripeCount": 0,
+      "stripeStart": "Right",
       "type": "Solid",
     },
     {
@@ -1054,6 +1071,7 @@ BeltSystem {
       "sortOrder": 180,
       "stripeColor": "#990000",
       "stripeCount": 7,
+      "stripeStart": "Right",
       "type": "Coral",
     },
     {
@@ -1071,6 +1089,7 @@ BeltSystem {
       "sortOrder": 190,
       "stripeColor": "#990000",
       "stripeCount": 8,
+      "stripeStart": "Right",
       "type": "Coral",
     },
     {
@@ -1088,6 +1107,7 @@ BeltSystem {
       "sortOrder": 200,
       "stripeColor": "#990000",
       "stripeCount": 9,
+      "stripeStart": "Right",
       "type": "Solid",
     },
   ],

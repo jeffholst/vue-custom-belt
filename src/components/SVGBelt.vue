@@ -508,6 +508,7 @@ if (!props.beltProps) {
           myBelt.value.hasPatch,
           myBelt.value.hasProfessorPatch,
           myBelt.value.stripeCount,
+          myBelt.value.stripeStart,
           myBelt.value.transitionCSS,
           myBelt.value.randomBeltTypes,
           myBelt.value.refreshInterval
@@ -973,7 +974,7 @@ const stripeStyle = (stripe: number, fill: string) => {
 
 const getStripeIndex = (index: number): number => {
   if (myBelt.value === undefined) {
-    return "";
+    return -1;
   }
   if (myBelt.value.stripeStart === "Left") {
     return index;

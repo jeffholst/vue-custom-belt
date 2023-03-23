@@ -10,6 +10,7 @@ let randomCrazy: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Crazy"],
   4000
@@ -18,6 +19,7 @@ let randomCheckered: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Checkered"],
   4000
@@ -27,6 +29,7 @@ let randomSolid: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Solid"],
   4000
@@ -36,6 +39,7 @@ let randomStriped: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Striped"],
   4000
@@ -45,6 +49,7 @@ let randomCoral: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Coral"],
   4000
@@ -54,6 +59,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
   true,
   false,
   0,
+  undefined,
   "transition: all 3.0s ease-in-out;",
   ["Split"],
   4000
