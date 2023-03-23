@@ -90,3 +90,11 @@ describe("mapColors", () => {
     expect(belts[0].color3).toBe("#999999");
   });
 });
+
+describe("getBeltProps", () => {
+  it("should match snap", () => {
+    expect(
+      shared.getBeltProps("Test Title", "Test Description")
+    ).toMatchSnapshot();
+  });
+});
