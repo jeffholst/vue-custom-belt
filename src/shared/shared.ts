@@ -531,10 +531,6 @@ export const setCheckeredBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s6l2a = belt.color2;
   beltProps.s6l2b = belt.color2;
   beltProps.s6l3 = belt.color1;
-  beltProps.s6l1 = belt.color1;
-  beltProps.s6l2a = belt.color1;
-  beltProps.s6l2b = belt.color1;
-  beltProps.s6l3 = belt.color1;
   beltProps.s7l1 = belt.color1;
   beltProps.s7l2a = belt.color2;
   beltProps.s7l2b = belt.color2;
