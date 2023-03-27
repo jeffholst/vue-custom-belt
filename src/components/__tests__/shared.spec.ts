@@ -95,7 +95,15 @@ describe("mapColors", () => {
 describe("getBeltProps", () => {
   it("should match snap", () => {
     expect(
-      shared.getBeltProps("Test Title", "Test Description")
+      shared.getBeltProps(
+        "Test Title",
+        "Test Description",
+        undefined,
+        0,
+        "Left",
+        "",
+        0
+      )
     ).toMatchSnapshot();
   });
 });

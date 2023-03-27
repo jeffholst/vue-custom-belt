@@ -76,7 +76,7 @@ exports[`getBeltProps > should match snap 1`] = `
   "stripe8": "",
   "stripe9": "",
   "stripeCount": 0,
-  "stripeStart": "Right",
+  "stripeStart": "Left",
   "transitionCSS": "",
 }
 `;
