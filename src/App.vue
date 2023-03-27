@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SVGBelt from "./components/SVGBelt.vue";
 import { BeltProps, BeltSystem } from "./types/BeltProps";
-import { getRandomBelt } from "./shared/shared";
+import { getRandomBelt, getSolidBelt } from "./shared/shared";
 import ibjjfJSON from "./shared/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
@@ -69,6 +69,26 @@ let randomSplit: BeltProps[] = getRandomBelt(
 <template>
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
+      <SVGBelt
+        :belt-props="
+          getSolidBelt(
+            'test1',
+            'Yellow',
+            'Black',
+            true,
+            'Black',
+            'Black',
+            false,
+            '',
+            '',
+            'White',
+            4,
+            'Left',
+            'My Test Belt',
+            'My Test Belt Description'
+          )
+        "
+      />
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         All {{ ibjjfSystem.title }} belts (rotating)
       </h1>

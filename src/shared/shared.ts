@@ -153,7 +153,8 @@ const setPatchProperties = (
   professorBorderColor: string,
   hasProfessorPatch: boolean,
   stripeColor: string,
-  stripeCount: number
+  stripeCount: number,
+  stripeStart: StripeStart
 ) => {
   beltProps.hasPatch = hasPatch;
   beltProps.patch = patchColor;
@@ -162,7 +163,7 @@ const setPatchProperties = (
   beltProps.professorBorder = professorBorderColor;
   beltProps.hasProfessorPatch = hasProfessorPatch;
   beltProps.stripeCount = stripeCount;
-
+  beltProps.stripeStart = stripeStart;
   beltProps.stripe1 = stripeColor;
   beltProps.stripe2 = stripeColor;
   beltProps.stripe3 = stripeColor;
@@ -327,6 +328,61 @@ export const getRandomBelt = (
   const beltPropsAry: BeltProps[] = [];
   beltPropsAry.push(beltProps);
   return beltPropsAry;
+};
+
+export const getSolidBelt = (
+  name: string,
+  color: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string
+): BeltProps[] => {
+  const belt: Belt = getBelt(
+    name,
+    "Solid",
+    0,
+    color,
+    undefined,
+    undefined,
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart
+  );
+
+  const beltProps: BeltProps = getBeltProps(title, description);
+  setSolidBelt(belt, beltProps);
+  setPatchProperties(
+    beltProps,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    professorPatchColor,
+    professorBorderColor,
+    hasProfessorPatch,
+    stripeColor,
+    stripeCount,
+    stripeStart
+  );
+  const beltPropAry: BeltProps[] = [];
+  beltPropAry.push(beltProps);
+
+  return beltPropAry;
 };
 
 export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
@@ -770,7 +826,8 @@ export const setBeltProps = (
       belt.professorBorderColor,
       belt.hasProfessorPatch,
       belt.stripeColor,
-      stripeCount
+      stripeCount,
+      stripeStart
     );
   }
 
