@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import SVGBelt from "./components/SVGBelt.vue";
 import { BeltProps, BeltSystem } from "./types/BeltProps";
-import {
-  getRandomBelt,
-  getSolidBelt,
-  getStripedBelt,
-  getCoralBelt,
-  getSplitBelt,
-  getCheckeredBelt,
-} from "./shared/shared";
+import { getRandomBelt, getStripedBelt } from "./shared/shared";
 import ibjjfJSON from "./shared/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
