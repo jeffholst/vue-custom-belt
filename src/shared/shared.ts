@@ -379,9 +379,12 @@ export const getRandomBelt = (
   return beltPropsAry;
 };
 
-export const getSolidBelt = (
+const getPredefinedBelt = (
   name: string,
-  color: string,
+  beltType: BeltType,
+  color1: string,
+  color2: string,
+  color3: string,
   borderColor: string,
   hasPatch: boolean,
   patchColor: string,
@@ -399,11 +402,11 @@ export const getSolidBelt = (
 ): BeltProps[] => {
   const belt: Belt = getBelt(
     name,
-    "Solid",
+    beltType,
     0,
-    color,
-    undefined,
-    undefined,
+    color1,
+    color2,
+    color3,
     borderColor,
     hasPatch,
     patchColor,
@@ -430,6 +433,216 @@ export const getSolidBelt = (
   beltPropAry.push(beltProps);
 
   return beltPropAry;
+};
+
+export const getSolidBelt = (
+  name: string,
+  color: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getPredefinedBelt(
+    name,
+    "Solid",
+    color,
+    "",
+    "",
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
+};
+
+export const getStripedBelt = (
+  name: string,
+  color1: string,
+  color2: string,
+  color3: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getPredefinedBelt(
+    name,
+    "Striped",
+    color1,
+    color2,
+    color3,
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
+};
+
+export const getCoralBelt = (
+  name: string,
+  color1: string,
+  color2: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getPredefinedBelt(
+    name,
+    "Coral",
+    color1,
+    color2,
+    "",
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
+};
+
+export const getSplitBelt = (
+  name: string,
+  color1: string,
+  color2: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getPredefinedBelt(
+    name,
+    "Split",
+    color1,
+    color2,
+    "",
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
+};
+
+export const getCheckeredBelt = (
+  name: string,
+  color1: string,
+  color2: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripeStart,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getPredefinedBelt(
+    name,
+    "Checkered",
+    color1,
+    color2,
+    "",
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
 };
 
 export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
@@ -495,59 +708,59 @@ export const setStripedBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color1;
   beltProps.s1l2a = belt.color2;
   beltProps.s1l2b = belt.color2;
-  beltProps.s1l3 = belt.color1;
+  beltProps.s1l3 = belt.color3;
   beltProps.s2l1 = belt.color1;
   beltProps.s2l2a = belt.color2;
   beltProps.s2l2b = belt.color2;
-  beltProps.s2l3 = belt.color1;
+  beltProps.s2l3 = belt.color3;
   beltProps.s3l1 = belt.color1;
   beltProps.s3l2a = belt.color2;
   beltProps.s3l2b = belt.color2;
-  beltProps.s3l3 = belt.color1;
+  beltProps.s3l3 = belt.color3;
   beltProps.s4l1 = belt.color1;
   beltProps.s4l2a = belt.color2;
   beltProps.s4l2b = belt.color2;
-  beltProps.s4l3 = belt.color1;
+  beltProps.s4l3 = belt.color3;
   beltProps.s5l1 = belt.color1;
   beltProps.s5l2a = belt.color2;
   beltProps.s5l2b = belt.color2;
-  beltProps.s5l3 = belt.color1;
+  beltProps.s5l3 = belt.color3;
   beltProps.s6l1 = belt.color1;
   beltProps.s6l2a = belt.color2;
   beltProps.s6l2b = belt.color2;
-  beltProps.s6l3 = belt.color1;
+  beltProps.s6l3 = belt.color3;
   beltProps.s6l1 = belt.color1;
   beltProps.s6l2a = belt.color2;
   beltProps.s6l2b = belt.color2;
-  beltProps.s6l3 = belt.color1;
+  beltProps.s6l3 = belt.color3;
   beltProps.s7l1 = belt.color1;
   beltProps.s7l2a = belt.color2;
   beltProps.s7l2b = belt.color2;
-  beltProps.s7l3 = belt.color1;
+  beltProps.s7l3 = belt.color3;
   beltProps.s8l1 = belt.color1;
   beltProps.s8l2a = belt.color2;
   beltProps.s8l2b = belt.color2;
-  beltProps.s8l3 = belt.color1;
+  beltProps.s8l3 = belt.color3;
   beltProps.s9l1 = belt.color1;
   beltProps.s9l2a = belt.color2;
   beltProps.s9l2b = belt.color2;
-  beltProps.s9l3 = belt.color1;
+  beltProps.s9l3 = belt.color3;
   beltProps.s10l1 = belt.color1;
   beltProps.s10l2a = belt.color2;
   beltProps.s10l2b = belt.color2;
-  beltProps.s10l3 = belt.color1;
+  beltProps.s10l3 = belt.color3;
   beltProps.s11l1 = belt.color1;
   beltProps.s11l2a = belt.color2;
   beltProps.s11l2b = belt.color2;
-  beltProps.s11l3 = belt.color1;
+  beltProps.s11l3 = belt.color3;
   beltProps.s12l1 = belt.color1;
   beltProps.s12l2a = belt.color2;
   beltProps.s12l2b = belt.color2;
-  beltProps.s12l3 = belt.color1;
+  beltProps.s12l3 = belt.color3;
   beltProps.s13l1 = belt.color1;
   beltProps.s13l2a = belt.color2;
   beltProps.s13l2b = belt.color2;
-  beltProps.s13l3 = belt.color1;
+  beltProps.s13l3 = belt.color3;
 };
 
 export const setCoralBelt = (belt: Belt, beltProps: BeltProps) => {

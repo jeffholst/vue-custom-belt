@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import SVGBelt from "./components/SVGBelt.vue";
 import { BeltProps, BeltSystem } from "./types/BeltProps";
-import { getRandomBelt, getSolidBelt } from "./shared/shared";
+import {
+  getRandomBelt,
+  getSolidBelt,
+  getStripedBelt,
+  getCoralBelt,
+  getSplitBelt,
+  getCheckeredBelt,
+} from "./shared/shared";
 import ibjjfJSON from "./shared/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
@@ -69,23 +76,28 @@ let randomSplit: BeltProps[] = getRandomBelt(
 <template>
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
+      <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
+        USA Striped Belt
+      </h1>
       <SVGBelt
         :belt-props="
-          getSolidBelt(
-            'test1',
-            'Yellow',
+          getStripedBelt(
+            'USA Belt',
+            'Red',
+            'White',
+            'Blue',
             'Black',
             true,
-            'Black',
+            'White',
             'Black',
             false,
             '',
             '',
-            'White',
-            4,
-            'Left',
-            'My Test Belt',
-            'My Test Belt Description',
+            '',
+            0,
+            'Right',
+            'USA Striped Belt',
+            'USA Striped Belt no Stripes',
             '',
             0
           )
