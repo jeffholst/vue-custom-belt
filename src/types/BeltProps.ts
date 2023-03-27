@@ -139,15 +139,17 @@ export class BeltSystem {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = shared.getDescription(rdfTitle, stripeCount);
 
-    return shared.setBeltProps(
+    const beltProps: BeltProps = shared.getBeltProps(
+      rdfTitle,
+      rdfDescription,
       belt,
       stripeCount,
       stripeStart,
-      rdfTitle,
-      rdfDescription,
       this.transitionCSS,
       this.refreshInterval
     );
+
+    return beltProps;
   }
 
   getBeltPropsByName(

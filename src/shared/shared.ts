@@ -61,7 +61,12 @@ export const mapColors = (belts: Belt[], colors: BeltColor[]) => {
 
 export const getBeltProps = (
   title: string = "",
-  description: string = ""
+  description: string = "",
+  belt: Belt | undefined,
+  stripeCount: number,
+  stripeStart: StripeStart | undefined,
+  transitionCSS: string,
+  refreshInterval: number
 ): BeltProps => {
   const beltProps: BeltProps = {
     border: "",
@@ -141,6 +146,52 @@ export const getBeltProps = (
     randomBeltTypes: Array<BeltType>(),
     refreshInterval: 0,
   };
+
+  beltProps.transitionCSS = transitionCSS;
+  beltProps.refreshInterval = refreshInterval;
+  beltProps.stripeCount = stripeCount;
+  if (stripeStart != undefined) beltProps.stripeStart = stripeStart;
+  else if (belt != undefined) beltProps.stripeStart = belt.stripeStart;
+
+  if (belt) {
+    switch (belt.type) {
+      case "Solid":
+        setSolidBelt(belt, beltProps);
+        break;
+      case "Striped":
+        setStripedBelt(belt, beltProps);
+        break;
+      case "Coral":
+        setCoralBelt(belt, beltProps);
+        break;
+      case "Split":
+        setSplitBelt(belt, beltProps);
+        break;
+      case "Checkered":
+        setCheckeredBelt(belt, beltProps);
+        break;
+      case "Crazy":
+        setCrazyBelt(belt, beltProps);
+        break;
+    }
+    beltProps.border = belt.borderColor;
+    //beltProps.patchBorder = belt.patchBorderColor;
+    //beltProps.professorBorder = belt.professorBorderColor;
+
+    setPatchProperties(
+      beltProps,
+      belt.hasPatch,
+      belt.patchColor,
+      belt.patchBorderColor,
+      belt.professorPatchColor,
+      belt.professorBorderColor,
+      belt.hasProfessorPatch,
+      belt.stripeColor,
+      stripeCount,
+      stripeStart
+    );
+  }
+
   return beltProps;
 };
 
@@ -154,7 +205,7 @@ const setPatchProperties = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart
+  stripeStart: StripeStart | undefined
 ) => {
   beltProps.hasPatch = hasPatch;
   beltProps.patch = patchColor;
@@ -163,7 +214,7 @@ const setPatchProperties = (
   beltProps.professorBorder = professorBorderColor;
   beltProps.hasProfessorPatch = hasProfessorPatch;
   beltProps.stripeCount = stripeCount;
-  beltProps.stripeStart = stripeStart;
+  beltProps.stripeStart = stripeStart != undefined ? stripeStart : "Right";
   beltProps.stripe1 = stripeColor;
   beltProps.stripe2 = stripeColor;
   beltProps.stripe3 = stripeColor;
@@ -261,8 +312,6 @@ export const getRandomBelt = (
     randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
 
-  let beltProps: BeltProps = getBeltProps();
-
   const belt: Belt = getBelt();
   belt.sortOrder = 0;
   belt.color1 = getRandomHexColor();
@@ -313,12 +362,12 @@ export const getRandomBelt = (
       break;
   }
 
-  beltProps = setBeltProps(
+  const beltProps: BeltProps = getBeltProps(
+    rdfTitle,
+    rdfDescription,
     belt,
     stripeCount,
     stripeStart,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -344,7 +393,9 @@ export const getSolidBelt = (
   stripeCount: number,
   stripeStart: StripeStart,
   title: string,
-  description: string
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
 ): BeltProps[] => {
   const belt: Belt = getBelt(
     name,
@@ -365,20 +416,16 @@ export const getSolidBelt = (
     stripeStart
   );
 
-  const beltProps: BeltProps = getBeltProps(title, description);
-  setSolidBelt(belt, beltProps);
-  setPatchProperties(
-    beltProps,
-    hasPatch,
-    patchColor,
-    patchBorderColor,
-    professorPatchColor,
-    professorBorderColor,
-    hasProfessorPatch,
-    stripeColor,
+  const beltProps: BeltProps = getBeltProps(
+    title,
+    description,
+    belt,
     stripeCount,
-    stripeStart
+    stripeStart,
+    transitionCSS,
+    refreshInterval
   );
+
   const beltPropAry: BeltProps[] = [];
   beltPropAry.push(beltProps);
 
@@ -773,63 +820,4 @@ export const getBelt = (
   };
 
   return belt;
-};
-
-export const setBeltProps = (
-  belt: Belt | undefined,
-  stripeCount: number,
-  stripeStart: StripeStart | undefined,
-  rdfTitle: string,
-  rdfDescription: string,
-  transitionCSS: string,
-  refreshInterval: number
-): BeltProps => {
-  const beltProps: BeltProps = getBeltProps(rdfTitle, rdfDescription);
-
-  beltProps.transitionCSS = transitionCSS;
-  beltProps.refreshInterval = refreshInterval;
-  beltProps.stripeCount = stripeCount;
-  if (stripeStart != undefined) beltProps.stripeStart = stripeStart;
-  else if (belt != undefined) beltProps.stripeStart = belt.stripeStart;
-
-  if (belt) {
-    switch (belt.type) {
-      case "Solid":
-        setSolidBelt(belt, beltProps);
-        break;
-      case "Striped":
-        setStripedBelt(belt, beltProps);
-        break;
-      case "Coral":
-        setCoralBelt(belt, beltProps);
-        break;
-      case "Split":
-        setSplitBelt(belt, beltProps);
-        break;
-      case "Checkered":
-        setCheckeredBelt(belt, beltProps);
-        break;
-      case "Crazy":
-        setCrazyBelt(belt, beltProps);
-        break;
-    }
-    beltProps.border = belt.borderColor;
-    //beltProps.patchBorder = belt.patchBorderColor;
-    //beltProps.professorBorder = belt.professorBorderColor;
-
-    setPatchProperties(
-      beltProps,
-      belt.hasPatch,
-      belt.patchColor,
-      belt.patchBorderColor,
-      belt.professorPatchColor,
-      belt.professorBorderColor,
-      belt.hasProfessorPatch,
-      belt.stripeColor,
-      stripeCount,
-      stripeStart
-    );
-  }
-
-  return beltProps;
 };

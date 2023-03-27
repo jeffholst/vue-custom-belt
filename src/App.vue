@@ -85,7 +85,9 @@ let randomSplit: BeltProps[] = getRandomBelt(
             4,
             'Left',
             'My Test Belt',
-            'My Test Belt Description'
+            'My Test Belt Description',
+            '',
+            0
           )
         "
       />
