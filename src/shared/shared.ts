@@ -245,10 +245,6 @@ const getRandomHexColor = (): string => {
   return `#${randomColor}`;
 };
 
-export const copyBeltProps = (oldProps: BeltProps, newProps: BeltProps) => {
-  oldProps = Object.assign(oldProps, newProps);
-};
-
 const getRandomBeltIndex = (beltType: BeltType): number => {
   let index: number = -1;
 
@@ -645,7 +641,7 @@ export const getCheckeredBelt = (
   );
 };
 
-export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
+const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color1;
   beltProps.s1l2a = belt.color1;
   beltProps.s1l2b = belt.color1;
@@ -704,7 +700,7 @@ export const setSolidBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color1;
 };
 
-export const setStripedBelt = (belt: Belt, beltProps: BeltProps) => {
+const setStripedBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color1;
   beltProps.s1l2a = belt.color2;
   beltProps.s1l2b = belt.color2;
@@ -763,7 +759,7 @@ export const setStripedBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color3;
 };
 
-export const setCoralBelt = (belt: Belt, beltProps: BeltProps) => {
+const setCoralBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color2;
   beltProps.s1l2a = belt.color2;
   beltProps.s1l2b = belt.color2;
@@ -822,7 +818,7 @@ export const setCoralBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color1;
 };
 
-export const setCheckeredBelt = (belt: Belt, beltProps: BeltProps) => {
+const setCheckeredBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color1;
   beltProps.s1l2a = belt.color2;
   beltProps.s1l2b = belt.color2;
@@ -877,7 +873,7 @@ export const setCheckeredBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color1;
 };
 
-export const setSplitBelt = (belt: Belt, beltProps: BeltProps) => {
+const setSplitBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = belt.color1;
   beltProps.s1l2a = belt.color1;
   beltProps.s1l2b = belt.color2;
@@ -936,7 +932,7 @@ export const setSplitBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s13l3 = belt.color2;
 };
 
-export const setCrazyBelt = (belt: Belt, beltProps: BeltProps) => {
+const setCrazyBelt = (belt: Belt, beltProps: BeltProps) => {
   beltProps.s1l1 = getRandomHexColor();
   beltProps.s1l2a = getRandomHexColor();
   beltProps.s1l2b = getRandomHexColor();
