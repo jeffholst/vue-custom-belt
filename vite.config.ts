@@ -12,7 +12,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/components/main.ts"),
       name: "SVGBelt",
       // the proper extensions will be added
-      fileName: "svg-belt",
+      fileName: "vue-svg-belt",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

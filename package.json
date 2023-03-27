@@ -1,17 +1,17 @@
 {
-  "name": "svg-belt",
+  "name": "vue-svg-belt",
   "version": "0.1.2",
   "type": "module",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "./dist/svg-belt.umd.cjs",
-  "module": "./dist/svg-belt.js",
+  "main": "./dist/vue-svg-belt.umd.cjs",
+  "module": "./dist/vue-svg-belt.js",
   "exports": {
     ".": {
-      "import": "./dist/svg-belt.js",
-      "require": "./dist/svg-belt.umd.cjs"
+      "import": "./dist/vue-svg-belt.js",
+      "require": "./dist/vue-svg-belt.umd.cjs"
     }
   },
   "types": "./dist/components/main.d.ts",
