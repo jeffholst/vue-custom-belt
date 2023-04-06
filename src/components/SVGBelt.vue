@@ -480,7 +480,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import type { BeltProps } from "../types/BeltProps";
 import { getRandomBelt } from "../shared/shared";
 
@@ -491,33 +491,47 @@ const props = defineProps<{
 
 const isValid = ref(true);
 const myBelt = ref(props.beltProps ? props.beltProps[index.value] : undefined);
-if (!props.beltProps) {
-  isValid.value = false;
-} else {
-  if (
-    myBelt.value != undefined &&
-    myBelt.value.refreshInterval != undefined &&
-    myBelt.value.refreshInterval > 0
-  ) {
-    setInterval(() => {
-      index.value =
-        index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
-      myBelt.value = props.beltProps[index.value];
-      if (myBelt.value.randomBeltTypes.length > 0) {
-        const randomBelt: BeltProps[] = getRandomBelt(
-          myBelt.value.hasPatch,
-          myBelt.value.hasProfessorPatch,
-          myBelt.value.stripeCount,
-          myBelt.value.stripeStart,
-          myBelt.value.transitionCSS,
-          myBelt.value.randomBeltTypes,
-          myBelt.value.refreshInterval
-        );
-        myBelt.value = randomBelt[0];
-      }
-    }, myBelt.value.refreshInterval);
+
+watch(
+  () => props.beltProps,
+  () => {
+    updateProps();
   }
-}
+);
+
+const updateProps = () => {
+  if (!props.beltProps) {
+    isValid.value = false;
+  } else {
+    index.value = 0;
+    myBelt.value = props.beltProps[index.value];
+    if (
+      myBelt.value != undefined &&
+      myBelt.value.refreshInterval != undefined &&
+      myBelt.value.refreshInterval > 0
+    ) {
+      setInterval(() => {
+        index.value =
+          index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
+        myBelt.value = props.beltProps[index.value];
+        if (myBelt.value.randomBeltTypes.length > 0) {
+          const randomBelt: BeltProps[] = getRandomBelt(
+            myBelt.value.hasPatch,
+            myBelt.value.hasProfessorPatch,
+            myBelt.value.stripeCount,
+            myBelt.value.stripeStart,
+            myBelt.value.transitionCSS,
+            myBelt.value.randomBeltTypes,
+            myBelt.value.refreshInterval
+          );
+          myBelt.value = randomBelt[0];
+        }
+      }, myBelt.value.refreshInterval);
+    }
+  }
+};
+
+updateProps();
 
 const downLoadSVG = (event: any) => {
   const svgContent = event.target.closest("svg").outerHTML;
