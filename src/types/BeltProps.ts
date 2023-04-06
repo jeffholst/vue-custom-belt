@@ -1,13 +1,17 @@
 import * as shared from "../shared/shared";
 
-export type StripeStart = "Left" | "Right";
-export type BeltType =
-  | "Solid"
-  | "Striped"
-  | "Coral"
-  | "Split"
-  | "Checkered"
-  | "Crazy";
+export const stripeStart = ["Left", "Right"] as const;
+export type StripeStart = (typeof stripeStart)[number];
+
+export const beltType = [
+  "Solid",
+  "Striped",
+  "Coral",
+  "Split",
+  "Checkered",
+  "Crazy",
+] as const;
+export type BeltType = (typeof beltType)[number];
 
 export interface BeltProps {
   border: string;
