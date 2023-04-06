@@ -1,9 +1,9 @@
 import type {
   BeltProps,
-  BeltType,
+  BeltTypes,
   Belt,
   BeltColor,
-  StripeStart,
+  StripePositions,
 } from "../types/BeltProps";
 
 //function isValidHexCode(str: string): boolean {
@@ -64,7 +64,7 @@ export const getBeltProps = (
   description: string = "",
   belt: Belt | undefined,
   stripeCount: number,
-  stripeStart: StripeStart | undefined,
+  stripeStart: StripePositions | undefined,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps => {
@@ -143,7 +143,7 @@ export const getBeltProps = (
     transitionCSS: "",
     rdfTitle: title,
     rdfDescription: description,
-    randomBeltTypes: Array<BeltType>(),
+    randomBeltTypes: Array<BeltTypes>(),
     refreshInterval: 0,
   };
 
@@ -205,7 +205,7 @@ const setPatchProperties = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart | undefined
+  stripeStart: StripePositions | undefined
 ) => {
   beltProps.hasPatch = hasPatch;
   beltProps.patch = patchColor;
@@ -245,10 +245,10 @@ const getRandomHexColor = (): string => {
   return `#${randomColor}`;
 };
 
-const getRandomBeltIndex = (beltType: BeltType): number => {
+const getRandomBeltIndex = (bType: BeltTypes): number => {
   let index: number = -1;
 
-  switch (beltType) {
+  switch (bType) {
     case "Solid":
       index = 0;
       break;
@@ -275,9 +275,9 @@ export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
   stripeCount: number | undefined,
-  stripeStart: StripeStart | undefined,
+  stripeStart: StripePositions | undefined,
   transitionCSS: string = "",
-  includeBelts: Array<BeltType> = [],
+  includeBelts: Array<BeltTypes> = [],
   refreshInterval: number = 0
 ): BeltProps[] => {
   let randomBeltTypeIndex;
@@ -296,7 +296,7 @@ export const getRandomBelt = (
       randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
     } else {
       // build array of includeBelt types and selct random one
-      const ary: Array<BeltType> = [];
+      const ary: Array<BeltTypes> = [];
       for (let i = 0; i < includeBelts.length; i++) {
         ary.push(includeBelts[i]);
       }
@@ -377,7 +377,7 @@ export const getRandomBelt = (
 
 export const getPredefinedBelt = (
   name: string,
-  beltType: BeltType,
+  beltType: BeltTypes,
   color1: string,
   color2: string,
   color3: string,
@@ -390,7 +390,7 @@ export const getPredefinedBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -443,7 +443,7 @@ export const getSolidBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -486,7 +486,7 @@ export const getStripedBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -528,7 +528,7 @@ export const getCoralBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -570,7 +570,7 @@ export const getSplitBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -612,7 +612,7 @@ export const getCheckeredBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripeStart,
+  stripeStart: StripePositions,
   title: string,
   description: string,
   transitionCSS: string,
@@ -993,7 +993,7 @@ const setCrazyBelt = (belt: Belt, beltProps: BeltProps) => {
 
 export const getBelt = (
   name: string = "",
-  type: BeltType = "Solid",
+  type: BeltTypes = "Solid",
   sortOrder: number = 0,
   color1: string = "",
   color2: string = "",
@@ -1007,7 +1007,7 @@ export const getBelt = (
   professorBorderColor: string = "",
   stripeColor: string = "",
   stripeCount: number = 0,
-  stripeStart: StripeStart = "Right"
+  stripeStart: StripePositions = "Right"
 ): Belt => {
   const belt: Belt = {
     name: name ? name : "",

@@ -1,14 +1,14 @@
 import { describe, it, expect } from "vitest";
 import {
-  stripeStart,
-  StripeStart,
-  beltType,
-  BeltType,
+  stripePositions,
+  StripePositions,
+  beltTypes,
+  BeltTypes,
 } from "../../types/BeltProps";
 
 describe("StripeStart", () => {
   let rval = "";
-  stripeStart.forEach((ss: StripeStart) => {
+  stripePositions.forEach((ss: StripePositions) => {
     rval += ss;
   });
 
@@ -19,7 +19,7 @@ describe("StripeStart", () => {
 
 describe("BeltType", () => {
   let rval = "";
-  beltType.forEach((bt: BeltType) => {
+  beltTypes.forEach((bt: BeltTypes) => {
     rval += bt;
   });
 

@@ -1,9 +1,9 @@
 import * as shared from "../shared/shared";
 
-export const stripeStart = ["Left", "Right"] as const;
-export type StripeStart = (typeof stripeStart)[number];
+export const stripePositions = ["Left", "Right"] as const;
+export type StripePositions = (typeof stripePositions)[number];
 
-export const beltType = [
+export const beltTypes = [
   "Solid",
   "Striped",
   "Coral",
@@ -11,7 +11,7 @@ export const beltType = [
   "Checkered",
   "Crazy",
 ] as const;
-export type BeltType = (typeof beltType)[number];
+export type BeltTypes = (typeof beltTypes)[number];
 
 export interface BeltProps {
   border: string;
@@ -22,7 +22,7 @@ export interface BeltProps {
   professorBorder: string;
   hasProfessorPatch: boolean;
   stripeCount: number;
-  stripeStart: StripeStart;
+  stripeStart: StripePositions;
   stripe1: string;
   stripe2: string;
   stripe3: string;
@@ -88,7 +88,7 @@ export interface BeltProps {
   transitionCSS: string;
   rdfTitle: string;
   rdfDescription: string;
-  randomBeltTypes: BeltType[];
+  randomBeltTypes: BeltTypes[];
   refreshInterval: number;
 }
 
@@ -100,7 +100,7 @@ export interface BeltColor {
 export interface Belt {
   name: string;
   sortOrder: number;
-  type: BeltType;
+  type: BeltTypes;
   color1: string;
   color2: string;
   color3: string;
@@ -113,7 +113,7 @@ export interface Belt {
   professorBorderColor: string;
   stripeColor: string;
   stripeCount: number;
-  stripeStart: StripeStart;
+  stripeStart: StripePositions;
 }
 
 export class BeltSystem {
@@ -138,7 +138,7 @@ export class BeltSystem {
   getBeltProps(
     belt: Belt,
     stripeCount: number,
-    stripeStart: StripeStart | undefined
+    stripeStart: StripePositions | undefined
   ): BeltProps {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = shared.getDescription(rdfTitle, stripeCount);
@@ -159,7 +159,7 @@ export class BeltSystem {
   getBeltPropsByName(
     name: string,
     stripeCount: number,
-    stripeStart: StripeStart | undefined = undefined
+    stripeStart: StripePositions | undefined = undefined
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt: Belt | undefined = this.belts.find(
