@@ -375,7 +375,7 @@ export const getRandomBelt = (
   return beltPropsAry;
 };
 
-const getPredefinedBelt = (
+export const getPredefinedBelt = (
   name: string,
   beltType: BeltType,
   color1: string,
