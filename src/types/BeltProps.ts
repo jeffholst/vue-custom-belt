@@ -158,15 +158,22 @@ export class BeltSystem {
 
   getBeltPropsByName(
     name: string,
-    stripeCount: number,
+    stripeCount: number | undefined = undefined,
     stripeStart: StripePositions | undefined = undefined
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt: Belt | undefined = this.belts.find(
       (belt) => belt.name === name
     );
-    if (belt)
-      beltPropsAry.push(this.getBeltProps(belt, stripeCount, stripeStart));
+    if (belt) {
+      beltPropsAry.push(
+        this.getBeltProps(
+          belt,
+          stripeCount === undefined ? belt.stripeCount : stripeCount,
+          stripeStart
+        )
+      );
+    }
 
     return beltPropsAry;
   }
