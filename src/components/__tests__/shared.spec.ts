@@ -36,6 +36,7 @@ const colors: BeltColor[] = [
 
 const belts: Belt[] = [
   {
+    id: 1,
     name: "White",
     sortOrder: 10,
     type: "Solid",
@@ -51,7 +52,9 @@ const belts: Belt[] = [
     professorBorderColor: "",
     stripeColor: "White",
     stripeCount: 0,
-    stripeStart: "Right",
+    stripePosition: "Right",
+    minStripes: 0,
+    maxStripes: 4,
   },
 ];
 

@@ -75,6 +75,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
       <SVGBelt
         :belt-props="
           getStripedBelt(
+            1,
             'USA Belt',
             'Red',
             'White',
@@ -89,6 +90,8 @@ let randomSplit: BeltProps[] = getRandomBelt(
             '',
             0,
             'Right',
+            0,
+            4,
             'USA Striped Belt',
             'USA Striped Belt no Stripes',
             '',

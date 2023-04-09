@@ -58,6 +58,7 @@
   ],
   "belts": [
     {
+      "id": 1,
       "name": "White",
       "sortOrder": 10,
       "type": "Solid",
@@ -72,10 +73,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 4
     },
     {
+      "id": 2,
       "name": "Gray/White",
       "sortOrder": 20,
       "type": "Striped",
@@ -90,10 +93,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 3,
       "name": "Gray",
       "sortOrder": 30,
       "type": "Solid",
@@ -108,10 +113,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 4,
       "name": "Gray/Black",
       "sortOrder": 40,
       "type": "Striped",
@@ -126,10 +133,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 5,
       "name": "Yellow/White",
       "sortOrder": 50,
       "type": "Striped",
@@ -144,10 +153,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 6,
       "name": "Yellow",
       "sortOrder": 60,
       "type": "Solid",
@@ -162,10 +173,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 7,
       "name": "Yellow/Black",
       "sortOrder": 70,
       "type": "Striped",
@@ -180,10 +193,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 8,
       "name": "Orange/White",
       "sortOrder": 80,
       "type": "Striped",
@@ -198,10 +213,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 9,
       "name": "Orange",
       "sortOrder": 90,
       "type": "Solid",
@@ -216,10 +233,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 10,
       "name": "Orange/Black",
       "sortOrder": 100,
       "type": "Striped",
@@ -234,10 +253,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 11,
       "name": "Green/White",
       "sortOrder": 110,
       "type": "Striped",
@@ -252,10 +273,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 12,
       "name": "Green",
       "sortOrder": 120,
       "type": "Solid",
@@ -270,10 +293,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 13,
       "name": "Green/Black",
       "sortOrder": 130,
       "type": "Striped",
@@ -288,10 +313,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 3
     },
     {
+      "id": 14,
       "name": "Blue",
       "sortOrder": 140,
       "type": "Solid",
@@ -306,10 +333,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 4
     },
     {
+      "id": 15,
       "name": "Purple",
       "sortOrder": 150,
       "type": "Solid",
@@ -324,10 +353,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 4
     },
     {
+      "id": 16,
       "name": "Brown",
       "sortOrder": 160,
       "type": "Solid",
@@ -342,10 +373,12 @@
       "professorPatchColor": "",
       "professorBorderColor": "",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 4
     },
     {
+      "id": 17,
       "name": "Black",
       "sortOrder": 170,
       "type": "Solid",
@@ -360,10 +393,12 @@
       "professorPatchColor": "White",
       "professorBorderColor": "LightBorder",
       "stripeColor": "White",
-      "stripeCount": 0,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 0,
+      "maxStripes": 6
     },
     {
+      "id": 18,
       "name": "Red/Black",
       "sortOrder": 180,
       "type": "Coral",
@@ -378,10 +413,12 @@
       "professorPatchColor": "Gray",
       "professorBorderColor": "LightBorder",
       "stripeColor": "Red",
-      "stripeCount": 7,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 7,
+      "maxStripes": 7
     },
     {
+      "id": 19,
       "name": "Red/White",
       "sortOrder": 190,
       "type": "Coral",
@@ -396,10 +433,12 @@
       "professorPatchColor": "Gray",
       "professorBorderColor": "DarkBorder",
       "stripeColor": "Red",
-      "stripeCount": 8,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 8,
+      "maxStripes": 8
     },
     {
+      "id": 20,
       "name": "Red",
       "sortOrder": 200,
       "type": "Solid",
@@ -415,7 +454,9 @@
       "professorBorderColor": "DarkBorder",
       "stripeColor": "Red",
       "stripeCount": 9,
-      "stripeStart": "Right"
+      "stripeStart": "Right",
+      "minStripes": 9,
+      "maxStripes": 10 
     }
   ]
 }

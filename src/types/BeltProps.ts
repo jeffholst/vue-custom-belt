@@ -22,7 +22,7 @@ export interface BeltProps {
   professorBorder: string;
   hasProfessorPatch: boolean;
   stripeCount: number;
-  stripeStart: StripePositions;
+  stripePosition: StripePositions;
   stripe1: string;
   stripe2: string;
   stripe3: string;
@@ -98,6 +98,7 @@ export interface BeltColor {
 }
 
 export interface Belt {
+  id: number;
   name: string;
   sortOrder: number;
   type: BeltTypes;
@@ -113,7 +114,9 @@ export interface Belt {
   professorBorderColor: string;
   stripeColor: string;
   stripeCount: number;
-  stripeStart: StripePositions;
+  stripePosition: StripePositions;
+  minStripes: number;
+  maxStripes: number;
 }
 
 export class BeltSystem {
@@ -138,7 +141,7 @@ export class BeltSystem {
   getBeltProps(
     belt: Belt,
     stripeCount: number,
-    stripeStart: StripePositions | undefined
+    stripePosition: StripePositions | undefined
   ): BeltProps {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = shared.getDescription(rdfTitle, stripeCount);
@@ -148,7 +151,7 @@ export class BeltSystem {
       rdfDescription,
       belt,
       stripeCount,
-      stripeStart,
+      stripePosition,
       this.transitionCSS,
       this.refreshInterval
     );
@@ -159,7 +162,7 @@ export class BeltSystem {
   getBeltPropsByName(
     name: string,
     stripeCount: number | undefined = undefined,
-    stripeStart: StripePositions | undefined = undefined
+    stripePosition: StripePositions | undefined = undefined
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt: Belt | undefined = this.belts.find(
@@ -170,7 +173,7 @@ export class BeltSystem {
         this.getBeltProps(
           belt,
           stripeCount === undefined ? belt.stripeCount : stripeCount,
-          stripeStart
+          stripePosition
         )
       );
     }
@@ -184,7 +187,7 @@ export class BeltSystem {
       const beltProps = this.getBeltProps(
         belt,
         belt.stripeCount,
-        belt.stripeStart
+        belt.stripePosition
       );
       beltProps.transitionCSS = transitionCSS;
       beltProps.refreshInterval = refreshInterval;
