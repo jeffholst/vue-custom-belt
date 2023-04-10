@@ -1,7 +1,7 @@
 {
   "name": "vue-svg-belt",
   "author": "Jeff Holst",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Vue 3 component to easily create any style martial arts belt in SVG format.",
   "keywords": [
     "vue",

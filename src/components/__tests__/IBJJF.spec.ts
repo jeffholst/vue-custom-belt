@@ -5,7 +5,7 @@ import {
   beltTypes,
   BeltTypes,
   stripePositions,
-  StripePositions
+  StripePositions,
 } from "../../types/BeltProps";
 import ibjjfJSON from "../../shared/ibjjf.json";
 
