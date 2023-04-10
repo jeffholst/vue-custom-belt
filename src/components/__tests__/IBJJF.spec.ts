@@ -34,5 +34,10 @@ describe("IBJJF System", () => {
         stripePositions.includes(belt.stripeStart as StripePositions)
       ).toBe(true);
     });
+
+    it(`${belt.name} unique id`, () => {
+      const matchingBelts = ibjjfSystem.belts.filter((b) => b.id === belt.id);
+      expect(matchingBelts.length === 1).toBe(true);
+    });
   });
 });

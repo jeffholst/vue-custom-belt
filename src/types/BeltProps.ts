@@ -163,6 +163,10 @@ export class BeltSystem {
     return this.belts.find((belt) => belt.name === name);
   }
 
+  getBeltById(id: number): Belt | undefined {
+    return this.belts.find((belt) => belt.id === id);
+  }
+
   getBeltPropsByName(
     name: string,
     stripeCount: number | undefined = undefined,
