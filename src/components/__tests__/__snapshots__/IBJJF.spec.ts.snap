@@ -1147,7 +1147,6 @@ BeltSystem {
       "professorPatchColor": "#CC9900",
       "sortOrder": 200,
       "stripeColor": "#990000",
-      "stripeCount": 9,
       "stripeStart": "Right",
       "type": "Solid",
     },

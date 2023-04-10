@@ -115,11 +115,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             {{ belt.name }}
           </h2>
-          <SVGBelt
-            :belt-props="
-              ibjjfSystem.getBeltPropsByName(belt.name, belt.stripeCount)
-            "
-          />
+          <SVGBelt :belt-props="ibjjfSystem.getBeltPropsByName(belt.name)" />
         </div>
       </div>
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white py-10">

@@ -453,7 +453,6 @@
       "professorPatchColor": "Gold",
       "professorBorderColor": "DarkBorder",
       "stripeColor": "Red",
-      "stripeCount": 9,
       "stripeStart": "Right",
       "minStripes": 9,
       "maxStripes": 10 

@@ -76,7 +76,7 @@ export const getBeltProps = (
     professorPatch: "",
     professorBorder: "",
     hasProfessorPatch: false,
-    stripeCount: 0,
+    stripeCount: stripeCount,
     stripePosition: "Right",
     stripe1: "",
     stripe2: "",

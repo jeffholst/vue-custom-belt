@@ -172,7 +172,7 @@ export class BeltSystem {
       beltPropsAry.push(
         this.getBeltProps(
           belt,
-          stripeCount === undefined ? belt.stripeCount : stripeCount,
+          stripeCount === undefined ? belt.minStripes : stripeCount,
           stripePosition
         )
       );
