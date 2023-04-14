@@ -21,7 +21,7 @@ Vue 3 component to easily create any style martial arts belt in [SVG](https://en
 ## Install
 
 ```sh
-npm install vue-svg-belt
+npm install vue-custom-belt
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ JavaScript
 
 ```js
 // Get IBJJF White Belt
-import { SVGBelt, BeltSystem, ibjjfJSON } from "vue-svg-belt";
+import { CustomBelt, BeltSystem, ibjjfJSON } from "vue-svg-belt";
 
 const ibjjfSystem = new BeltSystem(ibjjfJSON);
 
@@ -41,7 +41,7 @@ TypeScript
 
 ```ts
 // Get IBJJF White Belt
-import { SVGBelt, BeltProps, BeltSystem, ibjjfJSON } from "vue-svg-belt";
+import { CustomBelt, BeltProps, BeltSystem, ibjjfJSON } from "vue-svg-belt";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
 
@@ -52,7 +52,7 @@ Vue Component
 
 ```html
 <template>
-  <SVGBelt :beltProps="whiteBelt" />
+  <CustomBelt :beltProps="whiteBelt" />
 </template>
 ```
 

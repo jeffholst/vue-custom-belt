@@ -1,7 +1,7 @@
 <template>
   <svg
     v-if="isValid"
-    id="svg_belt"
+    id="custom_belt"
     :onClick="downLoadSVG"
     viewBox="0 0 471.2 190.2"
     role="img"

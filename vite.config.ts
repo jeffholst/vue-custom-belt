@@ -10,9 +10,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "src/components/main.ts"),
-      name: "SVGBelt",
+      name: "CustomBelt",
       // the proper extensions will be added
-      fileName: "vue-svg-belt",
+      fileName: "vue-custom-belt",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

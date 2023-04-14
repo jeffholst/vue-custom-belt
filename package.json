@@ -1,16 +1,17 @@
 {
-  "name": "vue-svg-belt",
+  "name": "vue-custom-belt",
   "author": "Jeff Holst",
   "version": "0.1.12",
-  "description": "Vue 3 component to easily create any style martial arts belt in SVG format.",
+  "description": "Vue 3 component to easily create any style martial arts belt.",
   "keywords": [
     "vue",
     "vue3",
     "vue3-component",
     "vue-component",
     "martial-arts",
-    "SVG-Belt",
-    "belt-image"
+    "vue-custom-belt",
+    "belt",
+    "obi"
   ],
   "type": "module",
   "private": false,
@@ -22,12 +23,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-svg-belt.umd.cjs",
-  "module": "./dist/vue-svg-belt.js",
+  "main": "./dist/vue-custom-belt.umd.cjs",
+  "module": "./dist/vue-custom-belt.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-svg-belt.js",
-      "require": "./dist/vue-svg-belt.umd.cjs"
+      "import": "./dist/vue-custom-belt.js",
+      "require": "./dist/vue-custom-belt.umd.cjs"
     }
   },
   "types": "./dist/components/main.d.ts",

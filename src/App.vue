@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SVGBelt from "./components/SVGBelt.vue";
+import CustomBelt from "./components/CustomBelt.vue";
 import { BeltProps, BeltSystem } from "./types/BeltProps";
 import { getRandomBelt, getStripedBelt } from "./shared/shared";
 import ibjjfJSON from "./shared/ibjjf.json";
@@ -72,7 +72,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         USA Striped Belt
       </h1>
-      <SVGBelt
+      <CustomBelt
         :belt-props="
           getStripedBelt(
             1,
@@ -102,7 +102,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         All {{ ibjjfSystem.title }} belts (rotating)
       </h1>
-      <SVGBelt
+      <CustomBelt
         :belt-props="
           ibjjfSystem.getBeltPropsAll('transition: all 3.0s ease-in-out;', 4000)
         "
@@ -115,7 +115,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             {{ belt.name }}
           </h2>
-          <SVGBelt :belt-props="ibjjfSystem.getBeltPropsByName(belt.name)" />
+          <CustomBelt :belt-props="ibjjfSystem.getBeltPropsByName(belt.name)" />
         </div>
       </div>
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white py-10">
@@ -126,37 +126,37 @@ let randomSplit: BeltProps[] = getRandomBelt(
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Solid
           </h2>
-          <SVGBelt :belt-props="randomSolid" />
+          <CustomBelt :belt-props="randomSolid" />
         </div>
         <div>
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Split
           </h2>
-          <SVGBelt :belt-props="randomSplit" />
+          <CustomBelt :belt-props="randomSplit" />
         </div>
         <div>
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Striped
           </h2>
-          <SVGBelt :belt-props="randomStriped" />
+          <CustomBelt :belt-props="randomStriped" />
         </div>
         <div>
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Checkered
           </h2>
-          <SVGBelt :belt-props="randomCheckered" />
+          <CustomBelt :belt-props="randomCheckered" />
         </div>
         <div>
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Coral
           </h2>
-          <SVGBelt :belt-props="randomCoral" />
+          <CustomBelt :belt-props="randomCoral" />
         </div>
         <div>
           <h2 class="text-lg font-bold text-slate-800 dark:text-white py-5">
             Crazy
           </h2>
-          <SVGBelt :belt-props="randomCrazy" />
+          <CustomBelt :belt-props="randomCrazy" />
         </div>
       </div>
     </main>
