@@ -491,6 +491,7 @@ const props = defineProps<{
 
 const isValid = ref(true);
 const myBelt = ref(props.beltProps ? props.beltProps[index.value] : undefined);
+let refreshIntervalId: any = undefined;
 
 watch(
   () => props.beltProps,
@@ -510,7 +511,10 @@ const updateProps = () => {
       myBelt.value.refreshInterval != undefined &&
       myBelt.value.refreshInterval > 0
     ) {
-      setInterval(() => {
+      if (refreshIntervalId != undefined) {
+        clearInterval(refreshIntervalId);
+      }
+      refreshIntervalId = setInterval(() => {
         index.value =
           index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
         myBelt.value = props.beltProps[index.value];
