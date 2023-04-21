@@ -11,6 +11,8 @@
 
 👀 [Demo and Documentation](https://jeffholst.github.io/custom-belt/)
 
+🐛 [Report Bugs]() and 🙋 [Feature Requests]()
+
 ## Highlights ✨`
 
 - Vite + Vue + TypeScript = ❤️
