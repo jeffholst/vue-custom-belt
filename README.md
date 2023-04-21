@@ -11,9 +11,9 @@
 
 👀 [Demo and Documentation](https://jeffholst.github.io/custom-belt/)
 
-🐛 [Report Bugs]() and 🙋 [Feature Requests]()
+🐞 [Report Bugs](https://github.com/jeffholst/vue-custom-belt/issues/new?assignees=&labels=bug%3A+pending+triage&template=bug_report.yml) and 🚀 [Feature Requests](https://github.com/jeffholst/vue-custom-belt/issues/new?assignees=&labels=&template=feature_request.yml)
 
-## Highlights ✨`
+## Highlights ✨
 
 - Vite + Vue + TypeScript = ❤️
 - SVG vector images
