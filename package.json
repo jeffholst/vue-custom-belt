@@ -1,11 +1,16 @@
 {
   "name": "vue-custom-belt",
   "author": "Jeff Holst",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Vue 3 component to easily create any style martial arts belt.",
   "homepage": "https://jeffholst.github.io/custom-belt/",
-  "bugs": {"url": "https://github.com/jeffholst/vue-custom-belt/issues"},
-  "repository": {"type": "git", "url": "https://github.com/jeffholst/vue-custom-belt"},
+  "bugs": {
+    "url": "https://github.com/jeffholst/vue-custom-belt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffholst/vue-custom-belt"
+  },
   "keywords": [
     "vue",
     "vue3",

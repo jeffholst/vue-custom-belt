@@ -160,11 +160,52 @@ export class BeltSystem {
   }
 
   getBeltByName(name: string): Belt | undefined {
-    return this.belts.find((belt) => belt.name === name);
+    return this.belts.find(
+      (belt) => belt.name.toUpperCase() === name.toUpperCase()
+    );
+  }
+
+  getBeltsByNames(names: string[]): Belt[] {
+    const upperCased: string[] = names.map((val) => val.toUpperCase());
+    const belts: Belt[] = [];
+    upperCased.forEach((belt) => {
+      const b: Belt | undefined = this.getBeltByName(belt);
+      if (b !== undefined) {
+        belts.push(b);
+      }
+    });
+
+    return belts;
   }
 
   getBeltById(id: number): Belt | undefined {
     return this.belts.find((belt) => belt.id === id);
+  }
+
+  getBeltPropsByNames(
+    names: string[],
+    stripeCount: number | undefined = undefined,
+    stripePosition: StripePositions | undefined = undefined,
+    transitionCSS: string,
+    refreshInterval: number
+  ): BeltProps[] {
+    const beltPropsAry: BeltProps[] = [];
+    const belts = this.getBeltsByNames(names);
+
+    if (belts) {
+      belts.forEach((belt) => {
+        const beltProps: BeltProps = this.getBeltProps(
+          belt,
+          stripeCount === undefined ? belt.minStripes : stripeCount,
+          stripePosition
+        );
+        beltProps.transitionCSS = transitionCSS;
+        beltProps.refreshInterval = refreshInterval;
+        beltPropsAry.push(beltProps);
+      });
+    }
+
+    return beltPropsAry;
   }
 
   getBeltPropsByName(
