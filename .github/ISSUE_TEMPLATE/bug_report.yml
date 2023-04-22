@@ -50,9 +50,9 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Follow the [Code of Conduct](https://github.com/jeffholst/custom-belt/blob/main/.github/CODE_OF_CONDUCT.md).
+        - label: Follow the [Code of Conduct](https://github.com/jeffholst/vue-custom-belt/blob/main/.github/CODE_OF_CONDUCT.md).
           required: true
-        - label: Read the [docs](https://jeffholst.github.io/custom-belt/).
+        - label: Read the [docs](https://jeffholst.github.io/custom-belt/documents).
           required: true
         - label: Check that there isn't already an issue that reports the same bug to avoid creating a duplicate.
           required: true

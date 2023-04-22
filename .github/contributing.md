@@ -2,7 +2,7 @@
 
 Howdy! I'm super excited that you are interested in contributing to this project. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
-- [Code of Conduct](https://github.com/jeffholst/custom-belt/blob/main/.github/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/jeffholst/vue-custom-belt/blob/main/.github/CODE_OF_CONDUCT.md)
 - [Pull Request Guidelines](#pull-request-guidelines)
 
 ## Pull Request Guidelines
