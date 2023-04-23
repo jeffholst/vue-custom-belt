@@ -480,7 +480,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, onUnmounted } from "vue";
+import { computed, ref, watch, onUnmounted } from "vue";
 import type { BeltProps } from "../types/BeltProps";
 import { getRandomBelt } from "../shared/shared";
 
@@ -489,7 +489,7 @@ const props = defineProps<{
   beltProps: BeltProps[];
 }>();
 
-const isValid = ref(true);
+const isValid = ref(false);
 const myBelt = ref(props.beltProps ? props.beltProps[index.value] : undefined);
 let refreshIntervalId: any = undefined;
 
@@ -504,6 +504,7 @@ const updateProps = () => {
   if (!props.beltProps) {
     isValid.value = false;
   } else {
+    isValid.value = true;
     index.value = 0;
     myBelt.value = props.beltProps[index.value];
     if (
@@ -535,11 +536,9 @@ const updateProps = () => {
   }
 };
 
-onMounted(() => {
-  if (typeof window !== "undefined") {
-    updateProps();
-  }
-});
+if (typeof window !== "undefined") {
+  updateProps();
+}
 
 onUnmounted(() => {
   if (refreshIntervalId != undefined) {
