@@ -536,7 +536,9 @@ const updateProps = () => {
 };
 
 onMounted(() => {
-  updateProps();
+  if (typeof window !== "undefined") {
+    updateProps();
+  }
 });
 
 onUnmounted(() => {
