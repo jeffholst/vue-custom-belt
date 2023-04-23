@@ -480,7 +480,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, onMounted, onUnmounted } from "vue";
 import type { BeltProps } from "../types/BeltProps";
 import { getRandomBelt } from "../shared/shared";
 
@@ -535,7 +535,15 @@ const updateProps = () => {
   }
 };
 
-updateProps();
+onMounted(() => {
+  updateProps();
+});
+
+onUnmounted(() => {
+  if (refreshIntervalId != undefined) {
+    clearInterval(refreshIntervalId);
+  }
+});
 
 const downLoadSVG = (event: any) => {
   const svgContent = event.target.closest("svg").outerHTML;
