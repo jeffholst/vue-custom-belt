@@ -138,11 +138,24 @@ export class BeltSystem {
     shared.mapColors(this.belts, this.colors);
   }
 
+  getBeltById(id: number): Belt | undefined {
+    // get belt by Id
+    return this.belts.find((belt) => belt.id === id);
+  }
+
+  getBeltByName(name: string): Belt | undefined {
+    // returns Belt matching name ( case insensitive)
+    return this.belts.find(
+      (belt) => belt.name.toUpperCase() === name.toUpperCase()
+    );
+  }
+
   getBeltProps(
     belt: Belt,
     stripeCount: number,
     stripePosition: StripePositions | undefined
   ): BeltProps {
+    // returns BeltProps from provided Belt object and info
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = shared.getDescription(rdfTitle, stripeCount);
 
@@ -159,27 +172,43 @@ export class BeltSystem {
     return beltProps;
   }
 
-  getBeltByName(name: string): Belt | undefined {
-    return this.belts.find(
-      (belt) => belt.name.toUpperCase() === name.toUpperCase()
-    );
-  }
-
-  getBeltsByNames(names: string[]): Belt[] {
-    const upperCased: string[] = names.map((val) => val.toUpperCase());
-    const belts: Belt[] = [];
-    upperCased.forEach((belt) => {
-      const b: Belt | undefined = this.getBeltByName(belt);
-      if (b !== undefined) {
-        belts.push(b);
-      }
+  getBeltPropsAll(transitionCSS: string, refreshInterval: number): BeltProps[] {
+    // returns BeltProps[] for all belts in the belt system
+    const beltPropsAry: BeltProps[] = [];
+    this.belts.forEach((belt) => {
+      const beltProps = this.getBeltProps(
+        belt,
+        belt.stripeCount,
+        belt.stripePosition
+      );
+      beltProps.transitionCSS = transitionCSS;
+      beltProps.refreshInterval = refreshInterval;
+      beltPropsAry.push(beltProps);
     });
 
-    return belts;
+    return beltPropsAry;
   }
 
-  getBeltById(id: number): Belt | undefined {
-    return this.belts.find((belt) => belt.id === id);
+  getBeltPropsByName(
+    name: string,
+    stripeCount: number | undefined = undefined,
+    stripePosition: StripePositions | undefined = undefined
+  ): BeltProps[] {
+    // returns BeltProps[] for specified belt name
+    const beltPropsAry: BeltProps[] = [];
+    const belt = this.getBeltByName(name);
+
+    if (belt) {
+      beltPropsAry.push(
+        this.getBeltProps(
+          belt,
+          stripeCount === undefined ? belt.minStripes : stripeCount,
+          stripePosition
+        )
+      );
+    }
+
+    return beltPropsAry;
   }
 
   getBeltPropsByNames(
@@ -189,6 +218,7 @@ export class BeltSystem {
     transitionCSS: string,
     refreshInterval: number
   ): BeltProps[] {
+    // returns BeltProps[] for specified belt names
     const beltPropsAry: BeltProps[] = [];
     const belts = this.getBeltsByNames(names);
 
@@ -208,40 +238,17 @@ export class BeltSystem {
     return beltPropsAry;
   }
 
-  getBeltPropsByName(
-    name: string,
-    stripeCount: number | undefined = undefined,
-    stripePosition: StripePositions | undefined = undefined
-  ): BeltProps[] {
-    const beltPropsAry: BeltProps[] = [];
-    const belt = this.getBeltByName(name);
-
-    if (belt) {
-      beltPropsAry.push(
-        this.getBeltProps(
-          belt,
-          stripeCount === undefined ? belt.minStripes : stripeCount,
-          stripePosition
-        )
-      );
-    }
-
-    return beltPropsAry;
-  }
-
-  getBeltPropsAll(transitionCSS: string, refreshInterval: number): BeltProps[] {
-    const beltPropsAry: BeltProps[] = [];
-    this.belts.forEach((belt) => {
-      const beltProps = this.getBeltProps(
-        belt,
-        belt.stripeCount,
-        belt.stripePosition
-      );
-      beltProps.transitionCSS = transitionCSS;
-      beltProps.refreshInterval = refreshInterval;
-      beltPropsAry.push(beltProps);
+  getBeltsByNames(names: string[]): Belt[] {
+    // returns Belt[] for specified belt names (case insensitive)
+    const upperCased: string[] = names.map((val) => val.toUpperCase());
+    const belts: Belt[] = [];
+    upperCased.forEach((belt) => {
+      const b: Belt | undefined = this.getBeltByName(belt);
+      if (b !== undefined) {
+        belts.push(b);
+      }
     });
 
-    return beltPropsAry;
+    return belts;
   }
 }
