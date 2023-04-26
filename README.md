@@ -30,6 +30,12 @@
 npm install vue-custom-belt
 ```
 
+## Publish to NPM
+
+```sh
+npm publish
+```
+
 ## Usage
 
 See [Documentation](https://jeffholst.github.io/custom-belt/introduction/what-is-custom-belt.html)
