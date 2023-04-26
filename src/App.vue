@@ -2,9 +2,9 @@
 import CustomBelt from "./components/CustomBelt.vue";
 import { BeltSystem } from "./BeltSystem";
 import { BeltProps, BeltType, getRandomBelt, getStripedBelt } from "./Belt";
-import ibjjfJSON from "./systems/ibjjf.json";
+import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
-const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
+const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
 let randomCrazy: BeltProps[] = getRandomBelt(
   true,

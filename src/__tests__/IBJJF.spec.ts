@@ -1,17 +1,17 @@
 import { describe, it, expect } from "vitest";
 
-import { BeltType, stripePositions, StripePositions } from "../../Belt";
-import { BeltSystem } from "../../BeltSystem";
-import ibjjfJSON from "../../systems/ibjjf.json";
+import { BeltType, stripePositions, StripePositions } from "../Belt";
+import { BeltSystem } from "../BeltSystem";
+import BeltSystemJSON_IBJJF from "../belt-systems/IBJJF.json";
 
-const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
+const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
 describe("IBJJF System", () => {
   it("JSON should match", () => {
     expect(ibjjfSystem).toMatchSnapshot();
   });
 
-  ibjjfJSON.belts.forEach((belt) => {
+  BeltSystemJSON_IBJJF.belts.forEach((belt) => {
     it(`${belt.name}`, () => {
       expect(ibjjfSystem.getBeltPropsByName(belt.name, 0)).toMatchSnapshot();
     });

@@ -1,47 +1,13 @@
 import { describe, it, expect } from "vitest";
-import ibjjfJSON from "../../systems/ibjjf.json";
-import { stripePositions, StripePositions, BeltType, Belt } from "../../Belt";
-import { BeltSystem } from "../../BeltSystem";
-
-/**
- * StripeStart tests
- */
-describe("StripeStart", () => {
-  let rval = "";
-  stripePositions.forEach((ss: StripePositions) => {
-    rval += ss;
-  });
-
-  /**
-   * Test that stripePositions only contains expected values
-   */
-  it(`is iterable`, () => {
-    expect(rval).toBe("LeftRight");
-  });
-});
-
-/**
- * BeltType tests
- */
-describe("BeltType", () => {
-  let rval = "";
-  for (const bt in BeltType) {
-    rval += bt;
-  }
-
-  /**
-   * Test that beltTypes only contains expected values
-   */
-  it(`is iterable`, () => {
-    expect(rval).toBe("SolidStripedCoralSplitCheckeredCrazy");
-  });
-});
+import BeltSystemJSON_IBJJF from "../belt-systems/IBJJF.json";
+import { Belt } from "../Belt";
+import { BeltSystem } from "../BeltSystem";
 
 /**
  * BeltSystem tests
  */
 describe("BeltSystem", () => {
-  const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
+  const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
   /**
    * Test that getBeltById returns undefined for invalid belt id
@@ -116,7 +82,6 @@ describe("BeltSystem", () => {
     const beltProps = ibjjfSystem.getBeltPropsAll("test", 2000);
     expect(beltProps).toMatchSnapshot();
   });
-
   /**
    * Test that getBeltPropsById returns valid data
    */

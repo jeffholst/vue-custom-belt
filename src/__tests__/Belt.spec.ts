@@ -1,6 +1,46 @@
 import { describe, it, expect } from "vitest";
-import * as shared from "../../Belt";
-import { BeltColor, Belt, BeltType } from "../../Belt";
+import * as shared from "../Belt";
+import {
+  BeltColor,
+  Belt,
+  BeltType,
+  stripePositions,
+  StripePositions,
+} from "../Belt";
+
+/**
+ * StripeStart tests
+ */
+describe("StripeStart", () => {
+  let rval = "";
+  stripePositions.forEach((ss: StripePositions) => {
+    rval += ss;
+  });
+
+  /**
+   * Test that stripePositions only contains expected values
+   */
+  it(`is iterable`, () => {
+    expect(rval).toBe("LeftRight");
+  });
+});
+
+/**
+ * BeltType tests
+ */
+describe("BeltType", () => {
+  let rval = "";
+  for (const bt in BeltType) {
+    rval += bt;
+  }
+
+  /**
+   * Test that beltTypes only contains expected values
+   */
+  it(`is iterable`, () => {
+    expect(rval).toBe("SolidStripedCoralSplitCheckeredCrazy");
+  });
+});
 
 describe("isValidHexCode", () => {
   const hexCodes: string[] = [
