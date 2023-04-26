@@ -1,4 +1,4 @@
-import * as shared from "../shared/shared";
+import * as shared from "./Belt";
 
 /**
  * Where to start stripe placement on patch (Left or Right)

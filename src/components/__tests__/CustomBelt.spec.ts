@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import CustomBelt from "../CustomBelt.vue";
-import ibjjfJSON from "../../shared/ibjjf.json";
-import { BeltSystem } from "../../types/BeltProps";
+import ibjjfJSON from "../../systems/ibjjf.json";
+import { BeltSystem } from "../../BeltSystem";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
 

@@ -5,8 +5,8 @@ import {
   BeltType,
   stripePositions,
   StripePositions,
-} from "../../types/BeltProps";
-import ibjjfJSON from "../../shared/ibjjf.json";
+} from "../../BeltSystem";
+import ibjjfJSON from "../../systems/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
 

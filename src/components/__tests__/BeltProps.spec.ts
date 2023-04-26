@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import ibjjfJSON from "../../shared/ibjjf.json";
+import ibjjfJSON from "../../systems/ibjjf.json";
 import {
   stripePositions,
   StripePositions,
   BeltType,
   BeltSystem,
   Belt,
-} from "../../types/BeltProps";
+} from "../../BeltSystem";
 
 /**
  * StripeStart tests

@@ -4,7 +4,7 @@ import {
   Belt,
   BeltColor,
   StripePositions,
-} from "../types/BeltProps";
+} from "./BeltSystem";
 
 //function isValidHexCode(str: string): boolean {
 export const isValidHexCode = (str: string): boolean => {
