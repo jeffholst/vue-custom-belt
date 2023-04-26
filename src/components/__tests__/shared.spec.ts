@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import * as shared from "../../Belt";
-import { BeltColor, Belt, BeltType } from "../../BeltSystem";
+import { BeltColor, Belt, BeltType } from "../../Belt";
 
 describe("isValidHexCode", () => {
   const hexCodes: string[] = [

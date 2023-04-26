@@ -1,11 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import {
-  BeltSystem,
-  BeltType,
-  stripePositions,
-  StripePositions,
-} from "../../BeltSystem";
+import { BeltType, stripePositions, StripePositions } from "../../Belt";
+import { BeltSystem } from "../../BeltSystem";
 import ibjjfJSON from "../../systems/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);

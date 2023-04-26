@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CustomBelt from "./components/CustomBelt.vue";
-import { BeltProps, BeltSystem, BeltType } from "./BeltSystem";
-import { getRandomBelt, getStripedBelt } from "./Belt";
+import { BeltSystem } from "./BeltSystem";
+import { BeltProps, BeltType, getRandomBelt, getStripedBelt } from "./Belt";
 import ibjjfJSON from "./systems/ibjjf.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);

@@ -481,8 +481,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch, onUnmounted } from "vue";
-import type { BeltProps } from "../BeltSystem";
-import { getRandomBelt } from "../Belt";
+import { getRandomBelt, BeltProps } from "../Belt";
 
 const index = ref(0);
 const props = defineProps<{
