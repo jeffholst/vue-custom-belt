@@ -11,7 +11,7 @@
 
 👉 Vue 3 component to easily create any style martial arts belt in [SVG](https://en.wikipedia.org/wiki/SVG) format.
 
-👀 [Demo](https://jeffholst.github.io/custom-belt/demo) and [Documentation](https://jeffholst.github.io/custom-belt/documentation)
+👀 [Demo](https://jeffholst.github.io/custom-belt/demo) and [Documentation](https://jeffholst.github.io/custom-belt/what-is-custom-belt.html)
 
 🐞 [Report Bugs](https://github.com/jeffholst/vue-custom-belt/issues/new?assignees=&labels=bug%3A+pending+triage&template=bug_report.yml) and 🚀 [Feature Requests](https://github.com/jeffholst/vue-custom-belt/issues/new?assignees=&labels=&template=feature_request.yml)
 
@@ -32,4 +32,4 @@ npm install vue-custom-belt
 
 ## Usage
 
-See [Documentation](https://jeffholst.github.io/custom-belt/documentation)
+See [Documentation](https://jeffholst.github.io/custom-belt/what-is-custom-belt.html)
