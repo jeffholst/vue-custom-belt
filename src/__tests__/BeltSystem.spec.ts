@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import BeltSystemJSON_IBJJF from "../belt-systems/IBJJF.json";
-import { Belt } from "../Belt";
+import { Belt, StripePosition } from "../Belt";
 import { BeltSystem } from "../BeltSystem";
 
 /**
@@ -55,7 +55,7 @@ describe("BeltSystem", () => {
   it(`getBeltProps returns valid data`, () => {
     const belt: Belt | undefined = ibjjfSystem.getBeltByName("white");
     if (belt !== undefined) {
-      const beltProps = ibjjfSystem.getBeltProps(belt, 1, "Left");
+      const beltProps = ibjjfSystem.getBeltProps(belt, 1, StripePosition.Left);
       expect(beltProps).toMatchSnapshot();
     } else {
       expect(belt).not.toBeUndefined();
@@ -110,7 +110,11 @@ describe("BeltSystem", () => {
    * Test that getBeltPropsByIds returns valid data (with stripe info)
    */
   it(`getBeltPropsByIds returns valid data (with stripe info)`, () => {
-    const beltProps = ibjjfSystem.getBeltPropsByIds([10, 20], 1, "Left");
+    const beltProps = ibjjfSystem.getBeltPropsByIds(
+      [10, 20],
+      1,
+      StripePosition.Left
+    );
     expect(beltProps).toMatchSnapshot();
   });
 
@@ -159,7 +163,7 @@ describe("BeltSystem", () => {
     const beltProps = ibjjfSystem.getBeltPropsByNames(
       ["White", "Brown"],
       1,
-      "Left"
+      StripePosition.Left
     );
     expect(beltProps).toMatchSnapshot();
   });

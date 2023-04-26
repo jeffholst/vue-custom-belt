@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import CustomBelt from "./components/CustomBelt.vue";
 import { BeltSystem } from "./BeltSystem";
-import { BeltProps, BeltType, getRandomBelt, getStripedBelt } from "./Belt";
+import {
+  BeltProps,
+  BeltType,
+  StripePosition,
+  getRandomBelt,
+  getStripedBelt,
+} from "./Belt";
 import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
@@ -89,7 +95,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
             '',
             '',
             0,
-            'Right',
+            StripePosition.Right,
             0,
             4,
             'USA Striped Belt',

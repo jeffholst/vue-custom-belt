@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { BeltType, stripePositions, StripePositions } from "../Belt";
+import { BeltType, StripePosition } from "../Belt";
 import { BeltSystem } from "../BeltSystem";
 import BeltSystemJSON_IBJJF from "../belt-systems/IBJJF.json";
 
@@ -27,9 +27,10 @@ describe("IBJJF System", () => {
     });
 
     it(`${belt.name} valid stripeStart`, () => {
-      expect(
-        stripePositions.includes(belt.stripeStart as StripePositions)
-      ).toBe(true);
+      const stripeStartAry = Object.values(StripePosition);
+      expect(stripeStartAry.includes(belt.stripeStart as StripePosition)).toBe(
+        true
+      );
     });
 
     it(`${belt.name} unique id`, () => {

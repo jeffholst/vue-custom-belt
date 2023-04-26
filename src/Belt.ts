@@ -1,8 +1,15 @@
 /**
  * Where to start stripe placement on patch (Left or Right)
  */
-export const stripePositions = ["Left", "Right"] as const;
-export type StripePositions = (typeof stripePositions)[number];
+export enum StripePosition {
+  Left = "Left",
+  Right = "Right",
+}
+
+/**
+ * Default stripe position
+ */
+const StripePositionDefault = StripePosition.Right;
 
 /**
  * Available belt types
@@ -28,7 +35,7 @@ export interface BeltProps {
   professorBorder: string;
   hasProfessorPatch: boolean;
   stripeCount: number;
-  stripePosition: StripePositions;
+  stripePosition: StripePosition;
   stripe1: string;
   stripe2: string;
   stripe3: string;
@@ -126,7 +133,7 @@ export interface Belt {
   professorBorderColor: string;
   stripeColor: string;
   stripeCount: number;
-  stripePosition: StripePositions;
+  stripePosition: StripePosition;
   minStripes: number;
   maxStripes: number;
 }
@@ -189,7 +196,7 @@ export const getBeltProps = (
   description: string = "",
   belt: Belt | undefined,
   stripeCount: number,
-  stripePosition: StripePositions | undefined,
+  stripePosition: StripePosition | undefined,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps => {
@@ -202,7 +209,7 @@ export const getBeltProps = (
     professorBorder: "",
     hasProfessorPatch: false,
     stripeCount: stripeCount,
-    stripePosition: "Right",
+    stripePosition: StripePositionDefault,
     stripe1: "",
     stripe2: "",
     stripe3: "",
@@ -330,7 +337,7 @@ const setPatchProperties = (
   hasProfessorPatch: boolean,
   stripeColor: string,
   stripeCount: number,
-  stripePosition: StripePositions | undefined
+  stripePosition: StripePosition | undefined
 ) => {
   beltProps.hasPatch = hasPatch;
   beltProps.patch = patchColor;
@@ -340,7 +347,7 @@ const setPatchProperties = (
   beltProps.hasProfessorPatch = hasProfessorPatch;
   beltProps.stripeCount = stripeCount;
   beltProps.stripePosition =
-    stripePosition != undefined ? stripePosition : "Right";
+    stripePosition != undefined ? stripePosition : StripePositionDefault;
   beltProps.stripe1 = stripeColor;
   beltProps.stripe2 = stripeColor;
   beltProps.stripe3 = stripeColor;
@@ -401,7 +408,7 @@ export const getRandomBelt = (
   hasPatch: boolean | undefined,
   hasProfessorPatch: boolean | undefined,
   stripeCount: number | undefined,
-  stripeStart: StripePositions | undefined,
+  stripeStart: StripePosition | undefined,
   transitionCSS: string = "",
   includeBelts: Array<BeltType> = [],
   refreshInterval: number = 0
@@ -414,8 +421,8 @@ export const getRandomBelt = (
   if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11); // randomly pick between 0-10 stripes
   if (stripeStart === undefined)
     Math.random() < 0.5 === true
-      ? (stripeStart = "Left")
-      : (stripeStart = "Right"); // randomly pick Left or Right
+      ? (stripeStart = StripePosition.Left)
+      : (stripeStart = StripePosition.Right); // randomly pick Left or Right
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       // if only one includeBelt items is specified, then use that belt type
@@ -517,7 +524,7 @@ export const getPredefinedBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripePosition: StripePositions,
+  stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -576,7 +583,7 @@ export const getSolidBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripePositions,
+  stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -625,7 +632,7 @@ export const getStripedBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripePositions,
+  stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -673,7 +680,7 @@ export const getCoralBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripePositions,
+  stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -721,7 +728,7 @@ export const getSplitBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripeStart: StripePositions,
+  stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -769,7 +776,7 @@ export const getCheckeredBelt = (
   professorBorderColor: string,
   stripeColor: string,
   stripeCount: number,
-  stripePosition: StripePositions,
+  stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
   title: string,
@@ -1170,7 +1177,7 @@ export const getBelt = (
   professorBorderColor: string = "",
   stripeColor: string = "",
   stripeCount: number = 0,
-  stripePosition: StripePositions = "Right",
+  stripePosition: StripePosition = StripePositionDefault,
   minStripes: number = 0,
   maxStripes: number = 4
 ): Belt => {
@@ -1191,7 +1198,7 @@ export const getBelt = (
     professorBorderColor: professorBorderColor ? professorBorderColor : "",
     stripeColor: stripeColor ? stripeColor : "",
     stripeCount: stripeCount ? stripeCount : 0,
-    stripePosition: stripePosition ? stripePosition : "Right",
+    stripePosition: stripePosition ? stripePosition : StripePositionDefault,
     minStripes: minStripes ? minStripes : 0,
     maxStripes: maxStripes ? maxStripes : 4,
   };

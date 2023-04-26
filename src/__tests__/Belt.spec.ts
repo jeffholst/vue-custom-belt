@@ -1,28 +1,22 @@
 import { describe, it, expect } from "vitest";
 import * as shared from "../Belt";
-import {
-  BeltColor,
-  Belt,
-  BeltType,
-  stripePositions,
-  StripePositions,
-} from "../Belt";
+import { BeltColor, Belt, BeltType, StripePosition } from "../Belt";
 
 /**
  * StripeStart tests
  */
 describe("StripeStart", () => {
   let rval = "";
-  stripePositions.forEach((ss: StripePositions) => {
+  for (const ss in StripePosition) {
     rval += ss;
-  });
 
-  /**
-   * Test that stripePositions only contains expected values
-   */
-  it(`is iterable`, () => {
-    expect(rval).toBe("LeftRight");
-  });
+    /**
+     * Test that stripePosition only contains expected values
+     */
+    it(`is iterable`, () => {
+      expect(rval).toBe("LeftRight");
+    });
+  }
 });
 
 /**
@@ -92,7 +86,7 @@ const belts: Belt[] = [
     professorBorderColor: "",
     stripeColor: "White",
     stripeCount: 0,
-    stripePosition: "Right",
+    stripePosition: StripePosition.Right,
     minStripes: 0,
     maxStripes: 4,
   },
@@ -143,7 +137,7 @@ describe("getBeltProps", () => {
         "Test Description",
         undefined,
         0,
-        "Left",
+        StripePosition.Left,
         "",
         0
       )

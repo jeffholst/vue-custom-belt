@@ -2,7 +2,7 @@ import {
   BeltProps,
   BeltColor,
   Belt,
-  StripePositions,
+  StripePosition,
   mapColors,
   getDescription,
   getBeltProps,
@@ -61,13 +61,13 @@ export class BeltSystem {
    * Get BeltpProps for provided Belt object and stripe info
    * @param {Belt} belt belt object to use
    * @param {number} stripeCount number of stripes to use (0-10)
-   * @param {StripePositions | undefined} stripePosition stripe placement
+   * @param {StripePosition | undefined} stripePosition stripe placement
    * @return {BeltProps} BeltProps for provided Belt object and stripe info
    */
   getBeltProps(
     belt: Belt,
     stripeCount: number,
-    stripePosition: StripePositions | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined
   ): BeltProps {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
     const rdfDescription = getDescription(rdfTitle, stripeCount);
@@ -114,13 +114,13 @@ export class BeltSystem {
    * Get BeltProps for matching belt id
    * @param {number} id belt id to find
    * @param {number | undefined} stripeCount number of stripes to use (0-10)
-   * @param {StripePositions | undefined} stripePosition stripe placement (Right or Left)
+   * @param {StripePosition | undefined} stripePosition stripe placement (Right or Left)
    * @return {BeltProps[]} BeltProps for matching belt name
    */
   getBeltPropsById(
     id: number,
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePositions | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt = this.getBeltById(id);
@@ -142,7 +142,7 @@ export class BeltSystem {
    * Get BeltProps for matching belt ids
    * @param {number[]} ids ids of belts to return
    * @param {number | undefined} stripeCount the number of stripes to use
-   * @param {StripePositions | undefined} stripePosition the stripe position to use
+   * @param {StripePosition | undefined} stripePosition the stripe position to use
    * @param {string} transitionCSS transition css to use between belt changes
    * @param {number} refreshInterval milliseconds to wait before changing belt
    * @return {BeltProps[]} BeltProps[] of matching belts
@@ -150,7 +150,7 @@ export class BeltSystem {
   getBeltPropsByIds(
     ids: number[],
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePositions | undefined = undefined,
+    stripePosition: StripePosition | undefined = undefined,
     transitionCSS: string = "",
     refreshInterval: number = 0
   ): BeltProps[] {
@@ -177,13 +177,13 @@ export class BeltSystem {
    * Get BeltProps for matching belt name
    * @param {string} name belt name to find
    * @param {number | undefined} stripeCount number of stripes to use (0-10)
-   * @param {StripePositions | undefined} stripePosition stripe placement (Right or Left)
+   * @param {StripePosition | undefined} stripePosition stripe placement (Right or Left)
    * @return {BeltProps[]} BeltProps for matching belt name
    */
   getBeltPropsByName(
     name: string,
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePositions | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt = this.getBeltByName(name);
@@ -205,7 +205,7 @@ export class BeltSystem {
    * Get BeltProps for matching belt names
    * @param {string[]} names names of belts to return
    * @param {number | undefined} stripeCount the number of stripes to use
-   * @param {StripePositions | undefined} stripePosition the stripe position to use
+   * @param {StripePosition | undefined} stripePosition the stripe position to use
    * @param {string} transitionCSS transition css to use between belt changes
    * @param {number} refreshInterval milliseconds to wait before changing belt
    * @return {BeltProps[]} BeltProps[] of matching belts
@@ -213,7 +213,7 @@ export class BeltSystem {
   getBeltPropsByNames(
     names: string[],
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePositions | undefined = undefined,
+    stripePosition: StripePosition | undefined = undefined,
     transitionCSS: string = "",
     refreshInterval: number = 0
   ): BeltProps[] {
