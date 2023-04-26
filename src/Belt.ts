@@ -1,26 +1,34 @@
 /**
- * Where to start stripe placement on patch (Left or Right)
+ * Belt object definition
  */
-export enum StripePosition {
-  Left = "Left",
-  Right = "Right",
+export interface Belt {
+  id: number;
+  name: string;
+  sortOrder: number;
+  type: BeltType;
+  color1: string;
+  color2: string;
+  color3: string;
+  borderColor: string;
+  hasPatch: boolean;
+  patchColor: string;
+  patchBorderColor: string;
+  hasProfessorPatch: boolean;
+  professorPatchColor: string;
+  professorBorderColor: string;
+  stripeColor: string;
+  stripeCount: number;
+  stripePosition: StripePosition;
+  minStripes: number;
+  maxStripes: number;
 }
 
 /**
- * Default stripe position
+ * Used to assign/lookup friendly names to hex colors
  */
-const StripePositionDefault = StripePosition.Right;
-
-/**
- * Available belt types
- */
-export enum BeltType {
-  Solid = "Solid",
-  Striped = "Striped",
-  Coral = "Coral",
-  Split = "Split",
-  Checkered = "Checkered",
-  Crazy = "Crazy",
+export interface BeltColor {
+  name: string;
+  hex: string;
 }
 
 /**
@@ -106,38 +114,29 @@ export interface BeltProps {
 }
 
 /**
- * Used to assign/lookup friendly names to hex colors
+ * Available belt types
  */
-export interface BeltColor {
-  name: string;
-  hex: string;
+export enum BeltType {
+  Solid = "Solid",
+  Striped = "Striped",
+  Coral = "Coral",
+  Split = "Split",
+  Checkered = "Checkered",
+  Crazy = "Crazy",
 }
 
 /**
- * Belt object definition
+ * Where to start stripe placement on patch (Left or Right)
  */
-export interface Belt {
-  id: number;
-  name: string;
-  sortOrder: number;
-  type: BeltType;
-  color1: string;
-  color2: string;
-  color3: string;
-  borderColor: string;
-  hasPatch: boolean;
-  patchColor: string;
-  patchBorderColor: string;
-  hasProfessorPatch: boolean;
-  professorPatchColor: string;
-  professorBorderColor: string;
-  stripeColor: string;
-  stripeCount: number;
-  stripePosition: StripePosition;
-  minStripes: number;
-  maxStripes: number;
+export enum StripePosition {
+  Left = "Left",
+  Right = "Right",
 }
 
+/**
+ * Default stripe position
+ */
+const StripePositionDefault = StripePosition.Right;
 //function isValidHexCode(str: string): boolean {
 export const isValidHexCode = (str: string): boolean => {
   // Regex to check valid
@@ -159,7 +158,7 @@ export const isValidHexCode = (str: string): boolean => {
   }
 };
 
-export const mapColor = (color: string, colors: BeltColor[]): string => {
+export const mapBeltColor = (color: string, colors: BeltColor[]): string => {
   // 1. if color is valid hex code, return it
   // 2. else if color in colors, return hex code
   // 3. else return color
@@ -177,17 +176,17 @@ export const mapColor = (color: string, colors: BeltColor[]): string => {
   return rval;
 };
 
-export const mapColors = (belts: Belt[], colors: BeltColor[]) => {
+export const mapBeltColors = (belts: Belt[], colors: BeltColor[]) => {
   belts.forEach((belt) => {
-    belt.color1 = mapColor(belt.color1, colors);
-    belt.color2 = mapColor(belt.color2, colors);
-    belt.color3 = mapColor(belt.color3, colors);
-    belt.borderColor = mapColor(belt.borderColor, colors);
-    belt.patchColor = mapColor(belt.patchColor, colors);
-    belt.patchBorderColor = mapColor(belt.patchBorderColor, colors);
-    belt.professorPatchColor = mapColor(belt.professorPatchColor, colors);
-    belt.professorBorderColor = mapColor(belt.professorBorderColor, colors);
-    belt.stripeColor = mapColor(belt.stripeColor, colors);
+    belt.color1 = mapBeltColor(belt.color1, colors);
+    belt.color2 = mapBeltColor(belt.color2, colors);
+    belt.color3 = mapBeltColor(belt.color3, colors);
+    belt.borderColor = mapBeltColor(belt.borderColor, colors);
+    belt.patchColor = mapBeltColor(belt.patchColor, colors);
+    belt.patchBorderColor = mapBeltColor(belt.patchBorderColor, colors);
+    belt.professorPatchColor = mapBeltColor(belt.professorPatchColor, colors);
+    belt.professorBorderColor = mapBeltColor(belt.professorBorderColor, colors);
+    belt.stripeColor = mapBeltColor(belt.stripeColor, colors);
   });
 };
 

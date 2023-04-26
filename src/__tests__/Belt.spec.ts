@@ -92,30 +92,30 @@ const belts: Belt[] = [
   },
 ];
 
-describe("mapColor", () => {
+describe("mapBeltColor", () => {
   it("should return valid hexcode", () => {
-    expect(shared.mapColor("#FFFFFF", colors)).toBe("#FFFFFF");
+    expect(shared.mapBeltColor("#FFFFFF", colors)).toBe("#FFFFFF");
   });
 
   it("should return mapped value for White", () => {
-    expect(shared.mapColor("White", colors)).toBe("#FFFFFF");
+    expect(shared.mapBeltColor("White", colors)).toBe("#FFFFFF");
   });
 
   it("should return mapped value for mixed case wHiTe", () => {
-    expect(shared.mapColor("wHiTe", colors)).toBe("#FFFFFF");
+    expect(shared.mapBeltColor("wHiTe", colors)).toBe("#FFFFFF");
   });
 
   it("should return mapped value for Gray", () => {
-    expect(shared.mapColor("Gray", colors)).toBe("#999999");
+    expect(shared.mapBeltColor("Gray", colors)).toBe("#999999");
   });
 
   it("should return passed color", () => {
-    expect(shared.mapColor("Red", colors)).toBe("Red");
+    expect(shared.mapBeltColor("Red", colors)).toBe("Red");
   });
 });
 
-describe("mapColors", () => {
-  shared.mapColors(belts, colors);
+describe("mapBeltColors", () => {
+  shared.mapBeltColors(belts, colors);
   it("should return mapped color for White", () => {
     expect(belts[0].color1).toBe("#FFFFFF");
   });

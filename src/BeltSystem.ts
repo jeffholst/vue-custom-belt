@@ -3,7 +3,7 @@ import {
   BeltColor,
   Belt,
   StripePosition,
-  mapColors,
+  mapBeltColors,
   getDescription,
   getBeltProps,
 } from "./Belt";
@@ -34,7 +34,7 @@ export class BeltSystem {
     this.belts = system.belts;
 
     // Replace friendly color names in Belt objects with hex values
-    mapColors(this.belts, this.colors);
+    mapBeltColors(this.belts, this.colors);
   }
 
   /**
