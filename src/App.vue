@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CustomBelt from "./components/CustomBelt.vue";
-import { BeltProps, BeltSystem } from "./types/BeltProps";
+import { BeltProps, BeltSystem, BeltType } from "./types/BeltProps";
 import { getRandomBelt, getStripedBelt } from "./shared/shared";
 import ibjjfJSON from "./shared/ibjjf.json";
 
@@ -12,7 +12,7 @@ let randomCrazy: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Crazy"],
+  [BeltType.Crazy],
   4000
 );
 let randomCheckered: BeltProps[] = getRandomBelt(
@@ -21,7 +21,7 @@ let randomCheckered: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Checkered"],
+  [BeltType.Checkered],
   4000
 );
 
@@ -31,7 +31,7 @@ let randomSolid: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Solid"],
+  [BeltType.Solid],
   4000
 );
 
@@ -41,7 +41,7 @@ let randomStriped: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Striped"],
+  [BeltType.Striped],
   4000
 );
 
@@ -51,7 +51,7 @@ let randomCoral: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Coral"],
+  [BeltType.Coral],
   4000
 );
 
@@ -61,7 +61,7 @@ let randomSplit: BeltProps[] = getRandomBelt(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  ["Split"],
+  [BeltType.Solid],
   4000
 );
 </script>

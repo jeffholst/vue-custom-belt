@@ -455,7 +455,7 @@
       "stripeColor": "Red",
       "stripeStart": "Right",
       "minStripes": 9,
-      "maxStripes": 10 
+      "maxStripes": 10
     }
   ]
 }

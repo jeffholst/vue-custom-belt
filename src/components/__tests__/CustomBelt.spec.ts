@@ -8,6 +8,7 @@ const ibjjfSystem: BeltSystem = new BeltSystem(ibjjfJSON);
 
 describe("CustomBelt", () => {
   it("reports missing beltParms", () => {
+    console.log(`Next warning is expected:`);
     const wrapper = mount(CustomBelt);
     expect(wrapper.text()).toContain("Invalid beltParms received");
   });

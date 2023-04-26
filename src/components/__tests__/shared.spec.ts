@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import * as shared from "../../shared/shared";
-import { BeltColor, Belt } from "../../types/BeltProps";
+import { BeltColor, Belt, BeltType } from "../../types/BeltProps";
 
 describe("isValidHexCode", () => {
   const hexCodes: string[] = [
@@ -39,7 +39,7 @@ const belts: Belt[] = [
     id: 1,
     name: "White",
     sortOrder: 10,
-    type: "Solid",
+    type: BeltType.Solid,
     color1: "wHiTe",
     color2: "Black",
     color3: "Gray",

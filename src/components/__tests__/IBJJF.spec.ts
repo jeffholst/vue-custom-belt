@@ -2,8 +2,7 @@ import { describe, it, expect } from "vitest";
 
 import {
   BeltSystem,
-  beltTypes,
-  BeltTypes,
+  BeltType,
   stripePositions,
   StripePositions,
 } from "../../types/BeltProps";
@@ -26,7 +25,9 @@ describe("IBJJF System", () => {
     });
 
     it(`${belt.name} valid type`, () => {
-      expect(beltTypes.includes(belt.type as BeltTypes)).toBe(true);
+      expect(Object.values(BeltType).includes(belt.type as BeltType)).toBe(
+        true
+      );
     });
 
     it(`${belt.name} valid stripeStart`, () => {

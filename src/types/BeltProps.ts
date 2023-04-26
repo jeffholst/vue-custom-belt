@@ -9,15 +9,14 @@ export type StripePositions = (typeof stripePositions)[number];
 /**
  * Available belt types
  */
-export const beltTypes = [
-  "Solid",
-  "Striped",
-  "Coral",
-  "Split",
-  "Checkered",
-  "Crazy",
-] as const;
-export type BeltTypes = (typeof beltTypes)[number];
+export enum BeltType {
+  Solid = "Solid",
+  Striped = "Striped",
+  Coral = "Coral",
+  Split = "Split",
+  Checkered = "Checkered",
+  Crazy = "Crazy",
+}
 
 /**
  * Property object passed to <CustomBelt /> component
@@ -97,7 +96,7 @@ export interface BeltProps {
   transitionCSS: string;
   rdfTitle: string;
   rdfDescription: string;
-  randomBeltTypes: BeltTypes[];
+  randomBeltTypes: BeltType[];
   refreshInterval: number;
 }
 
@@ -116,7 +115,7 @@ export interface Belt {
   id: number;
   name: string;
   sortOrder: number;
-  type: BeltTypes;
+  type: BeltType;
   color1: string;
   color2: string;
   color3: string;

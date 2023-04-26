@@ -3,8 +3,7 @@ import ibjjfJSON from "../../shared/ibjjf.json";
 import {
   stripePositions,
   StripePositions,
-  beltTypes,
-  BeltTypes,
+  BeltType,
   BeltSystem,
   Belt,
 } from "../../types/BeltProps";
@@ -31,9 +30,9 @@ describe("StripeStart", () => {
  */
 describe("BeltType", () => {
   let rval = "";
-  beltTypes.forEach((bt: BeltTypes) => {
+  for (const bt in BeltType) {
     rval += bt;
-  });
+  }
 
   /**
    * Test that beltTypes only contains expected values

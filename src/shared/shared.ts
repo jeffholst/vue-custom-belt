@@ -1,6 +1,6 @@
-import type {
+import {
   BeltProps,
-  BeltTypes,
+  BeltType,
   Belt,
   BeltColor,
   StripePositions,
@@ -143,7 +143,7 @@ export const getBeltProps = (
     transitionCSS: "",
     rdfTitle: title,
     rdfDescription: description,
-    randomBeltTypes: Array<BeltTypes>(),
+    randomBeltTypes: Array<BeltType>(),
     refreshInterval: 0,
   };
 
@@ -246,7 +246,7 @@ const getRandomHexColor = (): string => {
   return `#${randomColor}`;
 };
 
-const getRandomBeltIndex = (bType: BeltTypes): number => {
+const getRandomBeltIndex = (bType: BeltType): number => {
   let index: number = -1;
 
   switch (bType) {
@@ -278,7 +278,7 @@ export const getRandomBelt = (
   stripeCount: number | undefined,
   stripeStart: StripePositions | undefined,
   transitionCSS: string = "",
-  includeBelts: Array<BeltTypes> = [],
+  includeBelts: Array<BeltType> = [],
   refreshInterval: number = 0
 ): BeltProps[] => {
   let randomBeltTypeIndex;
@@ -297,7 +297,7 @@ export const getRandomBelt = (
       randomBeltTypeIndex = getRandomBeltIndex(includeBelts[0]);
     } else {
       // build array of includeBelt types and selct random one
-      const ary: Array<BeltTypes> = [];
+      const ary: Array<BeltType> = [];
       for (let i = 0; i < includeBelts.length; i++) {
         ary.push(includeBelts[i]);
       }
@@ -330,32 +330,32 @@ export const getRandomBelt = (
     case 0: // solid belt
       rdfTitle = `${title} Solid belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Solid";
+      belt.type = BeltType.Solid;
       break;
     case 1: // striped belt
       rdfTitle = `${title} Striped belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Striped";
+      belt.type = BeltType.Striped;
       break;
     case 2: // coral belt
       rdfTitle = `${title} Coral belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Coral";
+      belt.type = BeltType.Coral;
       break;
     case 3: // split belt
       rdfTitle = `${title} Split belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Split";
+      belt.type = BeltType.Split;
       break;
     case 4: // checkered belt
       rdfTitle = `${title} Checkered belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Checkered";
+      belt.type = BeltType.Checkered;
       break;
     case 5: // crazy belt
       rdfTitle = `${title} Crazy belt`;
       rdfDescription = getDescription(rdfTitle, stripeCount);
-      belt.type = "Crazy";
+      belt.type = BeltType.Crazy;
       break;
   }
 
@@ -379,7 +379,7 @@ export const getRandomBelt = (
 export const getPredefinedBelt = (
   id: number,
   name: string,
-  beltType: BeltTypes,
+  beltType: BeltType,
   color1: string,
   color2: string,
   color3: string,
@@ -462,7 +462,7 @@ export const getSolidBelt = (
   return getPredefinedBelt(
     id,
     name,
-    "Solid",
+    BeltType.Solid,
     color,
     "",
     "",
@@ -511,7 +511,7 @@ export const getStripedBelt = (
   return getPredefinedBelt(
     id,
     name,
-    "Striped",
+    BeltType.Striped,
     color1,
     color2,
     color3,
@@ -559,7 +559,7 @@ export const getCoralBelt = (
   return getPredefinedBelt(
     id,
     name,
-    "Coral",
+    BeltType.Coral,
     color1,
     color2,
     "",
@@ -607,7 +607,7 @@ export const getSplitBelt = (
   return getPredefinedBelt(
     id,
     name,
-    "Split",
+    BeltType.Split,
     color1,
     color2,
     "",
@@ -655,7 +655,7 @@ export const getCheckeredBelt = (
   return getPredefinedBelt(
     id,
     name,
-    "Checkered",
+    BeltType.Checkered,
     color1,
     color2,
     "",
@@ -1031,7 +1031,7 @@ const setCrazyBelt = (belt: Belt, beltProps: BeltProps) => {
 export const getBelt = (
   id: number = 0,
   name: string = "",
-  type: BeltTypes = "Solid",
+  type: BeltType = BeltType.Solid,
   sortOrder: number = 0,
   color1: string = "",
   color2: string = "",
@@ -1052,7 +1052,7 @@ export const getBelt = (
   const belt: Belt = {
     id: id ? id : 0,
     name: name ? name : "",
-    type: type ? type : "Solid",
+    type: type ? type : BeltType.Solid,
     sortOrder: sortOrder ? sortOrder : 0,
     color1: color1 ? color1 : "",
     color2: color2 ? color2 : "",
