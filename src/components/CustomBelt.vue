@@ -481,7 +481,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch, onUnmounted } from "vue";
-import { getRandomBelt, BeltProps } from "../Belt";
+import { getBeltRandom, BeltProps } from "../Belt";
 
 const index = ref(0);
 const props = defineProps<{
@@ -519,7 +519,7 @@ const updateProps = () => {
           index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
         myBelt.value = props.beltProps[index.value];
         if (myBelt.value.randomBeltTypes.length > 0) {
-          const randomBelt: BeltProps[] = getRandomBelt(
+          const randomBelt: BeltProps[] = getBeltRandom(
             myBelt.value.hasPatch,
             myBelt.value.hasProfessorPatch,
             myBelt.value.stripeCount,
