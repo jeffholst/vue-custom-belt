@@ -4,7 +4,7 @@ import {
   Belt,
   StripePosition,
   mapBeltColors,
-  getDescription,
+  getBeltDescription,
   getBeltProps,
 } from "./Belt";
 
@@ -70,7 +70,7 @@ export class BeltSystem {
     stripePosition: StripePosition | undefined = undefined
   ): BeltProps {
     const rdfTitle = `${this.title} ${belt.name} Belt`;
-    const rdfDescription = getDescription(rdfTitle, stripeCount);
+    const rdfDescription = getBeltDescription(rdfTitle, stripeCount);
 
     const beltProps: BeltProps = getBeltProps(
       rdfTitle,

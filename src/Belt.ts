@@ -359,7 +359,7 @@ const setPatchProperties = (
   beltProps.stripe10 = stripeColor;
 };
 
-export const getDescription = (
+export const getBeltDescription = (
   beltName: string,
   stripeCount: number | undefined
 ): string => {
@@ -460,32 +460,32 @@ export const getRandomBelt = (
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
       rdfTitle = `${title} Solid belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Solid;
       break;
     case 1: // striped belt
       rdfTitle = `${title} Striped belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Striped;
       break;
     case 2: // coral belt
       rdfTitle = `${title} Coral belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Coral;
       break;
     case 3: // split belt
       rdfTitle = `${title} Split belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Split;
       break;
     case 4: // checkered belt
       rdfTitle = `${title} Checkered belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Checkered;
       break;
     case 5: // crazy belt
       rdfTitle = `${title} Crazy belt`;
-      rdfDescription = getDescription(rdfTitle, stripeCount);
+      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
       belt.type = BeltType.Crazy;
       break;
   }
