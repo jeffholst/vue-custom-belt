@@ -1,4 +1,48 @@
 /**
+ *  ___
+ * | __|_ _ _  _ _ __  ___
+ * | _|| ' \ || | '  \(_-<
+ * |___|_||_\_,_|_|_|_/__/
+ */
+
+/**
+ * Belt types
+ */
+export enum BeltType {
+  Solid = "Solid",
+  Striped = "Striped",
+  Coral = "Coral",
+  Split = "Split",
+  Checkered = "Checkered",
+  Crazy = "Crazy",
+}
+
+/**
+ * Log types
+ */
+
+enum LogType {
+  Info = "Info",
+  Warning = "Warning",
+  Error = "Error",
+}
+
+/**
+ * Where to start stripe placement on patch (Left or Right)
+ */
+export enum StripePosition {
+  Left = "Left",
+  Right = "Right",
+}
+
+/**
+ *  ___     _            __
+ * |_ _|_ _| |_ ___ _ _ / _|__ _ __ ___ ___
+ *  | || ' \  _/ -_) '_|  _/ _` / _/ -_|_-<
+ * |___|_||_\__\___|_| |_| \__,_\__\___/__/
+ */
+
+/**
  * Belt object definition
  */
 export interface Belt {
@@ -114,29 +158,16 @@ export interface BeltProps {
 }
 
 /**
- * Available belt types
+ *  ___       __           _ _
+ * |   \ ___ / _|__ _ _  _| | |_ ___
+ * | |) / -_)  _/ _` | || | |  _(_-<
+ * |___/\___|_| \__,_|\_,_|_|\__/__/
  */
-export enum BeltType {
-  Solid = "Solid",
-  Striped = "Striped",
-  Coral = "Coral",
-  Split = "Split",
-  Checkered = "Checkered",
-  Crazy = "Crazy",
-}
 
-/**
- * Where to start stripe placement on patch (Left or Right)
- */
-export enum StripePosition {
-  Left = "Left",
-  Right = "Right",
-}
-
-/**
- * Default stripe position
- */
-const StripePositionDefault = StripePosition.Right;
+export const DefaultColor = "#FF0000"; // default when no color provided
+export const MinimumStripeCount = 0; // minimum number of stripes
+export const MaximumStripeCount = 10; // maximum number of stripes a belt may have
+export const StripePositionDefault = StripePosition.Right; // default stripe position
 
 /*
  *  ___                   _     ___             _   _
@@ -146,6 +177,29 @@ const StripePositionDefault = StripePosition.Right;
  *         |_|
  */
 
+/**
+ * Create a new Belt object
+ * @param {number} id unique identifier for belt
+ * @param {string} name friendly name for belt
+ * @param {BeltType} type type of belt
+ * @param {number} sortOrder used for sorting belts for display
+ * @param {string} color1 hex value for belt color 1
+ * @param {string} color2 hex value for belt color 2
+ * @param {string} color3 hex value for belt color 3
+ * @param {string} borderColor hex value for belt border color
+ * @param {boolean} hasPatch whether belt has patch or not
+ * @param {string} patchColor hex value for patch color
+ * @param {string} patchBorderColor hex value for patch border color
+ * @param {boolean} hasProfessorPatch whether belt has professor patch or not
+ * @param {string} professorPatchColor hex value for professor patch color
+ * @param {string} professorBorderColor hex value for professor patch border color
+ * @param {string} stripeColor hex value for stripe color
+ * @param {number} stripeCount number of stripes for belt [0-10]
+ * @param {StripePosition} stripePosition starting position of stripes on belt
+ * @param {number} minStripes minimum number of stripes for belt
+ * @param {number} maxStripes maximum number of stripes for belt
+ * @return {Belt} Belt object
+ */
 export const getBelt = (
   id: number = 0,
   name: string = "",
@@ -164,8 +218,8 @@ export const getBelt = (
   stripeColor: string = "",
   stripeCount: number = 0,
   stripePosition: StripePosition = StripePositionDefault,
-  minStripes: number = 0,
-  maxStripes: number = 4
+  minStripes: number = MinimumStripeCount,
+  maxStripes: number = MaximumStripeCount
 ): Belt => {
   const belt: Belt = {
     id: id ? id : 0,
@@ -188,6 +242,8 @@ export const getBelt = (
     minStripes: minStripes ? minStripes : 0,
     maxStripes: maxStripes ? maxStripes : 4,
   };
+
+  validateBelt(belt);
 
   return belt;
 };
@@ -650,6 +706,54 @@ export const getBeltSolid = (
   );
 };
 
+export const getBeltSplit = (
+  id: number,
+  name: string,
+  color1: string,
+  color2: string,
+  borderColor: string,
+  hasPatch: boolean,
+  patchColor: string,
+  patchBorderColor: string,
+  hasProfessorPatch: boolean,
+  professorPatchColor: string,
+  professorBorderColor: string,
+  stripeColor: string,
+  stripeCount: number,
+  stripeStart: StripePosition,
+  minStripes: number,
+  maxStripes: number,
+  title: string,
+  description: string,
+  transitionCSS: string,
+  refreshInterval: number
+): BeltProps[] => {
+  return getBeltPredefined(
+    id,
+    name,
+    BeltType.Split,
+    color1,
+    color2,
+    "",
+    borderColor,
+    hasPatch,
+    patchColor,
+    patchBorderColor,
+    hasProfessorPatch,
+    professorPatchColor,
+    professorBorderColor,
+    stripeColor,
+    stripeCount,
+    stripeStart,
+    minStripes,
+    maxStripes,
+    title,
+    description,
+    transitionCSS,
+    refreshInterval
+  );
+};
+
 export const getBeltStriped = (
   id: number,
   name: string,
@@ -680,54 +784,6 @@ export const getBeltStriped = (
     color1,
     color2,
     color3,
-    borderColor,
-    hasPatch,
-    patchColor,
-    patchBorderColor,
-    hasProfessorPatch,
-    professorPatchColor,
-    professorBorderColor,
-    stripeColor,
-    stripeCount,
-    stripeStart,
-    minStripes,
-    maxStripes,
-    title,
-    description,
-    transitionCSS,
-    refreshInterval
-  );
-};
-
-export const getBeltSplit = (
-  id: number,
-  name: string,
-  color1: string,
-  color2: string,
-  borderColor: string,
-  hasPatch: boolean,
-  patchColor: string,
-  patchBorderColor: string,
-  hasProfessorPatch: boolean,
-  professorPatchColor: string,
-  professorBorderColor: string,
-  stripeColor: string,
-  stripeCount: number,
-  stripeStart: StripePosition,
-  minStripes: number,
-  maxStripes: number,
-  title: string,
-  description: string,
-  transitionCSS: string,
-  refreshInterval: number
-): BeltProps[] => {
-  return getBeltPredefined(
-    id,
-    name,
-    BeltType.Split,
-    color1,
-    color2,
-    "",
     borderColor,
     hasPatch,
     patchColor,
@@ -806,6 +862,28 @@ export const mapBeltColors = (belts: Belt[], colors: BeltColor[]) => {
  * |____\___/\__\__,_|_| |_| \_,_|_||_\__|\__|_\___/_||_/__/
  */
 
+const getBeltColorCount = (bType: BeltType): number | undefined => {
+  let colorCount: number | undefined = undefined;
+  switch (bType) {
+    case BeltType.Solid:
+      colorCount = 1;
+      break;
+    case BeltType.Coral:
+    case BeltType.Split:
+    case BeltType.Checkered:
+      colorCount = 2;
+      break;
+    case BeltType.Striped:
+      colorCount = 3;
+      break;
+    case BeltType.Crazy:
+      colorCount = undefined;
+      break;
+  }
+
+  return colorCount;
+};
+
 const getRandomBeltIndex = (bType: BeltType): number => {
   let index: number = -1;
 
@@ -835,6 +913,18 @@ const getRandomBeltIndex = (bType: BeltType): number => {
 const getRandomHexColor = (): string => {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   return `#${randomColor}`;
+};
+
+const logMessage = (
+  ltype: LogType,
+  beltName: string,
+  beltId: number,
+  message: string
+) => {
+  const myName: string = beltName ? beltName : "Not Specified";
+  const msg: string = `CustomBelt ${ltype}: {'beltName': '${myName}', 'id': ${beltId}, 'message': '${message}'}`;
+
+  console.log(msg);
 };
 
 const setBeltCheckered = (belt: Belt, beltProps: BeltProps) => {
@@ -1218,4 +1308,101 @@ const setPatchProperties = (
   beltProps.stripe8 = stripeColor;
   beltProps.stripe9 = stripeColor;
   beltProps.stripe10 = stripeColor;
+};
+
+/**
+ * __   __    _ _    _      _             ___             _   _
+ * \ \ / /_ _| (_)__| |__ _| |_ ___ _ _  | __|  _ _ _  __| |_(_)___ _ _  ___
+ *  \ V / _` | | / _` / _` |  _/ _ \ '_| | _| || | ' \/ _|  _| / _ \ ' \(_-<
+ *   \_/\__,_|_|_\__,_\__,_|\__\___/_|   |_| \_,_|_||_\__|\__|_\___/_||_/__/
+ */
+
+/**
+ * Validate parameters received for Belt object
+ * @param {Belt} belt belt object to validate
+ */
+const validateBelt = (belt: Belt) => {
+  validateBelt_Colors(belt);
+  validateBelt_StripeCount(belt);
+};
+
+/**
+ * Validate color parameters for  Belt object
+ * @param {Belt} belt belt object to validate
+ */
+const validateBelt_Colors = (belt: Belt) => {
+  let msg;
+  const colorCount: number | undefined = getBeltColorCount(belt.type);
+
+  if (colorCount === undefined) {
+    msg = `unknown color count`;
+    logMessage(LogType.Error, belt.name, belt.id, msg);
+  } else {
+    if (colorCount >= 1) {
+      if (!belt.color1) {
+        msg = `color1 is required setting to (${DefaultColor})`;
+        logMessage(LogType.Error, belt.name, belt.id, msg);
+        belt.color1 = DefaultColor;
+      } else if (!isValidHexCode(belt.color1)) {
+        msg = `invalid color1 (${belt.color1}) setting to (${DefaultColor})`;
+        logMessage(LogType.Warning, belt.name, belt.id, msg);
+        belt.color1 = DefaultColor;
+      }
+    }
+    if (colorCount >= 2) {
+      if (!belt.color2) {
+        msg = `color2 is required setting to (${DefaultColor})`;
+        logMessage(LogType.Error, belt.name, belt.id, msg);
+        belt.color2 = DefaultColor;
+      } else if (!isValidHexCode(belt.color2)) {
+        msg = `invalid color2 (${belt.color2}) setting to (${DefaultColor})`;
+        logMessage(LogType.Warning, belt.name, belt.id, msg);
+        belt.color2 = DefaultColor;
+      }
+    }
+    if (colorCount >= 3) {
+      if (!belt.color3) {
+        msg = `color3 is required setting to (${DefaultColor})`;
+        logMessage(LogType.Error, belt.name, belt.id, msg);
+        belt.color3 = DefaultColor;
+      } else if (!isValidHexCode(belt.color3)) {
+        msg = `invalid color2 (${belt.color3}) setting to (${DefaultColor})`;
+        logMessage(LogType.Warning, belt.name, belt.id, msg);
+        belt.color3 = DefaultColor;
+      }
+    }
+  }
+};
+
+/**
+ * Validate minStripes and maxStripes parameters received for Belt object
+ * @param {Belt} belt belt object to validate
+ */
+const validateBelt_StripeCount = (belt: Belt) => {
+  let msg;
+  if (belt.minStripes < MinimumStripeCount) {
+    msg = `invalid minStripes (${belt.minStripes}) setting to (${MinimumStripeCount})`;
+    logMessage(LogType.Warning, belt.name, belt.id, msg);
+    belt.minStripes = MinimumStripeCount;
+  } else if (belt.minStripes > MaximumStripeCount) {
+    msg = `invalid minStripes (${belt.minStripes}) setting to (${MinimumStripeCount})`;
+    logMessage(LogType.Warning, belt.name, belt.id, msg);
+    belt.minStripes = MinimumStripeCount;
+  }
+
+  if (belt.maxStripes > MaximumStripeCount) {
+    msg = `invalid maxStripes (${belt.maxStripes}) setting to (${MaximumStripeCount})`;
+    logMessage(LogType.Warning, belt.name, belt.id, msg);
+    belt.maxStripes = MaximumStripeCount;
+  } else if (belt.maxStripes < MinimumStripeCount) {
+    msg = `invalid maxStripes (${belt.maxStripes}) setting to (${MaximumStripeCount})`;
+    logMessage(LogType.Warning, belt.name, belt.id, msg);
+    belt.maxStripes = MaximumStripeCount;
+  }
+
+  if (belt.minStripes > belt.maxStripes) {
+    msg = `minStripes (${belt.minStripes}) must be <= maxStripes (${belt.maxStripes}) setting minStripes to (${MinimumStripeCount})`;
+    logMessage(LogType.Warning, belt.name, belt.id, msg);
+    belt.minStripes = MinimumStripeCount;
+  }
 };
