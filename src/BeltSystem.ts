@@ -96,12 +96,16 @@ export class BeltSystem {
     refreshInterval: number = 0
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
+    let uniqueElementId: string | undefined = undefined;
     this.belts.forEach((belt) => {
       const beltProps = this.getBeltProps(
         belt,
         belt.minStripes,
         belt.stripePosition
       );
+      // use same element id for all belts
+      if (uniqueElementId === undefined) uniqueElementId = beltProps.id;
+      else beltProps.id = uniqueElementId;
       beltProps.transitionCSS = transitionCSS;
       beltProps.refreshInterval = refreshInterval;
       beltPropsAry.push(beltProps);

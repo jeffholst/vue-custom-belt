@@ -1,7 +1,7 @@
 <template>
   <svg
     v-if="isValid"
-    id="custom_belt"
+    :id="myBelt != undefined ? myBelt.id : ''"
     :onClick="downLoadSVG"
     viewBox="0 0 471.2 190.2"
     role="img"
@@ -529,6 +529,7 @@ const updateProps = () => {
             myBelt.value.randomBeltTypes,
             myBelt.value.refreshInterval
           );
+          randomBelt[0].id = myBelt.value.id; // keep the same element id
           myBelt.value = randomBelt[0];
         }
       }, myBelt.value.refreshInterval);

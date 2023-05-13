@@ -79,6 +79,7 @@ export interface BeltColor {
  * Property object passed to <CustomBelt /> component
  */
 export interface BeltProps {
+  id: string;
   border: string;
   hasPatch: boolean;
   patch: string;
@@ -173,6 +174,7 @@ export interface BeltRDF {
  */
 
 const RDFAbout = "https://github.com/jeffholst/vue-custom-belt"; // about URL for RDF metadata
+const UniqueIDPrefix = "custom-belt-"; // prefix for unique ID generation
 
 export const DefaultColor = "#FF0000"; // default when no color provided
 export const MinimumStripeCount = 0; // minimum number of stripes
@@ -463,6 +465,7 @@ export const getBeltProps = (
 ): BeltProps => {
   const beltRDF: BeltRDF = getBeltRDF(rdfTitle, rdfDescription);
   const beltProps: BeltProps = {
+    id: generateUniqueId(),
     border: "",
     hasPatch: true,
     patch: "",
@@ -905,6 +908,10 @@ export const mapBeltColors = (belts: Belt[], colors: BeltColor[]) => {
  * | |__/ _ \/ _/ _` | | | _| || | ' \/ _|  _| / _ \ ' \(_-<
  * |____\___/\__\__,_|_| |_| \_,_|_||_\__|\__|_\___/_||_/__/
  */
+
+const generateUniqueId = (): string => {
+  return `${UniqueIDPrefix}${Date.now()}${Math.floor(Math.random() * 1000)}`;
+};
 
 const getBeltColorCount = (bType: BeltType): number | undefined => {
   let colorCount: number | undefined = undefined;
@@ -1380,7 +1387,6 @@ const validateBelt_Colors = (belt: Belt) => {
   const colorCount: number | undefined = getBeltColorCount(belt.type);
 
   if (colorCount === undefined) {
-    debugger;
     msg = `unknown color count`;
     logMessage(LogType.Error, belt.name, belt.id, msg);
   } else {
