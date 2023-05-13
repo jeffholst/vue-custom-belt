@@ -151,10 +151,18 @@ export interface BeltProps {
   s13l2b: string;
   s13l3: string;
   transitionCSS: string;
-  rdfTitle: string;
-  rdfDescription: string;
+  beltRDF: BeltRDF;
   randomBeltTypes: BeltType[];
   refreshInterval: number;
+}
+
+/**
+ * RDF metadata used in SVG tag
+ */
+export interface BeltRDF {
+  title: string;
+  description: string;
+  about: string;
 }
 
 /**
@@ -163,6 +171,8 @@ export interface BeltProps {
  * | |) / -_)  _/ _` | || | |  _(_-<
  * |___/\___|_| \__,_|\_,_|_|\__/__/
  */
+
+const RDFAbout = "https://github.com/jeffholst/vue-custom-belt"; // about URL for RDF metadata
 
 export const DefaultColor = "#FF0000"; // default when no color provided
 export const MinimumStripeCount = 0; // minimum number of stripes
@@ -178,7 +188,7 @@ export const StripePositionDefault = StripePosition.Right; // default stripe pos
  */
 
 /**
- * Create a new Belt object
+ * Create a new Belt object from specified parameters
  * @param {number} id unique identifier for belt
  * @param {string} name friendly name for belt
  * @param {BeltType} type type of belt
@@ -248,6 +258,29 @@ export const getBelt = (
   return belt;
 };
 
+/**
+ * Create a new Checkered Belt object from specified parameters
+ * @param {number} id unique identifier for belt
+ * @param {string} name friendly name for belt
+ * @param {string} color1 hex value for belt color 1
+ * @param {string} color2 hex value for belt color 2
+ * @param {string} borderColor hex value for belt border color
+ * @param {boolean} hasPatch whether belt has patch or not
+ * @param {string} patchColor hex value for patch color
+ * @param {string} patchBorderColor hex value for patch border color
+ * @param {boolean} hasProfessorPatch whether belt has professor patch or not
+ * @param {string} professorPatchColor hex value for professor patch color
+ * @param {string} professorBorderColor hex value for professor patch border color
+ * @param {string} stripeColor hex value for stripe color
+ * @param {number} stripeCount number of stripes for belt [0-10]
+ * @param {StripePosition} stripePosition starting position of stripes on belt
+ * @param {number} minStripes minimum number of stripes for belt
+ * @param {number} maxStripes maximum number of stripes for belt
+ * @param {string} rdfTitle title of belt
+ * @param {string} rdfDescription description of belt
+ * @param {string} transitionCSS CSS for transition animation
+ * @param {number} refreshInterval interval for refreshing belt in milliseconds
+ * @return {BeltProps[]} Belt object */
 export const getBeltCheckered = (
   id: number,
   name: string,
@@ -265,8 +298,8 @@ export const getBeltCheckered = (
   stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -289,8 +322,8 @@ export const getBeltCheckered = (
     stripePosition,
     minStripes,
     maxStripes,
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -313,8 +346,8 @@ export const getBeltCoral = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -337,8 +370,8 @@ export const getBeltCoral = (
     stripeStart,
     minStripes,
     maxStripes,
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -376,8 +409,8 @@ export const getBeltPredefined = (
   stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -404,8 +437,8 @@ export const getBeltPredefined = (
   );
 
   const beltProps: BeltProps = getBeltProps(
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     belt,
     stripeCount,
     stripePosition,
@@ -420,14 +453,15 @@ export const getBeltPredefined = (
 };
 
 export const getBeltProps = (
-  title: string = "",
-  description: string = "",
+  rdfTitle: string = "",
+  rdfDescription: string = "",
   belt: Belt | undefined,
   stripeCount: number,
   stripePosition: StripePosition | undefined,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps => {
+  const beltRDF: BeltRDF = getBeltRDF(rdfTitle, rdfDescription);
   const beltProps: BeltProps = {
     border: "",
     hasPatch: true,
@@ -501,8 +535,7 @@ export const getBeltProps = (
     s13l2b: "",
     s13l3: "",
     transitionCSS: "",
-    rdfTitle: title,
-    rdfDescription: description,
+    beltRDF: beltRDF,
     randomBeltTypes: Array<BeltType>(),
     refreshInterval: 0,
   };
@@ -535,8 +568,6 @@ export const getBeltProps = (
         break;
     }
     beltProps.border = belt.borderColor;
-    //beltProps.patchBorder = belt.patchBorderColor;
-    //beltProps.professorBorder = belt.professorBorderColor;
 
     setPatchProperties(
       beltProps,
@@ -592,55 +623,58 @@ export const getBeltRandom = (
     randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
 
-  const belt: Belt = getBelt();
-  belt.sortOrder = 0;
-  belt.color1 = getRandomHexColor();
-  belt.color2 = getRandomHexColor();
-  belt.color3 = getRandomHexColor();
-  belt.borderColor =
-    belt.patchBorderColor =
-    belt.professorBorderColor =
-      getRandomHexColor();
-  belt.hasPatch = hasPatch;
-  belt.patchColor = getRandomHexColor();
-  belt.hasProfessorPatch = hasProfessorPatch;
-  belt.professorPatchColor = getRandomHexColor();
-  belt.stripeColor = getRandomHexColor();
-
   let rdfTitle = "";
   let rdfDescription = "";
+  let beltType: BeltType = BeltType.Solid;
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
       rdfTitle = `${title} Solid belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Solid;
+      beltType = BeltType.Solid;
       break;
     case 1: // striped belt
       rdfTitle = `${title} Striped belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Striped;
+      beltType = BeltType.Striped;
       break;
     case 2: // coral belt
       rdfTitle = `${title} Coral belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Coral;
+      beltType = BeltType.Coral;
       break;
     case 3: // split belt
       rdfTitle = `${title} Split belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Split;
+      beltType = BeltType.Split;
       break;
     case 4: // checkered belt
       rdfTitle = `${title} Checkered belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Checkered;
+      beltType = BeltType.Checkered;
       break;
     case 5: // crazy belt
       rdfTitle = `${title} Crazy belt`;
-      rdfDescription = getBeltDescription(rdfTitle, stripeCount);
-      belt.type = BeltType.Crazy;
+      beltType = BeltType.Crazy;
       break;
   }
+
+  rdfDescription = getBeltDescription(rdfTitle, stripeCount);
+  const belt: Belt = getBelt(
+    undefined,
+    rdfTitle,
+    beltType,
+    0,
+    getRandomHexColor(),
+    getRandomHexColor(),
+    getRandomHexColor(),
+    getRandomHexColor(),
+    hasPatch,
+    getRandomHexColor(),
+    getRandomHexColor(),
+    hasProfessorPatch,
+    getRandomHexColor(),
+    getRandomHexColor(),
+    getRandomHexColor(),
+    0,
+    StripePosition.Right,
+    0,
+    10
+  );
 
   const beltProps: BeltProps = getBeltProps(
     rdfTitle,
@@ -659,6 +693,16 @@ export const getBeltRandom = (
   return beltPropsAry;
 };
 
+export const getBeltRDF = (
+  title: string,
+  description: string,
+  about: string | undefined | null = undefined
+): BeltRDF => {
+  if (about === undefined || about === null) about = RDFAbout;
+  const beltRDF: BeltRDF = { about, title, description };
+  return beltRDF;
+};
+
 export const getBeltSolid = (
   id: number,
   name: string,
@@ -675,8 +719,8 @@ export const getBeltSolid = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -699,8 +743,8 @@ export const getBeltSolid = (
     stripeStart,
     minStripes,
     maxStripes,
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -723,8 +767,8 @@ export const getBeltSplit = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -747,8 +791,8 @@ export const getBeltSplit = (
     stripeStart,
     minStripes,
     maxStripes,
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -772,8 +816,8 @@ export const getBeltStriped = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  title: string,
-  description: string,
+  rdfTitle: string,
+  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -796,8 +840,8 @@ export const getBeltStriped = (
     stripeStart,
     minStripes,
     maxStripes,
-    title,
-    description,
+    rdfTitle,
+    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -877,7 +921,7 @@ const getBeltColorCount = (bType: BeltType): number | undefined => {
       colorCount = 3;
       break;
     case BeltType.Crazy:
-      colorCount = undefined;
+      colorCount = 3;
       break;
   }
 
@@ -911,8 +955,9 @@ const getRandomBeltIndex = (bType: BeltType): number => {
 };
 
 const getRandomHexColor = (): string => {
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return `#${randomColor}`;
+  return `#${[...Array(6)]
+    .map(() => Math.floor(Math.random() * 16).toString(16))
+    .join("")}`;
 };
 
 const logMessage = (
@@ -1335,6 +1380,7 @@ const validateBelt_Colors = (belt: Belt) => {
   const colorCount: number | undefined = getBeltColorCount(belt.type);
 
   if (colorCount === undefined) {
+    debugger;
     msg = `unknown color count`;
     logMessage(LogType.Error, belt.name, belt.id, msg);
   } else {

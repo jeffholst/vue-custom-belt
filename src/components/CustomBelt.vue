@@ -14,10 +14,11 @@
         xmlns:dc="http://purl.org/dc/elements/1.1/"
       >
         <rdf:Description
-          about="https://github.com/jeffholst/svg-belt"
-          :dc:title="myBelt != undefined ? myBelt.rdfTitle : ''"
-          :dc:description="myBelt != undefined ? myBelt.rdfDescription : ''"
-          dc:publisher="Jeff Holst"
+          :dc:about="myBelt != undefined ? myBelt.beltRDF.about : ''"
+          :dc:title="myBelt != undefined ? myBelt.beltRDF.title : ''"
+          :dc:description="
+            myBelt != undefined ? myBelt.beltRDF.description : ''
+          "
           :dc:date="new Date().toISOString().slice(0, 10)"
           dc:format="image/svg"
           dc:language="en"
