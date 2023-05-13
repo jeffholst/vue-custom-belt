@@ -2,16 +2,20 @@
 
 exports[`getBeltProps > should match snap 1`] = `
 {
+  "beltRDF": {
+    "about": "https://github.com/jeffholst/vue-custom-belt",
+    "description": "Test Description",
+    "title": "Test Title",
+  },
   "border": "",
   "hasPatch": true,
   "hasProfessorPatch": false,
+  "id": "",
   "patch": "",
   "patchBorder": "",
   "professorBorder": "",
   "professorPatch": "",
   "randomBeltTypes": [],
-  "rdfDescription": "Test Description",
-  "rdfTitle": "Test Title",
   "refreshInterval": 0,
   "s10l1": "",
   "s10l2a": "",

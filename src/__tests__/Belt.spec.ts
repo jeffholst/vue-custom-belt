@@ -142,17 +142,17 @@ describe("mapBeltColors", () => {
  */
 describe("getBeltProps", () => {
   it("should match snap", () => {
-    expect(
-      belt.getBeltProps(
-        "Test Title",
-        "Test Description",
-        undefined,
-        0,
-        belt.StripePosition.Left,
-        "",
-        0
-      )
-    ).toMatchSnapshot();
+    const beltProps: belt.BeltProps = belt.getBeltProps(
+      "Test Title",
+      "Test Description",
+      undefined,
+      0,
+      belt.StripePosition.Left,
+      "",
+      0
+    );
+    beltProps.id = ""; // blank id so snapshot doesn't fail
+    expect(beltProps).toMatchSnapshot();
   });
 });
 

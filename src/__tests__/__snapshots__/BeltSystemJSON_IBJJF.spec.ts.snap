@@ -3,16 +3,20 @@
 exports[`IBJJF System > Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Black Belt with no stripes",
+      "title": "IBJJF Black Belt",
+    },
     "border": "#CCCCCC",
     "hasPatch": true,
     "hasProfessorPatch": true,
+    "id": "",
     "patch": "#990000",
     "patchBorder": "#CCCCCC",
     "professorBorder": "#CCCCCC",
     "professorPatch": "#FFFFFF",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Black Belt with no stripes",
-    "rdfTitle": "IBJJF Black Belt",
     "refreshInterval": 0,
     "s10l1": "#000000",
     "s10l2a": "#000000",
@@ -86,16 +90,20 @@ exports[`IBJJF System > Black 1`] = `
 exports[`IBJJF System > Blue 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Blue Belt with no stripes",
+      "title": "IBJJF Blue Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Blue Belt with no stripes",
-    "rdfTitle": "IBJJF Blue Belt",
     "refreshInterval": 0,
     "s10l1": "#0099CC",
     "s10l2a": "#0099CC",
@@ -169,16 +177,20 @@ exports[`IBJJF System > Blue 1`] = `
 exports[`IBJJF System > Brown 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Brown Belt with no stripes",
+      "title": "IBJJF Brown Belt",
+    },
     "border": "#CCCCCC",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#CCCCCC",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Brown Belt with no stripes",
-    "rdfTitle": "IBJJF Brown Belt",
     "refreshInterval": 0,
     "s10l1": "#663300",
     "s10l2a": "#663300",
@@ -252,16 +264,20 @@ exports[`IBJJF System > Brown 1`] = `
 exports[`IBJJF System > Gray 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Gray Belt with no stripes",
+      "title": "IBJJF Gray Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Gray Belt with no stripes",
-    "rdfTitle": "IBJJF Gray Belt",
     "refreshInterval": 0,
     "s10l1": "#999999",
     "s10l2a": "#999999",
@@ -335,16 +351,20 @@ exports[`IBJJF System > Gray 1`] = `
 exports[`IBJJF System > Gray/Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Gray/Black Belt with no stripes",
+      "title": "IBJJF Gray/Black Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Gray/Black Belt with no stripes",
-    "rdfTitle": "IBJJF Gray/Black Belt",
     "refreshInterval": 0,
     "s10l1": "#999999",
     "s10l2a": "#000000",
@@ -418,16 +438,20 @@ exports[`IBJJF System > Gray/Black 1`] = `
 exports[`IBJJF System > Gray/White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Gray/White Belt with no stripes",
+      "title": "IBJJF Gray/White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Gray/White Belt with no stripes",
-    "rdfTitle": "IBJJF Gray/White Belt",
     "refreshInterval": 0,
     "s10l1": "#999999",
     "s10l2a": "#FFFFFF",
@@ -501,16 +525,20 @@ exports[`IBJJF System > Gray/White 1`] = `
 exports[`IBJJF System > Green 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Green Belt with no stripes",
+      "title": "IBJJF Green Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Green Belt with no stripes",
-    "rdfTitle": "IBJJF Green Belt",
     "refreshInterval": 0,
     "s10l1": "#006633",
     "s10l2a": "#006633",
@@ -584,16 +612,20 @@ exports[`IBJJF System > Green 1`] = `
 exports[`IBJJF System > Green/Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Green/Black Belt with no stripes",
+      "title": "IBJJF Green/Black Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Green/Black Belt with no stripes",
-    "rdfTitle": "IBJJF Green/Black Belt",
     "refreshInterval": 0,
     "s10l1": "#006633",
     "s10l2a": "#000000",
@@ -667,16 +699,20 @@ exports[`IBJJF System > Green/Black 1`] = `
 exports[`IBJJF System > Green/White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Green/White Belt with no stripes",
+      "title": "IBJJF Green/White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Green/White Belt with no stripes",
-    "rdfTitle": "IBJJF Green/White Belt",
     "refreshInterval": 0,
     "s10l1": "#006633",
     "s10l2a": "#FFFFFF",
@@ -1215,16 +1251,20 @@ BeltSystem {
 exports[`IBJJF System > Orange 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Orange Belt with no stripes",
+      "title": "IBJJF Orange Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Orange Belt with no stripes",
-    "rdfTitle": "IBJJF Orange Belt",
     "refreshInterval": 0,
     "s10l1": "#CC6633",
     "s10l2a": "#CC6633",
@@ -1298,16 +1338,20 @@ exports[`IBJJF System > Orange 1`] = `
 exports[`IBJJF System > Orange/Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Orange/Black Belt with no stripes",
+      "title": "IBJJF Orange/Black Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Orange/Black Belt with no stripes",
-    "rdfTitle": "IBJJF Orange/Black Belt",
     "refreshInterval": 0,
     "s10l1": "#CC6633",
     "s10l2a": "#000000",
@@ -1381,16 +1425,20 @@ exports[`IBJJF System > Orange/Black 1`] = `
 exports[`IBJJF System > Orange/White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Orange/White Belt with no stripes",
+      "title": "IBJJF Orange/White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Orange/White Belt with no stripes",
-    "rdfTitle": "IBJJF Orange/White Belt",
     "refreshInterval": 0,
     "s10l1": "#CC6633",
     "s10l2a": "#FFFFFF",
@@ -1464,16 +1512,20 @@ exports[`IBJJF System > Orange/White 1`] = `
 exports[`IBJJF System > Purple 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Purple Belt with no stripes",
+      "title": "IBJJF Purple Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Purple Belt with no stripes",
-    "rdfTitle": "IBJJF Purple Belt",
     "refreshInterval": 0,
     "s10l1": "#993399",
     "s10l2a": "#993399",
@@ -1547,16 +1599,20 @@ exports[`IBJJF System > Purple 1`] = `
 exports[`IBJJF System > Red 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Red Belt with no stripes",
+      "title": "IBJJF Red Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": true,
+    "id": "",
     "patch": "#FFFFFF",
     "patchBorder": "#434244",
     "professorBorder": "#434244",
     "professorPatch": "#CC9900",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Red Belt with no stripes",
-    "rdfTitle": "IBJJF Red Belt",
     "refreshInterval": 0,
     "s10l1": "#990000",
     "s10l2a": "#990000",
@@ -1630,16 +1686,20 @@ exports[`IBJJF System > Red 1`] = `
 exports[`IBJJF System > Red/Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Red/Black Belt with no stripes",
+      "title": "IBJJF Red/Black Belt",
+    },
     "border": "#CCCCCC",
     "hasPatch": true,
     "hasProfessorPatch": true,
+    "id": "",
     "patch": "#FFFFFF",
     "patchBorder": "#CCCCCC",
     "professorBorder": "#CCCCCC",
     "professorPatch": "#999999",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Red/Black Belt with no stripes",
-    "rdfTitle": "IBJJF Red/Black Belt",
     "refreshInterval": 0,
     "s10l1": "#000000",
     "s10l2a": "#000000",
@@ -1713,16 +1773,20 @@ exports[`IBJJF System > Red/Black 1`] = `
 exports[`IBJJF System > Red/White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Red/White Belt with no stripes",
+      "title": "IBJJF Red/White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": true,
+    "id": "",
     "patch": "#FFFFFF",
     "patchBorder": "#434244",
     "professorBorder": "#434244",
     "professorPatch": "#999999",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Red/White Belt with no stripes",
-    "rdfTitle": "IBJJF Red/White Belt",
     "refreshInterval": 0,
     "s10l1": "#990000",
     "s10l2a": "#990000",
@@ -1796,16 +1860,20 @@ exports[`IBJJF System > Red/White 1`] = `
 exports[`IBJJF System > White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF White Belt with no stripes",
+      "title": "IBJJF White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF White Belt with no stripes",
-    "rdfTitle": "IBJJF White Belt",
     "refreshInterval": 0,
     "s10l1": "#FFFFFF",
     "s10l2a": "#FFFFFF",
@@ -1879,16 +1947,20 @@ exports[`IBJJF System > White 1`] = `
 exports[`IBJJF System > Yellow 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Yellow Belt with no stripes",
+      "title": "IBJJF Yellow Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Yellow Belt with no stripes",
-    "rdfTitle": "IBJJF Yellow Belt",
     "refreshInterval": 0,
     "s10l1": "#FFCC00",
     "s10l2a": "#FFCC00",
@@ -1962,16 +2034,20 @@ exports[`IBJJF System > Yellow 1`] = `
 exports[`IBJJF System > Yellow/Black 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Yellow/Black Belt with no stripes",
+      "title": "IBJJF Yellow/Black Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Yellow/Black Belt with no stripes",
-    "rdfTitle": "IBJJF Yellow/Black Belt",
     "refreshInterval": 0,
     "s10l1": "#FFCC00",
     "s10l2a": "#000000",
@@ -2045,16 +2121,20 @@ exports[`IBJJF System > Yellow/Black 1`] = `
 exports[`IBJJF System > Yellow/White 1`] = `
 [
   {
+    "beltRDF": {
+      "about": "https://github.com/jeffholst/vue-custom-belt",
+      "description": "IBJJF Yellow/White Belt with no stripes",
+      "title": "IBJJF Yellow/White Belt",
+    },
     "border": "#434244",
     "hasPatch": true,
     "hasProfessorPatch": false,
+    "id": "",
     "patch": "#000000",
     "patchBorder": "#434244",
     "professorBorder": "",
     "professorPatch": "",
     "randomBeltTypes": [],
-    "rdfDescription": "IBJJF Yellow/White Belt with no stripes",
-    "rdfTitle": "IBJJF Yellow/White Belt",
     "refreshInterval": 0,
     "s10l1": "#FFCC00",
     "s10l2a": "#FFFFFF",

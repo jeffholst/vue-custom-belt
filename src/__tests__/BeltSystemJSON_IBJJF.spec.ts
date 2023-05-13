@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { BeltType, StripePosition } from "../Belt";
+import { BeltType, BeltProps, StripePosition } from "../Belt";
 import { BeltSystem } from "../BeltSystem";
 import BeltSystemJSON_IBJJF from "../belt-systems/IBJJF.json";
 
@@ -13,7 +13,12 @@ describe("IBJJF System", () => {
 
   BeltSystemJSON_IBJJF.belts.forEach((belt) => {
     it(`${belt.name}`, () => {
-      expect(ibjjfSystem.getBeltPropsByName(belt.name, 0)).toMatchSnapshot();
+      const beltProps: BeltProps[] = ibjjfSystem.getBeltPropsByName(
+        belt.name,
+        0
+      );
+      beltProps[0].id = ""; // blank out unique id so snapshot does not fail
+      expect(beltProps).toMatchSnapshot();
     });
 
     it(`${belt.name} min/max`, () => {
