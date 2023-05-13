@@ -83,9 +83,9 @@ let randomSplit: BeltProps[] = getBeltRandom(
           getBeltStriped(
             1,
             'USA Belt',
-            'Red',
-            'White',
-            'Blue',
+            '#FF0000',
+            '#FFFFFF',
+            '#0000FF',
             'Black',
             true,
             'White',
