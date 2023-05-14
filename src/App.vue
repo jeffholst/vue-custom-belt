@@ -124,7 +124,7 @@ const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        USA Striped Belt
+        Flag Belts
       </h1>
       <CustomBelt :belt-props="flagBelts" />
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
