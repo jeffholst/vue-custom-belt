@@ -1,3 +1,5 @@
+import { version } from "../package.json";
+
 /**
  *  ___
  * | __|_ _ _  _ _ __  ___
@@ -46,6 +48,8 @@ export enum StripePosition {
  * Belt object definition
  */
 export interface Belt {
+  version: string;
+  system: string;
   id: number;
   name: string;
   sortOrder: number;
@@ -160,7 +164,7 @@ export interface BeltProps {
 /**
  * RDF metadata used in SVG tag
  */
-export interface BeltRDF {
+interface BeltRDF {
   title: string;
   description: string;
   about: string;
@@ -188,6 +192,14 @@ export const StripePositionDefault = StripePosition.Right; // default stripe pos
  * |___/_\_\ .__/\___/_|  \__| |_| \_,_|_||_\__|\__|_\___/_||_/__/
  *         |_|
  */
+
+export const combineBeltProps = (beltProps: BeltProps[][]): BeltProps[] => {
+  let combinedBeltProps: BeltProps[] = [];
+  beltProps.forEach((beltProp) => {
+    combinedBeltProps = combinedBeltProps.concat(beltProp);
+  });
+  return combinedBeltProps;
+};
 
 /**
  * Create a new Belt object from specified parameters
@@ -234,6 +246,8 @@ export const getBelt = (
   maxStripes: number = MaximumStripeCount
 ): Belt => {
   const belt: Belt = {
+    version: version,
+    system: "none",
     id: id ? id : 0,
     name: name ? name : "",
     type: type ? type : BeltType.Solid,
@@ -278,8 +292,6 @@ export const getBelt = (
  * @param {StripePosition} stripePosition starting position of stripes on belt
  * @param {number} minStripes minimum number of stripes for belt
  * @param {number} maxStripes maximum number of stripes for belt
- * @param {string} rdfTitle title of belt
- * @param {string} rdfDescription description of belt
  * @param {string} transitionCSS CSS for transition animation
  * @param {number} refreshInterval interval for refreshing belt in milliseconds
  * @return {BeltProps[]} Belt object */
@@ -300,8 +312,6 @@ export const getBeltCheckered = (
   stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -324,8 +334,6 @@ export const getBeltCheckered = (
     stripePosition,
     minStripes,
     maxStripes,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -348,8 +356,6 @@ export const getBeltCoral = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -372,24 +378,9 @@ export const getBeltCoral = (
     stripeStart,
     minStripes,
     maxStripes,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
-};
-
-export const getBeltDescription = (
-  beltName: string,
-  stripeCount: number | undefined
-): string => {
-  if (stripeCount === undefined || stripeCount === 0) {
-    return `${beltName} with no stripes`;
-  } else if (stripeCount === 1) {
-    return `${beltName} with 1 stripe`;
-  }
-
-  return `${beltName} with ${stripeCount} stripes`;
 };
 
 export const getBeltPredefined = (
@@ -411,8 +402,6 @@ export const getBeltPredefined = (
   stripePosition: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -439,8 +428,6 @@ export const getBeltPredefined = (
   );
 
   const beltProps: BeltProps = getBeltProps(
-    rdfTitle,
-    rdfDescription,
     belt,
     stripeCount,
     stripePosition,
@@ -455,15 +442,13 @@ export const getBeltPredefined = (
 };
 
 export const getBeltProps = (
-  rdfTitle: string = "",
-  rdfDescription: string = "",
-  belt: Belt | undefined,
+  belt: Belt,
   stripeCount: number,
   stripePosition: StripePosition | undefined,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps => {
-  const beltRDF: BeltRDF = getBeltRDF(rdfTitle, rdfDescription);
+  const beltRDF: BeltRDF = getBeltRDF(belt);
   const beltProps: BeltProps = {
     id: generateUniqueId(),
     border: "",
@@ -590,24 +575,27 @@ export const getBeltProps = (
 };
 
 export const getBeltRandom = (
-  hasPatch: boolean | undefined,
-  hasProfessorPatch: boolean | undefined,
-  stripeCount: number | undefined,
-  stripeStart: StripePosition | undefined,
-  transitionCSS: string = "",
-  includeBelts: Array<BeltType> = [],
-  refreshInterval: number = 0
+  hasPatch: boolean | undefined = undefined,
+  hasProfessorPatch: boolean | undefined = undefined,
+  stripeCount: number | undefined = undefined,
+  stripeStart: StripePosition | undefined = undefined,
+  transitionCSS: string | undefined = "",
+  includeBelts: Array<BeltType> | undefined = [],
+  refreshInterval: number | undefined = 0
 ): BeltProps[] => {
   let randomBeltTypeIndex;
   const title = "Random";
-
-  if (hasPatch === undefined) hasPatch = Math.random() < 0.5; // randomly pick true or false
+  const rand = Math.random();
+  console.log(rand);
+  if (hasPatch == undefined) hasPatch = rand < 0.5; // randomly pick true or false
   if (hasProfessorPatch === undefined) hasProfessorPatch = Math.random() < 0.5; // randomly pick true or false
-  if (stripeCount === undefined) stripeCount = Math.floor(Math.random() * 11); // randomly pick between 0-10 stripes
+  if (stripeCount === undefined)
+    stripeCount = Math.floor(Math.random() * MaximumStripeCount + 1); // randomly pick between 0-10 stripes
   if (stripeStart === undefined)
     Math.random() < 0.5 === true
       ? (stripeStart = StripePosition.Left)
       : (stripeStart = StripePosition.Right); // randomly pick Left or Right
+  if (transitionCSS === undefined) transitionCSS = "";
   if (includeBelts !== undefined && includeBelts.length > 0) {
     if (includeBelts.length === 1) {
       // if only one includeBelt items is specified, then use that belt type
@@ -625,41 +613,39 @@ export const getBeltRandom = (
     // no includeBelt types specified, for select random from all
     randomBeltTypeIndex = Math.floor(Math.random() * 6);
   }
-
-  let rdfTitle = "";
-  let rdfDescription = "";
+  if (refreshInterval === undefined) refreshInterval = 0;
+  let name = "";
   let beltType: BeltType = BeltType.Solid;
   switch (randomBeltTypeIndex) {
     case 0: // solid belt
-      rdfTitle = `${title} Solid belt`;
+      name = `${title} Solid belt`;
       beltType = BeltType.Solid;
       break;
     case 1: // striped belt
-      rdfTitle = `${title} Striped belt`;
+      name = `${title} Striped belt`;
       beltType = BeltType.Striped;
       break;
     case 2: // coral belt
-      rdfTitle = `${title} Coral belt`;
+      name = `${title} Coral belt`;
       beltType = BeltType.Coral;
       break;
     case 3: // split belt
-      rdfTitle = `${title} Split belt`;
+      name = `${title} Split belt`;
       beltType = BeltType.Split;
       break;
     case 4: // checkered belt
-      rdfTitle = `${title} Checkered belt`;
+      name = `${title} Checkered belt`;
       beltType = BeltType.Checkered;
       break;
     case 5: // crazy belt
-      rdfTitle = `${title} Crazy belt`;
+      name = `${title} Crazy belt`;
       beltType = BeltType.Crazy;
       break;
   }
 
-  rdfDescription = getBeltDescription(rdfTitle, stripeCount);
   const belt: Belt = getBelt(
     undefined,
-    rdfTitle,
+    name,
     beltType,
     0,
     getRandomHexColor(),
@@ -680,8 +666,6 @@ export const getBeltRandom = (
   );
 
   const beltProps: BeltProps = getBeltProps(
-    rdfTitle,
-    rdfDescription,
     belt,
     stripeCount,
     stripeStart,
@@ -697,12 +681,15 @@ export const getBeltRandom = (
 };
 
 export const getBeltRDF = (
-  title: string,
-  description: string,
-  about: string | undefined | null = undefined
+  belt: Belt,
+  about: string | undefined = undefined
 ): BeltRDF => {
-  if (about === undefined || about === null) about = RDFAbout;
-  const beltRDF: BeltRDF = { about, title, description };
+  if (about === undefined) about = RDFAbout;
+  const beltRDF: BeltRDF = {
+    title: belt.name,
+    description: JSON.stringify(belt),
+    about: about,
+  };
   return beltRDF;
 };
 
@@ -722,8 +709,6 @@ export const getBeltSolid = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -746,8 +731,6 @@ export const getBeltSolid = (
     stripeStart,
     minStripes,
     maxStripes,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -770,8 +753,6 @@ export const getBeltSplit = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -794,8 +775,6 @@ export const getBeltSplit = (
     stripeStart,
     minStripes,
     maxStripes,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -819,8 +798,6 @@ export const getBeltStriped = (
   stripeStart: StripePosition,
   minStripes: number,
   maxStripes: number,
-  rdfTitle: string,
-  rdfDescription: string,
   transitionCSS: string,
   refreshInterval: number
 ): BeltProps[] => {
@@ -843,8 +820,6 @@ export const getBeltStriped = (
     stripeStart,
     minStripes,
     maxStripes,
-    rdfTitle,
-    rdfDescription,
     transitionCSS,
     refreshInterval
   );
@@ -855,8 +830,7 @@ export const isValidHexCode = (str: string): boolean => {
   // hexadecimalColor_code
   const regex = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
 
-  // if str
-  // is empty return false
+  // if str is empty return false
   if (str == null) {
     return false;
   }
