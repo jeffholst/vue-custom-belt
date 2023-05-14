@@ -5,7 +5,6 @@ import {
   StripePosition,
   mapBeltColors,
   getBeltProps,
-  BeltType,
 } from "./Belt";
 
 /**
