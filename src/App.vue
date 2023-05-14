@@ -14,16 +14,6 @@ import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
 let randomCrazy: BeltProps[] = getBeltRandom(
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  [BeltType.Crazy],
-  1000
-);
-/*
-let randomCrazy: BeltProps[] = getBeltRandom(
   true,
   false,
   0,
@@ -32,7 +22,7 @@ let randomCrazy: BeltProps[] = getBeltRandom(
   [BeltType.Crazy],
   4000
 );
-*/
+
 let randomCheckered: BeltProps[] = getBeltRandom(
   true,
   false,
