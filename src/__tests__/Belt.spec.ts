@@ -18,6 +18,8 @@ const colors: belt.BeltColor[] = [
 
 const belts: belt.Belt[] = [
   {
+    version: "",
+    system: "none",
     id: 1,
     name: "White",
     sortOrder: 10,
@@ -141,11 +143,10 @@ describe("mapBeltColors", () => {
  * Test that getBeltProps returns expected values
  */
 describe("getBeltProps", () => {
+  const myBelt: belt.Belt = belt.getBelt();
   it("should match snap", () => {
     const beltProps: belt.BeltProps = belt.getBeltProps(
-      "Test Title",
-      "Test Description",
-      undefined,
+      myBelt,
       0,
       belt.StripePosition.Left,
       "",

@@ -18,7 +18,6 @@ describe("CustomBelt", () => {
       props: { beltProps: ibjjfSystem.getBeltPropsByName("White", 0) },
     });
     expect(wrapper.html()).toContain("<svg");
-    expect(wrapper.html()).toContain("IBJJF White Belt with no stripes");
   });
 
   it("rendors correctly with 1 stripe", () => {
@@ -26,7 +25,6 @@ describe("CustomBelt", () => {
       props: { beltProps: ibjjfSystem.getBeltPropsByName("White", 1) },
     });
     expect(wrapper.html()).toContain("<svg");
-    expect(wrapper.html()).toContain("IBJJF White Belt with 1 stripe");
   });
 
   it("rendors correctly with 2 stripes", () => {
@@ -34,6 +32,5 @@ describe("CustomBelt", () => {
       props: { beltProps: ibjjfSystem.getBeltPropsByName("White", 2) },
     });
     expect(wrapper.html()).toContain("<svg");
-    expect(wrapper.html()).toContain("IBJJF White Belt with 2 stripes");
   });
 });

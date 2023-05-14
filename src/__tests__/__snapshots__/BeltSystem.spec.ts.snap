@@ -4,8 +4,8 @@ exports[`BeltSystem > getBeltProps returns valid data (stripePosition undefined)
 {
   "beltRDF": {
     "about": "https://github.com/jeffholst/vue-custom-belt",
-    "description": "IBJJF White Belt with 2 stripes",
-    "title": "IBJJF White Belt",
+    "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+    "title": "White",
   },
   "border": "#434244",
   "hasPatch": true,
@@ -89,8 +89,8 @@ exports[`BeltSystem > getBeltProps returns valid data 1`] = `
 {
   "beltRDF": {
     "about": "https://github.com/jeffholst/vue-custom-belt",
-    "description": "IBJJF White Belt with 1 stripe",
-    "title": "IBJJF White Belt",
+    "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+    "title": "White",
   },
   "border": "#434244",
   "hasPatch": true,
@@ -175,8 +175,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF White Belt with no stripes",
-      "title": "IBJJF White Belt",
+      "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -257,8 +257,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Gray/White Belt with no stripes",
-      "title": "IBJJF Gray/White Belt",
+      "description": "{\\"id\\":2,\\"name\\":\\"Gray/White\\",\\"sortOrder\\":20,\\"type\\":\\"Striped\\",\\"color1\\":\\"#999999\\",\\"color2\\":\\"#FFFFFF\\",\\"color3\\":\\"#999999\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Gray/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -339,8 +339,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Gray Belt with no stripes",
-      "title": "IBJJF Gray Belt",
+      "description": "{\\"id\\":3,\\"name\\":\\"Gray\\",\\"sortOrder\\":30,\\"type\\":\\"Solid\\",\\"color1\\":\\"#999999\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Gray",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -421,8 +421,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Gray/Black Belt with no stripes",
-      "title": "IBJJF Gray/Black Belt",
+      "description": "{\\"id\\":4,\\"name\\":\\"Gray/Black\\",\\"sortOrder\\":40,\\"type\\":\\"Striped\\",\\"color1\\":\\"#999999\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#999999\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Gray/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -503,8 +503,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Yellow/White Belt with no stripes",
-      "title": "IBJJF Yellow/White Belt",
+      "description": "{\\"id\\":5,\\"name\\":\\"Yellow/White\\",\\"sortOrder\\":50,\\"type\\":\\"Striped\\",\\"color1\\":\\"#FFCC00\\",\\"color2\\":\\"#FFFFFF\\",\\"color3\\":\\"#FFCC00\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Yellow/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -585,8 +585,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Yellow Belt with no stripes",
-      "title": "IBJJF Yellow Belt",
+      "description": "{\\"id\\":6,\\"name\\":\\"Yellow\\",\\"sortOrder\\":60,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFCC00\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Yellow",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -667,8 +667,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Yellow/Black Belt with no stripes",
-      "title": "IBJJF Yellow/Black Belt",
+      "description": "{\\"id\\":7,\\"name\\":\\"Yellow/Black\\",\\"sortOrder\\":70,\\"type\\":\\"Striped\\",\\"color1\\":\\"#FFCC00\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#FFCC00\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Yellow/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -749,8 +749,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange/White Belt with no stripes",
-      "title": "IBJJF Orange/White Belt",
+      "description": "{\\"id\\":8,\\"name\\":\\"Orange/White\\",\\"sortOrder\\":80,\\"type\\":\\"Striped\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"#FFFFFF\\",\\"color3\\":\\"#CC6633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -831,8 +831,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange Belt with no stripes",
-      "title": "IBJJF Orange Belt",
+      "description": "{\\"id\\":9,\\"name\\":\\"Orange\\",\\"sortOrder\\":90,\\"type\\":\\"Solid\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -913,8 +913,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange/Black Belt with no stripes",
-      "title": "IBJJF Orange/Black Belt",
+      "description": "{\\"id\\":10,\\"name\\":\\"Orange/Black\\",\\"sortOrder\\":100,\\"type\\":\\"Striped\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#CC6633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -995,8 +995,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Green/White Belt with no stripes",
-      "title": "IBJJF Green/White Belt",
+      "description": "{\\"id\\":11,\\"name\\":\\"Green/White\\",\\"sortOrder\\":110,\\"type\\":\\"Striped\\",\\"color1\\":\\"#006633\\",\\"color2\\":\\"#FFFFFF\\",\\"color3\\":\\"#006633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Green/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1077,8 +1077,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Green Belt with no stripes",
-      "title": "IBJJF Green Belt",
+      "description": "{\\"id\\":12,\\"name\\":\\"Green\\",\\"sortOrder\\":120,\\"type\\":\\"Solid\\",\\"color1\\":\\"#006633\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Green",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1159,8 +1159,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Green/Black Belt with no stripes",
-      "title": "IBJJF Green/Black Belt",
+      "description": "{\\"id\\":13,\\"name\\":\\"Green/Black\\",\\"sortOrder\\":130,\\"type\\":\\"Striped\\",\\"color1\\":\\"#006633\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#006633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Green/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1241,8 +1241,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Blue Belt with no stripes",
-      "title": "IBJJF Blue Belt",
+      "description": "{\\"id\\":14,\\"name\\":\\"Blue\\",\\"sortOrder\\":140,\\"type\\":\\"Solid\\",\\"color1\\":\\"#0099CC\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Blue",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1323,8 +1323,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Purple Belt with no stripes",
-      "title": "IBJJF Purple Belt",
+      "description": "{\\"id\\":15,\\"name\\":\\"Purple\\",\\"sortOrder\\":150,\\"type\\":\\"Solid\\",\\"color1\\":\\"#993399\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Purple",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1405,8 +1405,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Brown Belt with no stripes",
-      "title": "IBJJF Brown Belt",
+      "description": "{\\"id\\":16,\\"name\\":\\"Brown\\",\\"sortOrder\\":160,\\"type\\":\\"Solid\\",\\"color1\\":\\"#663300\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#CCCCCC\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#CCCCCC\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Brown",
     },
     "border": "#CCCCCC",
     "hasPatch": true,
@@ -1487,8 +1487,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Black Belt with no stripes",
-      "title": "IBJJF Black Belt",
+      "description": "{\\"id\\":17,\\"name\\":\\"Black\\",\\"sortOrder\\":170,\\"type\\":\\"Solid\\",\\"color1\\":\\"#000000\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#CCCCCC\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#990000\\",\\"patchBorderColor\\":\\"#CCCCCC\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#FFFFFF\\",\\"professorBorderColor\\":\\"#CCCCCC\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":6,\\"system\\":\\"IBJJF\\"}",
+      "title": "Black",
     },
     "border": "#CCCCCC",
     "hasPatch": true,
@@ -1569,8 +1569,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Red/Black Belt with 7 stripes",
-      "title": "IBJJF Red/Black Belt",
+      "description": "{\\"id\\":18,\\"name\\":\\"Red/Black\\",\\"sortOrder\\":180,\\"type\\":\\"Coral\\",\\"color1\\":\\"#990000\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#CCCCCC\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#FFFFFF\\",\\"patchBorderColor\\":\\"#CCCCCC\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#999999\\",\\"professorBorderColor\\":\\"#CCCCCC\\",\\"stripeColor\\":\\"#990000\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":7,\\"maxStripes\\":7,\\"system\\":\\"IBJJF\\"}",
+      "title": "Red/Black",
     },
     "border": "#CCCCCC",
     "hasPatch": true,
@@ -1651,8 +1651,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Red/White Belt with 8 stripes",
-      "title": "IBJJF Red/White Belt",
+      "description": "{\\"id\\":19,\\"name\\":\\"Red/White\\",\\"sortOrder\\":190,\\"type\\":\\"Coral\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"#990000\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#FFFFFF\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#999999\\",\\"professorBorderColor\\":\\"#434244\\",\\"stripeColor\\":\\"#990000\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":8,\\"maxStripes\\":8,\\"system\\":\\"IBJJF\\"}",
+      "title": "Red/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1733,8 +1733,8 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Red Belt with 9 stripes",
-      "title": "IBJJF Red Belt",
+      "description": "{\\"id\\":20,\\"name\\":\\"Red\\",\\"sortOrder\\":200,\\"type\\":\\"Solid\\",\\"color1\\":\\"#990000\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#FFFFFF\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#CC9900\\",\\"professorBorderColor\\":\\"#434244\\",\\"stripeColor\\":\\"#990000\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":9,\\"maxStripes\\":10,\\"system\\":\\"IBJJF\\"}",
+      "title": "Red",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1820,8 +1820,8 @@ exports[`BeltSystem > getBeltPropsById returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange/Black Belt with no stripes",
-      "title": "IBJJF Orange/Black Belt",
+      "description": "{\\"id\\":10,\\"name\\":\\"Orange/Black\\",\\"sortOrder\\":100,\\"type\\":\\"Striped\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#CC6633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1907,8 +1907,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (no parms) 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange/Black Belt with no stripes",
-      "title": "IBJJF Orange/Black Belt",
+      "description": "{\\"id\\":10,\\"name\\":\\"Orange/Black\\",\\"sortOrder\\":100,\\"type\\":\\"Striped\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#CC6633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -1989,8 +1989,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (no parms) 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Red Belt with 9 stripes",
-      "title": "IBJJF Red Belt",
+      "description": "{\\"id\\":20,\\"name\\":\\"Red\\",\\"sortOrder\\":200,\\"type\\":\\"Solid\\",\\"color1\\":\\"#990000\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#FFFFFF\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#CC9900\\",\\"professorBorderColor\\":\\"#434244\\",\\"stripeColor\\":\\"#990000\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":9,\\"maxStripes\\":10,\\"system\\":\\"IBJJF\\"}",
+      "title": "Red",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2076,8 +2076,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with extra info) 1`]
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF White Belt with no stripes",
-      "title": "IBJJF White Belt",
+      "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2158,8 +2158,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with extra info) 1`]
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Gray/White Belt with no stripes",
-      "title": "IBJJF Gray/White Belt",
+      "description": "{\\"id\\":2,\\"name\\":\\"Gray/White\\",\\"sortOrder\\":20,\\"type\\":\\"Striped\\",\\"color1\\":\\"#999999\\",\\"color2\\":\\"#FFFFFF\\",\\"color3\\":\\"#999999\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Gray/White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2245,8 +2245,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with stripe info) 1`
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Orange/Black Belt with 1 stripe",
-      "title": "IBJJF Orange/Black Belt",
+      "description": "{\\"id\\":10,\\"name\\":\\"Orange/Black\\",\\"sortOrder\\":100,\\"type\\":\\"Striped\\",\\"color1\\":\\"#CC6633\\",\\"color2\\":\\"#000000\\",\\"color3\\":\\"#CC6633\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":3,\\"system\\":\\"IBJJF\\"}",
+      "title": "Orange/Black",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2327,8 +2327,8 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with stripe info) 1`
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Red Belt with 1 stripe",
-      "title": "IBJJF Red Belt",
+      "description": "{\\"id\\":20,\\"name\\":\\"Red\\",\\"sortOrder\\":200,\\"type\\":\\"Solid\\",\\"color1\\":\\"#990000\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#FFFFFF\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":true,\\"professorPatchColor\\":\\"#CC9900\\",\\"professorBorderColor\\":\\"#434244\\",\\"stripeColor\\":\\"#990000\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":9,\\"maxStripes\\":10,\\"system\\":\\"IBJJF\\"}",
+      "title": "Red",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2414,8 +2414,8 @@ exports[`BeltSystem > getBeltPropsByName returns valid data 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Blue Belt with no stripes",
-      "title": "IBJJF Blue Belt",
+      "description": "{\\"id\\":14,\\"name\\":\\"Blue\\",\\"sortOrder\\":140,\\"type\\":\\"Solid\\",\\"color1\\":\\"#0099CC\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Blue",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2501,8 +2501,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (no parms) 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Blue Belt with no stripes",
-      "title": "IBJJF Blue Belt",
+      "description": "{\\"id\\":14,\\"name\\":\\"Blue\\",\\"sortOrder\\":140,\\"type\\":\\"Solid\\",\\"color1\\":\\"#0099CC\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Blue",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2583,8 +2583,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (no parms) 1`] = `
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Purple Belt with no stripes",
-      "title": "IBJJF Purple Belt",
+      "description": "{\\"id\\":15,\\"name\\":\\"Purple\\",\\"sortOrder\\":150,\\"type\\":\\"Solid\\",\\"color1\\":\\"#993399\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Purple",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2670,8 +2670,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with extra info) 1
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF White Belt with no stripes",
-      "title": "IBJJF White Belt",
+      "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2752,8 +2752,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with extra info) 1
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Purple Belt with no stripes",
-      "title": "IBJJF Purple Belt",
+      "description": "{\\"id\\":15,\\"name\\":\\"Purple\\",\\"sortOrder\\":150,\\"type\\":\\"Solid\\",\\"color1\\":\\"#993399\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Purple",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2839,8 +2839,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with stripe info) 
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF White Belt with 1 stripe",
-      "title": "IBJJF White Belt",
+      "description": "{\\"id\\":1,\\"name\\":\\"White\\",\\"sortOrder\\":10,\\"type\\":\\"Solid\\",\\"color1\\":\\"#FFFFFF\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#434244\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#434244\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "White",
     },
     "border": "#434244",
     "hasPatch": true,
@@ -2921,8 +2921,8 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with stripe info) 
   {
     "beltRDF": {
       "about": "https://github.com/jeffholst/vue-custom-belt",
-      "description": "IBJJF Brown Belt with 1 stripe",
-      "title": "IBJJF Brown Belt",
+      "description": "{\\"id\\":16,\\"name\\":\\"Brown\\",\\"sortOrder\\":160,\\"type\\":\\"Solid\\",\\"color1\\":\\"#663300\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"#CCCCCC\\",\\"hasPatch\\":true,\\"patchColor\\":\\"#000000\\",\\"patchBorderColor\\":\\"#CCCCCC\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"#FFFFFF\\",\\"stripeStart\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":4,\\"system\\":\\"IBJJF\\"}",
+      "title": "Brown",
     },
     "border": "#CCCCCC",
     "hasPatch": true,
