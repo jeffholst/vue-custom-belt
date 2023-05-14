@@ -7,11 +7,22 @@ import {
   StripePosition,
   getBeltRandom,
   getBeltStriped,
+  combineBeltProps,
 } from "./Belt";
 import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
+let randomCrazy: BeltProps[] = getBeltRandom(
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  [BeltType.Crazy],
+  1000
+);
+/*
 let randomCrazy: BeltProps[] = getBeltRandom(
   true,
   false,
@@ -21,6 +32,7 @@ let randomCrazy: BeltProps[] = getBeltRandom(
   [BeltType.Crazy],
   4000
 );
+*/
 let randomCheckered: BeltProps[] = getBeltRandom(
   true,
   false,
@@ -70,6 +82,52 @@ let randomSplit: BeltProps[] = getBeltRandom(
   [BeltType.Solid],
   4000
 );
+
+const usaBelt = getBeltStriped(
+  1,
+  "USA Belt",
+  "#BF0A30",
+  "#FFFFFF",
+  "#002868",
+  "Black",
+  true,
+  "White",
+  "Black",
+  false,
+  "",
+  "",
+  "",
+  0,
+  StripePosition.Right,
+  0,
+  4,
+  "transition: all 2.0s ease;",
+  3000
+);
+
+const MexicoBelt = getBeltStriped(
+  2,
+  "Mexico Belt",
+  "#006847",
+  "#FFFFFF",
+  "#ce1127",
+  "Black",
+  true,
+  "White",
+  "Black",
+  false,
+  "",
+  "",
+  "",
+  0,
+  StripePosition.Right,
+  0,
+  4,
+  "transition: all 2.0s ease;",
+  3000
+);
+
+const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
 </script>
 
 <template>
@@ -78,33 +136,7 @@ let randomSplit: BeltProps[] = getBeltRandom(
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         USA Striped Belt
       </h1>
-      <CustomBelt
-        :belt-props="
-          getBeltStriped(
-            1,
-            'USA Belt',
-            '#FF0000',
-            '#FFFFFF',
-            '#0000FF',
-            'Black',
-            true,
-            'White',
-            'Black',
-            false,
-            '',
-            '',
-            '',
-            0,
-            StripePosition.Right,
-            0,
-            4,
-            'USA Striped Belt',
-            'USA Striped Belt no Stripes',
-            '',
-            0
-          )
-        "
-      />
+      <CustomBelt :belt-props="flagBelts" />
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
         All {{ ibjjfSystem.title }} belts (rotating)
       </h1>
