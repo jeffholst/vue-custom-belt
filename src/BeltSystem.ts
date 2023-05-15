@@ -90,7 +90,8 @@ export class BeltSystem {
    */
   getBeltPropsAll(
     transitionCSS: string = "",
-    refreshInterval: number = 0
+    refreshInterval: number = 0,
+    callback: Function | null = null
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     let uniqueElementId: string | undefined = undefined;
@@ -98,7 +99,8 @@ export class BeltSystem {
       const beltProps = this.getBeltProps(
         belt,
         belt.minStripes,
-        belt.stripePosition
+        belt.stripePosition,
+        callback
       );
       // use same element id for all belts
       if (uniqueElementId === undefined) uniqueElementId = beltProps.id;
