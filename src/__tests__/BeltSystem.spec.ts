@@ -90,6 +90,7 @@ describe("BeltSystem", () => {
     const beltProps = ibjjfSystem.getBeltPropsAll("test", 2000);
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -100,6 +101,7 @@ describe("BeltSystem", () => {
     const beltProps: BeltProps[] = ibjjfSystem.getBeltPropsById(10);
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -119,6 +121,7 @@ describe("BeltSystem", () => {
     const beltProps: BeltProps[] = ibjjfSystem.getBeltPropsByIds([10, 20]);
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -134,6 +137,7 @@ describe("BeltSystem", () => {
     );
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -151,6 +155,7 @@ describe("BeltSystem", () => {
     );
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -162,6 +167,7 @@ describe("BeltSystem", () => {
     const beltProps: BeltProps[] = ibjjfSystem.getBeltPropsByName("Blue");
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -174,6 +180,7 @@ describe("BeltSystem", () => {
       ibjjfSystem.getBeltPropsByName("DoesNotExist");
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toEqual([]);
   });
@@ -188,6 +195,7 @@ describe("BeltSystem", () => {
     ]);
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -203,6 +211,7 @@ describe("BeltSystem", () => {
     );
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });
@@ -220,6 +229,7 @@ describe("BeltSystem", () => {
     );
     beltProps.forEach((bp) => {
       bp.id = ""; // blank out unique id so snapshot does not fail
+      bp.version = ""; // blank out version so snapshot does not fail
     });
     expect(beltProps).toMatchSnapshot();
   });

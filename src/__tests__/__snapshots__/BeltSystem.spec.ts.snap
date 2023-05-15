@@ -336,7 +336,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -446,7 +446,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -556,7 +556,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -666,7 +666,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -776,7 +776,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -886,7 +886,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -996,7 +996,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1106,7 +1106,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1216,7 +1216,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1326,7 +1326,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1436,7 +1436,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1546,7 +1546,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1656,7 +1656,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1766,7 +1766,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1876,7 +1876,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -1986,7 +1986,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2096,7 +2096,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2206,7 +2206,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 7,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2316,7 +2316,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 8,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2426,7 +2426,7 @@ exports[`BeltSystem > getBeltPropsAll returns valid data 1`] = `
     "stripeCount": 9,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -2541,7 +2541,7 @@ exports[`BeltSystem > getBeltPropsById returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -2656,7 +2656,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (no parms) 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2766,7 +2766,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (no parms) 1`] = `
     "stripeCount": 9,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -2881,7 +2881,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with extra info) 1`]
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -2991,7 +2991,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with extra info) 1`]
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -3106,7 +3106,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with stripe info) 1`
     "stripeCount": 1,
     "stripePosition": "Left",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -3216,7 +3216,7 @@ exports[`BeltSystem > getBeltPropsByIds returns valid data (with stripe info) 1`
     "stripeCount": 1,
     "stripePosition": "Left",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -3331,7 +3331,7 @@ exports[`BeltSystem > getBeltPropsByName returns valid data 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -3446,7 +3446,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (no parms) 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -3556,7 +3556,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (no parms) 1`] = `
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -3671,7 +3671,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with extra info) 1
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -3781,7 +3781,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with extra info) 1
     "stripeCount": 0,
     "stripePosition": "Right",
     "transitionCSS": "test",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
@@ -3896,7 +3896,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with stripe info) 
     "stripeCount": 1,
     "stripePosition": "Left",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
   {
     "belt": {
@@ -4006,7 +4006,7 @@ exports[`BeltSystem > getBeltPropsByNames returns valid data (with stripe info) 
     "stripeCount": 1,
     "stripePosition": "Left",
     "transitionCSS": "",
-    "version": "0.1.31",
+    "version": "",
   },
 ]
 `;
