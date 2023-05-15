@@ -591,7 +591,6 @@ const doCallback = (event: Event | null, callbackType: BeltCallbackType) => {
 };
 
 const downLoadSVG = (event: any) => {
-  debugger;
   const svgContent = event.target.closest("svg").outerHTML;
   const blob = new Blob([svgContent], {
     type: "image/svg+xml",
