@@ -66,7 +66,8 @@ export class BeltSystem {
   getBeltProps(
     belt: Belt,
     stripeCount: number,
-    stripePosition: StripePosition | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined,
+    callback: Function | null = null
   ): BeltProps {
     belt.system = this.title;
     const beltProps: BeltProps = getBeltProps(
@@ -74,7 +75,8 @@ export class BeltSystem {
       stripeCount,
       stripePosition,
       this.transitionCSS,
-      this.refreshInterval
+      this.refreshInterval,
+      callback
     );
 
     return beltProps;
@@ -119,7 +121,8 @@ export class BeltSystem {
   getBeltPropsById(
     id: number,
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePosition | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined,
+    callback: Function | null = null
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt = this.getBeltById(id);
@@ -129,7 +132,8 @@ export class BeltSystem {
         this.getBeltProps(
           belt,
           stripeCount === undefined ? belt.minStripes : stripeCount,
-          stripePosition
+          stripePosition,
+          callback
         )
       );
     }
@@ -151,7 +155,8 @@ export class BeltSystem {
     stripeCount: number | undefined = undefined,
     stripePosition: StripePosition | undefined = undefined,
     transitionCSS: string = "",
-    refreshInterval: number = 0
+    refreshInterval: number = 0,
+    callback: Function | null = null
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belts = this.getBeltsByIds(ids);
@@ -161,7 +166,8 @@ export class BeltSystem {
         const beltProps: BeltProps = this.getBeltProps(
           belt,
           stripeCount === undefined ? belt.minStripes : stripeCount,
-          stripePosition
+          stripePosition,
+          callback
         );
         beltProps.transitionCSS = transitionCSS;
         beltProps.refreshInterval = refreshInterval;
@@ -182,7 +188,8 @@ export class BeltSystem {
   getBeltPropsByName(
     name: string,
     stripeCount: number | undefined = undefined,
-    stripePosition: StripePosition | undefined = undefined
+    stripePosition: StripePosition | undefined = undefined,
+    callback: Function | null = null
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belt = this.getBeltByName(name);
@@ -192,7 +199,8 @@ export class BeltSystem {
         this.getBeltProps(
           belt,
           stripeCount === undefined ? belt.minStripes : stripeCount,
-          stripePosition
+          stripePosition,
+          callback
         )
       );
     }
@@ -214,7 +222,8 @@ export class BeltSystem {
     stripeCount: number | undefined = undefined,
     stripePosition: StripePosition | undefined = undefined,
     transitionCSS: string = "",
-    refreshInterval: number = 0
+    refreshInterval: number = 0,
+    callback: Function | null = null
   ): BeltProps[] {
     const beltPropsAry: BeltProps[] = [];
     const belts = this.getBeltsByNames(names);
@@ -224,7 +233,8 @@ export class BeltSystem {
         const beltProps: BeltProps = this.getBeltProps(
           belt,
           stripeCount === undefined ? belt.minStripes : stripeCount,
-          stripePosition
+          stripePosition,
+          callback
         );
         beltProps.transitionCSS = transitionCSS;
         beltProps.refreshInterval = refreshInterval;

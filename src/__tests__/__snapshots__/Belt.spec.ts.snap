@@ -2,12 +2,34 @@
 
 exports[`getBeltProps > should match snap 1`] = `
 {
+  "belt": {
+    "borderColor": "",
+    "color1": "#FF0000",
+    "color2": "",
+    "color3": "",
+    "hasPatch": false,
+    "hasProfessorPatch": false,
+    "id": 0,
+    "maxStripes": 10,
+    "minStripes": 0,
+    "name": "",
+    "patchBorderColor": "",
+    "patchColor": "",
+    "professorBorderColor": "",
+    "professorPatchColor": "",
+    "sortOrder": 0,
+    "stripeColor": "",
+    "stripeCount": 0,
+    "stripePosition": "Right",
+    "system": "none",
+    "type": "Solid",
+  },
   "beltRDF": {
     "about": "https://github.com/jeffholst/vue-custom-belt",
-    "description": "{\\"version\\":\\"0.1.30\\",\\"system\\":\\"none\\",\\"id\\":0,\\"name\\":\\"\\",\\"type\\":\\"Solid\\",\\"sortOrder\\":0,\\"color1\\":\\"#FF0000\\",\\"color2\\":\\"\\",\\"color3\\":\\"\\",\\"borderColor\\":\\"\\",\\"hasPatch\\":false,\\"patchColor\\":\\"\\",\\"patchBorderColor\\":\\"\\",\\"hasProfessorPatch\\":false,\\"professorPatchColor\\":\\"\\",\\"professorBorderColor\\":\\"\\",\\"stripeColor\\":\\"\\",\\"stripeCount\\":0,\\"stripePosition\\":\\"Right\\",\\"minStripes\\":0,\\"maxStripes\\":10}",
     "title": "",
   },
   "border": "",
+  "callback": null,
   "hasPatch": false,
   "hasProfessorPatch": false,
   "id": "",
@@ -15,7 +37,13 @@ exports[`getBeltProps > should match snap 1`] = `
   "patchBorder": "",
   "professorBorder": "",
   "professorPatch": "",
-  "randomBeltTypes": [],
+  "randomSettings": {
+    "hasPatch": undefined,
+    "hasProfessorPatch": undefined,
+    "includeBelts": undefined,
+    "stripeCount": undefined,
+    "stripeStart": undefined,
+  },
   "refreshInterval": 0,
   "s10l1": "#FF0000",
   "s10l2a": "#FF0000",
@@ -82,5 +110,6 @@ exports[`getBeltProps > should match snap 1`] = `
   "stripeCount": 0,
   "stripePosition": "Left",
   "transitionCSS": "",
+  "version": "",
 }
 `;

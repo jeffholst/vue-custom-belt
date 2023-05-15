@@ -2,8 +2,11 @@
   <svg
     v-if="isValid"
     :id="myBelt != undefined ? myBelt.id : ''"
-    :onClick="downLoadSVG"
+    :onClick="oneClick"
+    :class="{ hasCallback: myBelt != undefined && myBelt.callback }"
     viewBox="0 0 471.2 190.2"
+    :data-version="myBelt != undefined ? myBelt.version : ''"
+    :data-belt="myBelt != undefined ? JSON.stringify(myBelt.belt) : ''"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -16,9 +19,6 @@
         <rdf:Description
           :dc:about="myBelt != undefined ? myBelt.beltRDF.about : ''"
           :dc:title="myBelt != undefined ? myBelt.beltRDF.title : ''"
-          :dc:description="
-            myBelt != undefined ? myBelt.beltRDF.description : ''
-          "
           :dc:date="new Date().toISOString().slice(0, 10)"
           dc:format="image/svg"
           dc:language="en"
@@ -482,7 +482,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch, onUnmounted } from "vue";
-import { getBeltRandom, BeltProps } from "../Belt";
+import { getBeltRandom, BeltProps, BeltCallbackType } from "../Belt";
 
 const index = ref(0);
 const props = defineProps<{
@@ -491,6 +491,9 @@ const props = defineProps<{
 
 const isValid = ref(false);
 const myBelt = ref(props.beltProps ? props.beltProps[index.value] : undefined);
+const clickDelay: number = 700;
+const clickCount = ref(0);
+let clickTimer: any = null;
 let refreshIntervalId: any = undefined;
 
 watch(
@@ -519,19 +522,24 @@ const updateProps = () => {
         index.value =
           index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
         myBelt.value = props.beltProps[index.value];
-        if (myBelt.value.randomBeltTypes.length > 0) {
+        if (
+          myBelt.value.randomSettings.includeBelts !== undefined &&
+          myBelt.value.randomSettings.includeBelts.length > 0
+        ) {
           const randomBelt: BeltProps[] = getBeltRandom(
-            myBelt.value.hasPatch,
-            myBelt.value.hasProfessorPatch,
-            myBelt.value.stripeCount,
-            myBelt.value.stripePosition,
+            myBelt.value.randomSettings.hasPatch,
+            myBelt.value.randomSettings.hasProfessorPatch,
+            myBelt.value.randomSettings.stripeCount,
+            myBelt.value.randomSettings.stripeStart,
             myBelt.value.transitionCSS,
-            myBelt.value.randomBeltTypes,
-            myBelt.value.refreshInterval
+            myBelt.value.randomSettings.includeBelts,
+            myBelt.value.refreshInterval,
+            myBelt.value.callback
           );
           randomBelt[0].id = myBelt.value.id; // keep the same element id
           myBelt.value = randomBelt[0];
         }
+        doCallback(null, BeltCallbackType.Refresh);
       }, myBelt.value.refreshInterval);
     }
   }
@@ -546,6 +554,28 @@ onUnmounted(() => {
     clearInterval(refreshIntervalId);
   }
 });
+
+const oneClick = (event: any) => {
+  if (myBelt.value != undefined && myBelt.value.callback != null) {
+    clickCount.value++;
+    if (clickCount.value === 1) {
+      clickTimer = setTimeout(function () {
+        doCallback(event, BeltCallbackType.Click);
+        clickCount.value = 0;
+      }, clickDelay);
+    } else {
+      clearTimeout(clickTimer);
+      doCallback(event, BeltCallbackType.DoubleClick);
+      clickCount.value = 0;
+    }
+  }
+};
+
+const doCallback = (event: Event | null, callbackType: BeltCallbackType) => {
+  if (myBelt.value != undefined && myBelt.value.callback != null) {
+    myBelt.value.callback(event, callbackType, myBelt.value, downLoadSVG);
+  }
+};
 
 const downLoadSVG = (event: any) => {
   const svgContent = event.target.closest("svg").outerHTML;
@@ -1081,3 +1111,9 @@ const stripe10 = computed(() => {
   return stripeStyle(getStripeIndex(10), myBelt.value.stripe10);
 });
 </script>
+
+<style scoped>
+.hasCallback:hover {
+  cursor: pointer;
+}
+</style>

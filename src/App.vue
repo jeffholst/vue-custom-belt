@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import CustomBelt from "./components/CustomBelt.vue";
 import { BeltSystem } from "./BeltSystem";
 import {
@@ -8,10 +9,26 @@ import {
   getBeltRandom,
   getBeltStriped,
   combineBeltProps,
+  BeltCallbackType,
 } from "./Belt";
 import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
+
+const myCallback = (
+  event: Event,
+  callbackType: BeltCallbackType,
+  beltProps: BeltProps,
+  downloadCallback: Function
+) => {
+  if (callbackType === BeltCallbackType.DoubleClick) {
+    if (downloadCallback && event) {
+      downloadCallback(event);
+    }
+  } else if (callbackType === BeltCallbackType.Refresh) {
+    flagBeltName.value = beltProps.belt.name;
+  }
+};
 
 let randomCrazy: BeltProps[] = getBeltRandom(
   true,
@@ -73,7 +90,7 @@ let randomSplit: BeltProps[] = getBeltRandom(
   4000
 );
 
-const usaBelt = getBeltStriped(
+const usaBelt: BeltProps[] = getBeltStriped(
   1,
   "USA Belt",
   "#BF0A30",
@@ -92,8 +109,11 @@ const usaBelt = getBeltStriped(
   0,
   4,
   "transition: all 2.0s ease;",
-  3000
+  3000,
+  myCallback
 );
+
+const flagBeltName = ref(usaBelt[0].belt.name);
 
 const MexicoBelt = getBeltStriped(
   2,
@@ -114,7 +134,8 @@ const MexicoBelt = getBeltStriped(
   0,
   4,
   "transition: all 2.0s ease;",
-  3000
+  3000,
+  myCallback
 );
 
 const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
@@ -124,7 +145,7 @@ const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
   <section class="bg-white dark:bg-slate-800">
     <main class="mx-40 pt-20">
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        Flag Belts
+        Flag Belts ({{ flagBeltName }})
       </h1>
       <CustomBelt :belt-props="flagBelts" />
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">

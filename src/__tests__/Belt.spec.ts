@@ -18,7 +18,6 @@ const colors: belt.BeltColor[] = [
 
 const belts: belt.Belt[] = [
   {
-    version: "",
     system: "none",
     id: 1,
     name: "White",
@@ -150,9 +149,11 @@ describe("getBeltProps", () => {
       0,
       belt.StripePosition.Left,
       "",
-      0
+      0,
+      null
     );
     beltProps.id = ""; // blank id so snapshot doesn't fail
+    beltProps.version = ""; // blank out version so snapshot does not fail
     expect(beltProps).toMatchSnapshot();
   });
 });

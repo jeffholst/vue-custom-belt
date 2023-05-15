@@ -61,6 +61,7 @@ describe("BeltSystem", () => {
         StripePosition.Left
       );
       beltProps.id = ""; // blank out unique id so snapshot does not fail
+      beltProps.version = ""; // blank out version so snapshot does not fail
       expect(beltProps).toMatchSnapshot();
     } else {
       expect(belt).not.toBeUndefined();
@@ -75,6 +76,7 @@ describe("BeltSystem", () => {
     if (belt !== undefined) {
       const beltProps: BeltProps = ibjjfSystem.getBeltProps(belt, 2);
       beltProps.id = ""; // blank out unique id so snapshot does not fail
+      beltProps.version = ""; // blank out version so snapshot does not fail
       expect(beltProps).toMatchSnapshot();
     } else {
       expect(belt).not.toBeUndefined();

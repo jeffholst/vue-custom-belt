@@ -7,6 +7,12 @@ import { version } from "../package.json";
  * |___|_||_\_,_|_|_|_/__/
  */
 
+export enum BeltCallbackType {
+  Refresh = "Refresh",
+  Click = "Click",
+  DoubleClick = "DoubleClick",
+}
+
 /**
  * Belt types
  */
@@ -48,7 +54,6 @@ export enum StripePosition {
  * Belt object definition
  */
 export interface Belt {
-  version: string;
   system: string;
   id: number;
   name: string;
@@ -83,7 +88,9 @@ export interface BeltColor {
  * Property object passed to <CustomBelt /> component
  */
 export interface BeltProps {
+  version: string;
   id: string;
+  belt: Belt;
   border: string;
   hasPatch: boolean;
   patch: string;
@@ -157,8 +164,9 @@ export interface BeltProps {
   s13l3: string;
   transitionCSS: string;
   beltRDF: BeltRDF;
-  randomBeltTypes: BeltType[];
+  randomSettings: RandomSettings;
   refreshInterval: number;
+  callback: Function | null;
 }
 
 /**
@@ -166,8 +174,18 @@ export interface BeltProps {
  */
 interface BeltRDF {
   title: string;
-  description: string;
   about: string;
+}
+
+/**
+ * Settings from getBeltRandom()
+ */
+export interface RandomSettings {
+  hasPatch: boolean | undefined;
+  hasProfessorPatch: boolean | undefined;
+  stripeCount: number | undefined;
+  stripeStart: StripePosition | undefined;
+  includeBelts: Array<BeltType> | undefined;
 }
 
 /**
@@ -246,7 +264,6 @@ export const getBelt = (
   maxStripes: number = MaximumStripeCount
 ): Belt => {
   const belt: Belt = {
-    version: version,
     system: "none",
     id: id ? id : 0,
     name: name ? name : "",
@@ -313,7 +330,8 @@ export const getBeltCheckered = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   return getBeltPredefined(
     id,
@@ -335,7 +353,8 @@ export const getBeltCheckered = (
     minStripes,
     maxStripes,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 };
 
@@ -357,7 +376,8 @@ export const getBeltCoral = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   return getBeltPredefined(
     id,
@@ -379,7 +399,8 @@ export const getBeltCoral = (
     minStripes,
     maxStripes,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 };
 
@@ -403,7 +424,8 @@ export const getBeltPredefined = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   const belt: Belt = getBelt(
     id,
@@ -432,7 +454,8 @@ export const getBeltPredefined = (
     stripeCount,
     stripePosition,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 
   const beltPropAry: BeltProps[] = [];
@@ -446,11 +469,15 @@ export const getBeltProps = (
   stripeCount: number,
   stripePosition: StripePosition | undefined,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps => {
   const beltRDF: BeltRDF = getBeltRDF(belt);
+  const randomSettings: RandomSettings = getRandomSettings();
   const beltProps: BeltProps = {
+    version: version,
     id: generateUniqueId(),
+    belt: belt,
     border: "",
     hasPatch: true,
     patch: "",
@@ -524,8 +551,9 @@ export const getBeltProps = (
     s13l3: "",
     transitionCSS: "",
     beltRDF: beltRDF,
-    randomBeltTypes: Array<BeltType>(),
+    randomSettings: randomSettings,
     refreshInterval: 0,
+    callback: callback,
   };
 
   beltProps.transitionCSS = transitionCSS;
@@ -581,13 +609,19 @@ export const getBeltRandom = (
   stripeStart: StripePosition | undefined = undefined,
   transitionCSS: string | undefined = "",
   includeBelts: Array<BeltType> | undefined = [],
-  refreshInterval: number | undefined = 0
+  refreshInterval: number | undefined = 0,
+  callback: Function | null = null
 ): BeltProps[] => {
   let randomBeltTypeIndex;
   const title = "Random";
-  const rand = Math.random();
-  console.log(rand);
-  if (hasPatch == undefined) hasPatch = rand < 0.5; // randomly pick true or false
+  const randomSettings: RandomSettings = getRandomSettings(
+    hasPatch,
+    hasProfessorPatch,
+    stripeCount,
+    stripeStart,
+    includeBelts
+  );
+  if (hasPatch == undefined) hasPatch = Math.random() < 0.5; // randomly pick true or false
   if (hasProfessorPatch === undefined) hasProfessorPatch = Math.random() < 0.5; // randomly pick true or false
   if (stripeCount === undefined)
     stripeCount = Math.floor(Math.random() * MaximumStripeCount + 1); // randomly pick between 0-10 stripes
@@ -670,10 +704,11 @@ export const getBeltRandom = (
     stripeCount,
     stripeStart,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 
-  beltProps.randomBeltTypes = includeBelts;
+  beltProps.randomSettings = randomSettings;
 
   const beltPropsAry: BeltProps[] = [];
   beltPropsAry.push(beltProps);
@@ -687,7 +722,6 @@ export const getBeltRDF = (
   if (about === undefined) about = RDFAbout;
   const beltRDF: BeltRDF = {
     title: belt.name,
-    description: JSON.stringify(belt),
     about: about,
   };
   return beltRDF;
@@ -710,7 +744,8 @@ export const getBeltSolid = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   return getBeltPredefined(
     id,
@@ -732,7 +767,8 @@ export const getBeltSolid = (
     minStripes,
     maxStripes,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 };
 
@@ -754,7 +790,8 @@ export const getBeltSplit = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   return getBeltPredefined(
     id,
@@ -776,7 +813,8 @@ export const getBeltSplit = (
     minStripes,
     maxStripes,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 };
 
@@ -799,7 +837,8 @@ export const getBeltStriped = (
   minStripes: number,
   maxStripes: number,
   transitionCSS: string,
-  refreshInterval: number
+  refreshInterval: number,
+  callback: Function | null = null
 ): BeltProps[] => {
   return getBeltPredefined(
     id,
@@ -821,7 +860,8 @@ export const getBeltStriped = (
     minStripes,
     maxStripes,
     transitionCSS,
-    refreshInterval
+    refreshInterval,
+    callback
   );
 };
 
@@ -939,6 +979,24 @@ const getRandomHexColor = (): string => {
   return `#${[...Array(6)]
     .map(() => Math.floor(Math.random() * 16).toString(16))
     .join("")}`;
+};
+
+const getRandomSettings = (
+  hasPatch: boolean | undefined = undefined,
+  hasProfessorPatch: boolean | undefined = undefined,
+  stripeCount: number | undefined = undefined,
+  stripeStart: StripePosition | undefined = undefined,
+  includeBelts: Array<BeltType> | undefined = undefined
+): RandomSettings => {
+  const randomSettings: RandomSettings = {
+    hasPatch: hasPatch,
+    hasProfessorPatch: hasProfessorPatch,
+    stripeCount: stripeCount,
+    stripeStart: stripeStart,
+    includeBelts: includeBelts,
+  };
+
+  return randomSettings;
 };
 
 const logMessage = (

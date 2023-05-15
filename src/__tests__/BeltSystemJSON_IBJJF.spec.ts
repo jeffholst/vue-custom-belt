@@ -18,6 +18,7 @@ describe("IBJJF System", () => {
         0
       );
       beltProps[0].id = ""; // blank out unique id so snapshot does not fail
+      beltProps[0].version = ""; // blank  so snapshot does not fail
       expect(beltProps).toMatchSnapshot();
     });
 
