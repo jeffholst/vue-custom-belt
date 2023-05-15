@@ -1126,7 +1126,7 @@ const stripe10 = computed(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .customBelt:hover {
   cursor: pointer;
 }
