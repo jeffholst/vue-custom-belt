@@ -502,6 +502,38 @@ watch(
   }
 );
 
+const transitionNextBelt = () => {
+  if (myBelt.value) {
+    const originalId: string = myBelt.value.id;
+    index.value =
+      index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
+    let nextBelt: BeltProps = props.beltProps[index.value];
+    if (
+      nextBelt.randomSettings.includeBelts !== undefined &&
+      nextBelt.randomSettings.includeBelts.length > 0
+    ) {
+      const randomBelt: BeltProps[] = getBeltRandom(
+        nextBelt.randomSettings.hasPatch,
+        nextBelt.randomSettings.hasProfessorPatch,
+        nextBelt.randomSettings.stripeCount,
+        nextBelt.randomSettings.stripeStart,
+        nextBelt.transitionCSS,
+        nextBelt.randomSettings.includeBelts,
+        nextBelt.refreshInterval,
+        nextBelt.callback
+      );
+      nextBelt = randomBelt[0];
+    }
+    nextBelt.id = originalId; // keep the same element id
+    myBelt.value = nextBelt;
+    doCallback(null, BeltCallbackType.Refresh);
+    refreshIntervalId = setTimeout(
+      transitionNextBelt,
+      myBelt.value.refreshInterval
+    );
+  }
+};
+
 const updateProps = () => {
   if (!props.beltProps) {
     isValid.value = false;
@@ -517,31 +549,10 @@ const updateProps = () => {
       if (refreshIntervalId != undefined) {
         clearInterval(refreshIntervalId);
       }
-      const originalId: string = myBelt.value.id;
-      refreshIntervalId = setInterval(() => {
-        index.value =
-          index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
-        let nextBelt: BeltProps = props.beltProps[index.value];
-        if (
-          nextBelt.randomSettings.includeBelts !== undefined &&
-          nextBelt.randomSettings.includeBelts.length > 0
-        ) {
-          const randomBelt: BeltProps[] = getBeltRandom(
-            nextBelt.randomSettings.hasPatch,
-            nextBelt.randomSettings.hasProfessorPatch,
-            nextBelt.randomSettings.stripeCount,
-            nextBelt.randomSettings.stripeStart,
-            nextBelt.transitionCSS,
-            nextBelt.randomSettings.includeBelts,
-            nextBelt.refreshInterval,
-            nextBelt.callback
-          );
-          nextBelt = randomBelt[0];
-        }
-        nextBelt.id = originalId; // keep the same element id
-        myBelt.value = nextBelt;
-        doCallback(null, BeltCallbackType.Refresh);
-      }, myBelt.value.refreshInterval);
+      refreshIntervalId = setTimeout(
+        transitionNextBelt,
+        myBelt.value.refreshInterval
+      );
     }
   }
 };
