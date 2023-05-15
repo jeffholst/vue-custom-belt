@@ -568,7 +568,7 @@ onUnmounted(() => {
 });
 
 const oneClick = (event: any) => {
-  if (myBelt.value != undefined && myBelt.value.callback != null) {
+  if (myBelt.value != undefined) {
     clickCount.value++;
     if (clickCount.value === 1) {
       clickTimer = setTimeout(function () {
@@ -591,6 +591,7 @@ const doCallback = (event: Event | null, callbackType: BeltCallbackType) => {
 };
 
 const downLoadSVG = (event: any) => {
+  debugger;
   const svgContent = event.target.closest("svg").outerHTML;
   const blob = new Blob([svgContent], {
     type: "image/svg+xml",
@@ -1125,7 +1126,7 @@ const stripe10 = computed(() => {
 });
 </script>
 
-<style scoped>
+<style>
 svg:hover {
   cursor: pointer;
 }
