@@ -3,7 +3,6 @@
     v-if="isValid"
     :id="myBelt != undefined ? myBelt.id : ''"
     :onClick="oneClick"
-    :class="{ hasCallback: myBelt != undefined && myBelt.callback }"
     viewBox="0 0 471.2 190.2"
     :data-version="myBelt != undefined ? myBelt.version : ''"
     :data-belt="myBelt != undefined ? JSON.stringify(myBelt.belt) : ''"
@@ -518,27 +517,29 @@ const updateProps = () => {
       if (refreshIntervalId != undefined) {
         clearInterval(refreshIntervalId);
       }
+      const originalId: string = myBelt.value.id;
       refreshIntervalId = setInterval(() => {
         index.value =
           index.value === props.beltProps.length - 1 ? 0 : index.value + 1;
-        myBelt.value = props.beltProps[index.value];
+        let nextBelt: BeltProps = props.beltProps[index.value];
         if (
-          myBelt.value.randomSettings.includeBelts !== undefined &&
-          myBelt.value.randomSettings.includeBelts.length > 0
+          nextBelt.randomSettings.includeBelts !== undefined &&
+          nextBelt.randomSettings.includeBelts.length > 0
         ) {
           const randomBelt: BeltProps[] = getBeltRandom(
-            myBelt.value.randomSettings.hasPatch,
-            myBelt.value.randomSettings.hasProfessorPatch,
-            myBelt.value.randomSettings.stripeCount,
-            myBelt.value.randomSettings.stripeStart,
-            myBelt.value.transitionCSS,
-            myBelt.value.randomSettings.includeBelts,
-            myBelt.value.refreshInterval,
-            myBelt.value.callback
+            nextBelt.randomSettings.hasPatch,
+            nextBelt.randomSettings.hasProfessorPatch,
+            nextBelt.randomSettings.stripeCount,
+            nextBelt.randomSettings.stripeStart,
+            nextBelt.transitionCSS,
+            nextBelt.randomSettings.includeBelts,
+            nextBelt.refreshInterval,
+            nextBelt.callback
           );
-          randomBelt[0].id = myBelt.value.id; // keep the same element id
-          myBelt.value = randomBelt[0];
+          nextBelt = randomBelt[0];
         }
+        nextBelt.id = originalId; // keep the same element id
+        myBelt.value = nextBelt;
         doCallback(null, BeltCallbackType.Refresh);
       }, myBelt.value.refreshInterval);
     }
@@ -565,6 +566,7 @@ const oneClick = (event: any) => {
       }, clickDelay);
     } else {
       clearTimeout(clickTimer);
+      downLoadSVG(event);
       doCallback(event, BeltCallbackType.DoubleClick);
       clickCount.value = 0;
     }
@@ -573,7 +575,7 @@ const oneClick = (event: any) => {
 
 const doCallback = (event: Event | null, callbackType: BeltCallbackType) => {
   if (myBelt.value != undefined && myBelt.value.callback != null) {
-    myBelt.value.callback(event, callbackType, myBelt.value, downLoadSVG);
+    myBelt.value.callback(event, callbackType, { ...myBelt.value });
   }
 };
 
@@ -1113,7 +1115,7 @@ const stripe10 = computed(() => {
 </script>
 
 <style scoped>
-.hasCallback:hover {
+svg:hover {
   cursor: pointer;
 }
 </style>
