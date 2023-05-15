@@ -4,6 +4,7 @@
     :id="myBelt != undefined ? myBelt.id : ''"
     :onClick="oneClick"
     viewBox="0 0 471.2 190.2"
+    class="customBelt"
     :data-version="myBelt != undefined ? myBelt.version : ''"
     :data-belt="myBelt != undefined ? JSON.stringify(myBelt.belt) : ''"
     role="img"
@@ -1125,8 +1126,8 @@ const stripe10 = computed(() => {
 });
 </script>
 
-<style>
-svg:hover {
+<style scoped>
+.customBelt:hover {
   cursor: pointer;
 }
 </style>
