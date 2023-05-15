@@ -15,21 +15,6 @@ import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
-const myCallback = (
-  event: Event,
-  callbackType: BeltCallbackType,
-  beltProps: BeltProps,
-  downloadCallback: Function
-) => {
-  if (callbackType === BeltCallbackType.DoubleClick) {
-    if (downloadCallback && event) {
-      downloadCallback(event);
-    }
-  } else if (callbackType === BeltCallbackType.Refresh) {
-    flagBeltName.value = beltProps.belt.name;
-  }
-};
-
 let randomCrazy: BeltProps[] = getBeltRandom(
   true,
   false,
@@ -86,9 +71,19 @@ let randomSplit: BeltProps[] = getBeltRandom(
   0,
   undefined,
   "transition: all 3.0s ease-in-out;",
-  [BeltType.Solid],
+  [BeltType.Split],
   4000
 );
+
+const flagBeltsCallback = (
+  event: Event,
+  callbackType: BeltCallbackType,
+  bp: BeltProps
+) => {
+  if (callbackType === BeltCallbackType.Refresh) {
+    flagBeltName.value = `${bp.belt.name as string}`;
+  }
+};
 
 const usaBelt: BeltProps[] = getBeltStriped(
   1,
@@ -110,7 +105,7 @@ const usaBelt: BeltProps[] = getBeltStriped(
   4,
   "transition: all 2.0s ease;",
   3000,
-  myCallback
+  flagBeltsCallback
 );
 
 const flagBeltName = ref(usaBelt[0].belt.name);
@@ -135,10 +130,28 @@ const MexicoBelt = getBeltStriped(
   4,
   "transition: all 2.0s ease;",
   3000,
-  myCallback
+  flagBeltsCallback
 );
 
 const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
+
+const IBBJFBeltsCallback = (
+  event: Event,
+  callbackType: BeltCallbackType,
+  beltProps: BeltProps
+) => {
+  if (callbackType === BeltCallbackType.Refresh) {
+    ibjjBeltName.value = beltProps.belt.name;
+  }
+};
+
+const allIBJJBelts: BeltProps[] = ibjjfSystem.getBeltPropsAll(
+  "transition: all 3.0s ease-in-out;",
+  4000,
+  IBBJFBeltsCallback
+);
+
+const ibjjBeltName = ref(allIBJJBelts[0].belt.name);
 </script>
 
 <template>
@@ -149,15 +162,11 @@ const flagBelts = combineBeltProps([usaBelt, MexicoBelt]);
       </h1>
       <CustomBelt :belt-props="flagBelts" />
       <h1 class="text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        All {{ ibjjfSystem.title }} belts (rotating)
+        {{ ibjjfSystem.title }} Belts ({{ ibjjBeltName }})
       </h1>
-      <CustomBelt
-        :belt-props="
-          ibjjfSystem.getBeltPropsAll('transition: all 3.0s ease-in-out;', 4000)
-        "
-      />
+      <CustomBelt :belt-props="allIBJJBelts" />
       <h1 class="pt-6 text-2xl font-bold text-slate-800 dark:text-white pb-10">
-        All {{ ibjjfSystem.title }} belts
+        {{ ibjjfSystem.title }} Belts
       </h1>
       <div class="grid grid-cols-2 gap-4">
         <div v-for="(belt, index) in ibjjfSystem.belts" :key="index">
