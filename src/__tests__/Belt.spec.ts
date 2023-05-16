@@ -68,10 +68,42 @@ describe("BeltType", () => {
   }
 
   /**
-   * Test that beltTypes only contains expected values
+   * Test that BeltType only contains expected values
    */
-  it(`is iterable`, () => {
+  it(`has correct values`, () => {
     expect(rval).toBe("SolidStripedCoralSplitCheckeredCrazy");
+  });
+});
+
+/**
+ * BeltTypeStandard tests
+ */
+describe("BeltTypeStandard", () => {
+  let rval = "";
+  for (const bt in belt.BeltTypeStandard) {
+    rval += bt;
+  }
+
+  /**
+   * Test that BeltTypeStandard only contains expected values
+   */
+  it(`has correct values`, () => {
+    expect(rval).toBe("SolidStripedCoralSplitCheckered");
+  });
+
+  /**
+   * Test that beltTypeStandard does not contain Crazy
+   */
+  it(`does not contain Crazy`, () => {
+    // @ts-ignore
+    expect(belt.BeltTypeStandard.Crazy).toBe(undefined);
+  });
+
+  /**
+   * BeltType.Solid matches BeltTypeStandard.Solid
+   */
+  it(`matches BeltType`, () => {
+    expect(belt.BeltType.Solid === belt.BeltTypeStandard.Solid).toBeTruthy();
   });
 });
 

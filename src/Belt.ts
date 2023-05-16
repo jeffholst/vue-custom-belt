@@ -16,8 +16,9 @@ export enum BeltCallbackType {
   DoubleClick = "DoubleClick",
 }
 
-/*
+/**
  * Belt types
+ * @enum
  */
 export enum BeltType {
   Solid = "Solid",
@@ -28,8 +29,23 @@ export enum BeltType {
   Crazy = "Crazy",
 }
 
-/*
+/**
+ * Belt types excluding Crazy
+ * @enum
+ */
+type BeltTypeStandard = Omit<BeltType, "Crazy">;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const BeltTypeStandard = {
+  Solid: BeltType.Solid,
+  Striped: BeltType.Striped,
+  Coral: BeltType.Coral,
+  Split: BeltType.Split,
+  Checkered: BeltType.Checkered,
+};
+
+/**
  * Log types
+ * @enum
  */
 
 enum LogType {
@@ -40,6 +56,7 @@ enum LogType {
 
 /**
  * Where to start stripe placement on patch (Left or Right)
+ * @enum
  */
 export enum StripePosition {
   Left = "Left",
@@ -53,8 +70,9 @@ export enum StripePosition {
  * |___|_||_\__\___|_| |_| \__,_\__\___/__/
  */
 
-/*
+/**
  * Belt object definition
+ * @interface
  */
 export interface Belt {
   system: string;
@@ -79,16 +97,18 @@ export interface Belt {
   maxStripes: number;
 }
 
-/*
+/**
  * Used to assign/lookup friendly names to hex colors
+ * @interface
  */
 export interface BeltColor {
   name: string;
   hex: string;
 }
 
-/*
+/**
  * Property object passed to <CustomBelt /> component
+ * @interface
  */
 export interface BeltProps {
   version: string;
@@ -172,16 +192,18 @@ export interface BeltProps {
   callback: Function | null;
 }
 
-/*
+/**
  * RDF metadata used in SVG tag
+ * @interface
  */
 interface BeltRDF {
   title: string;
   about: string;
 }
 
-/*
+/**
  * Settings for random belt generation
+ * @interface
  */
 export interface RandomSettings {
   hasPatch: boolean | undefined;
