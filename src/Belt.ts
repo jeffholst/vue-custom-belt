@@ -33,8 +33,7 @@ export enum BeltType {
  * Belt types excluding Crazy
  * @enum
  */
-type BeltTypeStandard = Omit<BeltType, "Crazy">;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export type BeltTypeStandard = Omit<BeltType, "Crazy">;
 export const BeltTypeStandard = {
   Solid: BeltType.Solid,
   Striped: BeltType.Striped,
