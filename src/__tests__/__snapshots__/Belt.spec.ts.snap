@@ -42,7 +42,7 @@ exports[`getBeltProps > should match snap 1`] = `
     "hasProfessorPatch": undefined,
     "includeBelts": undefined,
     "stripeCount": undefined,
-    "stripeStart": undefined,
+    "stripePosition": undefined,
   },
   "refreshInterval": 0,
   "s10l1": "#FF0000",

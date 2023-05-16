@@ -6,8 +6,8 @@ import {
   BeltProps,
   BeltType,
   StripePosition,
-  getBeltRandom,
-  getBeltStriped,
+  getBeltPropsRandom,
+  getBeltPropsStriped,
   combineBeltProps,
   BeltCallbackType,
 } from "./Belt";
@@ -15,7 +15,7 @@ import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
 const ibjjfSystem: BeltSystem = new BeltSystem(BeltSystemJSON_IBJJF);
 
-let randomCrazy: BeltProps[] = getBeltRandom(
+let randomCrazy: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -25,7 +25,7 @@ let randomCrazy: BeltProps[] = getBeltRandom(
   4000
 );
 
-let randomCheckered: BeltProps[] = getBeltRandom(
+let randomCheckered: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -35,7 +35,7 @@ let randomCheckered: BeltProps[] = getBeltRandom(
   4000
 );
 
-let randomSolid: BeltProps[] = getBeltRandom(
+let randomSolid: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -45,7 +45,7 @@ let randomSolid: BeltProps[] = getBeltRandom(
   4000
 );
 
-let randomStriped: BeltProps[] = getBeltRandom(
+let randomStriped: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -55,7 +55,7 @@ let randomStriped: BeltProps[] = getBeltRandom(
   4000
 );
 
-let randomCoral: BeltProps[] = getBeltRandom(
+let randomCoral: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -65,7 +65,7 @@ let randomCoral: BeltProps[] = getBeltRandom(
   4000
 );
 
-let randomSplit: BeltProps[] = getBeltRandom(
+let randomSplit: BeltProps[] = getBeltPropsRandom(
   true,
   false,
   0,
@@ -85,7 +85,7 @@ const flagBeltsCallback = (
   }
 };
 
-const usaBelt: BeltProps[] = getBeltStriped(
+const usaBelt: BeltProps[] = getBeltPropsStriped(
   1,
   "USA Belt",
   "#BF0A30",
@@ -110,7 +110,7 @@ const usaBelt: BeltProps[] = getBeltStriped(
 
 const flagBeltName = ref(usaBelt[0].belt.name);
 
-const MexicoBelt = getBeltStriped(
+const MexicoBelt = getBeltPropsStriped(
   2,
   "Mexico Belt",
   "#006847",

@@ -4,7 +4,7 @@ import {
   Belt,
   StripePosition,
   mapBeltColors,
-  getBeltProps,
+  getBeltPropsFromBelt,
 } from "./Belt";
 
 /**
@@ -70,7 +70,7 @@ export class BeltSystem {
     callback: Function | null = null
   ): BeltProps {
     belt.system = this.title;
-    const beltProps: BeltProps = getBeltProps(
+    const beltProps: BeltProps = getBeltPropsFromBelt(
       belt,
       stripeCount,
       stripePosition,

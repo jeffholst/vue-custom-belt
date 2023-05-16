@@ -482,7 +482,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch, onUnmounted } from "vue";
-import { getBeltRandom, BeltProps, BeltCallbackType } from "../Belt";
+import { getBeltPropsRandom, BeltProps, BeltCallbackType } from "../Belt";
 
 const index = ref(0);
 const props = defineProps<{
@@ -513,11 +513,11 @@ const transitionNextBelt = () => {
       nextBelt.randomSettings.includeBelts !== undefined &&
       nextBelt.randomSettings.includeBelts.length > 0
     ) {
-      const randomBelt: BeltProps[] = getBeltRandom(
+      const randomBelt: BeltProps[] = getBeltPropsRandom(
         nextBelt.randomSettings.hasPatch,
         nextBelt.randomSettings.hasProfessorPatch,
         nextBelt.randomSettings.stripeCount,
-        nextBelt.randomSettings.stripeStart,
+        nextBelt.randomSettings.stripePosition,
         nextBelt.transitionCSS,
         nextBelt.randomSettings.includeBelts,
         nextBelt.refreshInterval,

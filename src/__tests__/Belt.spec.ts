@@ -144,7 +144,7 @@ describe("mapBeltColors", () => {
 describe("getBeltProps", () => {
   const myBelt: belt.Belt = belt.getBelt();
   it("should match snap", () => {
-    const beltProps: belt.BeltProps = belt.getBeltProps(
+    const beltProps: belt.BeltProps = belt.getBeltPropsFromBelt(
       myBelt,
       0,
       belt.StripePosition.Left,
