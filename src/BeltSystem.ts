@@ -28,7 +28,7 @@ export class BeltSystem {
    * Instantiate a new BeltSystem object
    * @param {BeltSystem} system belt system object to use
    */
-  constructor(system: BeltSystem) {
+  constructor(system: BeltSystem | any) {
     this.name = system.name;
     this.title = system.title;
     this.transitionCSS = system.transitionCSS;

@@ -95,7 +95,6 @@ describe("BeltTypeStandard", () => {
    * Test that beltTypeStandard does not contain Crazy
    */
   it(`does not contain Crazy`, () => {
-    // @ts-ignore
     expect(belt.BeltTypeStandard.Crazy).toBe(undefined);
   });
 
@@ -103,6 +102,7 @@ describe("BeltTypeStandard", () => {
    * BeltType.Solid matches BeltTypeStandard.Solid
    */
   it(`matches BeltType`, () => {
+    // @ts-ignore
     expect(belt.BeltType.Solid === belt.BeltTypeStandard.Solid).toBeTruthy();
   });
 });
