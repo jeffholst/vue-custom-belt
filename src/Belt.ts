@@ -1073,21 +1073,34 @@ export const getBeltRDF = (
 };
 
 /**
- * Check for valid hex code
- * @param {string} str hex code string to validate
- * @return {boolean} true if valid hex code, false otherwise
+ * Check for valid color hex code (must begin with # and then 3 or 6 valid hex characters)
+ *
+ * RegEx: /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+ *
+ * Example JavaScript Usage:
+ *
+ * ```js
+ * isValidHexCode("#1AFFa1"); // returns true
+ * isValidHexCode("#F00"); // returns true
+ * isValidHexCode("123456"); // returns false (does not begin with #)
+ * isValidHexCode("#123abce"); // returns false (too long)
+ * isValidHexCode("#afafah"); // returns false (contains invalid character)
+ * ```
+ *
+ * @param {string} input string to validate
+ * @return {boolean} true if valid color hex code, false otherwise
  */
-export const isValidHexCode = (str: string): boolean => {
+export const isValidHexCode = (input: string): boolean => {
   // Regex to check for valid hex code
   const regex = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
 
   // if str is empty return false
-  if (str == null) {
+  if (input == null) {
     return false;
   }
 
   // Return true if the str matches the Regex
-  if (regex.test(str) == true) {
+  if (regex.test(input) == true) {
     return true;
   } else {
     return false;

@@ -54,7 +54,7 @@ Default color when no color provided
 
 #### Defined in
 
-[Belt.ts:225](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L225)
+[Belt.ts:225](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L225)
 
 ___
 
@@ -66,7 +66,7 @@ Maximum number of stripes a belt may have
 
 #### Defined in
 
-[Belt.ts:227](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L227)
+[Belt.ts:227](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L227)
 
 ___
 
@@ -78,7 +78,7 @@ Minimum number of stripes
 
 #### Defined in
 
-[Belt.ts:229](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L229)
+[Belt.ts:229](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L229)
 
 ___
 
@@ -90,7 +90,7 @@ Default stripe position
 
 #### Defined in
 
-[Belt.ts:231](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L231)
+[Belt.ts:231](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L231)
 
 ## Functions
 
@@ -114,7 +114,7 @@ combined array of BeltProps[] arrays
 
 #### Defined in
 
-[Belt.ts:246](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L246)
+[Belt.ts:246](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L246)
 
 ___
 
@@ -156,7 +156,7 @@ Belt object
 
 #### Defined in
 
-[Belt.ts:277](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L277)
+[Belt.ts:277](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L277)
 
 ___
 
@@ -180,7 +180,7 @@ number of colors in beltType
 
 #### Defined in
 
-[Belt.ts:332](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L332)
+[Belt.ts:332](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L332)
 
 ___
 
@@ -224,7 +224,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:379](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L379)
+[Belt.ts:379](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L379)
 
 ___
 
@@ -266,7 +266,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:462](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L462)
+[Belt.ts:462](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L462)
 
 ___
 
@@ -308,7 +308,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:531](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L531)
+[Belt.ts:531](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L531)
 
 ___
 
@@ -337,7 +337,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:587](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L587)
+[Belt.ts:587](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L587)
 
 ___
 
@@ -368,7 +368,7 @@ Belt object
 
 #### Defined in
 
-[Belt.ts:737](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L737)
+[Belt.ts:737](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L737)
 
 ___
 
@@ -409,7 +409,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:872](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L872)
+[Belt.ts:872](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L872)
 
 ___
 
@@ -451,7 +451,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:940](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L940)
+[Belt.ts:940](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L940)
 
 ___
 
@@ -494,7 +494,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:1010](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1010)
+[Belt.ts:1010](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L1010)
 
 ___
 
@@ -502,7 +502,7 @@ ___
 
 ▸ **getBeltRDF**(`belt`, `about?`): [`BeltRDF`](../interfaces/Belt.BeltRDF.md)
 
-Create new BeltRDF object used in <svg> metadata
+Create new BeltRDF object used in svg metadata
 
 #### Parameters
 
@@ -519,31 +519,43 @@ BeltRDF object
 
 #### Defined in
 
-[Belt.ts:1063](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1063)
+[Belt.ts:1063](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L1063)
 
 ___
 
 ### isValidHexCode
 
-▸ **isValidHexCode**(`str`): `boolean`
+▸ **isValidHexCode**(`input`): `boolean`
 
-Check for valid hex code
+Check for valid color hex code (must begin with # and then 3 or 6 valid hex characters)
+
+RegEx: /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+
+Example JavaScript Usage:
+
+```js
+isValidHexCode("#1AFFa1"); // returns true
+isValidHexCode("#F00"); // returns true
+isValidHexCode("123456"); // returns false (does not begin with #)
+isValidHexCode("#123abce"); // returns false (too long)
+isValidHexCode("#afafah"); // returns false (contains invalid character)
+```
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `str` | `string` | hex code string to validate |
+| `input` | `string` | string to validate |
 
 #### Returns
 
 `boolean`
 
-true if valid hex code, false otherwise
+true if valid color hex code, false otherwise
 
 #### Defined in
 
-[Belt.ts:1080](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1080)
+[Belt.ts:1093](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L1093)
 
 ___
 
@@ -568,7 +580,7 @@ found hex code or original color name
 
 #### Defined in
 
-[Belt.ts:1103](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1103)
+[Belt.ts:1116](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L1116)
 
 ___
 
@@ -591,4 +603,4 @@ Map all belt color names in all Belt array object to hex codes
 
 #### Defined in
 
-[Belt.ts:1128](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1128)
+[Belt.ts:1141](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L1141)

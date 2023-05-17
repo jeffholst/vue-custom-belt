@@ -39,7 +39,7 @@ Belt object definition
 
 #### Defined in
 
-[Belt.ts:84](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L84)
+[Belt.ts:84](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L84)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:81](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L81)
+[Belt.ts:81](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L81)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:82](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L82)
+[Belt.ts:82](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L82)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:83](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L83)
+[Belt.ts:83](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L83)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:85](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L85)
+[Belt.ts:85](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L85)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:88](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L88)
+[Belt.ts:88](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L88)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:77](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L77)
+[Belt.ts:77](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L77)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:95](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L95)
+[Belt.ts:95](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L95)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:94](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L94)
+[Belt.ts:94](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L94)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:78](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L78)
+[Belt.ts:78](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L78)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:87](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L87)
+[Belt.ts:87](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L87)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:86](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L86)
+[Belt.ts:86](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L86)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:90](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L90)
+[Belt.ts:90](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L90)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:89](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L89)
+[Belt.ts:89](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L89)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:79](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L79)
+[Belt.ts:79](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L79)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:91](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L91)
+[Belt.ts:91](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L91)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:92](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L92)
+[Belt.ts:92](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L92)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:93](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L93)
+[Belt.ts:93](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L93)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:76](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L76)
+[Belt.ts:76](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L76)
 
 ___
 
@@ -229,4 +229,4 @@ ___
 
 #### Defined in
 
-[Belt.ts:80](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L80)
+[Belt.ts:80](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L80)

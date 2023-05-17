@@ -21,7 +21,7 @@ RDF metadata used in SVG tag
 
 #### Defined in
 
-[Belt.ts:199](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L199)
+[Belt.ts:199](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L199)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[Belt.ts:198](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L198)
+[Belt.ts:198](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L198)

@@ -22,7 +22,7 @@ Callback types for belt interactions
 
 #### Defined in
 
-[Belt.ts:16](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L16)
+[Belt.ts:16](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L16)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:17](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L17)
+[Belt.ts:17](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L17)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[Belt.ts:15](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L15)
+[Belt.ts:15](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L15)
