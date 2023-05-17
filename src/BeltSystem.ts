@@ -9,22 +9,26 @@ import {
 
 /**
  * Class used to represent predefined belt systems
- * @param {string} name name to give belt system
- * @param {string} title title used for display purposes
- * @param {string} transitionCSS default transition css to use between belt changes
- * @param {number} refreshInterval default milliseconds to wait before changing belt
- * @param {BeltColor[]} colors array of BeltColor objects used to lookup hex colors by friendly name
- * @param {Belt[]} belts array of Belt objects contained in this belt system
  */
 export class BeltSystem {
+  /** name of belt system */
   name: string;
+  /** title of belt system */
   title: string;
+  /** transition CSS  */
   transitionCSS: string;
+  /** refresh interval in milliseconds */
   refreshInterval: number;
+  /** lookup table of friendly color names to hex codes */
   colors: BeltColor[];
+  /** belts in the system */
   belts: Belt[];
 
-  constructor(system: any) {
+  /**
+   * Instantiate a new BeltSystem object
+   * @param {BeltSystem} system belt system object to use
+   */
+  constructor(system: BeltSystem) {
     this.name = system.name;
     this.title = system.title;
     this.transitionCSS = system.transitionCSS;

@@ -6,30 +6,6 @@
 
 Class used to represent predefined belt systems
 
-**`Param`**
-
-name to give belt system
-
-**`Param`**
-
-title used for display purposes
-
-**`Param`**
-
-default transition css to use between belt changes
-
-**`Param`**
-
-default milliseconds to wait before changing belt
-
-**`Param`**
-
-array of BeltColor objects used to lookup hex colors by friendly name
-
-**`Param`**
-
-array of Belt objects contained in this belt system
-
 ## Table of contents
 
 ### Constructors
@@ -64,21 +40,25 @@ array of Belt objects contained in this belt system
 
 • **new BeltSystem**(`system`)
 
+Instantiate a new BeltSystem object
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `system` | `any` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `system` | [`BeltSystem`](BeltSystem.BeltSystem.md) | belt system object to use |
 
 #### Defined in
 
-[BeltSystem.ts:27](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L27)
+[BeltSystem.ts:31](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L31)
 
 ## Properties
 
 ### belts
 
 • **belts**: [`Belt`](../interfaces/Belt.Belt.md)[]
+
+belts in the system
 
 #### Defined in
 
@@ -90,25 +70,7 @@ ___
 
 • **colors**: [`BeltColor`](../interfaces/Belt.BeltColor.md)[]
 
-#### Defined in
-
-[BeltSystem.ts:24](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L24)
-
-___
-
-### name
-
-• **name**: `string`
-
-#### Defined in
-
-[BeltSystem.ts:20](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L20)
-
-___
-
-### refreshInterval
-
-• **refreshInterval**: `number`
+lookup table of friendly color names to hex codes
 
 #### Defined in
 
@@ -116,9 +78,23 @@ ___
 
 ___
 
-### title
+### name
 
-• **title**: `string`
+• **name**: `string`
+
+name of belt system
+
+#### Defined in
+
+[BeltSystem.ts:15](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L15)
+
+___
+
+### refreshInterval
+
+• **refreshInterval**: `number`
+
+refresh interval in milliseconds
 
 #### Defined in
 
@@ -126,13 +102,27 @@ ___
 
 ___
 
+### title
+
+• **title**: `string`
+
+title of belt system
+
+#### Defined in
+
+[BeltSystem.ts:17](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L17)
+
+___
+
 ### transitionCSS
 
 • **transitionCSS**: `string`
 
+transition CSS
+
 #### Defined in
 
-[BeltSystem.ts:22](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L22)
+[BeltSystem.ts:19](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L19)
 
 ## Methods
 
@@ -156,7 +146,7 @@ matching Belt or undefined
 
 #### Defined in
 
-[BeltSystem.ts:44](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L44)
+[BeltSystem.ts:48](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L48)
 
 ___
 
@@ -180,7 +170,7 @@ matching Belt or undefined
 
 #### Defined in
 
-[BeltSystem.ts:53](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L53)
+[BeltSystem.ts:57](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L57)
 
 ___
 
@@ -207,7 +197,7 @@ BeltProps for provided Belt object and stripe info
 
 #### Defined in
 
-[BeltSystem.ts:66](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L66)
+[BeltSystem.ts:70](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L70)
 
 ___
 
@@ -233,7 +223,7 @@ all belts in the belt system
 
 #### Defined in
 
-[BeltSystem.ts:91](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L91)
+[BeltSystem.ts:95](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L95)
 
 ___
 
@@ -260,7 +250,7 @@ BeltProps for matching belt name
 
 #### Defined in
 
-[BeltSystem.ts:123](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L123)
+[BeltSystem.ts:127](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L127)
 
 ___
 
@@ -289,7 +279,7 @@ BeltProps[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:155](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L155)
+[BeltSystem.ts:159](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L159)
 
 ___
 
@@ -316,7 +306,7 @@ BeltProps for matching belt name
 
 #### Defined in
 
-[BeltSystem.ts:190](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L190)
+[BeltSystem.ts:194](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L194)
 
 ___
 
@@ -345,7 +335,7 @@ BeltProps[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:222](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L222)
+[BeltSystem.ts:226](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L226)
 
 ___
 
@@ -369,7 +359,7 @@ Belt[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:255](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L255)
+[BeltSystem.ts:259](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L259)
 
 ___
 
@@ -393,4 +383,4 @@ Belt[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:272](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L272)
+[BeltSystem.ts:276](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/BeltSystem.ts#L276)

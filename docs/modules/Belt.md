@@ -62,7 +62,7 @@ ___
 
 • `Const` **MaximumStripeCount**: ``10``
 
-maximum number of stripes a belt may have
+Maximum number of stripes a belt may have
 
 #### Defined in
 
@@ -74,7 +74,7 @@ ___
 
 • `Const` **MinimumStripeCount**: ``0``
 
-minimum number of stripes
+Minimum number of stripes
 
 #### Defined in
 
@@ -86,7 +86,7 @@ ___
 
 • `Const` **StripePositionDefault**: [`Right`](../enums/Belt.StripePosition.md#right) = `StripePosition.Right`
 
-default stripe position
+Default stripe position
 
 #### Defined in
 
@@ -98,19 +98,19 @@ default stripe position
 
 ▸ **combineBeltProps**(`beltProps`): [`BeltProps`](../interfaces/Belt.BeltProps.md)[]
 
-Combine multiple BropProps arrays into a single array
+Combine multiple BeltProps[] arrays into a single BeltProps[] array
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `beltProps` | [`BeltProps`](../interfaces/Belt.BeltProps.md)[][] | array of BeltProp arrays |
+| `beltProps` | [`BeltProps`](../interfaces/Belt.BeltProps.md)[][] | array of BeltProp[] arrays to combine |
 
 #### Returns
 
 [`BeltProps`](../interfaces/Belt.BeltProps.md)[]
 
-combined array of BeltProps
+combined array of BeltProps[] arrays
 
 #### Defined in
 
@@ -162,7 +162,7 @@ ___
 
 ### getBeltColorCount
 
-▸ **getBeltColorCount**(`bType`): `number`
+▸ **getBeltColorCount**(`beltType`): `number`
 
 Get number of colors in BeltType [1-3]
 
@@ -170,13 +170,13 @@ Get number of colors in BeltType [1-3]
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `bType` | [`BeltType`](../enums/Belt.BeltType.md) | BeltType |
+| `beltType` | [`BeltType`](../enums/Belt.BeltType.md) | BeltType to lookup color count |
 
 #### Returns
 
 `number`
 
-number of colors in BeltType
+number of colors in beltType
 
 #### Defined in
 
@@ -196,10 +196,10 @@ Create new BeltProps[] array
 | :------ | :------ | :------ | :------ |
 | `id` | `number` | `undefined` | unique identifier for belt |
 | `name` | `string` | `undefined` | name of belt |
-| `beltType` | [`BeltType`](../enums/Belt.BeltType.md) | `undefined` | - |
+| `beltType` | [`BeltType`](../enums/Belt.BeltType.md) | `undefined` | type of belt |
 | `color1` | `string` | `undefined` | hex value for belt color 1 |
 | `color2` | `string` | `undefined` | hex value for belt color 2 |
-| `color3` | `string` | `undefined` | - |
+| `color3` | `string` | `undefined` | hex value for belt color 3 |
 | `borderColor` | `string` | `undefined` | hex value for belt border color |
 | `hasPatch` | `boolean` | `undefined` | whether belt has patch or not |
 | `patchColor` | `string` | `undefined` | hex value for patch color |
@@ -224,7 +224,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:377](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L377)
+[Belt.ts:379](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L379)
 
 ___
 
@@ -266,7 +266,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:460](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L460)
+[Belt.ts:462](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L462)
 
 ___
 
@@ -308,7 +308,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:529](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L529)
+[Belt.ts:531](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L531)
 
 ___
 
@@ -316,7 +316,7 @@ ___
 
 ▸ **getBeltPropsFromBelt**(`belt`, `stripeCount`, `stripePosition`, `transitionCSS`, `refreshInterval`, `callback?`): [`BeltProps`](../interfaces/Belt.BeltProps.md)
 
-Create new BeltProps[] array deom Belt object
+Create new BeltProps[] array from Belt object
 
 #### Parameters
 
@@ -337,7 +337,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:585](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L585)
+[Belt.ts:587](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L587)
 
 ___
 
@@ -368,7 +368,7 @@ Belt object
 
 #### Defined in
 
-[Belt.ts:735](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L735)
+[Belt.ts:737](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L737)
 
 ___
 
@@ -409,7 +409,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:870](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L870)
+[Belt.ts:872](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L872)
 
 ___
 
@@ -426,7 +426,7 @@ Create new Split BeltProps[] array
 | `id` | `number` | `undefined` | unique identifier for belt |
 | `name` | `string` | `undefined` | name of belt |
 | `color1` | `string` | `undefined` | hex value for belt color 1 |
-| `color2` | `string` | `undefined` | hex value for belt color 1 |
+| `color2` | `string` | `undefined` | hex value for belt color 2 |
 | `borderColor` | `string` | `undefined` | hex value for belt border color |
 | `hasPatch` | `boolean` | `undefined` | whether belt has patch or not |
 | `patchColor` | `string` | `undefined` | hex value for patch color |
@@ -451,7 +451,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:938](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L938)
+[Belt.ts:940](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L940)
 
 ___
 
@@ -468,8 +468,8 @@ Create new Striped BeltProps[] array
 | `id` | `number` | `undefined` | unique identifier for belt |
 | `name` | `string` | `undefined` | name of belt |
 | `color1` | `string` | `undefined` | hex value for belt color 1 |
-| `color2` | `string` | `undefined` | hex value for belt color 1 |
-| `color3` | `string` | `undefined` | hex value for belt color 1 |
+| `color2` | `string` | `undefined` | hex value for belt color 2 |
+| `color3` | `string` | `undefined` | hex value for belt color 3 |
 | `borderColor` | `string` | `undefined` | hex value for belt border color |
 | `hasPatch` | `boolean` | `undefined` | whether belt has patch or not |
 | `patchColor` | `string` | `undefined` | hex value for patch color |
@@ -494,7 +494,7 @@ BeltProps[] array
 
 #### Defined in
 
-[Belt.ts:1008](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1008)
+[Belt.ts:1010](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1010)
 
 ___
 
@@ -502,14 +502,14 @@ ___
 
 ▸ **getBeltRDF**(`belt`, `about?`): [`BeltRDF`](../interfaces/Belt.BeltRDF.md)
 
-Create new BeltRDF object
+Create new BeltRDF object used in <svg> metadata
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `belt` | [`Belt`](../interfaces/Belt.Belt.md) | `undefined` | belt object |
-| `about` | `string` | `undefined` | about URL value |
+| `about` | `string` | `undefined` | about information |
 
 #### Returns
 
@@ -519,7 +519,7 @@ BeltRDF object
 
 #### Defined in
 
-[Belt.ts:1061](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1061)
+[Belt.ts:1063](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1063)
 
 ___
 
@@ -533,7 +533,7 @@ Check for valid hex code
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `str` | `string` | about URL value |
+| `str` | `string` | hex code string to validate |
 
 #### Returns
 
@@ -543,7 +543,7 @@ true if valid hex code, false otherwise
 
 #### Defined in
 
-[Belt.ts:1078](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1078)
+[Belt.ts:1080](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1080)
 
 ___
 
@@ -568,7 +568,7 @@ found hex code or original color name
 
 #### Defined in
 
-[Belt.ts:1101](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1101)
+[Belt.ts:1103](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1103)
 
 ___
 
@@ -576,7 +576,7 @@ ___
 
 ▸ **mapBeltColors**(`belts`, `colors`): `void`
 
-Attempt to map all belt color names in all Belt array object to hex codes
+Map all belt color names in all Belt array object to hex codes
 
 #### Parameters
 
@@ -591,4 +591,4 @@ Attempt to map all belt color names in all Belt array object to hex codes
 
 #### Defined in
 
-[Belt.ts:1126](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1126)
+[Belt.ts:1128](https://github.com/jeffholst/vue-custom-belt/blob/2e88ea1/src/Belt.ts#L1128)

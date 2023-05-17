@@ -223,11 +223,11 @@ const UniqueIDPrefix = "custom-belt-"; // prefix for unique ID generation
 
 /** Default color when no color provided */
 export const DefaultColor = "#FF0000";
-/** maximum number of stripes a belt may have */
+/** Maximum number of stripes a belt may have */
 export const MaximumStripeCount = 10;
-/** minimum number of stripes */
+/** Minimum number of stripes */
 export const MinimumStripeCount = 0;
-/** default stripe position */
+/** Default stripe position */
 export const StripePositionDefault = StripePosition.Right;
 
 /*
@@ -239,9 +239,9 @@ export const StripePositionDefault = StripePosition.Right;
  */
 
 /**
- * Combine multiple BropProps arrays into a single array
- * @param {BeltProps[][]} beltProps array of BeltProp arrays
- * @return {BeltProps[]} combined array of BeltProps
+ * Combine multiple BeltProps[] arrays into a single BeltProps[] array
+ * @param {BeltProps[][]} beltProps array of BeltProp[] arrays to combine
+ * @return {BeltProps[]} combined array of BeltProps[] arrays
  */
 export const combineBeltProps = (beltProps: BeltProps[][]): BeltProps[] => {
   let combinedBeltProps: BeltProps[] = [];
@@ -326,12 +326,12 @@ export const getBelt = (
 // Todo: use in custom-belt
 /**
  * Get number of colors in BeltType [1-3]
- * @param {BeltType} bType BeltType
- * @return {number} number of colors in BeltType
+ * @param {BeltType} beltType BeltType to lookup color count
+ * @return {number} number of colors in beltType
  */
-export const getBeltColorCount = (bType: BeltType): number | undefined => {
+export const getBeltColorCount = (beltType: BeltType): number | undefined => {
   let colorCount: number;
-  switch (bType) {
+  switch (beltType) {
     case BeltType.Solid:
       colorCount = 1;
       break;
@@ -355,8 +355,10 @@ export const getBeltColorCount = (bType: BeltType): number | undefined => {
  * Create new BeltProps[] array
  * @param {number} id unique identifier for belt
  * @param {string} name name of belt
+ * @param {BeltType} beltType type of belt
  * @param {string} color1 hex value for belt color 1
  * @param {string} color2 hex value for belt color 2
+ * @param {string} color3 hex value for belt color 3
  * @param {string} borderColor hex value for belt border color
  * @param {boolean} hasPatch whether belt has patch or not
  * @param {string} patchColor hex value for patch color
@@ -573,7 +575,7 @@ export const getBeltPropsCoral = (
 };
 
 /**
- * Create new BeltProps[] array deom Belt object
+ * Create new BeltProps[] array from Belt object
  * @param {Belt} belt Belt object to create BeltProps[] array from
  * @param {number} stripeCount number of stripes for belt [0-10]
  * @param {StripePosition} stripePosition starting position of stripes on belt patch
@@ -917,7 +919,7 @@ export const getBeltPropsSolid = (
  * @param {number} id unique identifier for belt
  * @param {string} name name of belt
  * @param {string} color1 hex value for belt color 1
- * @param {string} color2 hex value for belt color 1
+ * @param {string} color2 hex value for belt color 2
  * @param {string} borderColor hex value for belt border color
  * @param {boolean} hasPatch whether belt has patch or not
  * @param {string} patchColor hex value for patch color
@@ -986,8 +988,8 @@ export const getBeltPropsSplit = (
  * @param {number} id unique identifier for belt
  * @param {string} name name of belt
  * @param {string} color1 hex value for belt color 1
- * @param {string} color2 hex value for belt color 1
- * @param {string} color3 hex value for belt color 1
+ * @param {string} color2 hex value for belt color 2
+ * @param {string} color3 hex value for belt color 3
  * @param {string} borderColor hex value for belt border color
  * @param {boolean} hasPatch whether belt has patch or not
  * @param {string} patchColor hex value for patch color
@@ -1053,9 +1055,9 @@ export const getBeltPropsStriped = (
 };
 
 /**
- * Create new BeltRDF object
+ * Create new BeltRDF object used in <svg> metadata
  * @param {Belt} belt belt object
- * @param {string} about about URL value
+ * @param {string} about about information
  * @return {BeltRDF} BeltRDF object
  */
 export const getBeltRDF = (
@@ -1072,7 +1074,7 @@ export const getBeltRDF = (
 
 /**
  * Check for valid hex code
- * @param {string} str about URL value
+ * @param {string} str hex code string to validate
  * @return {boolean} true if valid hex code, false otherwise
  */
 export const isValidHexCode = (str: string): boolean => {
@@ -1119,7 +1121,7 @@ export const mapBeltColor = (color: string, colors: BeltColor[]): string => {
 };
 
 /**
- * Attempt to map all belt color names in all Belt array object to hex codes
+ * Map all belt color names in all Belt array object to hex codes
  * @param {Belt[]} belts belt object
  * @param {BeltColor[]} colors BeltColor[] lookup array
  */
