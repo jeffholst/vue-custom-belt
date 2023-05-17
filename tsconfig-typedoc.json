@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true
+  },
+  "include": ["src/Belt.ts", "src/BeltSystem.ts"],
+  "typedocOptions": {
+    "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-missing-exports"],
+    "out": "docs",
+    "entryPoints": ["src/Belt.ts", "src/BeltSystem.ts"]
+  }
+}

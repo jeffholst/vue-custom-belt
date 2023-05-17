@@ -7,8 +7,9 @@ import { version } from "../package.json";
  * |___|_||_\_,_|_|_|_/__/
  */
 
-/*
- * Callback types for belt interaction
+/**
+ * Callback types for belt interactions
+ * @enum
  */
 export enum BeltCallbackType {
   Refresh = "Refresh",
@@ -17,7 +18,7 @@ export enum BeltCallbackType {
 }
 
 /**
- * Belt types
+ * Available belt types
  * @enum
  */
 export enum BeltType {
@@ -33,20 +34,18 @@ export enum BeltType {
  * Belt types excluding Crazy
  * @enum
  */
-export type BeltTypeStandard = Omit<BeltType, "Crazy">;
-export const BeltTypeStandard = {
-  Solid: BeltType.Solid,
-  Striped: BeltType.Striped,
-  Coral: BeltType.Coral,
-  Split: BeltType.Split,
-  Checkered: BeltType.Checkered,
-};
+export enum BeltTypeStandard {
+  Solid = "Solid",
+  Striped = "Striped",
+  Coral = "Coral",
+  Split = "Split",
+  Checkered = "Checkered",
+}
 
 /**
  * Log types
  * @enum
  */
-
 enum LogType {
   Info = "Info",
   Warning = "Warning",
@@ -195,7 +194,7 @@ export interface BeltProps {
  * RDF metadata used in SVG tag
  * @interface
  */
-interface BeltRDF {
+export interface BeltRDF {
   title: string;
   about: string;
 }
@@ -222,10 +221,14 @@ export interface RandomSettings {
 const AboutURL = "https://github.com/jeffholst/vue-custom-belt"; // about URL
 const UniqueIDPrefix = "custom-belt-"; // prefix for unique ID generation
 
-export const DefaultColor = "#FF0000"; // default when no color provided
-export const MaximumStripeCount = 10; // maximum number of stripes a belt may have
-export const MinimumStripeCount = 0; // minimum number of stripes
-export const StripePositionDefault = StripePosition.Right; // default stripe position
+/** Default color when no color provided */
+export const DefaultColor = "#FF0000";
+/** maximum number of stripes a belt may have */
+export const MaximumStripeCount = 10;
+/** minimum number of stripes */
+export const MinimumStripeCount = 0;
+/** default stripe position */
+export const StripePositionDefault = StripePosition.Right;
 
 /*
  *  ___                   _     ___             _   _

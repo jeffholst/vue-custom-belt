@@ -1,3 +1,5 @@
+vue-custom-belt / [Modules](modules.md)
+
 # [Custom Belt](https://jeffholst.github.io/custom-belt/) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jeffholst/vue-custom-belt/blob/main/LICENSE.md) [![npm version](https://img.shields.io/npm/v/vue-custom-belt)](https://www.npmjs.com/package/vue-custom-belt) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jeffholst/vue-custom-belt/pulls) ![GitHub last commit](https://img.shields.io/github/last-commit/jeffholst/vue-custom-belt) ![GitHub issues](https://img.shields.io/github/issues/jeffholst/vue-custom-belt) ![GitHub pull requests](https://img.shields.io/github/issues-pr/jeffholst/vue-custom-belt)
 
 <h1 align="center">
