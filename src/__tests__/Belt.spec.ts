@@ -95,6 +95,7 @@ describe("BeltTypeStandard", () => {
    * Test that beltTypeStandard does not contain Crazy
    */
   it(`does not contain Crazy`, () => {
+    // @ts-ignore
     expect(belt.BeltTypeStandard.Crazy).toBe(undefined);
   });
 
