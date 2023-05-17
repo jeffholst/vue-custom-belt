@@ -1055,7 +1055,7 @@ export const getBeltPropsStriped = (
 };
 
 /**
- * Create new BeltRDF object used in <svg> metadata
+ * Create new BeltRDF object used in svg metadata
  * @param {Belt} belt belt object
  * @param {string} about about information
  * @return {BeltRDF} BeltRDF object
