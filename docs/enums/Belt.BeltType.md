@@ -25,7 +25,7 @@ Available belt types
 
 #### Defined in
 
-[Belt.ts:29](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L29)
+[Belt.ts:29](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L29)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:27](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L27)
+[Belt.ts:27](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L27)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:30](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L30)
+[Belt.ts:30](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L30)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:25](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L25)
+[Belt.ts:25](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L25)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[Belt.ts:28](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L28)
+[Belt.ts:28](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L28)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[Belt.ts:26](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L26)
+[Belt.ts:26](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L26)

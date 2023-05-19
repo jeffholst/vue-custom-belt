@@ -10,6 +10,7 @@ import {
   getBeltPropsStriped,
   combineBeltProps,
   BeltCallbackType,
+  getBeltPropsSolid,
 } from "./Belt";
 import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
@@ -86,11 +87,11 @@ const flagBeltsCallback = (
 };
 
 const usaBelt: BeltProps[] = getBeltPropsStriped(
-  1,
   "USA Belt",
   "#BF0A30",
   "#FFFFFF",
   "#002868",
+  1,
   "Black",
   true,
   "White",
@@ -111,11 +112,11 @@ const usaBelt: BeltProps[] = getBeltPropsStriped(
 const flagBeltName = ref(usaBelt[0].belt.name);
 
 const MexicoBelt = getBeltPropsStriped(
-  2,
   "Mexico Belt",
   "#006847",
   "#FFFFFF",
   "#ce1127",
+  2,
   "Black",
   true,
   "White",

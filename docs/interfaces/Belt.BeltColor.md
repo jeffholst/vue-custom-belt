@@ -21,7 +21,7 @@ Used to assign/lookup friendly names to hex colors
 
 #### Defined in
 
-[Belt.ts:104](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L104)
+[Belt.ts:104](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L104)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[Belt.ts:103](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/Belt.ts#L103)
+[Belt.ts:103](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/Belt.ts#L103)

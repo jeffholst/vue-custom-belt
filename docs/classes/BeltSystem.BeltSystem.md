@@ -50,7 +50,7 @@ Instantiate a new BeltSystem object
 
 #### Defined in
 
-[BeltSystem.ts:31](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L31)
+[BeltSystem.ts:31](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L31)
 
 ## Properties
 
@@ -62,7 +62,7 @@ belts in the system
 
 #### Defined in
 
-[BeltSystem.ts:25](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L25)
+[BeltSystem.ts:25](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L25)
 
 ___
 
@@ -74,7 +74,7 @@ lookup table of friendly color names to hex codes
 
 #### Defined in
 
-[BeltSystem.ts:23](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L23)
+[BeltSystem.ts:23](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L23)
 
 ___
 
@@ -86,7 +86,7 @@ name of belt system
 
 #### Defined in
 
-[BeltSystem.ts:15](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L15)
+[BeltSystem.ts:15](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L15)
 
 ___
 
@@ -98,7 +98,7 @@ refresh interval in milliseconds
 
 #### Defined in
 
-[BeltSystem.ts:21](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L21)
+[BeltSystem.ts:21](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L21)
 
 ___
 
@@ -110,7 +110,7 @@ title of belt system
 
 #### Defined in
 
-[BeltSystem.ts:17](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L17)
+[BeltSystem.ts:17](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L17)
 
 ___
 
@@ -122,7 +122,7 @@ transition CSS
 
 #### Defined in
 
-[BeltSystem.ts:19](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L19)
+[BeltSystem.ts:19](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L19)
 
 ## Methods
 
@@ -146,7 +146,7 @@ matching Belt or undefined
 
 #### Defined in
 
-[BeltSystem.ts:48](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L48)
+[BeltSystem.ts:48](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L48)
 
 ___
 
@@ -170,7 +170,7 @@ matching Belt or undefined
 
 #### Defined in
 
-[BeltSystem.ts:57](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L57)
+[BeltSystem.ts:57](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L57)
 
 ___
 
@@ -197,7 +197,7 @@ BeltProps for provided Belt object and stripe info
 
 #### Defined in
 
-[BeltSystem.ts:70](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L70)
+[BeltSystem.ts:70](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L70)
 
 ___
 
@@ -223,7 +223,7 @@ all belts in the belt system
 
 #### Defined in
 
-[BeltSystem.ts:95](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L95)
+[BeltSystem.ts:95](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L95)
 
 ___
 
@@ -250,7 +250,7 @@ BeltProps for matching belt name
 
 #### Defined in
 
-[BeltSystem.ts:127](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L127)
+[BeltSystem.ts:127](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L127)
 
 ___
 
@@ -279,7 +279,7 @@ BeltProps[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:159](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L159)
+[BeltSystem.ts:159](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L159)
 
 ___
 
@@ -306,7 +306,7 @@ BeltProps for matching belt name
 
 #### Defined in
 
-[BeltSystem.ts:194](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L194)
+[BeltSystem.ts:194](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L194)
 
 ___
 
@@ -335,7 +335,7 @@ BeltProps[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:226](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L226)
+[BeltSystem.ts:226](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L226)
 
 ___
 
@@ -359,7 +359,7 @@ Belt[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:259](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L259)
+[BeltSystem.ts:259](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L259)
 
 ___
 
@@ -383,4 +383,4 @@ Belt[] of matching belts
 
 #### Defined in
 
-[BeltSystem.ts:276](https://github.com/jeffholst/vue-custom-belt/blob/fd97bd8/src/BeltSystem.ts#L276)
+[BeltSystem.ts:276](https://github.com/jeffholst/vue-custom-belt/blob/98d6c2b/src/BeltSystem.ts#L276)
