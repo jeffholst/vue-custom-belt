@@ -10,7 +10,6 @@ import {
   getBeltPropsStriped,
   combineBeltProps,
   BeltCallbackType,
-  getBeltPropsSolid,
 } from "./Belt";
 import BeltSystemJSON_IBJJF from "./belt-systems/IBJJF.json";
 
